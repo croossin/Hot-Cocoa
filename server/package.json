@@ -11,6 +11,7 @@
   "dependencies": {
     "cheerio": "latest",
     "express": "latest",
+    "mongoose": "^4.5.10",
     "q": "^1.4.1",
     "request": "latest"
   }
