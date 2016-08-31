@@ -1,0 +1,17 @@
+{
+  "name": "hot-cocoa",
+  "version": "0.0.1",
+  "description": "CocoaPod Library",
+  "main": "server.js",
+  "author": "Roo",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/croossin/Hot-Cocoa"
+  },
+  "dependencies": {
+    "cheerio": "latest",
+    "express": "latest",
+    "q": "^1.4.1",
+    "request": "latest"
+  }
+}
