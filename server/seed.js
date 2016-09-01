@@ -22,6 +22,11 @@ var cocoaSchema = new Schema({
   dateAdded: Date,
   license: String,
   details: {
+    author: {
+      name: String,
+      url: String,
+      image: String
+    },
     amountOfVotes: String,
     appetize: String,
     tags: [String],
