@@ -83,6 +83,14 @@ function getDetails(controlUrl){
       var $ = cheerio.load(html);
 
       var d = {};
+      var author = {};
+
+      //Author
+      author.name = $('small').find('a').text();
+      author.url = $('small').find('a').attr('href');
+      author.image = $('small').find('a > img').attr('src');
+
+      d.author = author;
 
       //Amount of Votes
       d.amountOfVotes = $('span.ratings-count').text().split(" ")[0];
