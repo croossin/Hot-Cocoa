@@ -12,6 +12,7 @@
     "cheerio": "latest",
     "express": "latest",
     "mongoose": "^4.5.10",
+    "morgan": "^1.7.0",
     "q": "^1.4.1",
     "request": "latest"
   }
