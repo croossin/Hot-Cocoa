@@ -45,14 +45,14 @@ module.exports = {
 	        })
 
 	        Q.all(promises).then(function(results){
-	          for(i = 0; i < results.length; i++){
+	          for(var i = 0; i < results.length; i++){
 	            controls[i].details = results[i];
 	          }
 	          p.resolve(controls);
 	        });
+	      }else{
+	      	p.reject(error);
 	      }
-
-	      p.reject(error);
 	    })
 
 	    return p.promise; 
@@ -73,7 +73,7 @@ function splitMetaData(str){
 }
 
 function getDetails(controlUrl){
-  url = MAIN_URL + controlUrl;
+  var url = config.MAIN_URL + controlUrl;
 
   var p = Q.defer();
 
@@ -82,7 +82,7 @@ function getDetails(controlUrl){
     if(!error && response.statusCode == 200){
       var $ = cheerio.load(html);
 
-      d = {};
+      var d = {};
 
       //Amount of Votes
       d.amountOfVotes = $('span.ratings-count').text().split(" ")[0];
