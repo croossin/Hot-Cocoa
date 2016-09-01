@@ -170,6 +170,7 @@ var mongoose = require('mongoose');
 // })
 
 app.use('/api/v1/search', require('./api/v1/search'));
+app.use('/api/v1/author', require('./api/v1/author'));
 
 
 app.listen('8081')
