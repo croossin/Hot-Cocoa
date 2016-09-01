@@ -45,14 +45,14 @@ db.once('open', function() {
 
     console.log("Starting seeding");
        
-    for (var i = 20; i > 0; i--) {
+    for (var i = 150; i < 200; i++) {
         getPageData(i);
     }
 });
 
 function getPageData(page){
 
-    url = (page == 1) ? MAIN_URL : (MAIN_URL + '/controls?page=' + page)
+    url = MAIN_URL + '/controls?page=' + page;
     
     console.log("Getting data for URL: " + url);
 
