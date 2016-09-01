@@ -1,12 +1,58 @@
-var express = require('express');
-var request = require('request');
-var cheerio = require('cheerio');
-var app     = express();
-var Q       = require('q');
+var express  = require('express');
+var request  = require('request');
+var cheerio  = require('cheerio');
+var app      = express();
+var Q        = require('q');
+var mongoose = require('mongoose');
+/** 
+ * =============================================================================
+ * Config Variables
+ * =============================================================================
+ */
 var MAIN_URL = 'https://www.cocoacontrols.com';
 
 
+/** 
+ * =============================================================================
+ * Mongo Database
+ * =============================================================================
+ */
+mongoose.connect('mongodb://localhost/hotcocoa');
+mongoose.Promise = global.Promise;
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+    console.log("Connected to DB");
+});
 
+var Schema = mongoose.Schema;
+
+var cocoaSchema = new Schema({
+  name: String,
+  url: String,
+  imageUrl: String,
+  dateAddedPretty: String,
+  dateAdded: Date,
+  license: String,
+  details: {
+    amountOfVotes: String,
+    appetize: String,
+    tags: [String],
+    license: String,
+    language: String,
+    githubLink: String,
+    description: String
+  }
+});
+
+var CocoaPod = mongoose.model('CocoaPod', cocoaSchema);
+
+
+/** 
+ * =============================================================================
+ * Helper Functions
+ * =============================================================================
+ */
 function splitMetaData(str){
   var list = [];
   var temp = str.split(" \u2022 ");
@@ -108,8 +154,19 @@ function getPageData(page, res){
     }) 
 }
 
-app.get('/', function(req, res){
-  getPageData(0, res);
+/** 
+ * =============================================================================
+ * API Routes
+ * =============================================================================
+ */
+app.get('/:numberOfPods?', function(req, res){
+    if(req.params.numberOfPods){
+      CocoaPod.find().limit(30).exec(function(err, posts){
+          res.send(posts);
+      });
+    }else{
+      
+    }
 })
 
 
