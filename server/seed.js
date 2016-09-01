@@ -113,6 +113,8 @@ function getDetails(controlUrl){
       author.url = $('small').find('a').attr('href');
       author.image = $('small').find('a > img').attr('src');
       
+      d.author = author;
+
       //Amount of Votes
       d.amountOfVotes = $('span.ratings-count').text().split(" ")[0];
       
