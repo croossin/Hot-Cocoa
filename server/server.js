@@ -6,6 +6,7 @@ var Q       = require('q');
 var MAIN_URL = 'https://www.cocoacontrols.com';
 
 
+
 function splitMetaData(str){
   var list = [];
   var temp = str.split(" \u2022 ");
@@ -68,40 +69,47 @@ function getDetails(controlUrl){
   return p.promise;
 }
 
+function getPageData(page, res){
+
+    url = (page == 1 || page == 0) ? MAIN_URL : (MAIN_URL + '/controls?page=' + page)
+    
+    console.log("Getting data for URL: " + url);
+
+    request(url, function(error, response, html){
+      if(!error && response.statusCode == 200){
+        var $ = cheerio.load(html);
+
+        var controls = [];
+        var promises = [];
+
+        $('li.block-grid-item').each(function(i, element){
+
+          var cn = $(this).children().next().find('a').text();
+          var cu = $(this).find('p > a').attr('href');
+          var ci = $(this).find('p > a > img').attr('src');
+
+          var t = splitMetaData($(this).find('p.control-metadata').text());
+          var dateAddedPretty = t[0];
+          var dateAdded = new Date(t[0]);
+          var license = t[1];
+
+          promises.push(getDetails(cu));
+
+          controls.push({"name": cn, "url": cu, "imageUrl": ci, "dateAdded": dateAdded , "dateAddedPretty": dateAddedPretty, "license": license});
+        })
+
+        Q.all(promises).then(function(results){
+          for(i = 0; i < results.length; i++){
+            controls[i].details = results[i];
+          }
+          res.send(controls);
+        });
+      }
+    }) 
+}
+
 app.get('/', function(req, res){
-  
-  url = MAIN_URL;
-
-  request(url, function(error, response, html){
-    if(!error && response.statusCode == 200){
-      var $ = cheerio.load(html);
-
-      var controls = [];
-      var promises = [];
-
-      $('li.block-grid-item').each(function(i, element){
-
-        var cn = $(this).children().next().find('a').text();
-        var cu = $(this).find('p > a').attr('href');
-        var ci = $(this).find('p > a > img').attr('src');
-
-        var t = splitMetaData($(this).find('p.control-metadata').text());
-        var dateAdded = t[0];
-        var license = t[1];
-
-        promises.push(getDetails(cu));
-
-        controls.push({"name": cn, "url": cu, "imageUrl": ci, "dateAdded": dateAdded, "license": license});
-      })
-
-      Q.all(promises).then(function(results){
-        for(i = 0; i < results.length; i++){
-          controls[i].details = results[i];
-        }
-        res.send(controls);
-      });
-    }
-  })
+  getPageData(0, res);
 })
 
 

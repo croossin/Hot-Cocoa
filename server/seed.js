@@ -40,7 +40,7 @@ db.once('open', function() {
 
     console.log("Starting seeding");
        
-    for (var i = 3; i > 0; i--) {
+    for (var i = 20; i > 0; i--) {
         getPageData(i);
     }
 });
