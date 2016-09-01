@@ -106,7 +106,13 @@ function getDetails(controlUrl){
       var $ = cheerio.load(html);
 
       d = {};
+      var author = {};
 
+      //Author
+      author.name = $('small').find('a').text();
+      author.url = $('small').find('a').attr('href');
+      author.image = $('small').find('a > img').attr('src');
+      
       //Amount of Votes
       d.amountOfVotes = $('span.ratings-count').text().split(" ")[0];
       
