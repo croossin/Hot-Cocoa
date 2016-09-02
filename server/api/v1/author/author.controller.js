@@ -3,13 +3,14 @@
 var scraper   = require('../../../helper/scraper.js');
 var formatter = require('../../../helper/formatter.js');
 var config    = require('../../../config.js');
+var Pod  = require('../../../helper/cocoaModel.js');
 
 exports.search = function(req, res){
-	var searchURL = config.AUTHOR_URL + formatter.formatUrl(req.params.author); 
 	
-	scraper.getFullPageAndDetail(searchURL).then(function(response){
-		res.json(response);
+	Pod.find({'details.author.name': req.params.author})
+	.then(function(resp){
+		res.send(resp);
 	}, function(err){
-		res.send("Server Error");
-	});
+		res.send(err);
+	})
 }
