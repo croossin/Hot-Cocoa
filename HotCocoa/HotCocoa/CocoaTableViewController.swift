@@ -47,6 +47,13 @@ class CocoaTableViewController: UIViewController, UICollectionViewDelegateFlowLa
         collectionView.collectionViewLayout = listLayout
         collectionView.registerNib(PodCollectionViewCell.cellNib, forCellWithReuseIdentifier:PodCollectionViewCell.id)
     }
+
+    class func generateSelf() -> CocoaTableViewController{
+        let board = UIStoryboard(name: "Main", bundle: nil)
+
+        //FIX FOR TYPE SAFETY
+        return board.instantiateViewControllerWithIdentifier(String(self)) as! CocoaTableViewController
+    }
 }
 
 extension CocoaTableViewController {

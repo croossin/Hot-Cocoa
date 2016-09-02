@@ -74,16 +74,17 @@ class HomeController: UIViewController {
     }
 
     private func gatherViewControllers() -> [CocoaTableViewController] {
-        let a = CocoaTableViewController()
+
+        let a = CocoaTableViewController.generateSelf()
 //        a.setupConfig = (recent: true, rating: false, swift: false, objc: false)
 
-        let b = CocoaTableViewController()
+        let b = CocoaTableViewController.generateSelf()
 //        b.setupConfig = (recent: false, rating: true, swift: false, objc: false)
 
-        let c = CocoaTableViewController()
+        let c = CocoaTableViewController.generateSelf()
 //        a.setupConfig = (recent: true, rating: false, swift: false, objc: false)
 
-        let d = CocoaTableViewController()
+        let d = CocoaTableViewController.generateSelf()
 //        a.setupConfig = (recent: true, rating: false, swift: false, objc: false)
 
         return [a,b,c,d]
