@@ -39,37 +39,12 @@ class HCSegmentio {
     }
 
     private func content() -> [SegmentioItem] {
-        var segItems = [SegmentioItem]()
-
-        var s = SegmentioItem(
-            title: "Recent",
-            image: UIImage(named: "recent") ?? UIImage()
-        )
-
-        segItems.append(s)
-
-        s = SegmentioItem(
-            title: "Rating",
-            image: UIImage(named: "rating") ?? UIImage()
-        )
-
-        segItems.append(s)
-
-        s = SegmentioItem(
-            title: "Swift",
-            image: UIImage(named: "swift") ?? UIImage()
-        )
-
-        segItems.append(s)
-
-        s = SegmentioItem(
-            title: "Objective-C",
-            image: UIImage(named: "objc") ?? UIImage()
-        )
-
-        segItems.append(s)
-
-        return segItems
+        return [
+            SegmentioItem(title: "Recent", image: UIImage(named: "recent") ?? UIImage()),
+            SegmentioItem(title: "Rating", image: UIImage(named: "rating") ?? UIImage()),
+            SegmentioItem(title: "Swift", image: UIImage(named: "swift") ?? UIImage()),
+            SegmentioItem(title: "Objective-C", image: UIImage(named: "objc") ?? UIImage()),
+        ]
     }
 
     private func indicatorOptions() -> SegmentioIndicatorOptions {
