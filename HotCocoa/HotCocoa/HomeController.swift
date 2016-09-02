@@ -13,6 +13,10 @@ class HomeController: UIViewController {
     let HCSeg: HCSegmentio = HCSegmentio()
     let scrollView: UIScrollView = UIScrollView()
 
+    private lazy var viewControllers: [UIViewController] = {
+        return self.gatherViewControllers()
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,7 +25,22 @@ class HomeController: UIViewController {
     }
 
     func _setupScrollView(){
-        
+        scrollView.contentSize = CGSize(
+            width: UIScreen.mainScreen().bounds.width * CGFloat(viewControllers.count),
+            height: UIScreen.mainScreen().bounds.height - 200
+        )
+
+        for (index, viewController) in viewControllers.enumerate() {
+            viewController.view.frame = CGRect(
+                x: UIScreen.mainScreen().bounds.width * CGFloat(index),
+                y: 0,
+                width: scrollView.frame.width,
+                height: scrollView.frame.height
+            )
+            addChildViewController(viewController)
+            scrollView.addSubview(viewController.view, options: .UseAutoresize) // module's extension
+            viewController.didMoveToParentViewController(self)
+        }
     }
 
     func _setupUI(){
@@ -47,4 +66,33 @@ class HomeController: UIViewController {
     func segViewValueDidChange(selectedIndex: Int){
         print(selectedIndex)
     }
+
+    private func gatherViewControllers() -> [CocoaTableViewController] {
+        let a = CocoaTableViewController()
+//        a.setupConfig = (recent: true, rating: false, swift: false, objc: false)
+
+        let b = CocoaTableViewController()
+//        b.setupConfig = (recent: false, rating: true, swift: false, objc: false)
+
+        let c = CocoaTableViewController()
+//        a.setupConfig = (recent: true, rating: false, swift: false, objc: false)
+
+        let d = CocoaTableViewController()
+//        a.setupConfig = (recent: true, rating: false, swift: false, objc: false)
+
+        return [a,b,c,d]
+    }
+}
+
+extension HomeController: UIScrollViewDelegate {
+
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        let currentPage = floor(scrollView.contentOffset.x / scrollView.frame.width)
+        HCSeg.segView?.selectedSegmentioIndex = Int(currentPage)
+    }
+
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        scrollView.contentSize = CGSize(width: scrollView.contentSize.width, height: 0)
+    }
+
 }
