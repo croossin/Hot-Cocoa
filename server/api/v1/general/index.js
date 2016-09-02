@@ -13,6 +13,6 @@ var router = express.Router();
  * Routes
  * =============================================================================
  */
-router.get('/:fromPage?', controller.fetch);
+router.get('/fetch/:fromPage?', controller.fetch);
 
 module.exports = router;
