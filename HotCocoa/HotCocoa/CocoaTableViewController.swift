@@ -17,11 +17,11 @@ typealias viewcontrollerconfig = (recent: Bool, rating: Bool, swift: Bool, objc:
 
 class CocoaTableViewController: UIViewController, UICollectionViewDelegateFlowLayout{
 
+    @IBOutlet weak var collectionView: UICollectionView!
+
     var setupConfig: viewcontrollerconfig? = nil
 
     private var pods = [Pod]()
-
-    private var collectionView: UICollectionView?
 
     private var isTransitionAvailable = true
     private lazy var listLayout = BaseLayout(staticCellHeight: listLayoutStaticCellHeight, nextLayoutStaticCellHeight: gridLayoutStaticCellHeight, layoutState: .ListLayoutState)
@@ -44,13 +44,6 @@ class CocoaTableViewController: UIViewController, UICollectionViewDelegateFlowLa
     }
 
     private func _setupCollectionView() {
-
-        let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSizeMake(200, 200)
-        collectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: layout)
-
-        guard let collectionView = collectionView else { return }
-
         collectionView.collectionViewLayout = listLayout
         collectionView.registerNib(PodCollectionViewCell.cellNib, forCellWithReuseIdentifier:PodCollectionViewCell.id)
     }

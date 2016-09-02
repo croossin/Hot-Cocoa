@@ -7,11 +7,16 @@
 //
 
 import UIKit
+import Segmentio
 
 class HomeController: UIViewController {
 
     let HCSeg: HCSegmentio = HCSegmentio()
-    let scrollView: UIScrollView = UIScrollView()
+
+
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var scrollView: UIScrollView!
+
 
     private lazy var viewControllers: [UIViewController] = {
         return self.gatherViewControllers()
@@ -25,11 +30,10 @@ class HomeController: UIViewController {
     }
 
     func _setupScrollView(){
-        scrollView.frame = CGRect(origin: CGPointZero, size: CGSize(width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.height)) //NEED TO FIGURE THIS OUT
 
         scrollView.contentSize = CGSize(
             width: UIScreen.mainScreen().bounds.width * CGFloat(viewControllers.count),
-            height: UIScreen.mainScreen().bounds.height
+            height: containerView.frame.height
         )
 
         for (index, viewController) in viewControllers.enumerate() {

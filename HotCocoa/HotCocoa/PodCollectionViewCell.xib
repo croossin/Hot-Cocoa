@@ -14,21 +14,9 @@
         </mutableArray>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PodCollectionViewCell" customModule="HotCocoa" customModuleProvider="target">
-            <connections>
-                <outlet property="backgroundGradientView" destination="v4V-HL-vIg" id="2Qe-vd-eIT"/>
-                <outlet property="nameGridLabel" destination="VqP-48-Rgg" id="01g-xl-DhT"/>
-                <outlet property="nameListLabel" destination="a9j-Aw-17H" id="5lc-EG-HAH"/>
-                <outlet property="nameListLabelLeadingConstraint" destination="ERq-ZI-diG" id="5yh-dR-Tbx"/>
-                <outlet property="podImageView" destination="rD7-Vo-twC" id="dUX-Qs-XGa"/>
-                <outlet property="podImageViewHeightConstraint" destination="ay6-YI-b9I" id="VXl-xU-rdq"/>
-                <outlet property="podImageViewWidthConstraint" destination="8Dz-sD-KtT" id="IAa-gC-FVY"/>
-                <outlet property="statisticLabel" destination="xf3-NZ-6V1" id="lbv-I3-oa4"/>
-                <outlet property="statisticLabelLeadingConstraint" destination="ZHK-IT-vXx" id="h3a-YB-Sy6"/>
-            </connections>
-        </placeholder>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PodCollectionViewCell" customModule="HotCocoa" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="UserCollectionViewCell" id="IJG-DA-unF" userLabel="PodCollectionViewCell" customClass="UserCollectionViewCell" customModule="HotCocoa" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PodCollectionViewCell" id="IJG-DA-unF" userLabel="PodCollectionViewCell" customClass="PodCollectionViewCell" customModule="HotCocoa" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -95,6 +83,17 @@
                 <constraint firstItem="rD7-Vo-twC" firstAttribute="top" secondItem="IJG-DA-unF" secondAttribute="top" id="xQB-yD-zLb"/>
             </constraints>
             <size key="customSize" width="329" height="50"/>
+            <connections>
+                <outlet property="backgroundGradientView" destination="v4V-HL-vIg" id="Oan-Nn-nEJ"/>
+                <outlet property="nameGridLabel" destination="VqP-48-Rgg" id="HIt-uW-ssw"/>
+                <outlet property="nameListLabel" destination="a9j-Aw-17H" id="RE0-LJ-wuw"/>
+                <outlet property="nameListLabelLeadingConstraint" destination="ERq-ZI-diG" id="rv7-CT-5iZ"/>
+                <outlet property="podImageView" destination="rD7-Vo-twC" id="lfz-cD-gOV"/>
+                <outlet property="podImageViewHeightConstraint" destination="ay6-YI-b9I" id="Bsw-bD-xKO"/>
+                <outlet property="podImageViewWidthConstraint" destination="8Dz-sD-KtT" id="Lfg-6C-hqa"/>
+                <outlet property="statisticLabel" destination="xf3-NZ-6V1" id="gnQ-bi-Nn2"/>
+                <outlet property="statisticLabelLeadingConstraint" destination="ZHK-IT-vXx" id="BPI-eJ-HMy"/>
+            </connections>
             <point key="canvasLocation" x="359" y="151"/>
         </collectionViewCell>
     </objects>
