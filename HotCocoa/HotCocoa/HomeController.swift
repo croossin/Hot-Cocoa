@@ -11,11 +11,17 @@ import UIKit
 class HomeController: UIViewController {
 
     let HCSeg: HCSegmentio = HCSegmentio()
+    let scrollView: UIScrollView = UIScrollView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        _setupScrollView()
         _setupUI()
+    }
+
+    func _setupScrollView(){
+        
     }
 
     func _setupUI(){

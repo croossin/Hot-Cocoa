@@ -43,7 +43,7 @@ class HCSegmentio {
             SegmentioItem(title: "Recent", image: UIImage(named: "recent") ?? UIImage()),
             SegmentioItem(title: "Rating", image: UIImage(named: "rating") ?? UIImage()),
             SegmentioItem(title: "Swift", image: UIImage(named: "swift") ?? UIImage()),
-            SegmentioItem(title: "Objective-C", image: UIImage(named: "objc") ?? UIImage()),
+            SegmentioItem(title: "Objective-C", image: UIImage(named: "objc") ?? UIImage())
         ]
     }
 
