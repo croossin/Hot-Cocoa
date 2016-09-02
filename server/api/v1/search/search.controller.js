@@ -1,15 +1,27 @@
 'use strict';
-
+/** 
+ * =============================================================================
+ * Imports
+ * =============================================================================
+ */
 var scraper   = require('../../../helper/scraper.js');
 var formatter = require('../../../helper/formatter.js');
 var config    = require('../../../config.js');
+var Pod  = require('../../../helper/cocoaModel.js');
 
+/** 
+ * =============================================================================
+ * Public Functions
+ * =============================================================================
+ */
 exports.search = function(req, res){
-	var searchURL = config.SEARCH_URL + formatter.formatUrl(req.params.searchTerm); 
 	
-	scraper.getFullPageAndDetail(searchURL).then(function(response){
-		res.json(response);
+	Pod.find({'details.tags': req.params.searchTerm})
+	.limit(20)
+	.sort('-details.amountOfVotes')	
+	.then(function(resp){
+		res.send(resp);
 	}, function(err){
-		res.send("Server Error");
-	});
+		res.send(err);
+	})
 }
