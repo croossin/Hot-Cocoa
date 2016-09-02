@@ -25,9 +25,11 @@ class HomeController: UIViewController {
     }
 
     func _setupScrollView(){
+        scrollView.frame = CGRect(origin: CGPointZero, size: CGSize(width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.height)) //NEED TO FIGURE THIS OUT
+
         scrollView.contentSize = CGSize(
             width: UIScreen.mainScreen().bounds.width * CGFloat(viewControllers.count),
-            height: UIScreen.mainScreen().bounds.height - 200
+            height: UIScreen.mainScreen().bounds.height
         )
 
         for (index, viewController) in viewControllers.enumerate() {
