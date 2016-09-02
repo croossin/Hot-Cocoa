@@ -1,0 +1,22 @@
+PODS:
+  - Alamofire (3.4.2)
+  - Segmentio (1.0)
+  - SVProgressHUD (2.0.3)
+  - SwiftyJSON (2.3.2)
+  - UITableViewCell-Badge (1.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 3.4)
+  - Segmentio (~> 1.0)
+  - SVProgressHUD
+  - SwiftyJSON
+  - UITableViewCell-Badge
+
+SPEC CHECKSUMS:
+  Alamofire: 6aa33201d20d069e1598891cf928883ff1888c7a
+  Segmentio: fd5598b3b13a6aa4e0356c4d12e1ed3e373fde1b
+  SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+  UITableViewCell-Badge: db55cad2d53d43dd3e66e656b1f6612cb1d7138d
+
+COCOAPODS: 0.39.0

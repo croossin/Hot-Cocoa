@@ -1,0 +1,550 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		055B3093F4F4FA681EE9548B /* Pods_HotCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B0FB52893405A6A12F4F9B7 /* Pods_HotCocoa.framework */; };
+		8CDAE3B81D791EA900C4F220 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDAE3B71D791EA900C4F220 /* AppDelegate.swift */; };
+		8CDAE3BA1D791EA900C4F220 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDAE3B91D791EA900C4F220 /* HomeController.swift */; };
+		8CDAE3BD1D791EA900C4F220 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CDAE3BB1D791EA900C4F220 /* Main.storyboard */; };
+		8CDAE3BF1D791EA900C4F220 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CDAE3BE1D791EA900C4F220 /* Assets.xcassets */; };
+		8CDAE3C21D791EA900C4F220 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CDAE3C01D791EA900C4F220 /* LaunchScreen.storyboard */; };
+		8CDAE3CD1D791EA900C4F220 /* HotCocoaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDAE3CC1D791EA900C4F220 /* HotCocoaTests.swift */; };
+		8CE37EF51D79286700EB23C9 /* HCSegmentio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE37EF41D79286700EB23C9 /* HCSegmentio.swift */; };
+		8CE37EF71D7928FB00EB23C9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE37EF61D7928FB00EB23C9 /* Constants.swift */; };
+		8CE37EFA1D792A1E00EB23C9 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE37EF91D792A1E00EB23C9 /* UIColorExtension.swift */; };
+		8CE37EFC1D792A4F00EB23C9 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE37EFB1D792A4F00EB23C9 /* UIFontExtension.swift */; };
+		8CE37EFE1D79300600EB23C9 /* UINavigationBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE37EFD1D79300600EB23C9 /* UINavigationBarExtension.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8CDAE3C91D791EA900C4F220 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8CDAE3AC1D791EA800C4F220 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8CDAE3B31D791EA800C4F220;
+			remoteInfo = HotCocoa;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0B0FB52893405A6A12F4F9B7 /* Pods_HotCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HotCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		36785DE6B260728008A6417C /* Pods-HotCocoa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotCocoa.release.xcconfig"; path = "Pods/Target Support Files/Pods-HotCocoa/Pods-HotCocoa.release.xcconfig"; sourceTree = "<group>"; };
+		8CDAE3B41D791EA800C4F220 /* HotCocoa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotCocoa.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CDAE3B71D791EA900C4F220 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8CDAE3B91D791EA900C4F220 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		8CDAE3BC1D791EA900C4F220 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8CDAE3BE1D791EA900C4F220 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8CDAE3C11D791EA900C4F220 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8CDAE3C31D791EA900C4F220 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CDAE3C81D791EA900C4F220 /* HotCocoaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HotCocoaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CDAE3CC1D791EA900C4F220 /* HotCocoaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotCocoaTests.swift; sourceTree = "<group>"; };
+		8CDAE3CE1D791EA900C4F220 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CE37EF41D79286700EB23C9 /* HCSegmentio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCSegmentio.swift; sourceTree = "<group>"; };
+		8CE37EF61D7928FB00EB23C9 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8CE37EF91D792A1E00EB23C9 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		8CE37EFB1D792A4F00EB23C9 /* UIFontExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
+		8CE37EFD1D79300600EB23C9 /* UINavigationBarExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationBarExtension.swift; sourceTree = "<group>"; };
+		AF9F545C70185FA405AD8196 /* Pods-HotCocoa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotCocoa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HotCocoa/Pods-HotCocoa.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8CDAE3B11D791EA800C4F220 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				055B3093F4F4FA681EE9548B /* Pods_HotCocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CDAE3C51D791EA900C4F220 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8CDAE3AB1D791EA800C4F220 = {
+			isa = PBXGroup;
+			children = (
+				8CDAE3B61D791EA900C4F220 /* HotCocoa */,
+				8CDAE3CB1D791EA900C4F220 /* HotCocoaTests */,
+				8CDAE3B51D791EA800C4F220 /* Products */,
+				A9325852B32048B91A3FDE33 /* Pods */,
+				FB3F498F1707C8AEB7C08219 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		8CDAE3B51D791EA800C4F220 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8CDAE3B41D791EA800C4F220 /* HotCocoa.app */,
+				8CDAE3C81D791EA900C4F220 /* HotCocoaTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8CDAE3B61D791EA900C4F220 /* HotCocoa */ = {
+			isa = PBXGroup;
+			children = (
+				8CE37EF31D79280F00EB23C9 /* Resources */,
+				8CE37EF21D7927FD00EB23C9 /* Storyboards */,
+				8CE37EF11D7927F600EB23C9 /* Application */,
+				8CE37EF81D7929FF00EB23C9 /* Extensions */,
+				8CE37EF01D7927C400EB23C9 /* Models */,
+				8CE37EEF1D79272C00EB23C9 /* ViewControllers */,
+			);
+			path = HotCocoa;
+			sourceTree = "<group>";
+		};
+		8CDAE3CB1D791EA900C4F220 /* HotCocoaTests */ = {
+			isa = PBXGroup;
+			children = (
+				8CDAE3CC1D791EA900C4F220 /* HotCocoaTests.swift */,
+				8CDAE3CE1D791EA900C4F220 /* Info.plist */,
+			);
+			path = HotCocoaTests;
+			sourceTree = "<group>";
+		};
+		8CE37EEF1D79272C00EB23C9 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8CDAE3B91D791EA900C4F220 /* HomeController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		8CE37EF01D7927C400EB23C9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8CE37EF41D79286700EB23C9 /* HCSegmentio.swift */,
+				8CE37EF61D7928FB00EB23C9 /* Constants.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		8CE37EF11D7927F600EB23C9 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				8CDAE3B71D791EA900C4F220 /* AppDelegate.swift */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		8CE37EF21D7927FD00EB23C9 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				8CDAE3BB1D791EA900C4F220 /* Main.storyboard */,
+				8CDAE3C01D791EA900C4F220 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		8CE37EF31D79280F00EB23C9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8CDAE3C31D791EA900C4F220 /* Info.plist */,
+				8CDAE3BE1D791EA900C4F220 /* Assets.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		8CE37EF81D7929FF00EB23C9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8CE37EF91D792A1E00EB23C9 /* UIColorExtension.swift */,
+				8CE37EFB1D792A4F00EB23C9 /* UIFontExtension.swift */,
+				8CE37EFD1D79300600EB23C9 /* UINavigationBarExtension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		A9325852B32048B91A3FDE33 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AF9F545C70185FA405AD8196 /* Pods-HotCocoa.debug.xcconfig */,
+				36785DE6B260728008A6417C /* Pods-HotCocoa.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FB3F498F1707C8AEB7C08219 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0B0FB52893405A6A12F4F9B7 /* Pods_HotCocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8CDAE3B31D791EA800C4F220 /* HotCocoa */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8CDAE3D11D791EA900C4F220 /* Build configuration list for PBXNativeTarget "HotCocoa" */;
+			buildPhases = (
+				5C63DEF3FE312FC97286E329 /* Check Pods Manifest.lock */,
+				8CDAE3B01D791EA800C4F220 /* Sources */,
+				8CDAE3B11D791EA800C4F220 /* Frameworks */,
+				8CDAE3B21D791EA800C4F220 /* Resources */,
+				B7057A7F7CB8184CB2C77E9C /* Embed Pods Frameworks */,
+				0211B22C25B20A3E9981863F /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HotCocoa;
+			productName = HotCocoa;
+			productReference = 8CDAE3B41D791EA800C4F220 /* HotCocoa.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8CDAE3C71D791EA900C4F220 /* HotCocoaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8CDAE3D41D791EA900C4F220 /* Build configuration list for PBXNativeTarget "HotCocoaTests" */;
+			buildPhases = (
+				8CDAE3C41D791EA900C4F220 /* Sources */,
+				8CDAE3C51D791EA900C4F220 /* Frameworks */,
+				8CDAE3C61D791EA900C4F220 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8CDAE3CA1D791EA900C4F220 /* PBXTargetDependency */,
+			);
+			name = HotCocoaTests;
+			productName = HotCocoaTests;
+			productReference = 8CDAE3C81D791EA900C4F220 /* HotCocoaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8CDAE3AC1D791EA800C4F220 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = crmobiledev;
+				TargetAttributes = {
+					8CDAE3B31D791EA800C4F220 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					8CDAE3C71D791EA900C4F220 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 8CDAE3B31D791EA800C4F220;
+					};
+				};
+			};
+			buildConfigurationList = 8CDAE3AF1D791EA800C4F220 /* Build configuration list for PBXProject "HotCocoa" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8CDAE3AB1D791EA800C4F220;
+			productRefGroup = 8CDAE3B51D791EA800C4F220 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8CDAE3B31D791EA800C4F220 /* HotCocoa */,
+				8CDAE3C71D791EA900C4F220 /* HotCocoaTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8CDAE3B21D791EA800C4F220 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CDAE3C21D791EA900C4F220 /* LaunchScreen.storyboard in Resources */,
+				8CDAE3BF1D791EA900C4F220 /* Assets.xcassets in Resources */,
+				8CDAE3BD1D791EA900C4F220 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CDAE3C61D791EA900C4F220 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0211B22C25B20A3E9981863F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HotCocoa/Pods-HotCocoa-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5C63DEF3FE312FC97286E329 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B7057A7F7CB8184CB2C77E9C /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HotCocoa/Pods-HotCocoa-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8CDAE3B01D791EA800C4F220 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CDAE3BA1D791EA900C4F220 /* HomeController.swift in Sources */,
+				8CE37EF51D79286700EB23C9 /* HCSegmentio.swift in Sources */,
+				8CE37EFA1D792A1E00EB23C9 /* UIColorExtension.swift in Sources */,
+				8CDAE3B81D791EA900C4F220 /* AppDelegate.swift in Sources */,
+				8CE37EFE1D79300600EB23C9 /* UINavigationBarExtension.swift in Sources */,
+				8CE37EFC1D792A4F00EB23C9 /* UIFontExtension.swift in Sources */,
+				8CE37EF71D7928FB00EB23C9 /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CDAE3C41D791EA900C4F220 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CDAE3CD1D791EA900C4F220 /* HotCocoaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8CDAE3CA1D791EA900C4F220 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8CDAE3B31D791EA800C4F220 /* HotCocoa */;
+			targetProxy = 8CDAE3C91D791EA900C4F220 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8CDAE3BB1D791EA900C4F220 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8CDAE3BC1D791EA900C4F220 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8CDAE3C01D791EA900C4F220 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8CDAE3C11D791EA900C4F220 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8CDAE3CF1D791EA900C4F220 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8CDAE3D01D791EA900C4F220 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8CDAE3D21D791EA900C4F220 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF9F545C70185FA405AD8196 /* Pods-HotCocoa.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = HotCocoa/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.crmobiledev.HotCocoa;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		8CDAE3D31D791EA900C4F220 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36785DE6B260728008A6417C /* Pods-HotCocoa.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = HotCocoa/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.crmobiledev.HotCocoa;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		8CDAE3D51D791EA900C4F220 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = HotCocoaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.crmobiledev.HotCocoaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HotCocoa.app/HotCocoa";
+			};
+			name = Debug;
+		};
+		8CDAE3D61D791EA900C4F220 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = HotCocoaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.crmobiledev.HotCocoaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HotCocoa.app/HotCocoa";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8CDAE3AF1D791EA800C4F220 /* Build configuration list for PBXProject "HotCocoa" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CDAE3CF1D791EA900C4F220 /* Debug */,
+				8CDAE3D01D791EA900C4F220 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8CDAE3D11D791EA900C4F220 /* Build configuration list for PBXNativeTarget "HotCocoa" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CDAE3D21D791EA900C4F220 /* Debug */,
+				8CDAE3D31D791EA900C4F220 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8CDAE3D41D791EA900C4F220 /* Build configuration list for PBXNativeTarget "HotCocoaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CDAE3D51D791EA900C4F220 /* Debug */,
+				8CDAE3D61D791EA900C4F220 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8CDAE3AC1D791EA800C4F220 /* Project object */;
+}
