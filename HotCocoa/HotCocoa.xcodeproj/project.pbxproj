@@ -26,6 +26,7 @@
 		8CE37F0E1D79422100EB23C9 /* Pod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE37F0D1D79422100EB23C9 /* Pod.swift */; };
 		8CE37F111D79454A00EB23C9 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE37F101D79454A00EB23C9 /* DataProvider.swift */; };
 		8CE37F1E1D7A4C9800EB23C9 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE37F1D1D7A4C9800EB23C9 /* Enums.swift */; };
+		8CE37F201D7A5A2200EB23C9 /* DataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE37F1F1D7A5A2200EB23C9 /* DataHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		8CE37F0D1D79422100EB23C9 /* Pod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pod.swift; sourceTree = "<group>"; };
 		8CE37F101D79454A00EB23C9 /* DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		8CE37F1D1D7A4C9800EB23C9 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		8CE37F1F1D7A5A2200EB23C9 /* DataHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHandler.swift; sourceTree = "<group>"; };
 		AF9F545C70185FA405AD8196 /* Pods-HotCocoa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotCocoa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HotCocoa/Pods-HotCocoa.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -207,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				8CE37F101D79454A00EB23C9 /* DataProvider.swift */,
+				8CE37F1F1D7A5A2200EB23C9 /* DataHandler.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -397,6 +400,7 @@
 				8CE37EFE1D79300600EB23C9 /* UINavigationBarExtension.swift in Sources */,
 				8CE37F111D79454A00EB23C9 /* DataProvider.swift in Sources */,
 				8CE37F1E1D7A4C9800EB23C9 /* Enums.swift in Sources */,
+				8CE37F201D7A5A2200EB23C9 /* DataHandler.swift in Sources */,
 				8CE37F0E1D79422100EB23C9 /* Pod.swift in Sources */,
 				8CE37F081D793E8C00EB23C9 /* CellInterface.swift in Sources */,
 				8CE37F001D793B8800EB23C9 /* CocoaTableViewController.swift in Sources */,

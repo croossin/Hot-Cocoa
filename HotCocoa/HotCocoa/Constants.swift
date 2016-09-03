@@ -11,3 +11,7 @@ import UIKit
 struct Dimensions{
     static let NAVBAR_HEIGHT: CGFloat = 54
 }
+
+struct Network{
+    static let MAIN_URL: String = "http://localhost:8081/api/v1"
+}

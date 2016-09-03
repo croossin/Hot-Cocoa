@@ -35,7 +35,7 @@ class CocoaTableViewController: UIViewController, UICollectionViewDelegateFlowLa
     }
 
     private func _loadPods(){
-        DataProvider.getPodsBasedOnPodSorting(podSorting) { listOfPods in
+        DataProvider.getPodsBasedOnPodSorting(podSorting, currentNumberRetrieved: pods.count) { listOfPods in
             self.pods = listOfPods
             self.collectionView.reloadData()
         }
