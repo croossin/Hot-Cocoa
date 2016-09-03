@@ -15,7 +15,7 @@ class HCSegmentio {
 
     init(){
         //UI Setup
-        let segmentioViewRect = CGRect(x: 0, y: Dimensions.NAVBAR_HEIGHT, width: UIScreen.mainScreen().bounds.width, height: 125)
+        let segmentioViewRect = CGRect(x: 0, y: Dimensions.NAVBAR_HEIGHT, width: UIScreen.mainScreen().bounds.width, height: 90)
 
         let segmentioView = Segmentio(frame: segmentioViewRect)
 

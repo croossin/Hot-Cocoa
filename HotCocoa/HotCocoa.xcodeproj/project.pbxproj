@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		055B3093F4F4FA681EE9548B /* Pods_HotCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B0FB52893405A6A12F4F9B7 /* Pods_HotCocoa.framework */; };
+		8CC7F3441D7B37DD0082E36B /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC7F3431D7B37DD0082E36B /* UILabelExtension.swift */; };
 		8CDAE3B81D791EA900C4F220 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDAE3B71D791EA900C4F220 /* AppDelegate.swift */; };
 		8CDAE3BA1D791EA900C4F220 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDAE3B91D791EA900C4F220 /* HomeController.swift */; };
 		8CDAE3BD1D791EA900C4F220 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CDAE3BB1D791EA900C4F220 /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		0B0FB52893405A6A12F4F9B7 /* Pods_HotCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HotCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36785DE6B260728008A6417C /* Pods-HotCocoa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotCocoa.release.xcconfig"; path = "Pods/Target Support Files/Pods-HotCocoa/Pods-HotCocoa.release.xcconfig"; sourceTree = "<group>"; };
+		8CC7F3431D7B37DD0082E36B /* UILabelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
 		8CDAE3B41D791EA800C4F220 /* HotCocoa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotCocoa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CDAE3B71D791EA900C4F220 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CDAE3B91D791EA900C4F220 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 				8CE37EF91D792A1E00EB23C9 /* UIColorExtension.swift */,
 				8CE37EFB1D792A4F00EB23C9 /* UIFontExtension.swift */,
 				8CE37EFD1D79300600EB23C9 /* UINavigationBarExtension.swift */,
+				8CC7F3431D7B37DD0082E36B /* UILabelExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 				8CDAE3B81D791EA900C4F220 /* AppDelegate.swift in Sources */,
 				8CE37EFE1D79300600EB23C9 /* UINavigationBarExtension.swift in Sources */,
 				8CE37F111D79454A00EB23C9 /* DataProvider.swift in Sources */,
+				8CC7F3441D7B37DD0082E36B /* UILabelExtension.swift in Sources */,
 				8CE37F1E1D7A4C9800EB23C9 /* Enums.swift in Sources */,
 				8CE37F201D7A5A2200EB23C9 /* DataHandler.swift in Sources */,
 				8CE37F0E1D79422100EB23C9 /* Pod.swift in Sources */,
