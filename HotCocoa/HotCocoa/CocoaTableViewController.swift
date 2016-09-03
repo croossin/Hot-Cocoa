@@ -8,6 +8,7 @@
 
 import UIKit
 import DisplaySwitcher
+import SVProgressHUD
 
 private let animationDuration: NSTimeInterval = 0.3
 private let listLayoutStaticCellHeight: CGFloat = 80

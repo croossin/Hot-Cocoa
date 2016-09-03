@@ -11,7 +11,7 @@ import Segmentio
 
 class HomeController: UIViewController {
 
-    let HCSeg: HCSegmentio = HCSegmentio()
+    var segmentView: Segmentio = Segmentio()
 
 
     @IBOutlet weak var containerView: UIView!
@@ -59,18 +59,20 @@ class HomeController: UIViewController {
         navbar.setItems([title], animated: false)
 
         //Segmentio
-        guard let segView = HCSeg.segView else { return }
-        segView.selectedSegmentioIndex = 0
-        segView.valueDidChange = { [weak self] _, segmentIndex in
+        guard let sv = HCSegmentio().segView else { return }
+        self.segmentView = sv
+        segmentView.selectedSegmentioIndex = 0
+        segmentView.valueDidChange = { [weak self] _, segmentIndex in
             guard let strongself = self else { return }
             strongself.segViewValueDidChange(segmentIndex)
         }
 
-        self.view.addSubview(segView)
+        self.view.addSubview(segmentView)
     }
 
     func segViewValueDidChange(selectedIndex: Int){
-        print(selectedIndex)
+        let contentOffsetX = scrollView.frame.width * CGFloat(selectedIndex)
+        scrollView.setContentOffset(CGPoint(x: contentOffsetX, y: 0), animated: true)
     }
 
     private func gatherViewControllers() -> [CocoaTableViewController] {
@@ -95,11 +97,10 @@ extension HomeController: UIScrollViewDelegate {
 
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         let currentPage = floor(scrollView.contentOffset.x / scrollView.frame.width)
-        HCSeg.segView?.selectedSegmentioIndex = Int(currentPage)
+        self.segmentView.selectedSegmentioIndex = Int(currentPage)
     }
 
     func scrollViewDidScroll(scrollView: UIScrollView) {
         scrollView.contentSize = CGSize(width: scrollView.contentSize.width, height: 0)
     }
-
 }
