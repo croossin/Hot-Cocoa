@@ -33,7 +33,7 @@ app.use(bodyParser.json())
  * Tracking
  * =============================================================================
  */
-app.use(morgan(':method :url :response-time'));
+app.use(morgan(':remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length]'));
 
 /** 
  * =============================================================================
