@@ -26,14 +26,17 @@ class DataProvider {
     class func getPodsBasedOnPodSorting(_podSorting: PodSorting, currentNumberRetrieved: Int?, callback: ([Pod])->()){
         switch _podSorting {
         case .Recent:
-            print("trying to make call")
+            print("Making call for RECENT")
             sharedInstance.makeRequestToServer(.POST, endpoint: "/fetch", currentNumberRetrieved: currentNumberRetrieved, callback: callback)
         case .Rating:
-            print("rating")
+            print("Making call for RATING")
+            sharedInstance.makeRequestToServer(.POST, endpoint: "/fetch/rating", currentNumberRetrieved: currentNumberRetrieved, callback: callback)
         case .Swift:
-            print("swift")
+            print("Making call for SWIFT")
+            sharedInstance.makeRequestToServer(.POST, endpoint: "/fetch/language/swift", currentNumberRetrieved: currentNumberRetrieved, callback: callback)
         case .ObjC:
-            print("objc")
+            print("Making call for OBJECTIVE")
+            sharedInstance.makeRequestToServer(.POST, endpoint: "/fetch/language/objc", currentNumberRetrieved: currentNumberRetrieved, callback: callback)
         }
     }
 
