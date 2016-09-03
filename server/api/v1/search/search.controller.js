@@ -15,9 +15,10 @@ var Pod  = require('../../../helper/cocoaModel.js');
  * =============================================================================
  */
 exports.search = function(req, res){
+	
+	var skipNumber = req.body.currentNumber;
 
-	//TODO NEED TO FIX FOR BODY REQUESTS
-	// var skipNumber = req.params.fromPage ? req.params.fromPage : 0;
+	console.log(skipNumber);
 
 	Pod.find({'details.tags': req.params.searchTerm})
 	.limit(20)

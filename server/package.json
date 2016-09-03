@@ -9,6 +9,7 @@
     "url": "https://github.com/croossin/Hot-Cocoa"
   },
   "dependencies": {
+    "body-parser": "^1.15.2",
     "cheerio": "latest",
     "express": "latest",
     "mongoose": "^4.5.10",

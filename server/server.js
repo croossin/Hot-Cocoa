@@ -2,6 +2,7 @@ var express  = require('express');
 var app      = express();
 var morgan   = require('morgan');
 var mongoose = require('mongoose');
+var bodyParser = require('body-parser')
 
 /** 
  * =============================================================================
@@ -18,6 +19,14 @@ db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
     console.log("Connected to DB");
 });
+
+/** 
+ * =============================================================================
+ * Config
+ * =============================================================================
+ */
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 
 /** 
  * =============================================================================
@@ -40,6 +49,7 @@ app.use('/api/v1', require('./api/v1/general'));
  * Final Setup
  * =============================================================================
  */
+
 app.listen('8081')
 console.log('Magic happens on port 8081');
 exports = module.exports = app;
