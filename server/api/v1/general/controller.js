@@ -17,7 +17,7 @@ var Pod  = require('../../../helper/cocoaModel.js');
 exports.fetch = function(req, res){
 
 	var skipNumber = req.body.currentNumber;
-
+	
 	Pod.find()
 	.limit(20)
 	.skip(skipNumber)

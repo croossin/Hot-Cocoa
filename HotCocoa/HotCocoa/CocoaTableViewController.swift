@@ -8,7 +8,7 @@
 
 import UIKit
 import DisplaySwitcher
-import SVProgressHUD
+import UIScrollView_InfiniteScroll
 
 private let animationDuration: NSTimeInterval = 0.3
 private let listLayoutStaticCellHeight: CGFloat = 80
@@ -30,20 +30,56 @@ class CocoaTableViewController: UIViewController, UICollectionViewDelegateFlowLa
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        _loadPods()
         _setupCollectionView()
-    }
-
-    private func _loadPods(){
-        DataProvider.getPodsBasedOnPodSorting(podSorting, currentNumberRetrieved: pods.count) { listOfPods in
-            self.pods = listOfPods
-            self.collectionView.reloadData()
-        }
+        _loadPods()
+        _setupInfiniteScroll()
     }
 
     private func _setupCollectionView() {
         collectionView.collectionViewLayout = listLayout
         collectionView.registerNib(PodCollectionViewCell.cellNib, forCellWithReuseIdentifier:PodCollectionViewCell.id)
+    }
+
+    private func _loadPods(){
+        DataProvider.getPodsBasedOnPodSorting(podSorting, currentNumberRetrieved: pods.count) { listOfPods in
+            print(listOfPods.count)
+            self.pods = listOfPods
+            self.collectionView.reloadData()
+        }
+    }
+
+    private func _setupInfiniteScroll(){
+
+        collectionView.addInfiniteScrollWithHandler { [weak self] (scrollView) -> Void in
+
+            guard let strongSelf = self else { return }
+
+            let collectionView = scrollView 
+
+            DataProvider.getPodsBasedOnPodSorting(strongSelf.podSorting, currentNumberRetrieved: strongSelf.pods.count) {[weak self] listOfPods in
+                guard let strongSelf = self else { return }
+
+                var indexPaths = [NSIndexPath]()
+                var index = strongSelf.pods.count
+
+                // create index paths for affected items
+                for story in listOfPods {
+                    let indexPath = NSIndexPath(forItem: index++, inSection: 0)
+
+                    indexPaths.append(indexPath)
+                    strongSelf.pods.append(story)
+                }
+
+                // Update collection view
+                collectionView.performBatchUpdates({ () -> Void in
+                    // add new items into collection
+                    collectionView.insertItemsAtIndexPaths(indexPaths)
+                    }, completion: { (finished) -> Void in
+                        // finish infinite scroll animations
+                        collectionView.finishInfiniteScroll()
+                });
+            }
+        }
     }
 
     class func generateSelf() -> CocoaTableViewController{

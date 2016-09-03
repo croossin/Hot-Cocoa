@@ -14,7 +14,7 @@ class DataHandler {
     class func jsonToPods(json: JSON) -> [Pod]{
         var listOfPods = [Pod]()
 
-        for i in 0...json.count{
+        for i in 0...json.count-1{
 
             let name            = json[i]["name"].stringValue
             let url             = json[i]["url"].stringValue

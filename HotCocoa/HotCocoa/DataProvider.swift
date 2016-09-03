@@ -23,7 +23,7 @@ class DataProvider {
                  }
     }
 
-    class func getPodsBasedOnPodSorting(_podSorting: PodSorting, currentNumberRetrieved: Int?, callback: ([Pod])->()){
+    class func getPodsBasedOnPodSorting(_podSorting: PodSorting, currentNumberRetrieved: Int, callback: ([Pod])->()){
         switch _podSorting {
         case .Recent:
             print("Making call for RECENT")
@@ -40,11 +40,9 @@ class DataProvider {
         }
     }
 
-    internal func makeRequestToServer(requestType: Alamofire.Method, endpoint: String, currentNumberRetrieved: Int?, callback: ([Pod])->()){
+    internal func makeRequestToServer(requestType: Alamofire.Method, endpoint: String, currentNumberRetrieved: Int, callback: ([Pod])->()){
 
-        let currentNumber = (currentNumberRetrieved != nil) ? currentNumberRetrieved : 0
-
-        let parameters = ["currentNumber": String(currentNumber)]
+        let parameters = ["currentNumber": String(currentNumberRetrieved)]
 
         Alamofire.request(requestType, Network.MAIN_URL + endpoint, parameters: parameters, encoding: .JSON, headers: nil).validate().responseJSON { response in
             switch response.result {
