@@ -23,24 +23,24 @@ class DataProvider {
                  }
     }
 
-    class func getPodsBasedOnPodSorting(_podSorting: PodSorting, currentNumberRetrieved: Int, callback: ([Pod])->()){
+    class func getPodsBasedOnPodSorting(_podSorting: PodSorting, currentNumberRetrieved: Int, callback: ([Pod])->(), errorCallback: (()->())){
         switch _podSorting {
         case .Recent:
             print("Making call for RECENT")
-            sharedInstance.makeRequestToServer(.POST, endpoint: "/fetch", currentNumberRetrieved: currentNumberRetrieved, callback: callback)
+            sharedInstance.makeRequestToServer(.POST, endpoint: "/fetch", currentNumberRetrieved: currentNumberRetrieved, callback: callback, errorCallback: errorCallback)
         case .Rating:
             print("Making call for RATING")
-            sharedInstance.makeRequestToServer(.POST, endpoint: "/fetch/rating", currentNumberRetrieved: currentNumberRetrieved, callback: callback)
+            sharedInstance.makeRequestToServer(.POST, endpoint: "/fetch/rating", currentNumberRetrieved: currentNumberRetrieved, callback: callback, errorCallback: errorCallback)
         case .Swift:
             print("Making call for SWIFT")
-            sharedInstance.makeRequestToServer(.POST, endpoint: "/fetch/language/swift", currentNumberRetrieved: currentNumberRetrieved, callback: callback)
+            sharedInstance.makeRequestToServer(.POST, endpoint: "/fetch/language/swift", currentNumberRetrieved: currentNumberRetrieved, callback: callback, errorCallback: errorCallback)
         case .ObjC:
             print("Making call for OBJECTIVE")
-            sharedInstance.makeRequestToServer(.POST, endpoint: "/fetch/language/objc", currentNumberRetrieved: currentNumberRetrieved, callback: callback)
+            sharedInstance.makeRequestToServer(.POST, endpoint: "/fetch/language/objc", currentNumberRetrieved: currentNumberRetrieved, callback: callback, errorCallback: errorCallback)
         }
     }
 
-    internal func makeRequestToServer(requestType: Alamofire.Method, endpoint: String, currentNumberRetrieved: Int, callback: ([Pod])->()){
+    internal func makeRequestToServer(requestType: Alamofire.Method, endpoint: String, currentNumberRetrieved: Int, callback: ([Pod])->(), errorCallback: (()->())){
 
         let parameters = ["currentNumber": String(currentNumberRetrieved)]
 
@@ -53,6 +53,7 @@ class DataProvider {
                 }
             case .Failure(let error):
                 print(error)
+                errorCallback()
             }
         }
     }

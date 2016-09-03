@@ -9,6 +9,7 @@
 import UIKit
 import DisplaySwitcher
 import UIScrollView_InfiniteScroll
+import SVProgressHUD
 
 private let animationDuration: NSTimeInterval = 0.3
 private let listLayoutStaticCellHeight: CGFloat = 80
@@ -41,11 +42,13 @@ class CocoaTableViewController: UIViewController, UICollectionViewDelegateFlowLa
     }
 
     private func _loadPods(){
-        DataProvider.getPodsBasedOnPodSorting(podSorting, currentNumberRetrieved: pods.count) { listOfPods in
-            print(listOfPods.count)
+
+        DataProvider.getPodsBasedOnPodSorting(podSorting, currentNumberRetrieved: pods.count, callback: { listOfPods in
             self.pods = listOfPods
             self.collectionView.reloadData()
-        }
+            }, errorCallback: {
+            SVProgressHUD.showErrorWithStatus("Unable to connect to server")
+        })
     }
 
     private func _setupInfiniteScroll(){
@@ -56,18 +59,18 @@ class CocoaTableViewController: UIViewController, UICollectionViewDelegateFlowLa
 
             let collectionView = scrollView 
 
-            DataProvider.getPodsBasedOnPodSorting(strongSelf.podSorting, currentNumberRetrieved: strongSelf.pods.count) {[weak self] listOfPods in
+            DataProvider.getPodsBasedOnPodSorting(strongSelf.podSorting, currentNumberRetrieved: strongSelf.pods.count, callback: {[weak self] listofPods in
                 guard let strongSelf = self else { return }
 
                 var indexPaths = [NSIndexPath]()
                 var index = strongSelf.pods.count
 
                 // create index paths for affected items
-                for story in listOfPods {
+                for pod in listofPods {
                     let indexPath = NSIndexPath(forItem: index++, inSection: 0)
 
                     indexPaths.append(indexPath)
-                    strongSelf.pods.append(story)
+                    strongSelf.pods.append(pod)
                 }
 
                 // Update collection view
@@ -78,7 +81,9 @@ class CocoaTableViewController: UIViewController, UICollectionViewDelegateFlowLa
                         // finish infinite scroll animations
                         collectionView.finishInfiniteScroll()
                 });
-            }
+                }, errorCallback: {
+                SVProgressHUD.showErrorWithStatus("Unable to connect to server")
+            })
         }
     }
 
