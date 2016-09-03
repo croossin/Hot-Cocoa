@@ -43,6 +43,28 @@ exports.fetchRating = function(req, res){
 	})
 }
 
+exports.fetchTags = function(req, res){
+
+	Pod.find({}, 'details.tags')
+	.then(function(pods){
+		var listOfTags = [];
+
+		for(var i = 0; i < pods.length; i++){
+			var tags = pods[i].details.tags;
+
+			for(var x = 0; x < tags.length; x++){
+				if(listOfTags.indexOf(tags[x]) == -1){
+					listOfTags.push(tags[x]);
+				}
+			}
+		}
+
+		res.send(listOfTags);
+	}, function(err){
+		res.send(err);
+	})
+}
+
 exports.fetchLanguage = function(req, res){
 	var skipNumber = req.body.currentNumber;
 

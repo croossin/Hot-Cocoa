@@ -19,6 +19,9 @@ router.post('/fetch', controller.fetch);
 //Get by rating
 router.post('/fetch/rating', controller.fetchRating);
 
+//Get all tags
+router.get('/fetch/tags', controller.fetchTags);
+
 //Get by language
 router.post('/fetch/language/:language?', controller.fetchLanguage);
 

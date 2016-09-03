@@ -13,7 +13,6 @@ class HomeController: UIViewController {
 
     var segmentView: Segmentio = Segmentio()
 
-
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
 
@@ -55,8 +54,9 @@ class HomeController: UIViewController {
         navbar.backgroundColor = UIColor.WhiteSmokeColor
         self.view.addSubview(navbar)
 
-        let title = UINavigationItem(title: "Hot Cocoa")
-        navbar.setItems([title], animated: false)
+        let barAttributes = UINavigationItem(title: "Hot Cocoa")
+        barAttributes.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "search"), style: .Plain, target: nil, action: #selector(instantiateSearchController(_:)))
+        navbar.setItems([barAttributes], animated: false)
 
         //Segmentio
         guard let sv = HCSegmentio().segView else { return }
@@ -90,6 +90,11 @@ class HomeController: UIViewController {
         d.podSorting = .ObjC
 
         return [a,b,c,d]
+    }
+
+    @objc private func instantiateSearchController(sender: UIBarButtonItem){
+        let vc = SearchViewController()
+        self.presentViewController(vc, animated: true, completion: nil)
     }
 }
 

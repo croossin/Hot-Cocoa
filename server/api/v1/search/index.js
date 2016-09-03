@@ -16,5 +16,6 @@ var router = express.Router();
  */
 router.post('/:searchTerm', controller.search);
 router.get('/fuzzySearch/:searchTerm', controller.fuzzySearch);
+router.get('/fuzzySearchTags/:searchTerm', controller.fuzzySearchTags);
 
 module.exports = router;
