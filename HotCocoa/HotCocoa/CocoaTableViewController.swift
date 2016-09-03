@@ -14,13 +14,11 @@ private let animationDuration: NSTimeInterval = 0.3
 private let listLayoutStaticCellHeight: CGFloat = 80
 private let gridLayoutStaticCellHeight: CGFloat = 165
 
-typealias viewcontrollerconfig = (recent: Bool, rating: Bool, swift: Bool, objc: Bool)
-
 class CocoaTableViewController: UIViewController, UICollectionViewDelegateFlowLayout{
 
     @IBOutlet weak var collectionView: UICollectionView!
 
-    var setupConfig: viewcontrollerconfig? = nil
+    var podSorting: PodSorting = .Recent
 
     private var pods = [Pod]()
 
@@ -37,10 +35,9 @@ class CocoaTableViewController: UIViewController, UICollectionViewDelegateFlowLa
     }
 
     private func _loadPods(){
-        //temp until we wire up api
-        for _ in 1...10{
-            let newpod = Pod(name: "Best Pod", url: "/", imageUrl: "", dateAdded: NSDate(), dateAddedPretty: "August 22, 2016", license: "MIT", amountOfVotes: 39, appetize: "", language: "Swift", githubLink: "", description: "", author: (name: "Chase", url: "asfd", avatar: "https://avatars.githubusercontent.com/u/4737440"), tags: [""])
-            pods.append(newpod)
+        DataProvider.getPodsBasedOnPodSorting(podSorting) { listOfPods in
+            self.pods = listOfPods
+            self.collectionView.reloadData()
         }
     }
 

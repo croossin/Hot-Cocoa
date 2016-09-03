@@ -78,16 +78,16 @@ class HomeController: UIViewController {
     private func gatherViewControllers() -> [CocoaTableViewController] {
 
         let a = CocoaTableViewController.generateSelf()
-//        a.setupConfig = (recent: true, rating: false, swift: false, objc: false)
+        a.podSorting = .Recent
 
         let b = CocoaTableViewController.generateSelf()
-//        b.setupConfig = (recent: false, rating: true, swift: false, objc: false)
+        b.podSorting = .Rating
 
         let c = CocoaTableViewController.generateSelf()
-//        a.setupConfig = (recent: true, rating: false, swift: false, objc: false)
+        c.podSorting = .Swift
 
         let d = CocoaTableViewController.generateSelf()
-//        a.setupConfig = (recent: true, rating: false, swift: false, objc: false)
+        d.podSorting = .ObjC
 
         return [a,b,c,d]
     }

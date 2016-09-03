@@ -25,6 +25,7 @@
 		8CE37F0C1D793EF600EB23C9 /* PodCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CE37F0A1D793EF600EB23C9 /* PodCollectionViewCell.xib */; };
 		8CE37F0E1D79422100EB23C9 /* Pod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE37F0D1D79422100EB23C9 /* Pod.swift */; };
 		8CE37F111D79454A00EB23C9 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE37F101D79454A00EB23C9 /* DataProvider.swift */; };
+		8CE37F1E1D7A4C9800EB23C9 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE37F1D1D7A4C9800EB23C9 /* Enums.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		8CE37F0A1D793EF600EB23C9 /* PodCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PodCollectionViewCell.xib; sourceTree = "<group>"; };
 		8CE37F0D1D79422100EB23C9 /* Pod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pod.swift; sourceTree = "<group>"; };
 		8CE37F101D79454A00EB23C9 /* DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		8CE37F1D1D7A4C9800EB23C9 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		AF9F545C70185FA405AD8196 /* Pods-HotCocoa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotCocoa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HotCocoa/Pods-HotCocoa.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,6 +113,7 @@
 				8CE37EF11D7927F600EB23C9 /* Application */,
 				8CE37F061D793E7900EB23C9 /* Protocols */,
 				8CE37EF81D7929FF00EB23C9 /* Extensions */,
+				8CE37F1C1D7A4C4000EB23C9 /* Enum */,
 				8CE37F0F1D79452800EB23C9 /* Data */,
 				8CE37F031D793D9F00EB23C9 /* Views */,
 				8CE37EF01D7927C400EB23C9 /* Models */,
@@ -206,6 +209,14 @@
 				8CE37F101D79454A00EB23C9 /* DataProvider.swift */,
 			);
 			name = Data;
+			sourceTree = "<group>";
+		};
+		8CE37F1C1D7A4C4000EB23C9 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				8CE37F1D1D7A4C9800EB23C9 /* Enums.swift */,
+			);
+			name = Enum;
 			sourceTree = "<group>";
 		};
 		A9325852B32048B91A3FDE33 /* Pods */ = {
@@ -385,6 +396,7 @@
 				8CDAE3B81D791EA900C4F220 /* AppDelegate.swift in Sources */,
 				8CE37EFE1D79300600EB23C9 /* UINavigationBarExtension.swift in Sources */,
 				8CE37F111D79454A00EB23C9 /* DataProvider.swift in Sources */,
+				8CE37F1E1D7A4C9800EB23C9 /* Enums.swift in Sources */,
 				8CE37F0E1D79422100EB23C9 /* Pod.swift in Sources */,
 				8CE37F081D793E8C00EB23C9 /* CellInterface.swift in Sources */,
 				8CE37F001D793B8800EB23C9 /* CocoaTableViewController.swift in Sources */,

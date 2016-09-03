@@ -11,6 +11,7 @@ import Alamofire
 import AlamofireImage
 
 class DataProvider {
+    
     class func getImageFromUrl(url: String, callback: ((UIImage)->())){
         Alamofire.request(.GET, url)
                  .responseImage { response in
@@ -18,5 +19,18 @@ class DataProvider {
                         callback(image)
                     }
                  }
+    }
+
+    class func getPodsBasedOnPodSorting(_podSorting: PodSorting, callback: ([Pod])->()){
+        switch _podSorting {
+        case .Recent:
+            print("recent")
+        case .Rating:
+            print("rating")
+        case .Swift:
+            print("swift")
+        case .ObjC:
+            print("objc")
+        }
     }
 }
