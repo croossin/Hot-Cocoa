@@ -27,9 +27,11 @@ class CocoaTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.tableView.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
+
         _loadPods()
 
-        self.tableView.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
+        _setupInfiniteScroll()
     }
 
     // MARK: configure
@@ -51,6 +53,42 @@ class CocoaTableViewController: UITableViewController {
                 SVProgressHUD.showErrorWithStatus("Unable to connect to server")
         })
     }
+
+    private func _setupInfiniteScroll(){
+        // change indicator view style to white
+        tableView.infiniteScrollIndicatorStyle = .White
+
+        // Add infinite scroll handler
+        tableView.addInfiniteScrollWithHandler { (tableView) -> Void in
+
+            DataProvider.getPodsBasedOnPodSorting(self.podSorting, currentNumberRetrieved: self.pods.count, callback: {[weak self](listOfPods) in
+
+                guard let strongSelf = self else { return }
+
+                    var indexPaths = [NSIndexPath]() // index paths of updated rows
+                    var indexPathRow = strongSelf.pods.count
+
+                    for pod in listOfPods{
+                        strongSelf.pods.append(pod)
+                        indexPaths.append(NSIndexPath(forRow: indexPathRow, inSection: 0))
+                        indexPathRow += 1
+                    }
+
+                    strongSelf.createCellHeightsArray()
+
+                    // make sure you update tableView before calling -finishInfiniteScroll
+                    tableView.beginUpdates()
+                    tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: .Automatic)
+                    tableView.endUpdates()
+
+                    // finish infinite scroll animation
+                    tableView.finishInfiniteScroll()
+                }, errorCallback: { 
+                    SVProgressHUD.showErrorWithStatus("Unable to connect to server")
+            })
+        }
+    }
+
     // MARK: - Table view data source
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
