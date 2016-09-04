@@ -18,6 +18,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate {
     override func viewDidLoad() {
         self.view.backgroundColor = UIColor.whiteColor()
         super.viewDidLoad()
+
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -31,11 +32,6 @@ class SearchViewController: UIViewController, UICollectionViewDelegate {
             strongSelf.dataSource = SimplePrefixQueryDataSource(listOfTags)
             strongSelf.ramReel = RAMReel(frame: strongSelf.view.bounds, dataSource: strongSelf.dataSource, placeholder: "Search for tags…") {
                 print("Plain:", $0)
-            }
-            strongSelf.ramReel.hooks.append {
-                let r = Array($0.characters.reverse())
-                let j = String(r)
-                print("Reversed:", j)
             }
 
             strongSelf.view.addSubview(strongSelf.ramReel.view)
