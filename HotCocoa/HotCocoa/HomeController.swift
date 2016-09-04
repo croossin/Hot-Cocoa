@@ -75,7 +75,7 @@ class HomeController: UIViewController {
         scrollView.setContentOffset(CGPoint(x: contentOffsetX, y: 0), animated: true)
     }
 
-    private func gatherViewControllers() -> [MainTableViewController] {
+    private func gatherViewControllers() -> [CocoaTableViewController] {
 
 //        let a = CocoaTableViewController.generateSelf()
 //        a.podSorting = .Recent
@@ -88,9 +88,14 @@ class HomeController: UIViewController {
 //
 //        let d = CocoaTableViewController.generateSelf()
 //        d.podSorting = .ObjC
-        let a = MainTableViewController()
+//        let a = CocoaTableViewController()
 
-        return [a]
+        guard let a = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("CocoaTableViewController") as? CocoaTableViewController else { return [] }
+        guard let b = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("CocoaTableViewController") as? CocoaTableViewController else { return [] }
+        guard let c = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("CocoaTableViewController") as? CocoaTableViewController else { return [] }
+        guard let d = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("CocoaTableViewController") as? CocoaTableViewController else { return [] }
+
+        return [a,b,c,d]
     }
 
     @objc private func instantiateSearchController(sender: UIBarButtonItem){

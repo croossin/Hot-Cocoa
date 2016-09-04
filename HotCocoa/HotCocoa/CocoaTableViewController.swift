@@ -12,7 +12,7 @@ import UIScrollView_InfiniteScroll
 import SVProgressHUD
 import FoldingCell
 
-class MainTableViewController: UITableViewController {
+class CocoaTableViewController: UITableViewController {
 
     let kCloseCellHeight: CGFloat = 179
     let kOpenCellHeight: CGFloat = 488
@@ -25,7 +25,7 @@ class MainTableViewController: UITableViewController {
         super.viewDidLoad()
 
         createCellHeightsArray()
-//        self.tableView.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
+        self.tableView.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
     }
 
     // MARK: configure
