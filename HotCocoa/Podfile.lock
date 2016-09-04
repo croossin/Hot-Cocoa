@@ -3,6 +3,7 @@ PODS:
   - AlamofireImage (2.4.1):
     - Alamofire (~> 3.3)
   - DisplaySwitcher (0.1.1)
+  - FoldingCell (1.0.0)
   - RAMReel (1.2.4)
   - Segmentio (1.0)
   - SVProgressHUD (2.0.3)
@@ -14,6 +15,7 @@ DEPENDENCIES:
   - Alamofire (~> 3.4)
   - AlamofireImage (~> 2.0)
   - DisplaySwitcher (~> 0.1.1)
+  - FoldingCell
   - RAMReel
   - Segmentio (~> 1.0)
   - SVProgressHUD
@@ -25,6 +27,7 @@ SPEC CHECKSUMS:
   Alamofire: 6aa33201d20d069e1598891cf928883ff1888c7a
   AlamofireImage: 3ccf3347d9ea24580dc11fb892770a0be6a29826
   DisplaySwitcher: c23a4f751a7994de130612e9c669f8684a2cc540
+  FoldingCell: ca0b0f73a853143bf7d968c04a6604d25fbf1af7
   RAMReel: 8372977449403fd60f5bc91a7c3896ced9aa1683
   Segmentio: fd5598b3b13a6aa4e0356c4d12e1ed3e373fde1b
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4

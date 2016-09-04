@@ -12,5 +12,6 @@ pod 'UITableViewCell-Badge'
 pod ‘DisplaySwitcher’, '~> 0.1.1’
 pod 'UIScrollView-InfiniteScroll'
 pod 'RAMReel'
+pod 'FoldingCell'
 
 end

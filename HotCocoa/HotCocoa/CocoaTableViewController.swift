@@ -10,132 +10,90 @@ import UIKit
 import DisplaySwitcher
 import UIScrollView_InfiniteScroll
 import SVProgressHUD
+import FoldingCell
 
-private let animationDuration: NSTimeInterval = 0.3
-private let listLayoutStaticCellHeight: CGFloat = 80
-private let gridLayoutStaticCellHeight: CGFloat = 165
+class MainTableViewController: UITableViewController {
 
-class CocoaTableViewController: UIViewController, UICollectionViewDelegateFlowLayout{
+    let kCloseCellHeight: CGFloat = 179
+    let kOpenCellHeight: CGFloat = 488
 
-    @IBOutlet weak var collectionView: UICollectionView!
+    let kRowsCount = 10
 
-    var podSorting: PodSorting = .Recent
-
-    private var pods = [Pod]()
-
-    private var isTransitionAvailable = true
-    private lazy var listLayout = BaseLayout(staticCellHeight: listLayoutStaticCellHeight, nextLayoutStaticCellHeight: gridLayoutStaticCellHeight, layoutState: .ListLayoutState)
-    private lazy var gridLayout = BaseLayout(staticCellHeight: gridLayoutStaticCellHeight, nextLayoutStaticCellHeight: listLayoutStaticCellHeight, layoutState: .GridLayoutState)
-    private var layoutState: CollectionViewLayoutState = .ListLayoutState
+    var cellHeights = [CGFloat]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        _setupCollectionView()
-        _loadPods()
-        _setupInfiniteScroll()
+        createCellHeightsArray()
+//        self.tableView.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
     }
 
-    private func _setupCollectionView() {
-        collectionView.collectionViewLayout = listLayout
-        collectionView.registerNib(PodCollectionViewCell.cellNib, forCellWithReuseIdentifier:PodCollectionViewCell.id)
-    }
-
-    private func _loadPods(){
-
-        DataProvider.getPodsBasedOnPodSorting(podSorting, currentNumberRetrieved: pods.count, callback: { listOfPods in
-            self.pods = listOfPods
-            self.collectionView.reloadData()
-            }, errorCallback: {
-            SVProgressHUD.showErrorWithStatus("Unable to connect to server")
-        })
-    }
-
-    private func _setupInfiniteScroll(){
-
-        collectionView.addInfiniteScrollWithHandler { [weak self] (scrollView) -> Void in
-
-            guard let strongSelf = self else { return }
-
-            let collectionView = scrollView 
-
-            DataProvider.getPodsBasedOnPodSorting(strongSelf.podSorting, currentNumberRetrieved: strongSelf.pods.count, callback: {[weak self] listofPods in
-                guard let strongSelf = self else { return }
-
-                var indexPaths = [NSIndexPath]()
-                var index = strongSelf.pods.count
-
-                // create index paths for affected items
-                for pod in listofPods {
-                    let indexPath = NSIndexPath(forItem: index++, inSection: 0)
-
-                    indexPaths.append(indexPath)
-                    strongSelf.pods.append(pod)
-                }
-
-                // Update collection view
-                collectionView.performBatchUpdates({ () -> Void in
-                    // add new items into collection
-                    collectionView.insertItemsAtIndexPaths(indexPaths)
-                    }, completion: { (finished) -> Void in
-                        // finish infinite scroll animations
-                        collectionView.finishInfiniteScroll()
-                });
-                }, errorCallback: {
-                SVProgressHUD.showErrorWithStatus("Unable to connect to server")
-            })
+    // MARK: configure
+    func createCellHeightsArray() {
+        for _ in 0...kRowsCount {
+            cellHeights.append(kCloseCellHeight)
         }
     }
 
-    class func generateSelf() -> CocoaTableViewController{
-        let board = UIStoryboard(name: "Main", bundle: nil)
+    // MARK: - Table view data source
 
-        //FIX FOR TYPE SAFETY
-        return board.instantiateViewControllerWithIdentifier(String(self)) as! CocoaTableViewController
-    }
-}
-
-extension CocoaTableViewController {
-
-
-    // MARK: - UICollectionViewDataSource
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return pods.count
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
     }
 
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(PodCollectionViewCell.id, forIndexPath: indexPath) as! PodCollectionViewCell
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
 
-        if layoutState == .GridLayoutState {
-            cell.setupGridLayoutConstraints(1, cellWidth: cell.frame.width)
+        guard case let cell as DemoCell = cell else {
+            return
+        }
+
+        cell.backgroundColor = UIColor.clearColor()
+
+        if cellHeights[indexPath.row] == kCloseCellHeight {
+            cell.selectedAnimation(false, animated: false, completion:nil)
         } else {
-            cell.setupListLayoutConstraints(1, cellWidth: cell.frame.width)
+            cell.selectedAnimation(true, animated: false, completion: nil)
         }
 
-        cell.inject(pods[indexPath.row])
+        cell.number = indexPath.row
+    }
+
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("FoldingCell", forIndexPath: indexPath)
 
         return cell
     }
 
-    // MARK: - UICollectionViewDelegate
-    func collectionView(collectionView: UICollectionView, transitionLayoutForOldLayout fromLayout: UICollectionViewLayout, newLayout toLayout: UICollectionViewLayout) -> UICollectionViewTransitionLayout {
-        let customTransitionLayout = TransitionLayout(currentLayout: fromLayout, nextLayout: toLayout)
-        return customTransitionLayout
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return cellHeights[indexPath.row]
     }
 
-    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
-        isTransitionAvailable = false
-    }
+    // MARK: Table vie delegate
 
-    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        isTransitionAvailable = true
-    }
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 
-    func scrollViewDidScroll(scrollView: UIScrollView) {
-        view.endEditing(true)
-    }
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as! FoldingCell
 
-    func collectionView(collectionView: UICollectionView,didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        print("Selected: \(indexPath.row)")
+        if cell.isAnimating() {
+            return
+        }
+
+        var duration = 0.0
+        if cellHeights[indexPath.row] == kCloseCellHeight { // open cell
+            cellHeights[indexPath.row] = kOpenCellHeight
+            cell.selectedAnimation(true, animated: true, completion: nil)
+            duration = 0.5
+        } else {// close cell
+            cellHeights[indexPath.row] = kCloseCellHeight
+            cell.selectedAnimation(false, animated: true, completion: nil)
+            duration = 0.8
+        }
+
+        UIView.animateWithDuration(duration, delay: 0, options: .CurveEaseOut, animations: { () -> Void in
+            tableView.beginUpdates()
+            tableView.endUpdates()
+            }, completion: nil)
+        
+        
     }
 }

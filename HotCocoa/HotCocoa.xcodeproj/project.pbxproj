@@ -29,6 +29,7 @@
 		8CE37F111D79454A00EB23C9 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE37F101D79454A00EB23C9 /* DataProvider.swift */; };
 		8CE37F1E1D7A4C9800EB23C9 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE37F1D1D7A4C9800EB23C9 /* Enums.swift */; };
 		8CE37F201D7A5A2200EB23C9 /* DataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE37F1F1D7A5A2200EB23C9 /* DataHandler.swift */; };
+		8CF54BC01D7C8AF50025BE5F /* DemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF54BBF1D7C8AF50025BE5F /* DemoCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		8CE37F101D79454A00EB23C9 /* DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		8CE37F1D1D7A4C9800EB23C9 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		8CE37F1F1D7A5A2200EB23C9 /* DataHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHandler.swift; sourceTree = "<group>"; };
+		8CF54BBF1D7C8AF50025BE5F /* DemoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoCell.swift; sourceTree = "<group>"; };
 		AF9F545C70185FA405AD8196 /* Pods-HotCocoa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotCocoa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HotCocoa/Pods-HotCocoa.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -199,6 +201,7 @@
 			children = (
 				8CE37F091D793EF600EB23C9 /* PodCollectionViewCell.swift */,
 				8CE37F0A1D793EF600EB23C9 /* PodCollectionViewCell.xib */,
+				8CF54BBF1D7C8AF50025BE5F /* DemoCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 				8CE37EF51D79286700EB23C9 /* HCSegmentio.swift in Sources */,
 				8CE37F0B1D793EF600EB23C9 /* PodCollectionViewCell.swift in Sources */,
 				8CE37EFA1D792A1E00EB23C9 /* UIColorExtension.swift in Sources */,
+				8CF54BC01D7C8AF50025BE5F /* DemoCell.swift in Sources */,
 				8CDAE3B81D791EA900C4F220 /* AppDelegate.swift in Sources */,
 				8CE37EFE1D79300600EB23C9 /* UINavigationBarExtension.swift in Sources */,
 				8CE37F111D79454A00EB23C9 /* DataProvider.swift in Sources */,

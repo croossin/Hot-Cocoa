@@ -75,21 +75,22 @@ class HomeController: UIViewController {
         scrollView.setContentOffset(CGPoint(x: contentOffsetX, y: 0), animated: true)
     }
 
-    private func gatherViewControllers() -> [CocoaTableViewController] {
+    private func gatherViewControllers() -> [MainTableViewController] {
 
-        let a = CocoaTableViewController.generateSelf()
-        a.podSorting = .Recent
+//        let a = CocoaTableViewController.generateSelf()
+//        a.podSorting = .Recent
+//
+//        let b = CocoaTableViewController.generateSelf()
+//        b.podSorting = .Rating
+//
+//        let c = CocoaTableViewController.generateSelf()
+//        c.podSorting = .Swift
+//
+//        let d = CocoaTableViewController.generateSelf()
+//        d.podSorting = .ObjC
+        let a = MainTableViewController()
 
-        let b = CocoaTableViewController.generateSelf()
-        b.podSorting = .Rating
-
-        let c = CocoaTableViewController.generateSelf()
-        c.podSorting = .Swift
-
-        let d = CocoaTableViewController.generateSelf()
-        d.podSorting = .ObjC
-
-        return [a,b,c,d]
+        return [a]
     }
 
     @objc private func instantiateSearchController(sender: UIBarButtonItem){
