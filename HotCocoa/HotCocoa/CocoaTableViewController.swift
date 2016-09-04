@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import DisplaySwitcher
 import UIScrollView_InfiniteScroll
 import SVProgressHUD
 import FoldingCell
@@ -21,24 +20,41 @@ class CocoaTableViewController: UITableViewController {
 
     var cellHeights = [CGFloat]()
 
+    private var pods = [Pod]()
+
+    var podSorting: PodSorting = .Recent
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        createCellHeightsArray()
+        _loadPods()
+
         self.tableView.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
     }
 
     // MARK: configure
     func createCellHeightsArray() {
-        for _ in 0...kRowsCount {
+        for _ in 0...pods.count {
             cellHeights.append(kCloseCellHeight)
         }
     }
 
+    private func _loadPods(){
+
+        DataProvider.getPodsBasedOnPodSorting(podSorting, currentNumberRetrieved: pods.count, callback: { listOfPods in
+            self.pods = listOfPods
+
+            self.createCellHeightsArray()
+
+            self.tableView.reloadData()
+            }, errorCallback: {
+                SVProgressHUD.showErrorWithStatus("Unable to connect to server")
+        })
+    }
     // MARK: - Table view data source
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return pods.count
     }
 
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -54,6 +70,8 @@ class CocoaTableViewController: UITableViewController {
         } else {
             cell.selectedAnimation(true, animated: false, completion: nil)
         }
+
+        cell.loadCell(pods[indexPath.row])
 
         cell.number = indexPath.row
     }
