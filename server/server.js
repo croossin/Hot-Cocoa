@@ -9,7 +9,7 @@ var bodyParser = require('body-parser')
  * Mongo Database
  * =============================================================================
  */
-mongoose.connect('mongodb://localhost/hotcocoa');
+mongoose.connect(process.env.MONGODB_URI);
 
 mongoose.Promise = global.Promise;
 
