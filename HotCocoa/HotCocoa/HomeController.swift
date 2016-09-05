@@ -77,23 +77,17 @@ class HomeController: UIViewController {
 
     private func gatherViewControllers() -> [CocoaTableViewController] {
 
-//        let a = CocoaTableViewController.generateSelf()
-//        a.podSorting = .Recent
-//
-//        let b = CocoaTableViewController.generateSelf()
-//        b.podSorting = .Rating
-//
-//        let c = CocoaTableViewController.generateSelf()
-//        c.podSorting = .Swift
-//
-//        let d = CocoaTableViewController.generateSelf()
-//        d.podSorting = .ObjC
-//        let a = CocoaTableViewController()
-
         guard let a = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("CocoaTableViewController") as? CocoaTableViewController else { return [] }
+        a.podSorting = .Recent
+
         guard let b = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("CocoaTableViewController") as? CocoaTableViewController else { return [] }
+        b.podSorting = .Rating
+
         guard let c = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("CocoaTableViewController") as? CocoaTableViewController else { return [] }
+        c.podSorting = .Swift
+
         guard let d = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("CocoaTableViewController") as? CocoaTableViewController else { return [] }
+        d.podSorting = .ObjC
 
         return [a,b,c,d]
     }

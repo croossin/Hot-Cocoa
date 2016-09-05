@@ -1,5 +1,5 @@
 //
-//  DemoCell.swift
+//  PodCell.swift
 //  HotCocoa
 //
 //  Created by Chase Roossin on 9/4/16.
@@ -9,7 +9,7 @@
 import UIKit
 import FoldingCell
 
-class DemoCell: FoldingCell {
+class PodCell: FoldingCell {
 
     @IBOutlet weak var closeNumberLabel: UILabel!
 
@@ -63,7 +63,7 @@ class DemoCell: FoldingCell {
         closeProjectDescription.text = pod.description
         openProjectDescription.text = pod.description
 
-        closeProjectDate.text = pod.dateAddedPretty
+        closeProjectDate.text = pod.minifyPrettyDate()
         openProjectDate.text = pod.dateAddedPretty
 
         closeLanguage.text = pod.language

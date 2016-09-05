@@ -49,6 +49,7 @@ class CocoaTableViewController: UITableViewController {
             self.createCellHeightsArray()
 
             self.tableView.reloadData()
+
             }, errorCallback: {
                 SVProgressHUD.showErrorWithStatus("Unable to connect to server")
         })
@@ -97,7 +98,7 @@ class CocoaTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
 
-        guard case let cell as DemoCell = cell else {
+        guard case let cell as PodCell = cell else {
             return
         }
 

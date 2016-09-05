@@ -39,4 +39,11 @@ class Pod {
         self.author = author
         self.tags = tags
     }
+
+    func minifyPrettyDate() -> String{
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "MM-dd-yyyy"
+
+        return dateFormatter.stringFromDate(self.dateAdded)
+    }
 }
