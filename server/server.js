@@ -51,5 +51,5 @@ app.use('/api/v1', require('./api/v1/general'));
  */
 
 app.listen(process.env.PORT || '8081')
-console.log('Magic happens on port 8081');
+console.log('Magic happens on port ' + process.env.PORT);
 exports = module.exports = app;
