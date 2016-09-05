@@ -13,5 +13,5 @@ struct Dimensions{
 }
 
 struct Network{
-    static let MAIN_URL: String = "http://localhost:8081/api/v1"
+    static let MAIN_URL: String = "http://shielded-plateau-69173.herokuapp.com:8081/api/v1"
 }
