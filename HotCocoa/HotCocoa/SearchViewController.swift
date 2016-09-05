@@ -18,7 +18,6 @@ class SearchViewController: UIViewController, UICollectionViewDelegate {
     override func viewDidLoad() {
         self.view.backgroundColor = UIColor.whiteColor()
         super.viewDidLoad()
-
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -36,8 +35,20 @@ class SearchViewController: UIViewController, UICollectionViewDelegate {
 
             strongSelf.view.addSubview(strongSelf.ramReel.view)
             strongSelf.ramReel.view.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+            strongSelf._setupDismissButton()
             SVProgressHUD.dismiss()
         }
     }
 
+    func _setupDismissButton(){
+        let dismissButton = UIButton(frame: CGRect(x: 5, y: 10, width: 20, height: 20))
+        dismissButton.backgroundColor = UIColor.BlackColor
+        dismissButton.setTitle("X", forState: .Normal)
+        dismissButton.addTarget(self, action: #selector(SearchViewController.dismiss(_:)), forControlEvents: .TouchUpInside)
+        self.view.addSubview(dismissButton)
+    }
+
+    func dismiss(sender: UIButton!){
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
 }
