@@ -36,6 +36,12 @@ class PodCell: FoldingCell {
 
     @IBOutlet weak var projectImage: UIImageView!
 
+    @IBAction func launchGitHub(sender: AnyObject) {
+        WebController.displayURLWithinView(githubLink)
+    }
+
+    var githubLink: String = ""
+    
     var number: Int = 0 {
         didSet {
             closeNumberLabel.text = String(number)
@@ -74,6 +80,8 @@ class PodCell: FoldingCell {
 
         closeVotes.text = String(pod.amountOfVotes)
         openVotes.text = String(pod.amountOfVotes)
+
+        githubLink = pod.githubLink
 
         authorName.text = pod.author.name
         DataProvider.getImageFromUrl(pod.author.avatar){[weak self] image in
