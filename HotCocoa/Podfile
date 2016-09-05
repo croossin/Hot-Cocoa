@@ -9,7 +9,6 @@ pod ‘SwiftyJSON’
 pod 'SVProgressHUD'
 pod 'Segmentio', '~> 1.0'
 pod 'UITableViewCell-Badge'
-pod ‘DisplaySwitcher’, '~> 0.1.1’
 pod 'UIScrollView-InfiniteScroll'
 pod 'RAMReel'
 pod 'FoldingCell'
