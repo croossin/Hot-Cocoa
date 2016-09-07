@@ -8,27 +8,90 @@ var scraper   = require('../../../helper/scraper.js');
 var formatter = require('../../../helper/formatter.js');
 var config    = require('../../../config.js');
 var Pod  = require('../../../helper/cocoaModel.js');
+var http = require('http');
 
 /** 
  * =============================================================================
  * Public Functions
  * =============================================================================
  */
-exports.search = function(req, res){
+
+//We got a tag search:
+//* Scan cocoapods.org
+//* Get top 10 most popular
+//* Scrape each of their pages
+//* Return array of objects
+exports.searchTag = function(req, res){
 	
 	var skipNumber = req.body.currentNumber;
+	var searchTerm = req.params.searchTerm;
 
-	console.log(skipNumber);
+	//Make CocoaPods.org API call to retrieve the 10 they think we should scrape
+	var options = {
+		host: config.COCOAPODS_APIURL,
+		path: '/api/pods?query=' + searchTerm,
+		headers: {
+			accept: 'application/vnd.cocoapods.org+flat.hash.json'
+		}
+	};
 
-	Pod.find({'details.tags': req.params.searchTerm})
-	.limit(20)
-	.skip(skipNumber)
-	.sort('-details.amountOfVotes')	
-	.then(function(resp){
-		res.send(resp);
-	}, function(err){
-		res.send(err);
-	})
+	scraper.getCocoaPodsOrgDetails('RETableViewManager');
+
+	// http.get(options, function(cocoaRes) {
+	  
+	//   if(cocoaRes.statusCode === 200){
+
+	//   	  cocoaRes.setEncoding('utf8');
+	// 	  cocoaRes.on('data', function (data) {
+		  	// var jsonData = JSON.parse(data);
+		   	
+		   // 	var pods = [];
+		   // 	var promises = [];
+		   	
+		   // 	//Iterate through each response
+		   // 	for(var i = 0; i < jsonData.length; i++){
+		   // 		var currentPod = jsonData[i];
+
+		   // 		//Add the detail scrape promise to array of promises
+		   // 		// promises.push(scraper.getCocoaPodsOrgDetails(currentPod.id));
+
+		   // 		pods.push({
+		   // 			"name": currentPod.id,
+		   // 			"version": currentPod.version,
+		   // 			"description": currentPod.summary,
+		   // 			"url": currentPod.link,
+		   // 			"documentation": currentPod.cocoadocs,
+		   // 			"tags": currentPod.tags,
+		   // 			"author":{
+		   // 				"name": Object.keys(currentPod.authors)[0],
+		   // 				"author": currentPod.authors[Object.keys(currentPod.authors)[0]]
+		   // 			}
+		   // 		});
+		   // 	}
+
+		   // 	//Iterate through all final promises and append to pods
+		   // 	Q.all(promises).then(function(results){
+
+	    //       for(i = 0; i < results.length; i++){
+
+	    //       	//Add all details we gathered from their page to the object
+	    //         pods[i].details = results[i];
+	    //       }
+
+	    //       //Send back entire object
+	    //       res.send(pods);
+	    //     });
+		  // });
+	//   }else{
+	//   	res.send("Bad Network Request.");
+	//   }
+	// }).on('error', function(e) {
+	//   console.log("Got error: " + e.message);
+	//   res.send("Bad Network Request.");
+	// });
+	//Once we have the 10, scrape each individual pods page
+	
+	//Return a compiled array of objects
 }
 
 //This is for when the user is typing in search field

@@ -1,15 +1,15 @@
 //
-//  Pod.swift
+//  CocoaPod.swift
 //  HotCocoa
 //
-//  Created by Chase Roossin on 9/1/16.
+//  Created by Chase Roossin on 9/7/16.
 //  Copyright © 2016 crmobiledev. All rights reserved.
 //
 
 import UIKit
 
-//Creates CocoaControl Object [cocoacontrols.com]
-class Pod {
+//Creates Actual CocoaPod Object [cocoapods.org]
+class CocoaPod {
 
     var name: String
     var url: String
@@ -48,3 +48,4 @@ class Pod {
         return dateFormatter.stringFromDate(self.dateAdded)
     }
 }
+

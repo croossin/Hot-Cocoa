@@ -9,16 +9,16 @@ var bodyParser = require('body-parser')
  * Mongo Database
  * =============================================================================
  */
-mongoose.connect(process.env.MONGODB_URI);
+// mongoose.connect(process.env.MONGODB_URI);
 
-mongoose.Promise = global.Promise;
+// mongoose.Promise = global.Promise;
 
-var db = mongoose.connection;
+// var db = mongoose.connection;
 
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
-    console.log("Connected to DB");
-});
+// db.on('error', console.error.bind(console, 'connection error:'));
+// db.once('open', function() {
+//     console.log("Connected to DB");
+// });
 
 /** 
  * =============================================================================
@@ -50,6 +50,6 @@ app.use('/api/v1', require('./api/v1/general'));
  * =============================================================================
  */
 
-app.listen(process.env.PORT || '8081')
-console.log('Magic happens on port ' + process.env.PORT);
+app.listen('8081')
+console.log('Magic happens on port ');
 exports = module.exports = app;

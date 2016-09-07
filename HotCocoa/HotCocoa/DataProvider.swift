@@ -77,4 +77,27 @@ class DataProvider {
             }
         }
     }
+
+    class func getPodsBasedOnSearchTag(platform: Platform, searchTerm: String, currentNumberRetrieved: Int, callback: ([CocoaPod])->(), errorCallback: (()->())){
+
+        sharedInstance.makeRequestToServerForSearchTagPage(.POST, endpoint: "/search/tags/", platform: platform, searchTerm: searchTerm, currentNumberRetrieved: currentNumberRetrieved, callback: callback, errorCallback: errorCallback)
+    }
+
+    internal func makeRequestToServerForSearchTagPage(requestType: Alamofire.Method, endpoint: String, platform: Platform, searchTerm: String, currentNumberRetrieved: Int, callback: ([CocoaPod])->(), errorCallback: (()->())){
+
+        let parameters = ["currentNumber": String(currentNumberRetrieved), "platform": platform.rawValue, "searchTerm":searchTerm]
+
+        Alamofire.request(requestType, Network.MAIN_URL + endpoint, parameters: parameters, encoding: .JSON, headers: nil).validate().responseJSON { response in
+            switch response.result {
+            case .Success:
+                if let value = response.result.value {
+                    let json = JSON(value)
+                    callback(DataHandler.jsonToCocoaPods(json))
+                }
+            case .Failure(let error):
+                print(error)
+                errorCallback()
+            }
+        }
+    }
 }

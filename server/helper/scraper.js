@@ -56,7 +56,93 @@ module.exports = {
 	    })
 
 	    return p.promise; 
-	}
+	},
+
+  getCocoaPodsOrgDetails: function(podUrl){
+    var p = Q.defer();
+
+    var url = config.COCOAPODS_MAINURL + podUrl;
+
+    //Fetch detailed pod pages and scrape for data
+    request(url, function(error, response, html){
+    if(!error && response.statusCode == 200){
+
+      console.log("Success connection");
+      var $ = cheerio.load(html);
+
+      var d = {};
+
+      //Get Header information
+      var t = $('table.header').children();
+
+      d.language = t.next().next().children().last().find('span.visible-lg-span').text();
+      // d.license = t.next().next().next().children().
+
+      //Iterate the main data blocks
+      $('table.inset').each(function(i, element){
+          
+          //Downloads
+          if(i === 0){
+            var downloads = {};
+            var t = $(this).find('tbody').children();
+            
+            downloads.total = t.first().children().next().text();
+            downloads.week = t.next().children().next().text();
+            downloads.month = t.last().children().next().text();
+            
+            d.downloads = downloads;
+          }
+
+          //Installs
+          else if(i === 1){
+            var installs = {};
+            var t = $(this).find('tbody').children();
+
+            installs.apps = t.first().children().next().text();
+            installs.appsThisWeek = t.next().children().next().text();
+            installs.podTries = t.next().next().children().next().text();
+          
+            d.installs = installs;
+          }
+
+          //GitHub
+          else if(i === 2){
+            var github = {};
+            var t = $(this).find('tbody').children();
+            
+            github.stars = t.first().children().next().text();
+            github.watchers = t.next().children().next().text();
+            github.forks = t.next().next().children().next().text();
+            github.issues = t.next().next().next().children().next().text();
+            github.contributors = t.next().next().next().next().children().next().text();
+            github.pullRequests = t.last().children().next().text();
+
+            d.github = github;
+          }
+
+          //Code Base
+          else if(i === 3){
+            var codebase = {};
+            var t = $(this).find('tbody').children();
+
+            codebase.files = t.first().children().next().text();
+            codebase.size = t.next().children().next().text();
+            codebase.linesOfCode = t.last().children().next().text();
+
+            d.codebase = codebase;          
+          }
+      })
+
+      console.log(d);
+
+      p.resolve(d);
+    }else{
+      p.reject(error);
+    }
+  })
+
+    return p.promise;
+  }
 }
 
 /** 
@@ -126,9 +212,9 @@ function getDetails(controlUrl){
       d.description = $('div.rendered-description').children().first().text();
 
       p.resolve(d);
+    }else{
+      p.reject(error);
     }
-
-    p.reject(error);
   })
 
   return p.promise;

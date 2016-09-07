@@ -6,5 +6,9 @@ module.exports = {
 
 	SEARCH_URL: "https://www.cocoacontrols.com/search?q=",
 
-	AUTHOR_URL: "https://www.cocoacontrols.com/authors/"
+	AUTHOR_URL: "https://www.cocoacontrols.com/authors/",
+
+	COCOAPODS_MAINURL: "https://cocoapods.org/pods/",
+
+	COCOAPODS_APIURL: "search.cocoapods.org"
 };

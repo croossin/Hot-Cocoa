@@ -29,3 +29,25 @@ enum PodSorting: String{
         }
     }
 }
+
+enum Platform: String{
+    case IOS      = "ios"
+    case OSX      = "osx"
+    case WATCHOS  = "watchos"
+    case TVOS     = "tvos"
+
+    init?(id : Int) {
+        switch id {
+        case 0:
+            self = .IOS
+        case 1:
+            self = .OSX
+        case 2:
+            self = .WATCHOS
+        case 3:
+            self = .TVOS
+        default:
+            return nil
+        }
+    }
+}
