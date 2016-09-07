@@ -100,6 +100,7 @@ module.exports = {
 
             installs.apps = t.first().children().next().text();
             installs.appsThisWeek = t.next().children().next().text();
+            console.log(t.next().children().next());
             installs.podTries = t.next().next().children().next().text();
           
             d.installs = installs;
