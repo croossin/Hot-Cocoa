@@ -8,6 +8,7 @@ var scraper   = require('../../../helper/scraper.js');
 var formatter = require('../../../helper/formatter.js');
 var config    = require('../../../config.js');
 var Pod  = require('../../../helper/cocoaModel.js');
+var Q        = require('q');
 var http = require('http');
 
 /** 
@@ -35,60 +36,65 @@ exports.searchTag = function(req, res){
 		}
 	};
 
-	scraper.getCocoaPodsOrgDetails('RETableViewManager');
+	// scraper.getCocoaPodsOrgDetails('RETableViewManager');
 
-	// http.get(options, function(cocoaRes) {
+	http.get(options, function(cocoaRes) {
 	  
-	//   if(cocoaRes.statusCode === 200){
+	  if(cocoaRes.statusCode === 200){
 
-	//   	  cocoaRes.setEncoding('utf8');
-	// 	  cocoaRes.on('data', function (data) {
-		  	// var jsonData = JSON.parse(data);
+  		  var data = '';
+
+		  cocoaRes.on('data', function(chunk){
+		  	data += chunk;
+		  });
+
+		  cocoaRes.on('end', function(){
+		  	var jsonData = JSON.parse(data);
 		   	
-		   // 	var pods = [];
-		   // 	var promises = [];
+		   	var pods = [];
+		   	var promises = [];
 		   	
-		   // 	//Iterate through each response
-		   // 	for(var i = 0; i < jsonData.length; i++){
-		   // 		var currentPod = jsonData[i];
+		   	//Iterate through each response
+		   	for(var i = 0; i < jsonData.length; i++){
+		   		var currentPod = jsonData[i];
 
-		   // 		//Add the detail scrape promise to array of promises
-		   // 		// promises.push(scraper.getCocoaPodsOrgDetails(currentPod.id));
+		   		//Add the detail scrape promise to array of promises
+		   		// promises.push(scraper.getCocoaPodsOrgDetails(currentPod.id));
 
-		   // 		pods.push({
-		   // 			"name": currentPod.id,
-		   // 			"version": currentPod.version,
-		   // 			"description": currentPod.summary,
-		   // 			"url": currentPod.link,
-		   // 			"documentation": currentPod.cocoadocs,
-		   // 			"tags": currentPod.tags,
-		   // 			"author":{
-		   // 				"name": Object.keys(currentPod.authors)[0],
-		   // 				"author": currentPod.authors[Object.keys(currentPod.authors)[0]]
-		   // 			}
-		   // 		});
-		   // 	}
+		   		pods.push({
+		   			"name": currentPod.id,
+		   			"version": currentPod.version,
+		   			"description": currentPod.summary,
+		   			"url": currentPod.link,
+		   			"documentation": currentPod.cocoadocs,
+		   			"tags": currentPod.tags,
+		   			"author":{
+		   				"name": Object.keys(currentPod.authors)[0],
+		   				"author": currentPod.authors[Object.keys(currentPod.authors)[0]]
+		   			}
+		   		});
+		   	}
 
-		   // 	//Iterate through all final promises and append to pods
-		   // 	Q.all(promises).then(function(results){
+		   	//Iterate through all final promises and append to pods
+		   	Q.all(promises).then(function(results){
 
-	    //       for(i = 0; i < results.length; i++){
+	          for(i = 0; i < results.length; i++){
 
-	    //       	//Add all details we gathered from their page to the object
-	    //         pods[i].details = results[i];
-	    //       }
+	          	//Add all details we gathered from their page to the object
+	            pods[i].details = results[i];
+	          }
 
-	    //       //Send back entire object
-	    //       res.send(pods);
-	    //     });
-		  // });
-	//   }else{
-	//   	res.send("Bad Network Request.");
-	//   }
-	// }).on('error', function(e) {
-	//   console.log("Got error: " + e.message);
-	//   res.send("Bad Network Request.");
-	// });
+	          //Send back entire object
+	          res.send(pods);
+	        });
+		  });
+	  }else{
+	  	res.send("Bad Network Request.");
+	  }
+	}).on('error', function(e) {
+	  console.log("Got error: " + e.message);
+	  res.send("Bad Network Request.");
+	});
 	//Once we have the 10, scrape each individual pods page
 	
 	//Return a compiled array of objects
