@@ -67,7 +67,6 @@ module.exports = {
     request(url, function(error, response, html){
     if(!error && response.statusCode == 200){
 
-      console.log("Success connection");
       var $ = cheerio.load(html);
 
       var d = {};

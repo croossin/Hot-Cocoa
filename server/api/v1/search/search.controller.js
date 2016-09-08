@@ -30,7 +30,7 @@ exports.searchTag = function(req, res){
 	//Make CocoaPods.org API call to retrieve the 10 they think we should scrape
 	var options = {
 		host: config.COCOAPODS_APIURL,
-		path: '/api/pods?query=' + searchTerm,
+		path: '/api/pods?query=' + searchTerm + "&amount=10&start-at=" + skipNumber,
 		headers: {
 			accept: 'application/vnd.cocoapods.org+flat.hash.json'
 		}
