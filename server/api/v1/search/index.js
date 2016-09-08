@@ -14,7 +14,7 @@ var router = express.Router();
  * Routes
  * =============================================================================
  */
-router.post('/tags/:searchTerm', controller.searchTag);
+router.post('/tags', controller.searchTag);
 router.get('/fuzzySearch/:searchTerm', controller.fuzzySearch);
 router.get('/fuzzySearchTags/:searchTerm', controller.fuzzySearchTags);
 

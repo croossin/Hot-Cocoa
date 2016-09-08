@@ -25,12 +25,13 @@ var http = require('http');
 exports.searchTag = function(req, res){
 	
 	var skipNumber = req.body.currentNumber;
-	var searchTerm = req.params.searchTerm;
+	var searchTerm = encodeURIComponent(req.body.searchTerm);
+	var platform = req.body.platform;
 
 	//Make CocoaPods.org API call to retrieve the 10 they think we should scrape
 	var options = {
 		host: config.COCOAPODS_APIURL,
-		path: '/api/pods?query=' + searchTerm + "&amount=10&start-at=" + skipNumber,
+		path: '/api/pods?query=on:' + platform + "%20" + searchTerm + "&amount=10&start-at=" + skipNumber,
 		headers: {
 			accept: 'application/vnd.cocoapods.org+flat.hash.json'
 		}
