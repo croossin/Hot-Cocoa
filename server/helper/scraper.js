@@ -79,63 +79,59 @@ module.exports = {
       // d.license = t.next().next().next().children().
 
       //Iterate the main data blocks
-      // $('table.inset').each(function(i, element){
+      $('table.inset').each(function(i, element){
           
-      //     //Downloads
-      //     if(i === 0){
-      //       var downloads = {};
-      //       var t = $(this).find('tbody').children();
-      //       console.log(t.next().children());
-      //       downloads.total = t.first().children().next().text();
-      //       downloads.week = t.next().children().next().text();
-      //       downloads.month = t.last().children().next().text();
+          //Downloads
+          if(i === 0){
+            var downloads = {};
+            var t = $(this).find('tbody').children();
             
-      //       d.downloads = downloads;
-      //     }
+            downloads.total = t.first().children().next().text();
+            downloads.week = t.next().children().first().next().text();
+            downloads.month = t.last().children().next().text();
+            
+            d.downloads = downloads;
+          }
 
-      //     //Installs
-      //     else if(i === 1){
-      //       var installs = {};
-      //       var t = $(this).find('tbody').children();
+          //Installs
+          else if(i === 1){
+            var installs = {};
+            var t = $(this).find('tbody').children();
 
-      //       installs.apps = t.first().children().next().text();
-      //       installs.appsThisWeek = t.next().children().next().text();
-      //       installs.podTries = t.next().next().children().next().text();
+            installs.apps = t.first().children().next().text();
+            installs.appsThisWeek = t.next().children().first().next().text();
+            installs.podTries = t.next().next().children().first().next().text();
           
-      //       d.installs = installs;
-      //     }
+            d.installs = installs;
+          }
 
-      //     //GitHub
-      //     else if(i === 2){
-      //       var github = {};
-      //       var t = $(this).find('tbody').children();
+          //GitHub
+          else if(i === 2){
+            var github = {};
+            var t = $(this).find('tbody').children();
             
-      //       github.stars = t.first().children().next().text();
-      //       github.watchers = t.next().children().next().text();
-      //       github.forks = t.next().next().children().next().text();
-      //       github.issues = t.next().next().next().children().next().text();
-      //       github.contributors = t.next().next().next().next().children().next().text();
-      //       github.pullRequests = t.last().children().next().text();
+            github.stars = t.first().children().next().text();
+            github.watchers = t.next().children().first().next().text();
+            github.forks = t.next().next().children().first().next().text();
+            github.issues = t.next().next().next().children().first().next().text();
+            github.contributors = t.next().next().next().next().children().first().next().text();
+            github.pullRequests = t.last().children().first().next().text();
 
-      //       d.github = github;
-      //     }
+            d.github = github;
+          }
 
-      //     //Code Base
-      //     else if(i === 3){
-      //       var codebase = {};
-      //       var t = $(this).find('tbody').children();
+          //Code Base
+          else if(i === 3){
+            var codebase = {};
+            var t = $(this).find('tbody').children();
 
-      //       codebase.files = t.first().children().next().text();
-      //       codebase.size = t.next().children().next().text();
-      //       codebase.linesOfCode = t.last().children().next().text();
+            codebase.files = t.first().children().next().text();
+            codebase.size = t.next().children().first().next().text();
+            codebase.linesOfCode = t.last().children().next().text();
 
-      //       d.codebase = codebase;          
-      //     }
-      // })
-      
-      var insets = $('table.inset').find('tbody');
-
-      console.log(d);
+            d.codebase = codebase;          
+          }
+      })
 
       p.resolve(d);
     }else{

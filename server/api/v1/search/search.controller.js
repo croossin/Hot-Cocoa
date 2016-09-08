@@ -36,8 +36,6 @@ exports.searchTag = function(req, res){
 		}
 	};
 
-	// scraper.getCocoaPodsOrgDetails('RETableViewManager');
-
 	http.get(options, function(cocoaRes) {
 	  
 	  if(cocoaRes.statusCode === 200){
@@ -59,7 +57,7 @@ exports.searchTag = function(req, res){
 		   		var currentPod = jsonData[i];
 
 		   		//Add the detail scrape promise to array of promises
-		   		// promises.push(scraper.getCocoaPodsOrgDetails(currentPod.id));
+		   		promises.push(scraper.getCocoaPodsOrgDetails(currentPod.id));
 
 		   		pods.push({
 		   			"name": currentPod.id,
@@ -95,9 +93,6 @@ exports.searchTag = function(req, res){
 	  console.log("Got error: " + e.message);
 	  res.send("Bad Network Request.");
 	});
-	//Once we have the 10, scrape each individual pods page
-	
-	//Return a compiled array of objects
 }
 
 //This is for when the user is typing in search field
