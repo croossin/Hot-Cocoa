@@ -50,13 +50,13 @@ class HomeController: UIViewController {
 
     func _setupUI(){
         //NavBar
-        let navbar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.width, height: Dimensions.NAVBAR_HEIGHT))
-        navbar.backgroundColor = UIColor.WhiteSmokeColor
-        self.view.addSubview(navbar)
+        let searchButton = UIButton()
+        searchButton.setImage(UIImage(named: "search"), forState: .Normal)
+        searchButton.frame = CGRectMake(0, 0, 30, 30)
+        searchButton.addTarget(self, action: #selector(HomeController.presentSearchVC), forControlEvents: .TouchUpInside)
 
-        let barAttributes = UINavigationItem(title: "Hot Cocoa")
-        barAttributes.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "search"), style: .Plain, target: nil, action: #selector(instantiateSearchController(_:)))
-        navbar.setItems([barAttributes], animated: false)
+        let rightBarButton = UIBarButtonItem(customView: searchButton)
+        self.navigationItem.rightBarButtonItem = rightBarButton
 
         //Segmentio
         guard let sv = HCSegmentio().segView else { return }
@@ -68,6 +68,11 @@ class HomeController: UIViewController {
         }
 
         self.view.addSubview(segmentView)
+    }
+
+    func presentSearchVC(){
+        let vc = SearchViewController()
+        self.presentViewController(vc, animated: true, completion: nil)
     }
 
     func segViewValueDidChange(selectedIndex: Int){
