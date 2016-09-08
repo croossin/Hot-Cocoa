@@ -74,8 +74,10 @@ module.exports = {
       //Get Header information
       var t = $('table.header').children();
 
-      d.language = t.next().next().children().last().find('span.visible-lg-span').text();
-      // d.license = t.next().next().next().children().
+      d.language = t.children().last().prev().prev().children().last().children().last().text();
+      var license = t.children().last().prev().children().last().text();
+      d.license = license.replace(/\s/g, "");
+      d.lastRelease = t.children().last().children().last().text();
 
       //Iterate the main data blocks
       $('table.inset').each(function(i, element){
