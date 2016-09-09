@@ -13,7 +13,7 @@ class HCSegmentio {
 
     var segView: Segmentio?
 
-    init(){
+    init(isSearching: Bool){
         //UI Setup
         let segmentioViewRect = CGRect(x: 0, y: Dimensions.NAVBAR_HEIGHT, width: UIScreen.mainScreen().bounds.width, height: 90)
 
@@ -33,17 +33,28 @@ class HCSegmentio {
         )
 
         //Setup
-        segmentioView.setup(content: content(), style: SegmentioStyle.ImageOverLabel, options: options)
+        let content = isSearching ? searchingContent() : homeContent()
+
+        segmentioView.setup(content: content, style: SegmentioStyle.ImageOverLabel, options: options)
 
         segView = segmentioView
     }
 
-    private func content() -> [SegmentioItem] {
+    private func homeContent() -> [SegmentioItem] {
         return [
             SegmentioItem(title: "Recent", image: UIImage(named: "recent") ?? UIImage()),
             SegmentioItem(title: "Rating", image: UIImage(named: "rating") ?? UIImage()),
             SegmentioItem(title: "Swift", image: UIImage(named: "swift") ?? UIImage()),
             SegmentioItem(title: "Objective-C", image: UIImage(named: "objc") ?? UIImage())
+        ]
+    }
+
+    private func searchingContent() -> [SegmentioItem] {
+        return [
+            SegmentioItem(title: "iOS", image: UIImage(named: "recent") ?? UIImage()),
+            SegmentioItem(title: "OSX", image: UIImage(named: "rating") ?? UIImage()),
+            SegmentioItem(title: "watchOS", image: UIImage(named: "swift") ?? UIImage()),
+            SegmentioItem(title: "tvOS", image: UIImage(named: "objc") ?? UIImage())
         ]
     }
 

@@ -20,6 +20,8 @@ class HomeController: UIViewController {
         return self.gatherViewControllers()
     }()
 
+    var isSearching: Bool = false
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -58,7 +60,7 @@ class HomeController: UIViewController {
         self.navigationItem.rightBarButtonItem = rightBarButton
 
         //Segmentio
-        guard let sv = HCSegmentio().segView else { return }
+        guard let sv = HCSegmentio(isSearching: isSearching).segView else { return }
         self.segmentView = sv
         segmentView.selectedSegmentioIndex = 0
         segmentView.valueDidChange = { [weak self] _, segmentIndex in
@@ -79,8 +81,11 @@ class HomeController: UIViewController {
         scrollView.setContentOffset(CGPoint(x: contentOffsetX, y: 0), animated: true)
     }
 
-    private func gatherViewControllers() -> [CocoaTableViewController] {
+    private func gatherViewControllers() -> [UIViewController] {
+        return isSearching ? returnSearchTableViewControllers() : returnMainTablViewControllers()
+    }
 
+    private func returnMainTablViewControllers() -> [CocoaTableViewController] {
         guard let a = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("CocoaTableViewController") as? CocoaTableViewController else { return [] }
         a.podSorting = .Recent
 
@@ -94,6 +99,10 @@ class HomeController: UIViewController {
         d.podSorting = .ObjC
 
         return [a,b,c,d]
+    }
+
+    private func returnSearchTableViewControllers() -> [CocoaSearchTableViewController]{
+        return []
     }
 
     @objc private func instantiateSearchController(sender: UIBarButtonItem){

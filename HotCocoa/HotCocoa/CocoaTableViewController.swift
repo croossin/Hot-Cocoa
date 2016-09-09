@@ -149,8 +149,6 @@ class CocoaTableViewController: UITableViewController {
         UIView.animateWithDuration(duration, delay: 0, options: .CurveEaseOut, animations: { () -> Void in
             tableView.beginUpdates()
             tableView.endUpdates()
-            }, completion: nil)
-        
-        
+            }, completion: nil)   
     }
 }
