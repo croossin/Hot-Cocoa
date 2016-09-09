@@ -30,7 +30,9 @@ class SearchViewController: UIViewController, UICollectionViewDelegate {
 
             strongSelf.dataSource = SimplePrefixQueryDataSource(listOfTags)
             strongSelf.ramReel = RAMReel(frame: strongSelf.view.bounds, dataSource: strongSelf.dataSource, placeholder: "Search for tags…") {
-                print("Plain:", $0)
+                guard let tagVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("HomeController") as? HomeController else { return }
+                tagVC.title = "#\($0)"
+                strongSelf.dismissAndPresentOntoRoot(tagVC)
             }
 
             strongSelf.view.addSubview(strongSelf.ramReel.view)

@@ -16,7 +16,6 @@ class HomeController: UIViewController {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
 
-
     private lazy var viewControllers: [UIViewController] = {
         return self.gatherViewControllers()
     }()

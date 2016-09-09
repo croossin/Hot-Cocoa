@@ -10,15 +10,16 @@ var bodyParser = require('body-parser')
  * =============================================================================
  */
 // mongoose.connect(process.env.MONGODB_URI);
+mongoose.connect("mongodb://localhost/hotcocoa")
 
-// mongoose.Promise = global.Promise;
+mongoose.Promise = global.Promise;
 
-// var db = mongoose.connection;
+var db = mongoose.connection;
 
-// db.on('error', console.error.bind(console, 'connection error:'));
-// db.once('open', function() {
-//     console.log("Connected to DB");
-// });
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+    console.log("Connected to DB");
+});
 
 /** 
  * =============================================================================
@@ -50,6 +51,7 @@ app.use('/api/v1', require('./api/v1/general'));
  * =============================================================================
  */
 
-app.listen('8081')
+// app.listen(process.env.PORT || '8081');
+app.listen('8081');
 console.log('Magic happens on port ');
 exports = module.exports = app;
