@@ -90,7 +90,7 @@
         <!--Hot Cocoa-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="HomeController" id="BYZ-38-t0r" customClass="HomeController" customModule="HotCocoa" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeController" automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="HomeController" customModule="HotCocoa" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -139,7 +139,7 @@
         <!--Cocoa Table View Controller-->
         <scene sceneID="zsL-pq-7rG">
             <objects>
-                <tableViewController storyboardIdentifier="CocoaTableViewController" id="Aez-M7-kAy" customClass="CocoaTableViewController" customModule="HotCocoa" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="CocoaTableViewController" automaticallyAdjustsScrollViewInsets="NO" id="Aez-M7-kAy" customClass="CocoaTableViewController" customModule="HotCocoa" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="667" sectionHeaderHeight="28" sectionFooterHeight="28" id="r9g-M5-yvH">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="695"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
