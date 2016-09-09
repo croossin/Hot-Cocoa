@@ -102,7 +102,19 @@ class HomeController: UIViewController {
     }
 
     private func returnSearchTableViewControllers() -> [CocoaSearchTableViewController]{
-        return []
+        guard let a = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("CocoaSearchTableViewController") as? CocoaSearchTableViewController else { return [] }
+        a.platform = .IOS
+
+        guard let b = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("CocoaSearchTableViewController") as? CocoaSearchTableViewController else { return [] }
+        b.platform = .OSX
+
+        guard let c = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("CocoaSearchTableViewController") as? CocoaSearchTableViewController else { return [] }
+        c.platform = .WATCHOS
+
+        guard let d = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("CocoaSearchTableViewController") as? CocoaSearchTableViewController else { return [] }
+        d.platform = .TVOS
+
+        return [a,b,c,d]
     }
 
     @objc private func instantiateSearchController(sender: UIBarButtonItem){
