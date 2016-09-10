@@ -64,31 +64,31 @@ class CocoaSearchTableViewController: UITableViewController {
         // Add infinite scroll handler
         tableView.addInfiniteScrollWithHandler { (tableView) -> Void in
 
-//            DataProvider.getPodsBasedOnPodSorting(self.podSorting, currentNumberRetrieved: self.pods.count, callback: {[weak self](listOfPods) in
-//
-//                guard let strongSelf = self else { return }
-//
-//                var indexPaths = [NSIndexPath]() // index paths of updated rows
-//                var indexPathRow = strongSelf.pods.count
-//
-//                for pod in listOfPods{
-//                    strongSelf.pods.append(pod)
-//                    indexPaths.append(NSIndexPath(forRow: indexPathRow, inSection: 0))
-//                    indexPathRow += 1
-//                }
-//
-//                strongSelf.createCellHeightsArray()
-//
-//                // make sure you update tableView before calling -finishInfiniteScroll
-//                tableView.beginUpdates()
-//                tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: .Automatic)
-//                tableView.endUpdates()
-//
-//                // finish infinite scroll animation
-//                tableView.finishInfiniteScroll()
-//                }, errorCallback: {
-//                    SVProgressHUD.showErrorWithStatus("Unable to connect to server")
-//            })
+            DataProvider.getPodsBasedOnSearchTag(self.platform, searchTerm: self.searchTerm, currentNumberRetrieved: self.pods.count, callback: {[weak self](listOfPods) in
+
+                guard let strongSelf = self else { return }
+
+                var indexPaths = [NSIndexPath]() // index paths of updated rows
+                var indexPathRow = strongSelf.pods.count
+
+                for pod in listOfPods{
+                    strongSelf.pods.append(pod)
+                    indexPaths.append(NSIndexPath(forRow: indexPathRow, inSection: 0))
+                    indexPathRow += 1
+                }
+
+                strongSelf.createCellHeightsArray()
+
+                // make sure you update tableView before calling -finishInfiniteScroll
+                tableView.beginUpdates()
+                tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: .Automatic)
+                tableView.endUpdates()
+
+                // finish infinite scroll animation
+                tableView.finishInfiniteScroll()
+                }, errorCallback: {
+                    SVProgressHUD.showErrorWithStatus("Unable to connect to server")
+            })
         }
     }
 
