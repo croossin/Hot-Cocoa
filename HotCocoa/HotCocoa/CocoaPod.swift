@@ -12,40 +12,38 @@ import UIKit
 class CocoaPod {
 
     var name: String
-    var url: String
-    var imageUrl: String
-    var dateAdded: NSDate
-    var dateAddedPretty: String
-    var license: String
-    var amountOfVotes: Int
-    var appetize: String
-    var language: String
-    var githubLink: String
+    var url: String //GitHub Link
     var description: String
-    var author: (name: String, url: String, avatar: String)
+    var version: String
+    var lastRelease: String
+    var language: String
+    var license: String
+    var documentation: Bool
     var tags: [String]
 
-    init(name: String, url: String, imageUrl: String, dateAdded: NSDate, dateAddedPretty: String, license: String, amountOfVotes: Int, appetize: String, language: String, githubLink: String, description: String, author: (name: String, url: String, avatar: String), tags: [String]) {
+    var author: Author
+    var github: GitHub
+    var codebase: Codebase
+    var downloads: Downloads
+    var installs: Installs
+
+    init(name: String, url: String, description: String, version: String, lastRelease: String, language: String, license: String, documentation: Bool, tags: [String], author: Author, github: GitHub, codebase: Codebase, downloads: Downloads, installs: Installs){
+
         self.name = name
         self.url = url
-        self.imageUrl = imageUrl
-        self.dateAdded = dateAdded
-        self.dateAddedPretty = dateAddedPretty
-        self.license = license
-        self.amountOfVotes = amountOfVotes
-        self.appetize = appetize
-        self.language = language
-        self.githubLink = githubLink
         self.description = description
-        self.author = author
+        self.version = version
+        self.lastRelease = lastRelease
+        self.language = language
+        self.license = license
+        self.documentation = documentation
         self.tags = tags
-    }
 
-    func minifyPrettyDate() -> String{
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "MM-dd-yyyy"
-
-        return dateFormatter.stringFromDate(self.dateAdded)
+        self.author = author
+        self.github = github
+        self.codebase = codebase
+        self.downloads = downloads
+        self.installs = installs
     }
 }
 

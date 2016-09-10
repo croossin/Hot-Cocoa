@@ -51,10 +51,10 @@ class HCSegmentio {
 
     private func searchingContent() -> [SegmentioItem] {
         return [
-            SegmentioItem(title: "iOS", image: UIImage(named: "recent") ?? UIImage()),
-            SegmentioItem(title: "OSX", image: UIImage(named: "rating") ?? UIImage()),
-            SegmentioItem(title: "watchOS", image: UIImage(named: "swift") ?? UIImage()),
-            SegmentioItem(title: "tvOS", image: UIImage(named: "objc") ?? UIImage())
+            SegmentioItem(title: "iOS", image: UIImage(named: "iphone") ?? UIImage()),
+            SegmentioItem(title: "OSX", image: UIImage(named: "osx") ?? UIImage()),
+            SegmentioItem(title: "watchOS", image: UIImage(named: "watchos") ?? UIImage()),
+            SegmentioItem(title: "tvOS", image: UIImage(named: "tvos") ?? UIImage())
         ]
     }
 

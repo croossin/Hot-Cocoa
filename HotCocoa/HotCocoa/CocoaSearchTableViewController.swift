@@ -23,6 +23,7 @@ class CocoaSearchTableViewController: UITableViewController {
     private var pods = [CocoaPod]()
 
     var platform: Platform = .IOS
+    var searchTerm: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,16 +44,17 @@ class CocoaSearchTableViewController: UITableViewController {
 
     private func _loadPods(){
         print("Were loading search for \(platform)")
-//        DataProvider.getPodsBasedOnPodSorting(podSorting, currentNumberRetrieved: pods.count, callback: { listOfPods in
-//            self.pods = listOfPods
+        DataProvider.getPodsBasedOnSearchTag(platform, searchTerm: searchTerm, currentNumberRetrieved: pods.count, callback: { (listOfPods) in
+                print(listOfPods)
+//                self.pods = listOfPods
 //
-//            self.createCellHeightsArray()
+//                self.createCellHeightsArray()
 //
-//            self.tableView.reloadData()
-//
-//            }, errorCallback: {
-//                SVProgressHUD.showErrorWithStatus("Unable to connect to server")
-//        })
+//                self.tableView.reloadData()
+
+            }, errorCallback: {
+                SVProgressHUD.showErrorWithStatus("Unable to connect to server")
+        })
     }
 
     private func _setupInfiniteScroll(){

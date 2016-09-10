@@ -22,10 +22,10 @@ class Pod {
     var language: String
     var githubLink: String
     var description: String
-    var author: (name: String, url: String, avatar: String)
+    var author: CocoaControlAuthor
     var tags: [String]
 
-    init(name: String, url: String, imageUrl: String, dateAdded: NSDate, dateAddedPretty: String, license: String, amountOfVotes: Int, appetize: String, language: String, githubLink: String, description: String, author: (name: String, url: String, avatar: String), tags: [String]) {
+    init(name: String, url: String, imageUrl: String, dateAdded: NSDate, dateAddedPretty: String, license: String, amountOfVotes: Int, appetize: String, language: String, githubLink: String, description: String, author: CocoaControlAuthor, tags: [String]) {
         self.name = name
         self.url = url
         self.imageUrl = imageUrl

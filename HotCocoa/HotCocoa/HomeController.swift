@@ -21,6 +21,7 @@ class HomeController: UIViewController {
     }()
 
     var isSearching: Bool = false
+    var searchTerm: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,15 +105,19 @@ class HomeController: UIViewController {
     private func returnSearchTableViewControllers() -> [CocoaSearchTableViewController]{
         guard let a = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("CocoaSearchTableViewController") as? CocoaSearchTableViewController else { return [] }
         a.platform = .IOS
+        a.searchTerm = searchTerm
 
         guard let b = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("CocoaSearchTableViewController") as? CocoaSearchTableViewController else { return [] }
         b.platform = .OSX
+        b.searchTerm = searchTerm
 
         guard let c = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("CocoaSearchTableViewController") as? CocoaSearchTableViewController else { return [] }
         c.platform = .WATCHOS
+        c.searchTerm = searchTerm
 
         guard let d = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("CocoaSearchTableViewController") as? CocoaSearchTableViewController else { return [] }
         d.platform = .TVOS
+        d.searchTerm = searchTerm
 
         return [a,b,c,d]
     }

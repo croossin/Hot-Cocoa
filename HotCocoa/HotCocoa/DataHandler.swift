@@ -60,27 +60,54 @@ class DataHandler {
     class func jsonToCocoaPods(json: JSON) -> [CocoaPod]{
         var listOfPods = [CocoaPod]()
 
+        var author: Author = Author(name: "", email: "")
+        var gh: GitHub = GitHub(issues: "", stars: "", contributors: "", pullRequests: "", watchers: "", forks: "")
+        var codebase: Codebase = Codebase(files: "", size: "", linesOfCode: "")
+        var downloads: Downloads = Downloads(total: "", week: "", month: "")
+        var installs: Installs = Installs(apps: "", appsThisWeek: "", podTries: "")
+
         for i in 0...json.count-1{
 
             let name            = json[i]["name"].stringValue
             let url             = json[i]["url"].stringValue
-            let imageUrl        = json[i]["imageUrl"].stringValue
-            let dateAddedString = json[i]["dateAdded"].stringValue //Will want to convert to NSDate
-            var appetize        = "" //Incase they dont have one
-            if let _appetize    = json[i]["details"]["appetize"].string{
-                appetize = _appetize
-            }
-            let dateAddedPretty = json[i]["dateAddedPretty"].stringValue
-            let license         = json[i]["license"].stringValue
-            let amountOfVotes   = Int(json[i]["details"]["amountOfVotes"].stringValue)
-            let language        = json[i]["details"]["language"].stringValue
-            let githubLink      = json[i]["details"]["githubLink"].stringValue
             let description     = json[i]["details"]["description"].stringValue
-            let authorName      = json[i]["details"]["author"]["name"].stringValue
-            let authorUrl       = json[i]["details"]["author"]["url"].stringValue
-            let authorAvatar    = json[i]["details"]["author"]["image"].stringValue
+            let version         = json[i]["version"].stringValue
+            let lastRelease     = json[i]["details"]["lastRelease"].stringValue
+            let language        = json[i]["details"]["language"].stringValue
+            let license         = json[i]["details"]["license"].stringValue
+            let documentation   = json[i]["documentation"].boolValue
+
+            author.name        = json[i]["author"]["name"].stringValue
+            author.email       = json[i]["author"]["email"].stringValue
+
+            gh.issues          = json[i]["details"]["github"]["issues"].stringValue
+            gh.stars           = json[i]["details"]["github"]["stars"].stringValue
+            gh.contributors    = json[i]["details"]["github"]["contributors"].stringValue
+            gh.pullRequests    = json[i]["details"]["github"]["pullRequests"].stringValue
+            gh.watchers        = json[i]["details"]["github"]["watchers"].stringValue
+            gh.forks           = json[i]["details"]["github"]["forks"].stringValue
+
+            codebase.files     = json[i]["details"]["codebase"]["files"].stringValue
+            codebase.size      = json[i]["details"]["codebase"]["size"].stringValue
+            codebase.linesOfCode = json[i]["details"]["codebase"]["linesOfCode"].stringValue
+
+            downloads.total    = json[i]["details"]["downloads"]["total"].stringValue
+            downloads.week     = json[i]["details"]["downloads"]["week"].stringValue
+            downloads.month    = json[i]["details"]["downloads"]["month"].stringValue
+
+            installs.apps      = json[i]["details"]["installs"]["apps"].stringValue
+            installs.appsThisWeek = json[i]["details"]["installs"]["appsThisWeek"].stringValue
+            installs.podTries  = json[i]["details"]["installs"]["podTries"].stringValue
+
             var tags            = [String]()
 
+            for (key,subJson):(String, JSON) in json[i]["details"]["tags"] {
+                if let tag = subJson.string{
+                    tags.append(tag)
+                }
+            }
+
+            listOfPods.append(CocoaPod(name: name, url: url, description: description, version: version, lastRelease: lastRelease, language: language, license: license, documentation: documentation, tags: tags, author: author, github: gh, codebase: codebase, downloads: downloads, installs: installs))
         }
 
         return listOfPods

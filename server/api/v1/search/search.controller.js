@@ -69,7 +69,7 @@ exports.searchTag = function(req, res){
 		   			"tags": currentPod.tags,
 		   			"author":{
 		   				"name": Object.keys(currentPod.authors)[0],
-		   				"author": currentPod.authors[Object.keys(currentPod.authors)[0]]
+		   				"email": currentPod.authors[Object.keys(currentPod.authors)[0]]
 		   			}
 		   		});
 		   	}

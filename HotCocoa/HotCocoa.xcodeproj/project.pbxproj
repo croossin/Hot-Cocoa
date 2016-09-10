@@ -12,6 +12,7 @@
 		8CBF95A71D81BB4A0079782F /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBF95A61D81BB4A0079782F /* UIViewControllerExtension.swift */; };
 		8CBF95A91D830C0B0079782F /* CocoaSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBF95A81D830C0B0079782F /* CocoaSearchTableViewController.swift */; };
 		8CBF95AB1D830CAD0079782F /* CocoaPodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBF95AA1D830CAD0079782F /* CocoaPodCell.swift */; };
+		8CBF95AD1D8470000079782F /* Tuples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBF95AC1D8470000079782F /* Tuples.swift */; };
 		8CC7F3441D7B37DD0082E36B /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC7F3431D7B37DD0082E36B /* UILabelExtension.swift */; };
 		8CC7F3481D7B45A50082E36B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC7F3471D7B45A50082E36B /* SearchViewController.swift */; };
 		8CDAE3B81D791EA900C4F220 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDAE3B71D791EA900C4F220 /* AppDelegate.swift */; };
@@ -52,6 +53,7 @@
 		8CBF95A61D81BB4A0079782F /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		8CBF95A81D830C0B0079782F /* CocoaSearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocoaSearchTableViewController.swift; sourceTree = "<group>"; };
 		8CBF95AA1D830CAD0079782F /* CocoaPodCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocoaPodCell.swift; sourceTree = "<group>"; };
+		8CBF95AC1D8470000079782F /* Tuples.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tuples.swift; sourceTree = "<group>"; };
 		8CC7F3431D7B37DD0082E36B /* UILabelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
 		8CC7F3471D7B45A50082E36B /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		8CDAE3B41D791EA800C4F220 /* HotCocoa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotCocoa.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -164,6 +166,7 @@
 				8CE37EF61D7928FB00EB23C9 /* Constants.swift */,
 				8CE37F0D1D79422100EB23C9 /* Pod.swift */,
 				8CBF95A41D8068F60079782F /* CocoaPod.swift */,
+				8CBF95AC1D8470000079782F /* Tuples.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				8CF54BC01D7C8AF50025BE5F /* PodCell.swift in Sources */,
 				8CDAE3B81D791EA900C4F220 /* AppDelegate.swift in Sources */,
 				8CE37EFE1D79300600EB23C9 /* UINavigationBarExtension.swift in Sources */,
+				8CBF95AD1D8470000079782F /* Tuples.swift in Sources */,
 				8CE37F111D79454A00EB23C9 /* DataProvider.swift in Sources */,
 				8CF54BC21D7DEA310025BE5F /* WebController.swift in Sources */,
 				8CC7F3441D7B37DD0082E36B /* UILabelExtension.swift in Sources */,

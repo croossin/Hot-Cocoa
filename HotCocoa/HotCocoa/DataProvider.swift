@@ -92,7 +92,7 @@ class DataProvider {
             case .Success:
                 if let value = response.result.value {
                     let json = JSON(value)
-                    callback(DataHandler.jsonToCocoaPods(json))
+                    json.isEmpty ? callback([CocoaPod]()) : callback(DataHandler.jsonToCocoaPods(json))
                 }
             case .Failure(let error):
                 print(error)

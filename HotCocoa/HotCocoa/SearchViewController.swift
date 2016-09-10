@@ -32,6 +32,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate {
             strongSelf.ramReel = RAMReel(frame: strongSelf.view.bounds, dataSource: strongSelf.dataSource, placeholder: "Search for tags…") {
                 guard let tagVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("HomeController") as? HomeController else { return }
                 tagVC.title = "#\($0)"
+                tagVC.searchTerm = $0
                 tagVC.isSearching = true
                 strongSelf.dismissAndPresentOntoRoot(tagVC)
             }
