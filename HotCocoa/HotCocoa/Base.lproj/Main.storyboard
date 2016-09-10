@@ -377,7 +377,7 @@
                                                                 <constraint firstAttribute="bottom" secondItem="ASz-UL-llL" secondAttribute="bottom" id="zXF-cY-PBu"/>
                                                             </constraints>
                                                         </view>
-                                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aoc-2V-3hn" userLabel="CenterView">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aoc-2V-3hn" userLabel="CenterView">
                                                             <rect key="frame" x="190" y="117" width="180" height="40"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="LICENSE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i0l-zS-T6v">
@@ -769,34 +769,41 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2aq-P7-aYh" userLabel="LeftView">
                                                     <rect key="frame" x="0.0" y="0.0" width="88" height="165"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="#25" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OTe-mT-WbY">
-                                                            <rect key="frame" x="19" y="31" width="43" height="33"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="#25" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OTe-mT-WbY">
+                                                            <rect key="frame" x="8" y="15" width="71" height="33"/>
                                                             <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="24"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="0.80086043070000001" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="DATE ADDED" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bgi-uH-Qpd">
-                                                            <rect key="frame" x="18" y="101" width="61" height="14"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" misplaced="YES" text="LAST RELEASE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bgi-uH-Qpd">
+                                                            <rect key="frame" x="14" y="101" width="61" height="14"/>
                                                             <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="10"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="06:30 PM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zn8-bx-FEm">
-                                                            <rect key="frame" x="18" y="120" width="57" height="18"/>
+                                                            <rect key="frame" x="15" y="120" width="57" height="18"/>
                                                             <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="13"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="0.80434438340000003" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ratingStars" translatesAutoresizingMaskIntoConstraints="NO" id="PQE-xx-jI5">
+                                                            <rect key="frame" x="18" y="56" width="49" height="13"/>
+                                                        </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.36470588240000001" green="0.2901960784" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="88" id="1NI-Da-SMa"/>
+                                                        <constraint firstItem="Bgi-uH-Qpd" firstAttribute="top" secondItem="PQE-xx-jI5" secondAttribute="bottom" constant="32" id="24L-t7-GzG"/>
                                                         <constraint firstAttribute="bottom" secondItem="Bgi-uH-Qpd" secondAttribute="bottom" constant="50" id="3mT-I1-KGc"/>
-                                                        <constraint firstItem="OTe-mT-WbY" firstAttribute="centerX" secondItem="2aq-P7-aYh" secondAttribute="centerX" constant="-4" id="KAN-fC-5Eh"/>
-                                                        <constraint firstItem="Bgi-uH-Qpd" firstAttribute="leading" secondItem="2aq-P7-aYh" secondAttribute="leading" constant="13" id="KLr-Lr-WJw"/>
+                                                        <constraint firstItem="OTe-mT-WbY" firstAttribute="centerX" secondItem="2aq-P7-aYh" secondAttribute="centerX" constant="-0.5" id="KAN-fC-5Eh"/>
+                                                        <constraint firstItem="Bgi-uH-Qpd" firstAttribute="leading" secondItem="2aq-P7-aYh" secondAttribute="leading" constant="14" id="KLr-Lr-WJw"/>
+                                                        <constraint firstItem="PQE-xx-jI5" firstAttribute="leading" secondItem="2aq-P7-aYh" secondAttribute="leading" constant="18" id="LwW-GY-lKa"/>
                                                         <constraint firstAttribute="bottom" secondItem="zn8-bx-FEm" secondAttribute="bottom" constant="27" id="PJe-VQ-POZ"/>
                                                         <constraint firstItem="zn8-bx-FEm" firstAttribute="leading" secondItem="2aq-P7-aYh" secondAttribute="leading" constant="15" id="hCQ-4b-1ID"/>
-                                                        <constraint firstItem="OTe-mT-WbY" firstAttribute="centerY" secondItem="2aq-P7-aYh" secondAttribute="centerY" constant="-35" id="xlc-vn-Cb8"/>
+                                                        <constraint firstItem="PQE-xx-jI5" firstAttribute="top" secondItem="OTe-mT-WbY" secondAttribute="bottom" constant="8" id="rrc-1p-oag"/>
+                                                        <constraint firstAttribute="trailing" secondItem="PQE-xx-jI5" secondAttribute="trailing" constant="21" id="tVt-86-oVh"/>
+                                                        <constraint firstItem="OTe-mT-WbY" firstAttribute="centerY" secondItem="2aq-P7-aYh" secondAttribute="centerY" constant="-51" id="xlc-vn-Cb8"/>
                                                     </constraints>
                                                 </view>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dots" translatesAutoresizingMaskIntoConstraints="NO" id="6Ai-4n-aHk">
@@ -828,7 +835,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ffo-l0-Y1U" userLabel="RightView">
                                                     <rect key="frame" x="441" y="100" width="119" height="40"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="VOTES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yLK-cV-XW5">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="DOWNLOADS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yLK-cV-XW5">
                                                             <rect key="frame" x="3" y="0.0" width="47" height="14"/>
                                                             <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="10"/>
                                                             <color key="textColor" red="0.20000000000000001" green="0.23921568630000001" blue="0.26274509800000001" alpha="0.5" colorSpace="calibratedRGB"/>
@@ -987,7 +994,7 @@
                                                                 <constraint firstItem="CTo-sa-RqN" firstAttribute="top" secondItem="M1B-p6-jIc" secondAttribute="top" id="RHW-RA-aOv"/>
                                                             </constraints>
                                                         </view>
-                                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TKU-vf-79y" userLabel="CenterView">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TKU-vf-79y" userLabel="CenterView">
                                                             <rect key="frame" x="190" y="117" width="180" height="40"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="LICENSE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8NQ-fv-LDX">
@@ -1318,10 +1325,20 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <outlet property="authorName" destination="ypd-sA-P7p" id="9Eb-Xe-aJN"/>
+                                    <outlet property="closeDescription" destination="g0Y-gc-QWV" id="mKF-yn-dF0"/>
+                                    <outlet property="closeDownloads" destination="mCM-CU-e99" id="mct-4N-SZn"/>
+                                    <outlet property="closeLanguage" destination="RXY-Ch-IJm" id="V75-r7-G8n"/>
+                                    <outlet property="closeLicense" destination="Zqa-Ex-szX" id="bYe-hz-b1i"/>
+                                    <outlet property="closeProjectName" destination="68r-Fg-FU6" id="DN7-Qu-DgT"/>
+                                    <outlet property="closeRatings" destination="OTe-mT-WbY" id="biK-YK-u17"/>
                                     <outlet property="containerView" destination="Ggz-JW-xbN" id="g2k-QV-0YE"/>
                                     <outlet property="containerViewTop" destination="jGt-xD-xsU" id="mJq-WH-pfx"/>
                                     <outlet property="foregroundView" destination="oQU-eK-JS3" id="krJ-CA-UAO"/>
                                     <outlet property="foregroundViewTop" destination="BTq-qa-mNa" id="sv3-4Z-Chn"/>
+                                    <outlet property="lastRelease" destination="zn8-bx-FEm" id="5yf-7t-84O"/>
+                                    <outlet property="openDescription" destination="w1G-Ay-2OL" id="crD-Ax-W0e"/>
+                                    <outlet property="openProjectName" destination="CWf-tH-63p" id="u3U-R2-XiS"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1342,5 +1359,6 @@
         <image name="applebg" width="681" height="426"/>
         <image name="arrow" width="16" height="25"/>
         <image name="dots" width="14" height="84"/>
+        <image name="ratingStars" width="49" height="15"/>
     </resources>
 </document>

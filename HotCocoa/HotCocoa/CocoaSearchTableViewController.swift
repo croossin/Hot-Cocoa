@@ -45,12 +45,11 @@ class CocoaSearchTableViewController: UITableViewController {
     private func _loadPods(){
         print("Were loading search for \(platform)")
         DataProvider.getPodsBasedOnSearchTag(platform, searchTerm: searchTerm, currentNumberRetrieved: pods.count, callback: { (listOfPods) in
-                print(listOfPods)
-//                self.pods = listOfPods
-//
-//                self.createCellHeightsArray()
-//
-//                self.tableView.reloadData()
+                self.pods = listOfPods
+
+                self.createCellHeightsArray()
+
+                self.tableView.reloadData()
 
             }, errorCallback: {
                 SVProgressHUD.showErrorWithStatus("Unable to connect to server")
@@ -113,8 +112,6 @@ class CocoaSearchTableViewController: UITableViewController {
         }
 
         cell.loadCell(pods[indexPath.row])
-
-        cell.number = indexPath.row
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

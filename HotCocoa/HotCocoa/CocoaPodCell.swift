@@ -11,13 +11,23 @@ import FoldingCell
 
 class CocoaPodCell: FoldingCell {
 
-    var githubLink: String = ""
+    @IBOutlet weak var closeProjectName: UILabel!
+    @IBOutlet weak var openProjectName: UILabel!
 
-    var number: Int = 0 {
-        didSet {
-//            closeNumberLabel.text = String(number)
-        }
-    }
+    @IBOutlet weak var closeDescription: UILabel!
+    @IBOutlet weak var openDescription: UILabel!
+
+    @IBOutlet weak var closeRatings: UILabel!
+
+    @IBOutlet weak var authorName: UILabel!
+
+    @IBOutlet weak var lastRelease: UILabel!
+
+    @IBOutlet weak var closeLanguage: UILabel!
+    @IBOutlet weak var closeLicense: UILabel!
+    @IBOutlet weak var closeDownloads: UILabel!
+
+    var githubLink: String = ""
 
     override func awakeFromNib() {
 
@@ -34,6 +44,20 @@ class CocoaPodCell: FoldingCell {
     }
 
     func loadCell(pod: CocoaPod){
+        closeProjectName.text = pod.name
+        openProjectName.text = pod.name
 
+        closeDescription.text = pod.description
+        openDescription.text = pod.description
+
+        closeRatings.text = pod.github.stars
+
+        authorName.text = pod.author.name
+
+        lastRelease.text = pod.lastRelease
+
+        closeLanguage.text = pod.language
+        closeLicense.text = pod.license
+        closeDownloads.text = pod.downloads.total
     }
 }

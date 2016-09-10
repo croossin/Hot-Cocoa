@@ -70,7 +70,7 @@ class DataHandler {
 
             let name            = json[i]["name"].stringValue
             let url             = json[i]["url"].stringValue
-            let description     = json[i]["details"]["description"].stringValue
+            let description     = json[i]["description"].stringValue
             let version         = json[i]["version"].stringValue
             let lastRelease     = json[i]["details"]["lastRelease"].stringValue
             let language        = json[i]["details"]["language"].stringValue
