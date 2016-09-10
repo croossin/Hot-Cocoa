@@ -102,7 +102,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IX9-F9-a8Y" userLabel="Container">
                                 <rect key="frame" x="0.0" y="150" width="600" height="450"/>
                                 <subviews>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jKD-Ea-Jx3">
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jKD-Ea-Jx3">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="450"/>
                                         <connections>
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="E4c-v0-yao"/>
