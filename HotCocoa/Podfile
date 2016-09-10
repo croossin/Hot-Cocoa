@@ -12,5 +12,8 @@ pod 'UITableViewCell-Badge'
 pod 'UIScrollView-InfiniteScroll'
 pod 'RAMReel'
 pod 'FoldingCell'
+pod 'StatefulViewController', '~> 1.0'
+pod 'TCTitleLoading'
+pod 'XHAmazingLoading'
 
 end

@@ -11,6 +11,11 @@ import UIScrollView_InfiniteScroll
 import SVProgressHUD
 import FoldingCell
 
+protocol CocoaTableViewControllerDelegate: class {
+    func loadingStarted(currentPodPage: PodSorting)
+    func loadingEnded(currentPodPage: PodSorting)
+}
+
 class CocoaTableViewController: UITableViewController {
 
     let kCloseCellHeight: CGFloat = 179
@@ -23,6 +28,8 @@ class CocoaTableViewController: UITableViewController {
     private var pods = [Pod]()
 
     var podSorting: PodSorting = .Recent
+
+    weak var delegate: CocoaTableViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +49,7 @@ class CocoaTableViewController: UITableViewController {
     }
 
     private func _loadPods(){
+        delegate?.loadingStarted(self.podSorting)
 
         DataProvider.getPodsBasedOnPodSorting(podSorting, currentNumberRetrieved: pods.count, callback: { listOfPods in
             self.pods = listOfPods
@@ -50,6 +58,7 @@ class CocoaTableViewController: UITableViewController {
 
             self.tableView.reloadData()
 
+            self.delegate?.loadingEnded(self.podSorting)
             }, errorCallback: {
                 SVProgressHUD.showErrorWithStatus("Unable to connect to server")
         })

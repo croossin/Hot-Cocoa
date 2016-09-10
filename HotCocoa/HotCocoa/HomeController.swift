@@ -8,6 +8,7 @@
 
 import UIKit
 import Segmentio
+import TCTitleLoading
 
 class HomeController: UIViewController {
 
@@ -89,15 +90,19 @@ class HomeController: UIViewController {
     private func returnMainTablViewControllers() -> [CocoaTableViewController] {
         guard let a = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("CocoaTableViewController") as? CocoaTableViewController else { return [] }
         a.podSorting = .Recent
+        a.delegate = self
 
         guard let b = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("CocoaTableViewController") as? CocoaTableViewController else { return [] }
         b.podSorting = .Rating
+        b.delegate = self
 
         guard let c = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("CocoaTableViewController") as? CocoaTableViewController else { return [] }
         c.podSorting = .Swift
+        c.delegate = self
 
         guard let d = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("CocoaTableViewController") as? CocoaTableViewController else { return [] }
         d.podSorting = .ObjC
+        d.delegate = self
 
         return [a,b,c,d]
     }
@@ -137,5 +142,21 @@ extension HomeController: UIScrollViewDelegate {
 
     func scrollViewDidScroll(scrollView: UIScrollView) {
         scrollView.contentSize = CGSize(width: scrollView.contentSize.width, height: 0)
+    }
+}
+
+extension HomeController: CocoaTableViewControllerDelegate{
+    func loadingStarted(currentPodPage: PodSorting) {
+        //Check if we are on the current page 
+        //If so, show loading
+        if currentPodPage ==  PodSorting(id: Int(floor(scrollView.contentOffset.x / scrollView.frame.width))){
+            self.startAnimationTitle()
+        }
+    }
+
+    func loadingEnded(currentPodPage: PodSorting) {
+        if currentPodPage ==  PodSorting(id: Int(floor(scrollView.contentOffset.x / scrollView.frame.width))){
+            self.stopAnimationTitle()
+        }
     }
 }

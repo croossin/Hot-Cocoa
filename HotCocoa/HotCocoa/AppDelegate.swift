@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import TCTitleLoading
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
 //        UILabel.appearance().defaultFont = UIFont(name: "Avenir-Book", size: 14)
+        TCTitleLoadingManager.setDotColor(UIColor.CoralColor)
         return true
     }
 
