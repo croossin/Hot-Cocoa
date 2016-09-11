@@ -554,14 +554,14 @@
                                                                     <color key="textColor" red="0.13725490200000001" green="0.13725490200000001" blue="0.13725490200000001" alpha="0.49546030410000003" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="107-cE-XEr" customClass="TLTagsControl">
-                                                                    <rect key="frame" x="0.0" y="21" width="247" height="44"/>
+                                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="107-cE-XEr" customClass="TLTagsControl">
+                                                                    <rect key="frame" x="0.0" y="27" width="247" height="30"/>
                                                                 </scrollView>
                                                             </subviews>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <constraints>
-                                                                <constraint firstItem="107-cE-XEr" firstAttribute="top" secondItem="Wa6-xq-4Kp" secondAttribute="top" constant="21" id="ES8-ZB-eNb"/>
-                                                                <constraint firstItem="107-cE-XEr" firstAttribute="bottom" secondItem="Wa6-xq-4Kp" secondAttribute="bottomMargin" id="I3Q-Qy-K6f"/>
+                                                                <constraint firstItem="107-cE-XEr" firstAttribute="top" secondItem="Wa6-xq-4Kp" secondAttribute="top" constant="27" id="ES8-ZB-eNb"/>
+                                                                <constraint firstItem="107-cE-XEr" firstAttribute="bottom" secondItem="Wa6-xq-4Kp" secondAttribute="bottomMargin" constant="-8" id="I3Q-Qy-K6f"/>
                                                                 <constraint firstItem="107-cE-XEr" firstAttribute="leading" secondItem="rhe-Zq-KbL" secondAttribute="leading" id="Tmk-3o-1kb"/>
                                                                 <constraint firstItem="rhe-Zq-KbL" firstAttribute="top" secondItem="Wa6-xq-4Kp" secondAttribute="top" constant="8" id="UD1-RN-pnm"/>
                                                                 <constraint firstAttribute="trailing" secondItem="rhe-Zq-KbL" secondAttribute="trailing" constant="10" id="fd0-vh-PIN"/>
