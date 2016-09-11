@@ -1088,9 +1088,6 @@
                                                                 <constraint firstAttribute="width" constant="49" id="xqE-nx-CBl"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="Xeg-Ll-MOG">
-                                                            <rect key="frame" x="522" y="40" width="16" height="25"/>
-                                                        </imageView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HKq-ec-yMx" userLabel="line">
                                                             <rect key="frame" x="22" y="92" width="516" height="1"/>
                                                             <color key="backgroundColor" red="0.39607843139999999" green="0.40000000000000002" blue="0.39607843139999999" alpha="0.20135663009999999" colorSpace="calibratedRGB"/>
@@ -1098,7 +1095,7 @@
                                                                 <constraint firstAttribute="height" constant="1" id="rON-lQ-e8X"/>
                                                             </constraints>
                                                         </view>
-                                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KJo-TE-Qfd" userLabel="descriptionView">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KJo-TE-Qfd" userLabel="descriptionView">
                                                             <rect key="frame" x="22" y="92" width="516" height="73"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="DESCRIPTION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xmb-qI-lCC">
@@ -1131,15 +1128,22 @@
                                                                 <constraint firstAttribute="height" constant="1" id="pJX-uR-FlR"/>
                                                             </constraints>
                                                         </view>
+                                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TEH-cQ-ijR">
+                                                            <rect key="frame" x="509" y="36" width="29" height="34"/>
+                                                            <state key="normal" image="arrow"/>
+                                                            <connections>
+                                                                <action selector="emailAuthor:" destination="eEk-9d-qfZ" eventType="touchUpInside" id="Pvp-Mz-Ka6"/>
+                                                            </connections>
+                                                        </button>
                                                     </subviews>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
-                                                        <constraint firstItem="Xeg-Ll-MOG" firstAttribute="centerY" secondItem="FOg-ZF-O5c" secondAttribute="centerY" id="4ou-ie-OtT"/>
                                                         <constraint firstItem="gTi-bd-nFw" firstAttribute="leading" secondItem="FOg-ZF-O5c" secondAttribute="leading" id="79i-iS-fja"/>
                                                         <constraint firstItem="KJo-TE-Qfd" firstAttribute="top" secondItem="HKq-ec-yMx" secondAttribute="bottom" constant="-1" id="8iq-ot-MYe"/>
                                                         <constraint firstAttribute="height" constant="165" id="InG-1L-oHE"/>
                                                         <constraint firstAttribute="bottom" secondItem="v78-TM-lxj" secondAttribute="bottom" id="Jfj-BJ-H5B"/>
                                                         <constraint firstAttribute="trailing" secondItem="ypd-sA-P7p" secondAttribute="trailing" constant="8" id="N9h-9L-2Rm"/>
+                                                        <constraint firstItem="TEH-cQ-ijR" firstAttribute="top" secondItem="o6K-rM-PXg" secondAttribute="top" constant="36" id="NAY-ib-KDI"/>
                                                         <constraint firstItem="KJo-TE-Qfd" firstAttribute="leading" secondItem="HKq-ec-yMx" secondAttribute="leading" id="NL1-Xb-QJW"/>
                                                         <constraint firstItem="FOg-ZF-O5c" firstAttribute="leading" secondItem="HKq-ec-yMx" secondAttribute="leading" id="Pbe-h0-vJT"/>
                                                         <constraint firstAttribute="trailing" secondItem="HKq-ec-yMx" secondAttribute="trailing" constant="22" id="Q1h-Cb-3D4"/>
@@ -1149,9 +1153,11 @@
                                                         <constraint firstItem="HKq-ec-yMx" firstAttribute="top" secondItem="FOg-ZF-O5c" secondAttribute="bottom" constant="15" id="gWJ-kb-ADb"/>
                                                         <constraint firstAttribute="bottom" secondItem="KJo-TE-Qfd" secondAttribute="bottom" id="ghv-je-MgX"/>
                                                         <constraint firstItem="ypd-sA-P7p" firstAttribute="top" secondItem="FOg-ZF-O5c" secondAttribute="top" constant="12" id="hJj-SL-95O"/>
-                                                        <constraint firstItem="Xeg-Ll-MOG" firstAttribute="trailing" secondItem="HKq-ec-yMx" secondAttribute="trailing" id="mL2-k9-dtF"/>
+                                                        <constraint firstItem="TEH-cQ-ijR" firstAttribute="trailing" secondItem="HKq-ec-yMx" secondAttribute="trailing" id="iTq-OM-kz1"/>
                                                         <constraint firstItem="HKq-ec-yMx" firstAttribute="centerY" secondItem="o6K-rM-PXg" secondAttribute="centerY" constant="10" id="pAN-aI-o6J"/>
+                                                        <constraint firstItem="TEH-cQ-ijR" firstAttribute="trailing" secondItem="KJo-TE-Qfd" secondAttribute="trailing" id="puA-rB-GaU"/>
                                                         <constraint firstItem="HKq-ec-yMx" firstAttribute="leading" secondItem="o6K-rM-PXg" secondAttribute="leading" constant="22" id="qiQ-B8-kWv"/>
+                                                        <constraint firstItem="TEH-cQ-ijR" firstAttribute="centerY" secondItem="ypd-sA-P7p" secondAttribute="centerY" constant="2.5" id="v8e-RU-lka"/>
                                                         <constraint firstItem="FOg-ZF-O5c" firstAttribute="top" secondItem="gTi-bd-nFw" secondAttribute="bottom" constant="5" id="vzI-0n-Z7c"/>
                                                     </constraints>
                                                 </view>
@@ -1334,6 +1340,7 @@
                                     <outlet property="closeRatings" destination="OTe-mT-WbY" id="biK-YK-u17"/>
                                     <outlet property="containerView" destination="Ggz-JW-xbN" id="g2k-QV-0YE"/>
                                     <outlet property="containerViewTop" destination="jGt-xD-xsU" id="mJq-WH-pfx"/>
+                                    <outlet property="emailAuthorButton" destination="TEH-cQ-ijR" id="eXf-mh-2cg"/>
                                     <outlet property="foregroundView" destination="oQU-eK-JS3" id="krJ-CA-UAO"/>
                                     <outlet property="foregroundViewTop" destination="BTq-qa-mNa" id="sv3-4Z-Chn"/>
                                     <outlet property="lastRelease" destination="zn8-bx-FEm" id="5yf-7t-84O"/>

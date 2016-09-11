@@ -29,6 +29,15 @@ class CocoaPodCell: FoldingCell {
 
     var githubLink: String = ""
 
+    @IBOutlet weak var emailAuthorButton: UIButton!
+    @IBAction func emailAuthor(sender: AnyObject) {
+        if let pod = pod{
+            EmailController.createEmail(pod.author.email, podname: pod.name)
+        }
+    }
+
+    var pod: CocoaPod?
+
     override func awakeFromNib() {
 
         foregroundView.layer.cornerRadius = 10
@@ -44,6 +53,10 @@ class CocoaPodCell: FoldingCell {
     }
 
     func loadCell(pod: CocoaPod){
+        self.pod = pod //Save for future reference
+
+        emailAuthorButton.hidden = !pod.hasValidEmail()
+
         closeProjectName.text = pod.name
         openProjectName.text = pod.name
 

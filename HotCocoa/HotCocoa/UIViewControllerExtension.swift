@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MessageUI
 
 extension UIViewController{
     func dismissAndPresentOntoRoot(vc: UIViewController){
@@ -14,6 +15,12 @@ extension UIViewController{
             if let mainNavController = UIApplication.sharedApplication().keyWindow?.rootViewController{
                 mainNavController.childViewControllers.first?.navigationController?.pushViewController(vc, animated: true)
             }
+        }
+    }
+
+    func presentMailOntoRootController(vc: MFMailComposeViewController){
+        if let topController = UIApplication.topViewController(){
+            topController.presentViewController(vc, animated: true, completion: nil)
         }
     }
 }

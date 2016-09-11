@@ -32,6 +32,8 @@
 		8CE37F111D79454A00EB23C9 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE37F101D79454A00EB23C9 /* DataProvider.swift */; };
 		8CE37F1E1D7A4C9800EB23C9 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE37F1D1D7A4C9800EB23C9 /* Enums.swift */; };
 		8CE37F201D7A5A2200EB23C9 /* DataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE37F1F1D7A5A2200EB23C9 /* DataHandler.swift */; };
+		8CEEF49E1D84F20A001270DB /* EmailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEEF49D1D84F20A001270DB /* EmailController.swift */; };
+		8CEEF4A01D85B0CB001270DB /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEEF49F1D85B0CB001270DB /* UIApplicationExtension.swift */; };
 		8CF54BC01D7C8AF50025BE5F /* PodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF54BBF1D7C8AF50025BE5F /* PodCell.swift */; };
 		8CF54BC21D7DEA310025BE5F /* WebController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF54BC11D7DEA310025BE5F /* WebController.swift */; };
 /* End PBXBuildFile section */
@@ -77,6 +79,8 @@
 		8CE37F101D79454A00EB23C9 /* DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		8CE37F1D1D7A4C9800EB23C9 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		8CE37F1F1D7A5A2200EB23C9 /* DataHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHandler.swift; sourceTree = "<group>"; };
+		8CEEF49D1D84F20A001270DB /* EmailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailController.swift; sourceTree = "<group>"; };
+		8CEEF49F1D85B0CB001270DB /* UIApplicationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
 		8CF54BBF1D7C8AF50025BE5F /* PodCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodCell.swift; sourceTree = "<group>"; };
 		8CF54BC11D7DEA310025BE5F /* WebController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebController.swift; sourceTree = "<group>"; };
 		CCB442D7D84B77C65218B01D /* Pods_HotCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HotCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,6 +152,7 @@
 				8CE37EF81D7929FF00EB23C9 /* Extensions */,
 				8CE37F1C1D7A4C4000EB23C9 /* Enum */,
 				8CE37F0F1D79452800EB23C9 /* Data */,
+				8CEEF49C1D84F1F7001270DB /* Helper */,
 				8CE37F031D793D9F00EB23C9 /* Views */,
 				8CE37EF01D7927C400EB23C9 /* Models */,
 				8CE37EEF1D79272C00EB23C9 /* ViewControllers */,
@@ -170,7 +175,6 @@
 				8CDAE3B91D791EA900C4F220 /* HomeController.swift */,
 				8CE37EFF1D793B8800EB23C9 /* CocoaTableViewController.swift */,
 				8CC7F3471D7B45A50082E36B /* SearchViewController.swift */,
-				8CF54BC11D7DEA310025BE5F /* WebController.swift */,
 				8CBF95A81D830C0B0079782F /* CocoaSearchTableViewController.swift */,
 			);
 			name = ViewControllers;
@@ -222,6 +226,7 @@
 				8CE37EFD1D79300600EB23C9 /* UINavigationBarExtension.swift */,
 				8CC7F3431D7B37DD0082E36B /* UILabelExtension.swift */,
 				8CBF95A61D81BB4A0079782F /* UIViewControllerExtension.swift */,
+				8CEEF49F1D85B0CB001270DB /* UIApplicationExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -258,6 +263,15 @@
 				8CE37F1D1D7A4C9800EB23C9 /* Enums.swift */,
 			);
 			name = Enum;
+			sourceTree = "<group>";
+		};
+		8CEEF49C1D84F1F7001270DB /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				8CF54BC11D7DEA310025BE5F /* WebController.swift */,
+				8CEEF49D1D84F20A001270DB /* EmailController.swift */,
+			);
+			name = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -413,10 +427,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CDAE3BA1D791EA900C4F220 /* HomeController.swift in Sources */,
+				8CEEF49E1D84F20A001270DB /* EmailController.swift in Sources */,
 				8CE37EF51D79286700EB23C9 /* HCSegmentio.swift in Sources */,
 				8CE37EFA1D792A1E00EB23C9 /* UIColorExtension.swift in Sources */,
 				8CF54BC01D7C8AF50025BE5F /* PodCell.swift in Sources */,
 				8CDAE3B81D791EA900C4F220 /* AppDelegate.swift in Sources */,
+				8CEEF4A01D85B0CB001270DB /* UIApplicationExtension.swift in Sources */,
 				8CE37EFE1D79300600EB23C9 /* UINavigationBarExtension.swift in Sources */,
 				8CBF95AD1D8470000079782F /* Tuples.swift in Sources */,
 				8CE37F111D79454A00EB23C9 /* DataProvider.swift in Sources */,
