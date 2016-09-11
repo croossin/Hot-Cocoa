@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="OpenSans-Light.ttf">
@@ -481,7 +482,7 @@
                                                                 <constraint firstAttribute="height" constant="1" id="saD-Vk-IZt"/>
                                                             </constraints>
                                                         </view>
-                                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Jf-yn-thM" userLabel="descriptionView">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Jf-yn-thM" userLabel="descriptionView">
                                                             <rect key="frame" x="22" y="92" width="516" height="73"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="DESCRIPTION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0X-W1-cfm">
@@ -490,8 +491,12 @@
                                                                     <color key="textColor" red="0.13725490200000001" green="0.13725490200000001" blue="0.13725490200000001" alpha="0.49546030410000003" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Project Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HEw-Iw-u93">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Project Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HEw-Iw-u93">
                                                                     <rect key="frame" x="0.0" y="26" width="508" height="39"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="39" id="DGX-22-4of"/>
+                                                                        <constraint firstAttribute="width" constant="508" id="M0D-9V-IhZ"/>
+                                                                    </constraints>
                                                                     <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="15"/>
                                                                     <color key="textColor" red="0.20392156859999999" green="0.23921568630000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -499,12 +504,13 @@
                                                             </subviews>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="trailing" secondItem="HEw-Iw-u93" secondAttribute="trailing" constant="8" id="FDf-fj-doY"/>
-                                                                <constraint firstItem="HEw-Iw-u93" firstAttribute="leading" secondItem="8Jf-yn-thM" secondAttribute="leading" id="To7-mC-2e8"/>
+                                                                <constraint firstItem="HEw-Iw-u93" firstAttribute="trailing" secondItem="8Jf-yn-thM" secondAttribute="trailingMargin" id="94b-Ut-0q0"/>
                                                                 <constraint firstAttribute="trailing" secondItem="g0X-W1-cfm" secondAttribute="trailing" constant="10" id="Uba-V7-kPa"/>
-                                                                <constraint firstItem="HEw-Iw-u93" firstAttribute="top" secondItem="g0X-W1-cfm" secondAttribute="bottom" constant="4" id="daL-1a-4dW"/>
                                                                 <constraint firstItem="g0X-W1-cfm" firstAttribute="top" secondItem="8Jf-yn-thM" secondAttribute="top" constant="8" id="gh3-hm-6Jo"/>
+                                                                <constraint firstItem="HEw-Iw-u93" firstAttribute="bottom" secondItem="8Jf-yn-thM" secondAttribute="bottomMargin" id="iAr-02-E03"/>
                                                                 <constraint firstItem="g0X-W1-cfm" firstAttribute="leading" secondItem="8Jf-yn-thM" secondAttribute="leading" id="iEo-2C-9qb"/>
+                                                                <constraint firstItem="HEw-Iw-u93" firstAttribute="top" secondItem="g0X-W1-cfm" secondAttribute="bottom" constant="4" id="rRZ-L4-yky"/>
+                                                                <constraint firstItem="HEw-Iw-u93" firstAttribute="leading" secondItem="g0X-W1-cfm" secondAttribute="leading" id="rpX-u1-NN0"/>
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GXS-y4-HIG" userLabel="bottom line">
@@ -744,7 +750,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FEJ-86-71b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="43" y="295.5"/>
+            <point key="canvasLocation" x="698" y="295.5"/>
         </scene>
         <!--Cocoa Search Table View Controller-->
         <scene sceneID="LGz-7a-Aqp">
@@ -1104,8 +1110,11 @@
                                                                     <color key="textColor" red="0.13725490200000001" green="0.13725490200000001" blue="0.13725490200000001" alpha="0.49546030410000003" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Project Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w1G-Ay-2OL">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Project Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w1G-Ay-2OL">
                                                                     <rect key="frame" x="0.0" y="26" width="508" height="39"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="39" id="xhN-nu-vua"/>
+                                                                    </constraints>
                                                                     <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="15"/>
                                                                     <color key="textColor" red="0.20392156859999999" green="0.23921568630000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -1114,11 +1123,12 @@
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <constraints>
                                                                 <constraint firstItem="xmb-qI-lCC" firstAttribute="leading" secondItem="KJo-TE-Qfd" secondAttribute="leading" id="CB4-Fg-4N0"/>
+                                                                <constraint firstItem="w1G-Ay-2OL" firstAttribute="top" secondItem="xmb-qI-lCC" secondAttribute="bottom" constant="4" id="Rdw-kB-f8f"/>
+                                                                <constraint firstItem="w1G-Ay-2OL" firstAttribute="leading" secondItem="xmb-qI-lCC" secondAttribute="leading" id="Rf4-IK-Fhn"/>
                                                                 <constraint firstAttribute="trailing" secondItem="xmb-qI-lCC" secondAttribute="trailing" constant="10" id="Vhb-Wu-e8i"/>
-                                                                <constraint firstItem="w1G-Ay-2OL" firstAttribute="leading" secondItem="KJo-TE-Qfd" secondAttribute="leading" id="fgW-PO-nQd"/>
+                                                                <constraint firstItem="w1G-Ay-2OL" firstAttribute="trailing" secondItem="KJo-TE-Qfd" secondAttribute="trailingMargin" id="dN8-ry-DUF"/>
                                                                 <constraint firstItem="xmb-qI-lCC" firstAttribute="top" secondItem="KJo-TE-Qfd" secondAttribute="top" constant="8" id="mxu-tZ-eH8"/>
-                                                                <constraint firstAttribute="trailing" secondItem="w1G-Ay-2OL" secondAttribute="trailing" constant="8" id="wqr-xH-wr1"/>
-                                                                <constraint firstItem="w1G-Ay-2OL" firstAttribute="top" secondItem="xmb-qI-lCC" secondAttribute="bottom" constant="4" id="yUE-SU-XyL"/>
+                                                                <constraint firstItem="w1G-Ay-2OL" firstAttribute="bottom" secondItem="KJo-TE-Qfd" secondAttribute="bottomMargin" id="sHN-cd-0TY"/>
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v78-TM-lxj" userLabel="bottom line">
