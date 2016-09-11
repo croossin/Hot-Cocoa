@@ -20,12 +20,21 @@ DEPENDENCIES:
   - RAMReel
   - Segmentio (~> 1.0)
   - StatefulViewController (~> 1.0)
-  - SVProgressHUD
+  - SVProgressHUD (from `https://github.com/SVProgressHUD/SVProgressHUD.git`)
   - SwiftyJSON
   - TCTitleLoading
   - UIScrollView-InfiniteScroll
   - UITableViewCell-Badge
   - XHAmazingLoading
+
+EXTERNAL SOURCES:
+  SVProgressHUD:
+    :git: https://github.com/SVProgressHUD/SVProgressHUD.git
+
+CHECKOUT OPTIONS:
+  SVProgressHUD:
+    :commit: cc5f7d68fe76afdb79e215b8ff00133575fafacc
+    :git: https://github.com/SVProgressHUD/SVProgressHUD.git
 
 SPEC CHECKSUMS:
   Alamofire: b70a7352335f8ea5babd0a923eb7e8eacc67b877
@@ -41,4 +50,6 @@ SPEC CHECKSUMS:
   UITableViewCell-Badge: db55cad2d53d43dd3e66e656b1f6612cb1d7138d
   XHAmazingLoading: 86da1c59191326ea63e6df7ba3886f3e6ddef032
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: b123035cd185627c7fc6f46176c6dff809e80500
+
+COCOAPODS: 1.1.0.rc.1
