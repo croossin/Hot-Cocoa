@@ -36,6 +36,12 @@ class CocoaPodCell: FoldingCell {
         }
     }
 
+    @IBAction func openGitHubLink(sender: AnyObject) {
+        if let pod = pod{
+            WebController.displayURLWithinView(pod.url)
+        }
+    }
+
     var pod: CocoaPod?
 
     override func awakeFromNib() {
