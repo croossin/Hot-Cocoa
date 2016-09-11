@@ -25,6 +25,8 @@ class CocoaSearchTableViewController: UITableViewController {
     var platform: Platform = .IOS
     var searchTerm: String = ""
 
+    weak var delegate: CocoaTableViewControllerDelegate?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -44,6 +46,8 @@ class CocoaSearchTableViewController: UITableViewController {
 
     private func _loadPods(){
         print("Were loading search for \(platform)")
+        delegate?.loadingStarted()
+        
         DataProvider.getPodsBasedOnSearchTag(platform, searchTerm: searchTerm, currentNumberRetrieved: pods.count, callback: { (listOfPods) in
                 self.pods = listOfPods
 
@@ -51,6 +55,7 @@ class CocoaSearchTableViewController: UITableViewController {
 
                 self.tableView.reloadData()
 
+                self.delegate?.loadingEnded()
             }, errorCallback: {
                 SVProgressHUD.showErrorWithStatus("Unable to connect to server")
         })

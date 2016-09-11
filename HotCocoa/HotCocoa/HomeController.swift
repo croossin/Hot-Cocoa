@@ -111,18 +111,22 @@ class HomeController: UIViewController {
         guard let a = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("CocoaSearchTableViewController") as? CocoaSearchTableViewController else { return [] }
         a.platform = .IOS
         a.searchTerm = searchTerm
+        a.delegate = self
 
         guard let b = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("CocoaSearchTableViewController") as? CocoaSearchTableViewController else { return [] }
         b.platform = .OSX
         b.searchTerm = searchTerm
+        b.delegate = self
 
         guard let c = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("CocoaSearchTableViewController") as? CocoaSearchTableViewController else { return [] }
         c.platform = .WATCHOS
         c.searchTerm = searchTerm
+        c.delegate = self
 
         guard let d = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("CocoaSearchTableViewController") as? CocoaSearchTableViewController else { return [] }
         d.platform = .TVOS
         d.searchTerm = searchTerm
+        d.delegate = self
 
         return [a,b,c,d]
     }
@@ -146,17 +150,11 @@ extension HomeController: UIScrollViewDelegate {
 }
 
 extension HomeController: CocoaTableViewControllerDelegate{
-    func loadingStarted(currentPodPage: PodSorting) {
-        //Check if we are on the current page 
-        //If so, show loading
-        if currentPodPage ==  PodSorting(id: Int(floor(scrollView.contentOffset.x / scrollView.frame.width))){
-            self.startAnimationTitle()
-        }
+    func loadingStarted() {
+        self.startAnimationTitle()
     }
 
-    func loadingEnded(currentPodPage: PodSorting) {
-        if currentPodPage ==  PodSorting(id: Int(floor(scrollView.contentOffset.x / scrollView.frame.width))){
-            self.stopAnimationTitle()
-        }
+    func loadingEnded() {
+        self.stopAnimationTitle()
     }
 }

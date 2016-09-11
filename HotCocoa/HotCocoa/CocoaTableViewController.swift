@@ -12,8 +12,8 @@ import SVProgressHUD
 import FoldingCell
 
 protocol CocoaTableViewControllerDelegate: class {
-    func loadingStarted(currentPodPage: PodSorting)
-    func loadingEnded(currentPodPage: PodSorting)
+    func loadingStarted()
+    func loadingEnded()
 }
 
 class CocoaTableViewController: UITableViewController {
@@ -49,7 +49,7 @@ class CocoaTableViewController: UITableViewController {
     }
 
     private func _loadPods(){
-        delegate?.loadingStarted(self.podSorting)
+        delegate?.loadingStarted()
 
         DataProvider.getPodsBasedOnPodSorting(podSorting, currentNumberRetrieved: pods.count, callback: { listOfPods in
             self.pods = listOfPods
@@ -58,7 +58,7 @@ class CocoaTableViewController: UITableViewController {
 
             self.tableView.reloadData()
 
-            self.delegate?.loadingEnded(self.podSorting)
+            self.delegate?.loadingEnded()
             }, errorCallback: {
                 SVProgressHUD.showErrorWithStatus("Unable to connect to server")
         })
