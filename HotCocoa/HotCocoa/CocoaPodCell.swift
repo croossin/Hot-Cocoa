@@ -27,6 +27,10 @@ class CocoaPodCell: FoldingCell {
     @IBOutlet weak var closeLicense: UILabel!
     @IBOutlet weak var closeDownloads: UILabel!
 
+    @IBOutlet weak var openDisclaimerText: UILabel!
+
+    @IBOutlet weak var authorGHAvatarImage: UIImageView!
+    
     var githubLink: String = ""
 
     @IBOutlet weak var emailAuthorButton: UIButton!
@@ -73,10 +77,19 @@ class CocoaPodCell: FoldingCell {
 
         authorName.text = pod.author.name
 
+        //See if we can get gh username from gh link
+        if let ghUsername = pod.githubUsername(){
+            DataProvider.getImageFromUrl("https://github.com/\(ghUsername).png?size=49", callback: {[weak self] image in
+                self?.authorGHAvatarImage.image = image
+            })
+        }
+
         lastRelease.text = pod.lastRelease
 
         closeLanguage.text = pod.language
         closeLicense.text = pod.license
         closeDownloads.text = pod.downloads.total
+
+        openDisclaimerText.text = "\(pod.name) has \(pod.github.stars) stars on GitHub"
     }
 }

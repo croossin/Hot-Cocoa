@@ -52,5 +52,9 @@ class CocoaPod {
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailTest.evaluateWithObject(self.author.email)
     }
+
+    func githubUsername() -> String?{
+        return self.url.sliceFrom(".com/", to: "/")
+    }
 }
 
