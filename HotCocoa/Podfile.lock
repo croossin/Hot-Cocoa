@@ -9,6 +9,7 @@ PODS:
   - SVProgressHUD (2.0.3)
   - SwiftyJSON (2.3.2)
   - TCTitleLoading (0.0.4)
+  - TLTagsControl (1.0.0)
   - UIScrollView-InfiniteScroll (0.9.1)
   - UITableViewCell-Badge (1.0)
   - XHAmazingLoading (0.2)
@@ -23,6 +24,7 @@ DEPENDENCIES:
   - SVProgressHUD (from `https://github.com/SVProgressHUD/SVProgressHUD.git`)
   - SwiftyJSON
   - TCTitleLoading
+  - TLTagsControl (from `https://github.com/mohlman3/TLTagsControl.git`)
   - UIScrollView-InfiniteScroll
   - UITableViewCell-Badge
   - XHAmazingLoading
@@ -30,11 +32,16 @@ DEPENDENCIES:
 EXTERNAL SOURCES:
   SVProgressHUD:
     :git: https://github.com/SVProgressHUD/SVProgressHUD.git
+  TLTagsControl:
+    :git: https://github.com/mohlman3/TLTagsControl.git
 
 CHECKOUT OPTIONS:
   SVProgressHUD:
     :commit: cc5f7d68fe76afdb79e215b8ff00133575fafacc
     :git: https://github.com/SVProgressHUD/SVProgressHUD.git
+  TLTagsControl:
+    :commit: 6a60cc36d18ffb143ef2fe25859339757e7ce44c
+    :git: https://github.com/mohlman3/TLTagsControl.git
 
 SPEC CHECKSUMS:
   Alamofire: b70a7352335f8ea5babd0a923eb7e8eacc67b877
@@ -46,10 +53,11 @@ SPEC CHECKSUMS:
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
   TCTitleLoading: ecc8810b6e3609fcab4068d0844622a1189e6bca
+  TLTagsControl: 34ab7d25f282aa2b8b42e73cc71b96ffe9fa7a15
   UIScrollView-InfiniteScroll: 14e204c50ca4040467e1cbfa141dad7a18919b56
   UITableViewCell-Badge: db55cad2d53d43dd3e66e656b1f6612cb1d7138d
   XHAmazingLoading: 86da1c59191326ea63e6df7ba3886f3e6ddef032
 
-PODFILE CHECKSUM: b123035cd185627c7fc6f46176c6dff809e80500
+PODFILE CHECKSUM: 4b33ec680bd79762eb0a9357c93aa93adae9bc25
 
 COCOAPODS: 1.1.0.rc.1

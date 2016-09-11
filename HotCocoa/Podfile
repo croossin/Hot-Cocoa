@@ -15,5 +15,6 @@ pod 'FoldingCell'
 pod 'StatefulViewController', '~> 1.0'
 pod 'TCTitleLoading'
 pod 'XHAmazingLoading'
+pod 'TLTagsControl', :git => 'https://github.com/mohlman3/TLTagsControl.git'
 
 end

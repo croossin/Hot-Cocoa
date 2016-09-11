@@ -8,6 +8,7 @@
 
 import UIKit
 import FoldingCell
+import TLTagsControl
 
 class PodCell: FoldingCell {
 
@@ -36,6 +37,8 @@ class PodCell: FoldingCell {
 
     @IBOutlet weak var projectImage: UIImageView!
 
+    @IBOutlet weak var tagsView: TLTagsControl!
+
     @IBAction func launchGitHub(sender: AnyObject) {
         WebController.displayURLWithinView(githubLink)
     }
@@ -52,6 +55,11 @@ class PodCell: FoldingCell {
 
         foregroundView.layer.cornerRadius = 10
         foregroundView.layer.masksToBounds = true
+
+        tagsView.mode = .List
+        tagsView.tagsBackgroundColor = UIColor.CoralColor
+        tagsView.tagsTextColor = UIColor.whiteColor()
+        tagsView.tapDelegate = self
 
         super.awakeFromNib()
     }
@@ -87,6 +95,17 @@ class PodCell: FoldingCell {
         DataProvider.getImageFromUrl(pod.author.avatar){[weak self] image in
             guard let strongSelf = self else { return }
             strongSelf.authorAvatar.image = image
+        }
+
+        tagsView.tags = NSMutableArray(array: pod.tags)
+        tagsView.reloadTagSubviews()
+    }
+}
+
+extension PodCell: TLTagsControlDelegate{
+    func tagsControl(tagsControl: TLTagsControl!, tappedAtIndex index: Int) {
+        if let tagName = tagsControl.tags[index] as? String{
+            WindowHelper.displayTagVCOnRoot(tagName)
         }
     }
 }
