@@ -719,7 +719,6 @@
                                     <outlet property="foregroundViewTop" destination="dYS-8G-hXZ" id="5yx-rw-VYk"/>
                                     <outlet property="openLanguage" destination="ASz-UL-llL" id="4LJ-Sd-L1A"/>
                                     <outlet property="openLicense" destination="Rjc-tV-2hE" id="OjF-Pp-oOp"/>
-                                    <outlet property="openProjectDate" destination="uKp-bU-cqH" id="UGv-5b-xWg"/>
                                     <outlet property="openProjectDescription" destination="HEw-Iw-u93" id="4ks-do-2UR"/>
                                     <outlet property="openProjectName" destination="YPm-az-u9E" id="W3v-Fu-vCZ"/>
                                     <outlet property="openVotes" destination="IU3-RG-KqH" id="ymL-Tf-ee3"/>

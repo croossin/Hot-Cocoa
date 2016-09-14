@@ -21,7 +21,6 @@ class PodCell: FoldingCell {
     @IBOutlet weak var openProjectDescription: UILabel!
 
     @IBOutlet weak var closeProjectDate: UILabel!
-    @IBOutlet weak var openProjectDate: UILabel!
 
     @IBOutlet weak var closeLanguage: UILabel!
     @IBOutlet weak var openLanguage: UILabel!
@@ -57,7 +56,7 @@ class PodCell: FoldingCell {
         foregroundView.layer.masksToBounds = true
 
         tagsView.mode = .List
-        tagsView.tagsBackgroundColor = UIColor.CoralColor
+        tagsView.tagsBackgroundColor = UIColor.flatLightBlueColor
         tagsView.tagsTextColor = UIColor.whiteColor()
         tagsView.tapDelegate = self
 
@@ -78,7 +77,6 @@ class PodCell: FoldingCell {
         openProjectDescription.text = pod.description
 
         closeProjectDate.text = pod.minifyPrettyDate()
-        openProjectDate.text = pod.dateAddedPretty
 
         closeLanguage.text = pod.language
         openLanguage.text = pod.language
