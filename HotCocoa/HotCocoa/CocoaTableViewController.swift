@@ -61,6 +61,7 @@ class CocoaTableViewController: UITableViewController {
             self.delegate?.loadingEnded()
             }, errorCallback: {
                 SVProgressHUD.showErrorWithStatus("Unable to connect to server")
+                self.delegate?.loadingEnded()
         })
     }
 
