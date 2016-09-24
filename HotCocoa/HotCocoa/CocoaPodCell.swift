@@ -27,6 +27,10 @@ class CocoaPodCell: FoldingCell {
     @IBOutlet weak var closeLicense: UILabel!
     @IBOutlet weak var closeDownloads: UILabel!
 
+    @IBOutlet weak var openLanguage: UILabel!
+    @IBOutlet weak var openLicense: UILabel!
+    @IBOutlet weak var openDownloads: UILabel!
+
     @IBOutlet weak var openDisclaimerText: UILabel!
 
     @IBOutlet weak var authorGHAvatarImage: UIImageView!
@@ -89,6 +93,10 @@ class CocoaPodCell: FoldingCell {
         closeLanguage.text = pod.language
         closeLicense.text = pod.license
         closeDownloads.text = pod.downloads.total
+
+        openLanguage.text = pod.language
+        openLicense.text = pod.license
+        openDownloads.text = pod.downloads.total
 
         openDisclaimerText.text = "\(pod.name) has \(pod.github.stars) stars on GitHub"
     }

@@ -1347,6 +1347,9 @@
                                     <outlet property="lastRelease" destination="zn8-bx-FEm" id="5yf-7t-84O"/>
                                     <outlet property="openDescription" destination="w1G-Ay-2OL" id="crD-Ax-W0e"/>
                                     <outlet property="openDisclaimerText" destination="nMA-78-S9t" id="IC9-N4-HgD"/>
+                                    <outlet property="openDownloads" destination="lc1-xC-Tbx" id="YAl-Th-1kT"/>
+                                    <outlet property="openLanguage" destination="mTO-Sb-xmx" id="UZV-Z5-fza"/>
+                                    <outlet property="openLicense" destination="vhu-Rl-xkj" id="D2I-5p-hsC"/>
                                     <outlet property="openProjectName" destination="CWf-tH-63p" id="u3U-R2-XiS"/>
                                 </connections>
                             </tableViewCell>
