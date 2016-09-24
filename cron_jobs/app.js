@@ -6,7 +6,8 @@ var MAIN_URL = 'https://www.cocoacontrols.com';
 
 var mongoose = require('mongoose');
 
-mongoose.connect(process.env.MONGODB_URI);
+// mongoose.connect(process.env.MONGODB_URI);
+mongoose.connect('mongodb://localhost/hotcocoa');
 
 var db = mongoose.connection;
 
@@ -88,9 +89,13 @@ function getPageData(page){
             //If there isn't - save it
             CocoaPod.findOne({name: control.name})
             .then(function(pod){
-              console.log("There is already a pod with name: " pod.name);
+              if(pod){
+                console.log("There is already a pod with name: " pod.name);  
+              }else{
+                control.save();
+              }
             }, function(err){
-              control.save();
+              console.log("error: " + err);
             });
           }
         });
