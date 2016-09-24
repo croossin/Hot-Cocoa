@@ -21,3 +21,12 @@ struct GitHubLinks{
     static let MAIN_URL: String = "https://github.com/"
     static let IMAGE_SUFFIX: String = ".png?size=49"
 }
+
+struct DetailedScroll{
+    static let DETAILED_ARRAY: NSMutableArray = [
+        DetailedInfo.GitHub.rawValue,
+        DetailedInfo.CodeBase.rawValue,
+        DetailedInfo.Downloads.rawValue,
+        DetailedInfo.Installs.rawValue,
+        ]
+}

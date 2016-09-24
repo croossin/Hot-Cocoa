@@ -51,3 +51,25 @@ enum Platform: String{
         }
     }
 }
+
+enum DetailedInfo: String{
+    case GitHub    = "GitHub"
+    case CodeBase  = "Codebase"
+    case Downloads = "Downloads"
+    case Installs  = "Installs"
+
+    init?(id : Int) {
+        switch id {
+        case 0:
+            self = .GitHub
+        case 1:
+            self = .CodeBase
+        case 2:
+            self = .Downloads
+        case 3:
+            self = .Installs
+        default:
+            return nil
+        }
+    }
+}

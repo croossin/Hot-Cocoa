@@ -56,5 +56,21 @@ class CocoaPod {
     func githubUsername() -> String?{
         return self.url.sliceFrom(".com/", to: "/")
     }
+
+    func detailedGitHubInfo() -> String{
+        return "Stars: \(self.github.stars) | Contributors: \(self.github.contributors)\nPull Requests: \(self.github.pullRequests) | Issues: \(self.github.issues)\nForks: \(self.github.forks) | Watchers: \(self.github.watchers)\n"
+    }
+
+    func detailedDownloadInfo() -> String{
+        return "Total: \(self.downloads.total)\nWeek: \(self.downloads.week)\nMonth: \(self.downloads.month)"
+    }
+
+    func detailedInstallInfo() -> String{
+        return "Apps: \(self.installs.apps)\nApp This Week: \(self.installs.appsThisWeek)\nPod Tries: \(self.installs.podTries)"
+    }
+
+    func detailedCodebaseInfo() -> String{
+        return "Files: \(self.codebase.files)\nSize: \(self.codebase.size)\n Lines of Code: \(self.codebase.linesOfCode)"
+    }
 }
 

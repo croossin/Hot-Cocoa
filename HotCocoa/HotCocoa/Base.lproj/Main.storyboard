@@ -41,12 +41,8 @@
             <string>OpenSans</string>
             <string>OpenSans</string>
             <string>OpenSans</string>
-            <string>OpenSans</string>
-            <string>OpenSans</string>
         </mutableArray>
         <mutableArray key="OpenSans-Semibold.ttf">
-            <string>OpenSans-Semibold</string>
-            <string>OpenSans-Semibold</string>
             <string>OpenSans-Semibold</string>
             <string>OpenSans-Semibold</string>
             <string>OpenSans-Semibold</string>
@@ -552,7 +548,7 @@
                                                                     <color key="textColor" red="0.13725490200000001" green="0.13725490200000001" blue="0.13725490200000001" alpha="0.49546030410000003" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="107-cE-XEr" customClass="TLTagsControl">
+                                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="107-cE-XEr" customClass="TLTagsControl">
                                                                     <rect key="frame" x="0.0" y="27" width="508" height="30"/>
                                                                 </scrollView>
                                                             </subviews>
@@ -1129,79 +1125,38 @@
                                                 <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VpN-ks-1zb" userLabel="ThirdContanerView" customClass="RotatedView" customModule="FoldingCell">
                                                     <rect key="frame" x="0.0" y="330" width="560" height="72"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1XZ-v4-F3g" userLabel="fromView">
-                                                            <rect key="frame" x="22" y="0.0" width="257" height="73"/>
+                                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1XZ-v4-F3g" userLabel="fromView">
+                                                            <rect key="frame" x="22" y="0.0" width="516" height="73"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="TAGS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PwC-1t-NIV">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="DETAILED INFORMATION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PwC-1t-NIV">
                                                                     <rect key="frame" x="0.0" y="8" width="247" height="14"/>
                                                                     <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="10"/>
                                                                     <color key="textColor" red="0.13725490200000001" green="0.13725490200000001" blue="0.13725490200000001" alpha="0.49546030410000003" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="06:30 pm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbU-Sb-qog">
-                                                                    <rect key="frame" x="0.0" y="26" width="247" height="21"/>
-                                                                    <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="15"/>
-                                                                    <color key="textColor" red="0.20392156859999999" green="0.23921568630000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="May 16, 2015" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="30F-W0-Gkb">
-                                                                    <rect key="frame" x="0.0" y="47" width="247" height="17"/>
-                                                                    <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="12"/>
-                                                                    <color key="textColor" red="0.20392156859999999" green="0.23921568630000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
+                                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b5n-d4-hpE" customClass="TLTagsControl">
+                                                                    <rect key="frame" x="4" y="26" width="508" height="30"/>
+                                                                </scrollView>
                                                             </subviews>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <constraints>
-                                                                <constraint firstItem="nbU-Sb-qog" firstAttribute="top" secondItem="PwC-1t-NIV" secondAttribute="bottom" constant="4" id="7Pq-lk-H0P"/>
+                                                                <constraint firstAttribute="bottom" secondItem="b5n-d4-hpE" secondAttribute="bottom" constant="17" id="3uK-CB-I5k"/>
                                                                 <constraint firstItem="PwC-1t-NIV" firstAttribute="top" secondItem="1XZ-v4-F3g" secondAttribute="top" constant="8" id="9Kn-SK-0CA"/>
-                                                                <constraint firstAttribute="trailing" secondItem="30F-W0-Gkb" secondAttribute="trailing" constant="10" id="F5I-Tn-DLf"/>
-                                                                <constraint firstItem="30F-W0-Gkb" firstAttribute="leading" secondItem="1XZ-v4-F3g" secondAttribute="leading" id="Ygf-Kg-Zxf"/>
                                                                 <constraint firstItem="PwC-1t-NIV" firstAttribute="leading" secondItem="1XZ-v4-F3g" secondAttribute="leading" id="aHA-ys-Nwf"/>
-                                                                <constraint firstAttribute="trailing" secondItem="nbU-Sb-qog" secondAttribute="trailing" constant="10" id="cKD-4N-RXx"/>
-                                                                <constraint firstItem="nbU-Sb-qog" firstAttribute="leading" secondItem="1XZ-v4-F3g" secondAttribute="leading" id="eAV-Ou-LHd"/>
-                                                                <constraint firstItem="30F-W0-Gkb" firstAttribute="top" secondItem="nbU-Sb-qog" secondAttribute="bottom" id="gll-HK-8bf"/>
-                                                                <constraint firstAttribute="trailing" secondItem="PwC-1t-NIV" secondAttribute="trailing" constant="10" id="ju4-pL-SCy"/>
-                                                            </constraints>
-                                                        </view>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mbo-eU-pf7" userLabel="toView">
-                                                            <rect key="frame" x="282" y="0.0" width="256" height="73"/>
-                                                            <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="9/9/2016" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7M-jj-7hw">
-                                                                    <rect key="frame" x="0.0" y="26" width="256" height="21"/>
-                                                                    <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="15"/>
-                                                                    <color key="textColor" red="0.20392156859999999" green="0.23921568630000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="DATE ADDED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7v-al-pxZ">
-                                                                    <rect key="frame" x="0.0" y="8" width="256" height="14"/>
-                                                                    <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="10"/>
-                                                                    <color key="textColor" red="0.13725490200000001" green="0.13725490200000001" blue="0.13725490200000001" alpha="0.49546030410000003" colorSpace="calibratedRGB"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                            </subviews>
-                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="trailing" secondItem="g7v-al-pxZ" secondAttribute="trailing" id="1vM-v2-TST"/>
-                                                                <constraint firstItem="M7M-jj-7hw" firstAttribute="leading" secondItem="Mbo-eU-pf7" secondAttribute="leading" id="2LE-0V-9DH"/>
-                                                                <constraint firstItem="g7v-al-pxZ" firstAttribute="top" secondItem="Mbo-eU-pf7" secondAttribute="top" constant="8" id="9Lm-Sm-ZiE"/>
-                                                                <constraint firstItem="g7v-al-pxZ" firstAttribute="leading" secondItem="Mbo-eU-pf7" secondAttribute="leading" id="Hji-mH-Di8"/>
-                                                                <constraint firstItem="M7M-jj-7hw" firstAttribute="top" secondItem="g7v-al-pxZ" secondAttribute="bottom" constant="4" id="UYc-VW-dAN"/>
-                                                                <constraint firstAttribute="trailing" secondItem="M7M-jj-7hw" secondAttribute="trailing" id="Ux6-SC-cf7"/>
+                                                                <constraint firstItem="b5n-d4-hpE" firstAttribute="centerX" secondItem="1XZ-v4-F3g" secondAttribute="centerX" id="bJ1-SX-meN"/>
+                                                                <constraint firstAttribute="trailing" secondItem="PwC-1t-NIV" secondAttribute="trailing" constant="269" id="ju4-pL-SCy"/>
+                                                                <constraint firstItem="b5n-d4-hpE" firstAttribute="leading" secondItem="1XZ-v4-F3g" secondAttribute="leading" constant="4" id="lSd-xy-Ke1"/>
+                                                                <constraint firstItem="b5n-d4-hpE" firstAttribute="top" secondItem="PwC-1t-NIV" secondAttribute="bottom" constant="4" id="r1J-Xl-Q5g"/>
+                                                                <constraint firstItem="b5n-d4-hpE" firstAttribute="top" secondItem="1XZ-v4-F3g" secondAttribute="top" constant="26" id="ulH-YI-ElT"/>
                                                             </constraints>
                                                         </view>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstItem="1XZ-v4-F3g" firstAttribute="top" secondItem="VpN-ks-1zb" secondAttribute="top" id="Agi-I1-hTl"/>
-                                                        <constraint firstAttribute="bottom" secondItem="Mbo-eU-pf7" secondAttribute="bottom" constant="-1" id="GsZ-tm-1ox"/>
-                                                        <constraint firstItem="Mbo-eU-pf7" firstAttribute="top" secondItem="VpN-ks-1zb" secondAttribute="top" id="MNY-6X-Sbx"/>
                                                         <constraint firstAttribute="bottom" secondItem="1XZ-v4-F3g" secondAttribute="bottom" constant="-1" id="RAe-Uz-mml"/>
-                                                        <constraint firstItem="1XZ-v4-F3g" firstAttribute="width" secondItem="Mbo-eU-pf7" secondAttribute="width" id="YZH-O8-IFW"/>
                                                         <constraint firstAttribute="height" constant="72" id="hV9-Py-l62"/>
-                                                        <constraint firstItem="Mbo-eU-pf7" firstAttribute="leading" secondItem="1XZ-v4-F3g" secondAttribute="trailing" constant="3" id="oHF-aj-DdM"/>
                                                         <constraint firstItem="1XZ-v4-F3g" firstAttribute="leading" secondItem="VpN-ks-1zb" secondAttribute="leading" constant="22" id="tHh-Hj-mQ1"/>
-                                                        <constraint firstAttribute="trailing" secondItem="Mbo-eU-pf7" secondAttribute="trailing" constant="22" id="yFb-H2-7eb"/>
                                                     </constraints>
                                                 </view>
                                                 <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oxZ-i9-4TW" userLabel="BottomContanerView" customClass="RotatedView" customModule="FoldingCell">
@@ -1309,6 +1264,7 @@
                                     <outlet property="closeRatings" destination="OTe-mT-WbY" id="biK-YK-u17"/>
                                     <outlet property="containerView" destination="Ggz-JW-xbN" id="g2k-QV-0YE"/>
                                     <outlet property="containerViewTop" destination="jGt-xD-xsU" id="mJq-WH-pfx"/>
+                                    <outlet property="detailedScrollView" destination="b5n-d4-hpE" id="c0q-yA-IVb"/>
                                     <outlet property="emailAuthorButton" destination="TEH-cQ-ijR" id="eXf-mh-2cg"/>
                                     <outlet property="foregroundView" destination="oQU-eK-JS3" id="krJ-CA-UAO"/>
                                     <outlet property="foregroundViewTop" destination="BTq-qa-mNa" id="sv3-4Z-Chn"/>

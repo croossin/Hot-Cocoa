@@ -8,6 +8,7 @@
 
 import UIKit
 import FoldingCell
+import TLTagsControl
 
 class CocoaPodCell: FoldingCell {
 
@@ -35,6 +36,8 @@ class CocoaPodCell: FoldingCell {
 
     @IBOutlet weak var authorGHAvatarImage: UIImageView!
     
+    @IBOutlet weak var detailedScrollView: TLTagsControl!
+    
     var githubLink: String = ""
 
     @IBOutlet weak var emailAuthorButton: UIButton!
@@ -58,6 +61,12 @@ class CocoaPodCell: FoldingCell {
         foregroundView.layer.cornerRadius = 10
         foregroundView.layer.masksToBounds = true
 
+        detailedScrollView.mode = .List
+        detailedScrollView.tagsBackgroundColor = UIColor.flatLightBlueColor
+        detailedScrollView.tagsTextColor = UIColor.whiteColor()
+        detailedScrollView.tapDelegate = self
+        detailedScrollView.userInteractionEnabled = true
+        
         super.awakeFromNib()
     }
 
@@ -108,10 +117,33 @@ class CocoaPodCell: FoldingCell {
         openDownloads.text = pod.downloads.total
 
         openDisclaimerText.text = "\(pod.name) has \(pod.github.stars) stars on GitHub"
+
+        detailedScrollView.tags = DetailedScroll.DETAILED_ARRAY
+        detailedScrollView.reloadTagSubviews()
     }
 
     func profileImageTapped(img: AnyObject){
         guard let username = ghUsername else { return }
         WebController.displayURLWithinView(GitHubLinks.MAIN_URL + username)
+    }
+}
+
+extension CocoaPodCell: TLTagsControlDelegate{
+    func tagsControl(tagsControl: TLTagsControl!, tappedAtIndex index: Int) {
+        if let selectedDetail = DetailedInfo(id: index){
+
+            guard let selectedPod = pod else { return }
+
+            switch selectedDetail {
+            case .GitHub:
+                AlertController.displayAlert("GitHub", subtitle: selectedPod.detailedGitHubInfo())
+            case .Downloads:
+                AlertController.displayAlert("Downloads", subtitle: selectedPod.detailedDownloadInfo())
+            case .Installs:
+                AlertController.displayAlert("Installs", subtitle: selectedPod.detailedInstallInfo())
+            case .CodeBase:
+                AlertController.displayAlert("Code Base", subtitle: selectedPod.detailedCodebaseInfo())
+            }
+        }
     }
 }
