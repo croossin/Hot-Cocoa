@@ -121,8 +121,6 @@ class CocoaTableViewController: UITableViewController {
         }
 
         cell.loadCell(pods[indexPath.row])
-
-        cell.number = indexPath.row
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

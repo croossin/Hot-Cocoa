@@ -61,6 +61,9 @@ class CocoaPodCell: FoldingCell {
         foregroundView.layer.cornerRadius = 10
         foregroundView.layer.masksToBounds = true
 
+        authorGHAvatarImage.layer.cornerRadius = authorGHAvatarImage.frame.size.width / 2
+        authorGHAvatarImage.layer.masksToBounds = true
+
         detailedScrollView.mode = .List
         detailedScrollView.tagsBackgroundColor = UIColor.flatLightBlueColor
         detailedScrollView.tagsTextColor = UIColor.whiteColor()

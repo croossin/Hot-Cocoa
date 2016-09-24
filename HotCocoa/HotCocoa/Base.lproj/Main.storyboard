@@ -10,7 +10,6 @@
             <string>OpenSans-Light</string>
             <string>OpenSans-Light</string>
             <string>OpenSans-Light</string>
-            <string>OpenSans-Light</string>
         </mutableArray>
         <mutableArray key="OpenSans-Regular.ttf">
             <string>OpenSans</string>
@@ -152,12 +151,6 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bAC-dF-8ST" userLabel="LeftView">
                                                     <rect key="frame" x="0.0" y="0.0" width="88" height="165"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="#25" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MZE-nM-FTD">
-                                                            <rect key="frame" x="19" y="31" width="43" height="33"/>
-                                                            <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="24"/>
-                                                            <color key="textColor" red="1" green="1" blue="1" alpha="0.80086043070000001" colorSpace="calibratedRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="DATE ADDED" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b0S-sS-PGq">
                                                             <rect key="frame" x="18" y="101" width="61" height="14"/>
                                                             <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="10"/>
@@ -170,16 +163,25 @@
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="0.80434438340000003" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n7k-8f-5qW" userLabel="photo">
+                                                            <rect key="frame" x="20" y="28" width="49" height="49"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="49" id="Me4-gW-27e"/>
+                                                                <constraint firstAttribute="width" constant="49" id="aEY-Jj-eoA"/>
+                                                            </constraints>
+                                                        </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.36470588240000001" green="0.2901960784" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="88" id="0Bl-bb-wGU"/>
+                                                        <constraint firstAttribute="trailing" secondItem="n7k-8f-5qW" secondAttribute="trailing" constant="19" id="6eR-NS-Pkm"/>
                                                         <constraint firstItem="b0S-sS-PGq" firstAttribute="leading" secondItem="bAC-dF-8ST" secondAttribute="leading" constant="13" id="Ba8-AR-vwq"/>
                                                         <constraint firstAttribute="bottom" secondItem="b0S-sS-PGq" secondAttribute="bottom" constant="50" id="O3s-sw-joU"/>
+                                                        <constraint firstItem="b0S-sS-PGq" firstAttribute="top" secondItem="n7k-8f-5qW" secondAttribute="bottom" constant="24" id="RRw-Sh-ugY"/>
+                                                        <constraint firstItem="n7k-8f-5qW" firstAttribute="top" secondItem="bAC-dF-8ST" secondAttribute="top" constant="28" id="Re3-PL-5gJ"/>
                                                         <constraint firstItem="aZ4-Eo-sDt" firstAttribute="leading" secondItem="bAC-dF-8ST" secondAttribute="leading" constant="15" id="SLH-9w-F5k"/>
-                                                        <constraint firstItem="MZE-nM-FTD" firstAttribute="centerX" secondItem="bAC-dF-8ST" secondAttribute="centerX" constant="-4" id="U7j-ET-vrt"/>
-                                                        <constraint firstItem="MZE-nM-FTD" firstAttribute="centerY" secondItem="bAC-dF-8ST" secondAttribute="centerY" constant="-35" id="iEB-9A-0w8"/>
                                                         <constraint firstAttribute="bottom" secondItem="aZ4-Eo-sDt" secondAttribute="bottom" constant="27" id="igQ-r4-6kd"/>
+                                                        <constraint firstItem="n7k-8f-5qW" firstAttribute="leading" secondItem="bAC-dF-8ST" secondAttribute="leading" constant="20" id="kbZ-n1-cID"/>
                                                     </constraints>
                                                 </view>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dots" translatesAutoresizingMaskIntoConstraints="NO" id="vTX-NB-UJp">
@@ -669,9 +671,9 @@
                                 <connections>
                                     <outlet property="authorAvatar" destination="AyB-Cj-Z8D" id="CbD-LO-qUs"/>
                                     <outlet property="authorName" destination="RlG-FH-gnA" id="sjO-Jh-bwf"/>
+                                    <outlet property="closeAvatar" destination="n7k-8f-5qW" id="41y-he-N7j"/>
                                     <outlet property="closeLanguage" destination="zFY-zK-CuM" id="q2j-JZ-hkK"/>
                                     <outlet property="closeLicense" destination="WeP-wW-jRw" id="nlo-7l-lMo"/>
-                                    <outlet property="closeNumberLabel" destination="MZE-nM-FTD" id="24u-yb-SAp"/>
                                     <outlet property="closeProjectDate" destination="aZ4-Eo-sDt" id="M3m-u0-i9m"/>
                                     <outlet property="closeProjectDescription" destination="dKk-6o-bHs" id="sYp-xi-Tvs"/>
                                     <outlet property="closeProjectName" destination="0RF-wa-mbc" id="DbE-sY-Euu"/>

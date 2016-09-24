@@ -12,7 +12,7 @@ import TLTagsControl
 
 class PodCell: FoldingCell {
 
-    @IBOutlet weak var closeNumberLabel: UILabel!
+    @IBOutlet weak var closeAvatar: UIImageView!
 
     @IBOutlet weak var closeProjectName: UILabel!
     @IBOutlet weak var openProjectName: UILabel!
@@ -47,16 +47,16 @@ class PodCell: FoldingCell {
     var githubLink: String = ""
     var internalpod: Pod?
 
-    var number: Int = 0 {
-        didSet {
-            closeNumberLabel.text = String(number)
-        }
-    }
-
     override func awakeFromNib() {
 
         foregroundView.layer.cornerRadius = 10
         foregroundView.layer.masksToBounds = true
+
+        closeAvatar.layer.cornerRadius = closeAvatar.frame.size.width / 2
+        closeAvatar.layer.masksToBounds = true
+
+        authorAvatar.layer.cornerRadius = authorAvatar.frame.size.width / 2
+        authorAvatar.layer.masksToBounds = true
 
         tagsView.mode = .List
         tagsView.tagsBackgroundColor = UIColor.flatLightBlueColor
@@ -99,8 +99,8 @@ class PodCell: FoldingCell {
 
         authorName.text = pod.author.name
         DataProvider.getImageFromUrl(pod.author.avatar){[weak self] image in
-            guard let strongSelf = self else { return }
-            strongSelf.authorAvatar.image = image
+            self?.authorAvatar.image = image
+            self?.closeAvatar.image = image
 
             //Add tap gesture to their profile image to take directly to personal GH Link
             let tapGesture = UITapGestureRecognizer(target: self, action: Selector("profileImageTapped:"))

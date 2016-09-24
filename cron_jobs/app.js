@@ -47,7 +47,8 @@ db.once('open', function() {
     console.log("Running Cron Job at: " + Date());
 
     //Get page data for the first page
-    getPageData(0);
+    getPageData(1);
+    getPageData(2);
 });
 
 function getPageData(page){
@@ -90,7 +91,7 @@ function getPageData(page){
             CocoaPod.findOne({name: control.name})
             .then(function(pod){
               if(pod){
-                console.log("There is already a pod with name: " pod.name);  
+                console.log("There is already a pod with name: " + pod.name);  
               }else{
                 control.save();
               }
