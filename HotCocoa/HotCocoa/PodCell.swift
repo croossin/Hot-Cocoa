@@ -38,6 +38,8 @@ class PodCell: FoldingCell {
 
     @IBOutlet weak var tagsView: TLTagsControl!
 
+    @IBOutlet weak var openDateAdded: UILabel!
+
     @IBAction func launchGitHub(sender: AnyObject) {
         WebController.displayURLWithinView(githubLink)
     }
@@ -92,6 +94,8 @@ class PodCell: FoldingCell {
         openVotes.text = String(pod.amountOfVotes)
 
         githubLink = pod.githubLink
+
+        openDateAdded.text = pod.name + " was added to GitHub on " + pod.dateAddedPretty
 
         authorName.text = pod.author.name
         DataProvider.getImageFromUrl(pod.author.avatar){[weak self] image in
