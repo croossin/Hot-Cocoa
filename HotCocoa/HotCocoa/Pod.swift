@@ -47,4 +47,8 @@ class Pod {
 
         return dateFormatter.stringFromDate(self.dateAdded)
     }
+
+    func githubUsername() -> String?{
+        return self.githubLink.sliceFrom(".com/", to: "/")
+    }
 }

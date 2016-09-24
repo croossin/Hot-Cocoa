@@ -43,7 +43,8 @@ class PodCell: FoldingCell {
     }
 
     var githubLink: String = ""
-    
+    var internalpod: Pod?
+
     var number: Int = 0 {
         didSet {
             closeNumberLabel.text = String(number)
@@ -70,6 +71,9 @@ class PodCell: FoldingCell {
     }
 
     func loadCell(pod: Pod){
+
+        internalpod = pod
+
         openProjectName.text = pod.name
         closeProjectName.text = pod.name
 
@@ -93,10 +97,22 @@ class PodCell: FoldingCell {
         DataProvider.getImageFromUrl(pod.author.avatar){[weak self] image in
             guard let strongSelf = self else { return }
             strongSelf.authorAvatar.image = image
+
+            //Add tap gesture to their profile image to take directly to personal GH Link
+            let tapGesture = UITapGestureRecognizer(target: self, action: Selector("profileImageTapped:"))
+            self?.authorAvatar.userInteractionEnabled = true
+            self?.authorAvatar.addGestureRecognizer(tapGesture)
         }
 
         tagsView.tags = NSMutableArray(array: pod.tags)
         tagsView.reloadTagSubviews()
+    }
+
+    func profileImageTapped(img: AnyObject){
+        guard let pod = internalpod else { return }
+        if let username = pod.githubUsername() {
+            WebController.displayURLWithinView(GitHubLinks.MAIN_URL + username)
+        }
     }
 }
 

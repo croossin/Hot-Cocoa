@@ -16,3 +16,8 @@ struct Network{
 //    static let MAIN_URL: String = "https://shielded-plateau-69173.herokuapp.com/api/v1"
     static let MAIN_URL: String = "http://localhost:8081/api/v1"
 }
+
+struct GitHubLinks{
+    static let MAIN_URL: String = "https://github.com/"
+    static let IMAGE_SUFFIX: String = ".png?size=49"
+}

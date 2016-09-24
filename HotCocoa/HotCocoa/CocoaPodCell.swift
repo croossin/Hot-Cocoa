@@ -51,6 +51,7 @@ class CocoaPodCell: FoldingCell {
     }
 
     var pod: CocoaPod?
+    var ghUsername: String?
 
     override func awakeFromNib() {
 
@@ -82,9 +83,17 @@ class CocoaPodCell: FoldingCell {
         authorName.text = pod.author.name
 
         //See if we can get gh username from gh link
-        if let ghUsername = pod.githubUsername(){
-            DataProvider.getImageFromUrl("https://github.com/\(ghUsername).png?size=49", callback: {[weak self] image in
+        if let _ghUsername = pod.githubUsername(){
+
+            ghUsername = _ghUsername
+
+            DataProvider.getImageFromUrl(GitHubLinks.MAIN_URL + _ghUsername + GitHubLinks.IMAGE_SUFFIX, callback: {[weak self] image in
                 self?.authorGHAvatarImage.image = image
+
+                //Add tap gesture to their profile image to take directly to personal GH Link
+                let tapGesture = UITapGestureRecognizer(target: self, action: Selector("profileImageTapped:"))
+                self?.authorGHAvatarImage.userInteractionEnabled = true
+                self?.authorGHAvatarImage.addGestureRecognizer(tapGesture)
             })
         }
 
@@ -99,5 +108,10 @@ class CocoaPodCell: FoldingCell {
         openDownloads.text = pod.downloads.total
 
         openDisclaimerText.text = "\(pod.name) has \(pod.github.stars) stars on GitHub"
+    }
+
+    func profileImageTapped(img: AnyObject){
+        guard let username = ghUsername else { return }
+        WebController.displayURLWithinView(GitHubLinks.MAIN_URL + username)
     }
 }
