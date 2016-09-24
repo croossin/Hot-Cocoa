@@ -342,7 +342,7 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="applebg" translatesAutoresizingMaskIntoConstraints="NO" id="aWr-Gq-jGr">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="aWr-Gq-jGr">
                                                             <rect key="frame" x="0.0" y="49" width="560" height="116"/>
                                                         </imageView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OzY-F6-M3g" userLabel="LeftVoew">
@@ -923,7 +923,7 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="applebg" translatesAutoresizingMaskIntoConstraints="NO" id="6F4-hJ-Uvp">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="6F4-hJ-Uvp">
                                                             <rect key="frame" x="0.0" y="49" width="560" height="116"/>
                                                         </imageView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M1B-p6-jIc" userLabel="LeftVoew">
@@ -1148,7 +1148,13 @@
                                                                 <constraint firstItem="b5n-d4-hpE" firstAttribute="leading" secondItem="1XZ-v4-F3g" secondAttribute="leading" constant="4" id="lSd-xy-Ke1"/>
                                                                 <constraint firstItem="b5n-d4-hpE" firstAttribute="top" secondItem="PwC-1t-NIV" secondAttribute="bottom" constant="4" id="r1J-Xl-Q5g"/>
                                                                 <constraint firstItem="b5n-d4-hpE" firstAttribute="top" secondItem="1XZ-v4-F3g" secondAttribute="top" constant="26" id="ulH-YI-ElT"/>
+                                                                <constraint firstAttribute="trailing" secondItem="b5n-d4-hpE" secondAttribute="trailing" constant="4" id="zwS-bz-7FS"/>
                                                             </constraints>
+                                                            <variation key="default">
+                                                                <mask key="constraints">
+                                                                    <exclude reference="bJ1-SX-meN"/>
+                                                                </mask>
+                                                            </variation>
                                                         </view>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1292,8 +1298,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="applebg" width="681" height="426"/>
         <image name="arrow" width="16" height="25"/>
+        <image name="bg" width="960" height="600"/>
         <image name="dots" width="14" height="84"/>
         <image name="ratingStars" width="49" height="15"/>
     </resources>
