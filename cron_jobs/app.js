@@ -86,18 +86,14 @@ function getPageData(page){
 
             var control = new CocoaPod(controls[i]);
 
-            //Look in DB to see if there is a pod already with that name
-            //If there isn't - save it
-            CocoaPod.findOne({name: control.name})
-            .then(function(pod){
-              if(pod){
-                console.log("There is already a pod with name: " + pod.name);  
-              }else{
-                control.save();
+            CocoaPod.update(
+              {name: control.name},
+              {$setOnInsert: control},
+              {upsert: true},
+              function(err, numAffected){
+                console.log(numAffected);
               }
-            }, function(err){
-              console.log("error: " + err);
-            });
+            );
           }
         });
       }
