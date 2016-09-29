@@ -13,7 +13,9 @@ import TLTagsControl
 class PodCell: FoldingCell {
 
     @IBOutlet weak var appetizeLogo: UIImageView!
-    
+    @IBOutlet weak var openAppetizeLogo: UIButton!
+    @IBOutlet weak var openViewPodLabel: UILabel!
+
     @IBOutlet weak var closeAvatar: UIImageView!
 
     @IBOutlet weak var closeProjectName: UILabel!
@@ -43,10 +45,19 @@ class PodCell: FoldingCell {
     @IBOutlet weak var openDateAdded: UILabel!
 
     @IBAction func launchGitHub(sender: AnyObject) {
-        WebController.displayURLWithinView(githubLink)
+
+        guard let pod = internalpod else { return }
+
+        WebController.displayURLWithinView(pod.githubLink)
     }
 
-    var githubLink: String = ""
+    @IBAction func launchAppetizeSimulator(sender: AnyObject) {
+
+        guard let pod = internalpod else { return }
+
+        WebController.displayURLWithinView(pod.appetize)
+    }
+
     var internalpod: Pod?
 
     override func awakeFromNib() {
@@ -76,10 +87,18 @@ class PodCell: FoldingCell {
 
     func loadCell(pod: Pod){
 
-        appetizeLogo.hidden = pod.appetize.isEmpty
-
+        //Save reference to pod
         internalpod = pod
 
+
+        //Config Appetize
+        let shouldHideAppetize = pod.appetize.isEmpty
+        appetizeLogo.hidden = shouldHideAppetize
+        openAppetizeLogo.hidden = shouldHideAppetize
+        openViewPodLabel.hidden = shouldHideAppetize
+
+
+        //Setup all text
         openProjectName.text = pod.name
         closeProjectName.text = pod.name
 
@@ -97,12 +116,12 @@ class PodCell: FoldingCell {
         closeVotes.text = String(pod.amountOfVotes)
         openVotes.text = String(pod.amountOfVotes)
 
-        githubLink = pod.githubLink
-
         openDateAdded.text = pod.name + " was added to GitHub on " + pod.dateAddedPretty
 
         authorName.text = pod.author.name
 
+
+        //Get author profile image
         DataProvider.getImageFromUrl(pod.author.avatar){[weak self] image in
             self?.authorAvatar.image = image
             self?.closeAvatar.image = image
@@ -113,6 +132,8 @@ class PodCell: FoldingCell {
             self?.authorAvatar.addGestureRecognizer(tapGesture)
         }
 
+        
+        //Setup scrolling tags
         tagsView.tags = NSMutableArray(array: pod.tags)
         tagsView.reloadTagSubviews()
     }

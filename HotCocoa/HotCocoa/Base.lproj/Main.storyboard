@@ -429,15 +429,35 @@
                                                                 <constraint firstAttribute="trailing" secondItem="IU3-RG-KqH" secondAttribute="trailing" id="uoM-gH-Hrg"/>
                                                             </constraints>
                                                         </view>
+                                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zL3-o7-w8q">
+                                                            <rect key="frame" x="263" y="57" width="35" height="35"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="35" id="p5F-Pj-qBF"/>
+                                                            </constraints>
+                                                            <state key="normal" image="appetize_logo"/>
+                                                            <connections>
+                                                                <action selector="launchAppetizeSimulator:" destination="aiT-wu-ntn" eventType="touchUpInside" id="H52-2w-N3W"/>
+                                                            </connections>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="View Pod Simulator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FZc-Mb-fat">
+                                                            <rect key="frame" x="8" y="96" width="542" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.36470588240000001" green="0.29411764709999999" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="nGW-d8-ZhF" secondAttribute="trailing" id="4SH-9x-ybN"/>
                                                         <constraint firstItem="OzY-F6-M3g" firstAttribute="leading" secondItem="Mde-xB-KzJ" secondAttribute="leading" constant="10" id="8dQ-Wt-YoD"/>
+                                                        <constraint firstItem="FZc-Mb-fat" firstAttribute="centerY" secondItem="aWr-Gq-jGr" secondAttribute="centerY" id="C9E-zA-b3P"/>
+                                                        <constraint firstItem="zL3-o7-w8q" firstAttribute="centerX" secondItem="nGW-d8-ZhF" secondAttribute="centerX" id="Krx-XP-7rw"/>
                                                         <constraint firstAttribute="trailing" secondItem="aWr-Gq-jGr" secondAttribute="trailing" id="LeS-kL-7Ys"/>
+                                                        <constraint firstItem="zL3-o7-w8q" firstAttribute="top" secondItem="nGW-d8-ZhF" secondAttribute="bottom" constant="8" symbolic="YES" id="R7f-wE-fwI"/>
                                                         <constraint firstAttribute="trailing" secondItem="6DY-TT-WF7" secondAttribute="trailing" constant="10" id="TBu-C3-eFi"/>
                                                         <constraint firstItem="6DY-TT-WF7" firstAttribute="height" secondItem="OzY-F6-M3g" secondAttribute="height" id="U6p-3k-c3l"/>
                                                         <constraint firstItem="nGW-d8-ZhF" firstAttribute="leading" secondItem="Mde-xB-KzJ" secondAttribute="leading" id="Un1-Vt-KH3"/>
+                                                        <constraint firstItem="FZc-Mb-fat" firstAttribute="top" secondItem="zL3-o7-w8q" secondAttribute="bottom" constant="4" id="Vza-fe-A2p"/>
                                                         <constraint firstAttribute="bottom" secondItem="aWr-Gq-jGr" secondAttribute="bottom" id="WVG-XV-QsO"/>
                                                         <constraint firstItem="OzY-F6-M3g" firstAttribute="width" secondItem="aoc-2V-3hn" secondAttribute="width" id="XEG-UL-zLa"/>
                                                         <constraint firstItem="6DY-TT-WF7" firstAttribute="leading" secondItem="aoc-2V-3hn" secondAttribute="trailing" constant="1" id="XJ5-iW-Wwb"/>
@@ -445,10 +465,12 @@
                                                         <constraint firstItem="aoc-2V-3hn" firstAttribute="centerY" secondItem="OzY-F6-M3g" secondAttribute="centerY" id="fTo-UX-7X5"/>
                                                         <constraint firstItem="aWr-Gq-jGr" firstAttribute="leading" secondItem="Mde-xB-KzJ" secondAttribute="leading" id="kHx-jh-gsE"/>
                                                         <constraint firstItem="aoc-2V-3hn" firstAttribute="width" secondItem="6DY-TT-WF7" secondAttribute="width" id="lCN-XE-4ko"/>
+                                                        <constraint firstItem="FZc-Mb-fat" firstAttribute="leading" secondItem="Mde-xB-KzJ" secondAttribute="leadingMargin" id="lol-gY-FPl"/>
                                                         <constraint firstItem="aWr-Gq-jGr" firstAttribute="top" secondItem="nGW-d8-ZhF" secondAttribute="bottom" id="oAO-5a-RED"/>
                                                         <constraint firstItem="aoc-2V-3hn" firstAttribute="leading" secondItem="OzY-F6-M3g" secondAttribute="trailing" constant="1" id="phu-u4-93p"/>
                                                         <constraint firstAttribute="height" constant="165" id="qKS-xc-GK6"/>
                                                         <constraint firstAttribute="bottom" secondItem="OzY-F6-M3g" secondAttribute="bottom" constant="8" id="qaR-6m-J9X"/>
+                                                        <constraint firstItem="FZc-Mb-fat" firstAttribute="trailing" secondItem="6DY-TT-WF7" secondAttribute="trailing" id="rLU-Ng-hTZ"/>
                                                         <constraint firstItem="6DY-TT-WF7" firstAttribute="centerY" secondItem="OzY-F6-M3g" secondAttribute="centerY" id="vNT-lQ-haG"/>
                                                         <constraint firstItem="nGW-d8-ZhF" firstAttribute="top" secondItem="Mde-xB-KzJ" secondAttribute="top" id="xU9-6C-eUd"/>
                                                     </constraints>
@@ -692,11 +714,13 @@
                                     <outlet property="containerViewTop" destination="Qlb-Kg-RS2" id="AVo-Qc-7nx"/>
                                     <outlet property="foregroundView" destination="pwy-RS-NtI" id="jND-O0-9N6"/>
                                     <outlet property="foregroundViewTop" destination="dYS-8G-hXZ" id="5yx-rw-VYk"/>
+                                    <outlet property="openAppetizeLogo" destination="zL3-o7-w8q" id="F27-g5-hBr"/>
                                     <outlet property="openDateAdded" destination="T7c-ep-STl" id="SFU-v8-UPM"/>
                                     <outlet property="openLanguage" destination="ASz-UL-llL" id="4LJ-Sd-L1A"/>
                                     <outlet property="openLicense" destination="Rjc-tV-2hE" id="OjF-Pp-oOp"/>
                                     <outlet property="openProjectDescription" destination="HEw-Iw-u93" id="4ks-do-2UR"/>
                                     <outlet property="openProjectName" destination="YPm-az-u9E" id="W3v-Fu-vCZ"/>
+                                    <outlet property="openViewPodLabel" destination="FZc-Mb-fat" id="NHK-IC-Qhh"/>
                                     <outlet property="openVotes" destination="IU3-RG-KqH" id="ymL-Tf-ee3"/>
                                     <outlet property="projectImage" destination="aWr-Gq-jGr" id="GsV-tI-aod"/>
                                     <outlet property="tagsView" destination="107-cE-XEr" id="GV0-LC-etP"/>
