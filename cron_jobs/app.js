@@ -48,7 +48,6 @@ db.once('open', function() {
 
     //Get page data for the first page
     getPageData(1);
-    getPageData(2);
 });
 
 function getPageData(page){
