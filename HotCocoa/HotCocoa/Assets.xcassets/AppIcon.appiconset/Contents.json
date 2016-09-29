@@ -38,9 +38,24 @@
       "scale" : "1x"
     },
     {
+      "idiom" : "ipad",
+      "size" : "29x29",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "ipad",
+      "size" : "40x40",
+      "scale" : "1x"
+    },
+    {
       "size" : "40x40",
       "idiom" : "ipad",
       "filename" : "38mm Home Screen.png",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "car",
+      "size" : "60x60",
       "scale" : "2x"
     },
     {
@@ -80,6 +95,13 @@
       "scale" : "3x"
     },
     {
+      "size" : "40x40",
+      "idiom" : "watch",
+      "scale" : "2x",
+      "role" : "appLauncher",
+      "subtype" : "38mm"
+    },
+    {
       "size" : "44x44",
       "idiom" : "watch",
       "filename" : "42mm Long Look.png",
@@ -104,10 +126,20 @@
       "subtype" : "42mm"
     },
     {
+      "idiom" : "mac",
+      "size" : "256x256",
+      "scale" : "1x"
+    },
+    {
       "size" : "256x256",
       "idiom" : "mac",
       "filename" : "App Store Copy.png",
       "scale" : "2x"
+    },
+    {
+      "idiom" : "mac",
+      "size" : "512x512",
+      "scale" : "1x"
     },
     {
       "size" : "512x512",

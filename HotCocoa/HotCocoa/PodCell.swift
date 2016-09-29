@@ -12,6 +12,8 @@ import TLTagsControl
 
 class PodCell: FoldingCell {
 
+    @IBOutlet weak var appetizeLogo: UIImageView!
+    
     @IBOutlet weak var closeAvatar: UIImageView!
 
     @IBOutlet weak var closeProjectName: UILabel!
@@ -74,6 +76,8 @@ class PodCell: FoldingCell {
 
     func loadCell(pod: Pod){
 
+        appetizeLogo.hidden = pod.appetize.isEmpty
+
         internalpod = pod
 
         openProjectName.text = pod.name
@@ -98,6 +102,7 @@ class PodCell: FoldingCell {
         openDateAdded.text = pod.name + " was added to GitHub on " + pod.dateAddedPretty
 
         authorName.text = pod.author.name
+
         DataProvider.getImageFromUrl(pod.author.avatar){[weak self] image in
             self?.authorAvatar.image = image
             self?.closeAvatar.image = image

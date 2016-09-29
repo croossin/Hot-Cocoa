@@ -283,12 +283,19 @@
                                                         <constraint firstItem="rz0-J5-ioL" firstAttribute="top" secondItem="o6N-nE-sd8" secondAttribute="top" id="vWV-LU-fuO"/>
                                                     </constraints>
                                                 </view>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appetize_logo" translatesAutoresizingMaskIntoConstraints="NO" id="NtA-Na-QW3">
+                                                    <rect key="frame" x="535" y="8" width="15" height="15"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="15" id="9aM-qK-oFD"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstItem="bAC-dF-8ST" firstAttribute="top" secondItem="pwy-RS-NtI" secondAttribute="top" id="0Ii-cT-N0C"/>
                                                 <constraint firstItem="nIH-ai-V0O" firstAttribute="top" secondItem="pwy-RS-NtI" secondAttribute="top" constant="52" id="2E4-xB-Tys"/>
                                                 <constraint firstItem="lMw-qd-D3P" firstAttribute="width" secondItem="VLp-L8-pKo" secondAttribute="width" constant="24" id="7Bq-Gk-jte"/>
+                                                <constraint firstItem="NtA-Na-QW3" firstAttribute="top" secondItem="pwy-RS-NtI" secondAttribute="topMargin" id="85h-R6-dmB"/>
                                                 <constraint firstItem="dKk-6o-bHs" firstAttribute="top" secondItem="pwy-RS-NtI" secondAttribute="top" constant="60" id="8PA-Ka-e2a"/>
                                                 <constraint firstAttribute="bottom" secondItem="o6N-nE-sd8" secondAttribute="bottom" constant="25" id="8ZE-xT-hwZ"/>
                                                 <constraint firstItem="o6N-nE-sd8" firstAttribute="leading" secondItem="bAC-dF-8ST" secondAttribute="trailing" constant="20" id="9Vf-Xs-xXu"/>
@@ -306,12 +313,14 @@
                                                 <constraint firstItem="VLp-L8-pKo" firstAttribute="height" secondItem="o6N-nE-sd8" secondAttribute="height" id="e05-co-3Kt"/>
                                                 <constraint firstAttribute="trailing" secondItem="0RF-wa-mbc" secondAttribute="trailing" constant="10" id="hCD-T8-Z1X"/>
                                                 <constraint firstItem="0RF-wa-mbc" firstAttribute="leading" secondItem="pwy-RS-NtI" secondAttribute="leading" constant="124" id="hPv-1M-RdN"/>
+                                                <constraint firstItem="NtA-Na-QW3" firstAttribute="trailing" secondItem="0RF-wa-mbc" secondAttribute="trailing" id="kLe-oX-Cqc"/>
                                                 <constraint firstItem="lMw-qd-D3P" firstAttribute="centerY" secondItem="o6N-nE-sd8" secondAttribute="centerY" id="pCf-up-lhh"/>
                                                 <constraint firstAttribute="trailing" secondItem="nIH-ai-V0O" secondAttribute="trailing" constant="16" id="rak-B4-agY"/>
                                                 <constraint firstItem="VLp-L8-pKo" firstAttribute="leading" secondItem="lMw-qd-D3P" secondAttribute="trailing" constant="1" id="sR6-7l-Diu"/>
                                                 <constraint firstItem="bAC-dF-8ST" firstAttribute="leading" secondItem="pwy-RS-NtI" secondAttribute="leading" id="svD-fm-bJd"/>
                                                 <constraint firstAttribute="trailing" secondItem="dKk-6o-bHs" secondAttribute="trailing" constant="10" id="swk-PD-Hyx"/>
                                                 <constraint firstItem="vTX-NB-UJp" firstAttribute="top" secondItem="pwy-RS-NtI" secondAttribute="top" constant="32" id="uHw-6E-Q75"/>
+                                                <constraint firstItem="nIH-ai-V0O" firstAttribute="top" secondItem="NtA-Na-QW3" secondAttribute="bottom" constant="29" id="zWA-T1-Qsi"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J9R-uB-R9W" userLabel="Contener">
@@ -372,7 +381,7 @@
                                                                 <constraint firstAttribute="bottom" secondItem="ASz-UL-llL" secondAttribute="bottom" id="zXF-cY-PBu"/>
                                                             </constraints>
                                                         </view>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aoc-2V-3hn" userLabel="CenterView">
+                                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aoc-2V-3hn" userLabel="CenterView">
                                                             <rect key="frame" x="190" y="117" width="180" height="40"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="LICENSE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i0l-zS-T6v">
@@ -669,6 +678,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <outlet property="appetizeLogo" destination="NtA-Na-QW3" id="Tl4-Bo-Li4"/>
                                     <outlet property="authorAvatar" destination="AyB-Cj-Z8D" id="CbD-LO-qUs"/>
                                     <outlet property="authorName" destination="RlG-FH-gnA" id="sjO-Jh-bwf"/>
                                     <outlet property="closeAvatar" destination="n7k-8f-5qW" id="41y-he-N7j"/>
@@ -953,7 +963,7 @@
                                                                 <constraint firstItem="CTo-sa-RqN" firstAttribute="top" secondItem="M1B-p6-jIc" secondAttribute="top" id="RHW-RA-aOv"/>
                                                             </constraints>
                                                         </view>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TKU-vf-79y" userLabel="CenterView">
+                                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TKU-vf-79y" userLabel="CenterView">
                                                             <rect key="frame" x="190" y="117" width="180" height="40"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="LICENSE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8NQ-fv-LDX">
@@ -1300,6 +1310,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="appetize_logo" width="468" height="468"/>
         <image name="arrow" width="16" height="25"/>
         <image name="bg" width="960" height="600"/>
         <image name="dots" width="14" height="84"/>
