@@ -16,6 +16,9 @@ var router = express.Router();
 //Get most recent pods
 router.post('/fetch', controller.fetch);
 
+//Get by simulator
+router.post('/fetch/simulator', controller.fetchSimulator);
+
 //Get by rating
 router.post('/fetch/rating', controller.fetchRating);
 

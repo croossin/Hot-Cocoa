@@ -29,13 +29,28 @@ exports.fetch = function(req, res){
 	})
 }
 
+exports.fetchSimulator = function(req, res){
+
+	var skipNumber = parseInt(req.body.currentNumber);
+	
+	Pod.find({"details.appetize": {$exists: true, $ne: null}})
+	.limit(20)
+	.skip(skipNumber)
+	.sort('-dateAdded')
+	.then(function(resp){
+		res.send(resp);
+	}, function(err){
+		res.send(err);
+	})
+}
+
 exports.fetchRating = function(req, res){
 	var skipNumber = parseInt(req.body.currentNumber);
 
 	Pod.find()
 	.limit(20)
 	.skip(skipNumber)
-	.sort({'dateAdded': 1, 'details.amountOfVotes': 1})
+	.sort({'dateAdded': -1, 'details.amountOfVotes': 1})
 	.then(function(resp){
 		res.send(resp);
 	}, function(err){
