@@ -16,7 +16,7 @@ var Pod  = require('../../../helper/cocoaModel.js');
  */
 exports.fetch = function(req, res){
 
-	var skipNumber = req.body.currentNumber;
+	var skipNumber = parseInt(req.body.currentNumber);
 	
 	Pod.find()
 	.limit(20)
@@ -30,7 +30,7 @@ exports.fetch = function(req, res){
 }
 
 exports.fetchRating = function(req, res){
-	var skipNumber = req.body.currentNumber;
+	var skipNumber = parseInt(req.body.currentNumber);
 
 	Pod.find()
 	.limit(20)
@@ -66,7 +66,7 @@ exports.fetchTags = function(req, res){
 }
 
 exports.fetchLanguage = function(req, res){
-	var skipNumber = req.body.currentNumber;
+	var skipNumber = parseInt(req.body.currentNumber);
 
 	var language = req.params.language === 'swift' ? 'Swift' : 'Objective-C';
 
@@ -82,7 +82,7 @@ exports.fetchLanguage = function(req, res){
 }
 
 exports.fetchLicense = function(req, res){
-	var skipNumber = req.body.currentNumber;
+	var skipNumber = parseInt(req.body.currentNumber);
 
 	//NEED TO FIX
 	var license = req.params.license === 'MIT' ? 'MIT' : 'Objective-C';

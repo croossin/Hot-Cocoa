@@ -24,7 +24,7 @@ var http = require('http');
 //* Return array of objects
 exports.searchTag = function(req, res){
 	
-	var skipNumber = req.body.currentNumber;
+	var skipNumber = parseInt(req.body.currentNumber);
 	var searchTerm = encodeURIComponent(req.body.searchTerm);
 	var platform = req.body.platform;
 
