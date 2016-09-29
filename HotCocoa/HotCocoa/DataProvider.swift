@@ -57,6 +57,9 @@ class DataProvider {
         case .ObjC:
             print("Making call for OBJECTIVE")
             sharedInstance.makeRequestToServerForHomePage(.POST, endpoint: "/fetch/language/objc", currentNumberRetrieved: currentNumberRetrieved, callback: callback, errorCallback: errorCallback)
+        case .Simulator:
+            print("Making call for SIMULATOR")
+            sharedInstance.makeRequestToServerForHomePage(.POST, endpoint: "/fetch/simulator", currentNumberRetrieved: currentNumberRetrieved, callback: callback, errorCallback: errorCallback)
         }
     }
 

@@ -93,7 +93,7 @@ class HomeController: UIViewController {
         a.delegate = self
 
         guard let b = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("CocoaTableViewController") as? CocoaTableViewController else { return [] }
-        b.podSorting = .Rating
+        b.podSorting = .Simulator
         b.delegate = self
 
         guard let c = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("CocoaTableViewController") as? CocoaTableViewController else { return [] }

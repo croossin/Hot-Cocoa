@@ -9,10 +9,11 @@
 import Foundation
 
 enum PodSorting: String{
-    case Recent = "Recent"
-    case Rating = "Rating"
-    case Swift  = "Swift"
-    case ObjC   = "ObjC"
+    case Recent    = "Recent"
+    case Rating    = "Rating"
+    case Swift     = "Swift"
+    case ObjC      = "ObjC"
+    case Simulator = "Simulator"
 
     init?(id : Int) {
         switch id {
@@ -24,6 +25,8 @@ enum PodSorting: String{
             self = .Swift
         case 3:
             self = .ObjC
+        case 4:
+            self = .Simulator
         default:
             return nil
         }
