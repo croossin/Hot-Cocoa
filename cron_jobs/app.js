@@ -6,8 +6,8 @@ var MAIN_URL = 'https://www.cocoacontrols.com';
 
 var mongoose = require('mongoose');
 
-// mongoose.connect(process.env.MONGODB_URI);
-mongoose.connect('mongodb://localhost/hotcocoa');
+mongoose.connect('mongodb://heroku_qvw0rp7f:74udtbtnfugondk06t5onaog0s@ds019766.mlab.com:19766/heroku_qvw0rp7f');
+// mongoose.connect('mongodb://localhost/hotcocoa');
 
 var db = mongoose.connection;
 
