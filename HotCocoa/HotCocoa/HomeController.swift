@@ -87,7 +87,8 @@ class HomeController: UIViewController {
     }
 
     func presentSettingsVC(){
-
+        let navController = UINavigationController(rootViewController: SettingsViewController())
+        self.presentViewController(navController, animated: true, completion: nil)
     }
 
     func segViewValueDidChange(selectedIndex: Int){
