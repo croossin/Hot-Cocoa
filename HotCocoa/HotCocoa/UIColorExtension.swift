@@ -20,4 +20,5 @@ extension UIColor {
     static var WhiteSmokeColor: UIColor{return UIColor(red: 245, green: 245, blue: 245)}
     static var GrayChateauColor: UIColor{return UIColor(red: 163, green: 164, blue: 168)}
     static var flatLightBlueColor: UIColor{return UIColor(red: 107, green: 185, blue: 240)}
+    static var PurpleMainColor: UIColor{return UIColor(red: 82, green: 66, blue: 142)}
 }

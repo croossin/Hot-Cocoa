@@ -63,7 +63,7 @@ class HomeController: UIViewController {
 
         let menuButton = UIButton()
         menuButton.setImage(UIImage(named: "menu"), forState: .Normal)
-        menuButton.frame = CGRectMake(0, 0, 30, 30)
+        menuButton.frame = CGRectMake(0, 0, 20, 20)
         menuButton.addTarget(self, action: #selector(HomeController.presentSettingsVC), forControlEvents: .TouchUpInside)
 
         let leftBarButton = UIBarButtonItem(customView: menuButton)

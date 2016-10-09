@@ -21,6 +21,12 @@ class SettingsViewController: BOTableViewController {
 
     func setupUI(){
         self.title = "Settings"
+
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: #selector(SettingsViewController.dismiss))
+    }
+
+    func dismiss(){
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 
     func setupTableView(){
