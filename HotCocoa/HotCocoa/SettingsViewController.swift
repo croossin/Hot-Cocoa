@@ -54,13 +54,12 @@ extension SettingsViewController : CTFeedbackViewControllerDelegate{
 
         ProgressController.sharedInstance.show("Sending Feedback")
 
-        DataProvider.sendFeedback(topic, content: content, email: email, callback: { 
+        DataProvider.sendFeedback(topic, content: content, email: email, successCallback: {
 
             ProgressController.sharedInstance.dismiss()
             controller.dismissViewControllerAnimated(true, completion: { 
                 AlertController.displayCompleteFeedbackRequest()
             })
-
         }) { 
 
             ProgressController.sharedInstance.dismiss()

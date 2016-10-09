@@ -23,8 +23,18 @@ class DataProvider {
                  }
     }
 
-    class func sendFeedback(topic: String, content: String, email: String, callback: (()->()), errorCallback: (()->())){
+    class func sendFeedback(topic: String, content: String, email: String, successCallback: (()->()), errorCallback: (()->())){
 
+        let parameters = ["topic": topic, "content": content, "email": email]
+
+        Alamofire.request(.POST, Network.MAIN_URL + "/feedback", parameters: parameters, encoding: .JSON, headers: nil).validate().responseJSON { response in
+            switch response.result {
+            case .Success:
+                successCallback()
+            case .Failure:
+                errorCallback()
+            }
+        }
     }
 
     class func getAllTags(callback:([String])->()){

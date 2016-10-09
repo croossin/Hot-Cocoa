@@ -43,6 +43,7 @@ app.use(morgan(':method :url :status :res[content-length] - :response-time ms'))
  */
 app.use('/api/v1/search', require('./api/v1/search'));
 app.use('/api/v1/author', require('./api/v1/author'));
+app.use('/api/v1/feedback', require('./api/v1/feedback'));
 app.use('/api/v1', require('./api/v1/general'));
 
 /** 
