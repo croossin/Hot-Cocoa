@@ -24,6 +24,8 @@ class SettingsViewController: BOTableViewController {
     }
 
     func setupTableView(){
+
+        //Feedback
         self.addSection(BOTableViewSection(headerTitle: "Feedback", handler: { (section) in
 
             section.addCell(BOChoiceTableViewCell(title: "Give App Feedback", key: "", handler: { (cell) in
@@ -37,10 +39,16 @@ class SettingsViewController: BOTableViewController {
 
                 cell.destinationViewController = vc
             }))
+
+            section.footerTitle = "All feedback is greatly appreciated"
         }))
 
+        //Credit
         self.addSection(BOTableViewSection(headerTitle: "Credits", handler: { (section) in
 
+            
+
+            section.footerTitle = "App made possible by these great designers!"
         }))
     }
 }
@@ -63,9 +71,7 @@ extension SettingsViewController : CTFeedbackViewControllerDelegate{
         }) { 
 
             ProgressController.sharedInstance.dismiss()
-            controller.dismissViewControllerAnimated(true, completion: {
-                AlertController.displayErrorFeedbackRequest()
-            })
+            AlertController.displayErrorFeedbackRequest()
         }
     }
 }

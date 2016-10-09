@@ -35,3 +35,16 @@ struct MessageTitles{
     static let Error = ["Whoops", "Uh-Oh", "Shoot", "Darn"]
     static let Success = ["Sweet", "Awesome", "Excellent", "You Did It", "Great Job"]
 }
+
+struct Credit{
+    static let Icons = [
+        (title: "Time Return", author: "Hans Draiman", website: "Noun Project", url: "https://thenounproject.com/term/time-return/592187"),
+        (title: "H File", author: "Arthur Shlain", website: "Noun Project", url: "https://thenounproject.com/term/h-file/272711"),
+        (title: "Swift File", author: "Viktor Vorobyev", website: "Noun Project", url: "https://thenounproject.com/term/swift-file/342075"),
+        (title: "Search", author: "Creative Outlet", website: "Noun Project", url: "https://thenounproject.com/term/search/581925"),
+        (title: "Smart Watch", author: "M", website: "Noun Project", url: "https://thenounproject.com/search/?q=apple+watch&i=76125"),
+        (title: "Command", author: "Johan Cato", website: "Noun Project", url: "https://thenounproject.com/term/command/432301"),
+        (title: "iPhone", author: "Edward Boatman", website: "Noun Project", url: "https://thenounproject.com/term/iphone/414"),
+        (title: "Menu", author: "Milky - Digital Innovation", website: "Noun Project", url: "https://thenounproject.com/search/?q=menu&creator=246241&i=105216")
+    ]
+}
