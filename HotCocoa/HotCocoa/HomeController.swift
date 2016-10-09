@@ -61,6 +61,14 @@ class HomeController: UIViewController {
         let rightBarButton = UIBarButtonItem(customView: searchButton)
         self.navigationItem.rightBarButtonItem = rightBarButton
 
+        let menuButton = UIButton()
+        menuButton.setImage(UIImage(named: "menu"), forState: .Normal)
+        menuButton.frame = CGRectMake(0, 0, 30, 30)
+        menuButton.addTarget(self, action: #selector(HomeController.presentSettingsVC), forControlEvents: .TouchUpInside)
+
+        let leftBarButton = UIBarButtonItem(customView: menuButton)
+        self.navigationItem.leftBarButtonItem = leftBarButton
+
         //Segmentio
         guard let sv = HCSegmentio(isSearching: isSearching).segView else { return }
         self.segmentView = sv
@@ -76,6 +84,10 @@ class HomeController: UIViewController {
     func presentSearchVC(){
         let vc = SearchViewController()
         self.presentViewController(vc, animated: true, completion: nil)
+    }
+
+    func presentSettingsVC(){
+
     }
 
     func segViewValueDidChange(selectedIndex: Int){
