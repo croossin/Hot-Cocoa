@@ -17,4 +17,11 @@ class WebController {
             topController.presentViewController(svc, animated: true, completion: nil)
         }
     }
+
+    class func displayURLOnGivenView(vc: UIViewController, url: String){
+        guard let url = NSURL(string: url) else { return }
+        let svc = SFSafariViewController(URL: url)
+
+        vc.presentViewController(svc, animated: true, completion: nil)
+    }
 }

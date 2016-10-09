@@ -46,7 +46,17 @@ class SettingsViewController: BOTableViewController {
         //Credit
         self.addSection(BOTableViewSection(headerTitle: "Credits", handler: { (section) in
 
-            
+            for credit in Credit.Icons {
+
+                section.addCell(BOButtonTableViewCell(title: credit.title, key: "", handler: { (cell) in
+
+                    guard let cell = cell as? BOButtonTableViewCell else { return }
+
+                    cell.actionBlock = {
+                        WebController.displayURLOnGivenView(self, url: credit.url)
+                    }
+                }))
+            }
 
             section.footerTitle = "App made possible by these great designers!"
         }))
