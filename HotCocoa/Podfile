@@ -19,5 +19,6 @@ pod 'TLTagsControl', :git => 'https://github.com/mohlman3/TLTagsControl.git'
 pod 'FCAlertView'
 pod 'CTFeedback'
 pod 'Bohr'
+pod 'ISMessages'
 
 end

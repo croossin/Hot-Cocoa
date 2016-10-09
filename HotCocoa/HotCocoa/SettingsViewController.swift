@@ -46,15 +46,27 @@ class SettingsViewController: BOTableViewController {
 }
 
 extension SettingsViewController : CTFeedbackViewControllerDelegate{
-    func feedbackViewController(controller: CTFeedbackViewController!, didFinishWithCustomCallback email: String!, topic: String!, content: String!, attachment: UIImage!) {
-        print(email)
-        print(topic)
-        print(content)
+    func feedbackViewController(controller: CTFeedbackViewController?, didFinishWithCustomCallback email: String?, topic: String?, content: String?, attachment: UIImage?) {
 
-        if content.isEmpty {
+        guard let content = content, topic = topic, controller = controller else { AlertController.displayNotCompleteFormBanner(); return }
 
-            return
+        let email = email ?? ""
+
+        ProgressController.sharedInstance.show("Sending Feedback")
+
+        DataProvider.sendFeedback(topic, content: content, email: email, callback: { 
+
+            ProgressController.sharedInstance.dismiss()
+            controller.dismissViewControllerAnimated(true, completion: { 
+                AlertController.displayCompleteFeedbackRequest()
+            })
+
+        }) { 
+
+            ProgressController.sharedInstance.dismiss()
+            controller.dismissViewControllerAnimated(true, completion: {
+                AlertController.displayErrorFeedbackRequest()
+            })
         }
-//        print(attachment)
     }
 }

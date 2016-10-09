@@ -23,6 +23,10 @@ class DataProvider {
                  }
     }
 
+    class func sendFeedback(topic: String, content: String, email: String, callback: (()->()), errorCallback: (()->())){
+
+    }
+
     class func getAllTags(callback:([String])->()){
         Alamofire.request(.GET, Network.MAIN_URL + "/fetch/tags").validate().responseJSON { response in
             switch response.result {

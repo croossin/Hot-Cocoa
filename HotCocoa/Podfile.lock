@@ -6,6 +6,7 @@ PODS:
   - CTFeedback (1.1.1)
   - FCAlertView (1.0.9)
   - FoldingCell (1.0.0)
+  - ISMessages (1.0.3)
   - RAMReel (1.2.4)
   - Segmentio (1.0)
   - StatefulViewController (1.2)
@@ -24,6 +25,7 @@ DEPENDENCIES:
   - CTFeedback
   - FCAlertView
   - FoldingCell
+  - ISMessages
   - RAMReel
   - Segmentio (~> 1.0)
   - StatefulViewController (~> 1.0)
@@ -56,6 +58,7 @@ SPEC CHECKSUMS:
   CTFeedback: 6f128606e0d26d46075c3fa9fc33884372df8675
   FCAlertView: 9a39300baaf29de8b343dec7f05c9978cd5b9f51
   FoldingCell: ca0b0f73a853143bf7d968c04a6604d25fbf1af7
+  ISMessages: 8c9c900f750cc763774e6e581c8cbd6f35c8a6a6
   RAMReel: 8372977449403fd60f5bc91a7c3896ced9aa1683
   Segmentio: fd5598b3b13a6aa4e0356c4d12e1ed3e373fde1b
   StatefulViewController: 58a8134ea4a2f43504a9671700385f699450d018
@@ -67,6 +70,6 @@ SPEC CHECKSUMS:
   UITableViewCell-Badge: db55cad2d53d43dd3e66e656b1f6612cb1d7138d
   XHAmazingLoading: 86da1c59191326ea63e6df7ba3886f3e6ddef032
 
-PODFILE CHECKSUM: 8312d6d2c5e15035aaebcfa4d7456c3f42cb2f38
+PODFILE CHECKSUM: 8e96725a5819b4878c24d42909b8c5d51afd2a11
 
 COCOAPODS: 1.1.0.rc.1

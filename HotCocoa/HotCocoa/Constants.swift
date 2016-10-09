@@ -30,3 +30,8 @@ struct DetailedScroll{
         DetailedInfo.Installs.rawValue,
         ]
 }
+
+struct MessageTitles{
+    static let Error = ["Whoops", "Uh-Oh", "Shoot", "Darn"]
+    static let Success = ["Sweet", "Awesome", "Excellent", "You Did It", "Great Job"]
+}
