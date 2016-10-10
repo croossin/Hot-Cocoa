@@ -49,10 +49,32 @@ class SettingsViewController: BOTableViewController {
             section.footerTitle = "All feedback is greatly appreciated"
         }))
 
-        //Credit
-        self.addSection(BOTableViewSection(headerTitle: "Credits", handler: { (section) in
+        //Pods
+        self.addSection(BOTableViewSection(headerTitle: "CocoaPods", handler: { (section) in
 
-            for credit in Credit.Icons {
+            let sortedPods = Credit.CocoaPods.sort { $0.title < $1.title }
+
+            for pod in sortedPods {
+
+                section.addCell(BOButtonTableViewCell(title: pod.title, key: "", handler: { (cell) in
+
+                    guard let cell = cell as? BOButtonTableViewCell else { return }
+
+                    cell.actionBlock = {
+                        WebController.displayURLOnGivenView(self, url: pod.url)
+                    }
+                }))
+            }
+
+            section.footerTitle = "The CocoaPods used in this project"
+        }))
+
+        //Icons
+        self.addSection(BOTableViewSection(headerTitle: "Icons", handler: { (section) in
+
+            let sortedIcons = Credit.Icons.sort { $0.title < $1.title }
+
+            for credit in sortedIcons {
 
                 section.addCell(BOButtonTableViewCell(title: credit.title, key: "", handler: { (cell) in
 

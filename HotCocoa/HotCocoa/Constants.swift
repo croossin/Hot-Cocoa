@@ -37,6 +37,24 @@ struct MessageTitles{
 }
 
 struct Credit{
+    static let CocoaPods = [
+        (title: "Alamofire", author: "Alamofire", url: "https://github.com/Alamofire/Alamofire"),
+        (title: "Alamofire Image", author: "Alamofire", url: "https://github.com/Alamofire/AlamofireImage"),
+        (title: "SwiftyJSON", author: "SwiftyJSON", url: "https://github.com/SwiftyJSON/SwiftyJSON"),
+        (title: "SVProgressHUD", author: "SVProgressHUD", url: "https://github.com/SVProgressHUD/SVProgressHUD"),
+        (title: "Segmentio", author: "Yalantis", url: "https://github.com/Yalantis/Segmentio"),
+        (title: "UIScrollView-InfiniteScroll", author: "pronebird", url: "https://github.com/pronebird/UIScrollView-InfiniteScroll"),
+        (title: "RAMReel", author: "Ramotion", url: "https://github.com/Ramotion/reel-search"),
+        (title: "Folding Cell", author: "Ramotion", url: "https://github.com/Ramotion/folding-cell"),
+        (title: "TCTitleLoading", author: "TravelC", url: "https://github.com/TravelC/TCTitleLoading"),
+        (title: "TLTagsControl", author: "ali312", url: "https://github.com/ali312/TLTagsControl"),
+        (title: "FCAlertView", author: "nimati", url: "https://github.com/nimati/FCAlertView"),
+        (title: "CTFeedback", author: "rizumita", url: "https://github.com/rizumita/CTFeedback"),
+        (title: "Bohr", author: "DavdRoman", url: "https://github.com/DavdRoman/Bohr"),
+        (title: "ISMessages", author: "ilyainyushin", url: "https://github.com/ilyainyushin/ISMessages"),
+        (title: "Cloudinary", author: "cloudinary", url: "https://github.com/cloudinary/cloudinary_ios"),
+    ]
+
     static let Icons = [
         (title: "Time Return", author: "Hans Draiman", website: "Noun Project", url: "https://thenounproject.com/term/time-return/592187"),
         (title: "H File", author: "Arthur Shlain", website: "Noun Project", url: "https://thenounproject.com/term/h-file/272711"),

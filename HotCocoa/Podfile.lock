@@ -10,14 +10,11 @@ PODS:
   - ISMessages (1.0.3)
   - RAMReel (1.2.4)
   - Segmentio (1.0)
-  - StatefulViewController (1.2)
   - SVProgressHUD (2.0.3)
   - SwiftyJSON (2.3.2)
   - TCTitleLoading (0.0.4)
   - TLTagsControl (1.0.0)
   - UIScrollView-InfiniteScroll (0.9.1)
-  - UITableViewCell-Badge (1.0)
-  - XHAmazingLoading (0.2)
 
 DEPENDENCIES:
   - Alamofire (~> 3.4)
@@ -30,14 +27,11 @@ DEPENDENCIES:
   - ISMessages
   - RAMReel
   - Segmentio (~> 1.0)
-  - StatefulViewController (~> 1.0)
   - SVProgressHUD (from `https://github.com/SVProgressHUD/SVProgressHUD.git`)
   - SwiftyJSON
   - TCTitleLoading
   - TLTagsControl (from `https://github.com/mohlman3/TLTagsControl.git`)
   - UIScrollView-InfiniteScroll
-  - UITableViewCell-Badge
-  - XHAmazingLoading
 
 EXTERNAL SOURCES:
   SVProgressHUD:
@@ -64,15 +58,12 @@ SPEC CHECKSUMS:
   ISMessages: 8c9c900f750cc763774e6e581c8cbd6f35c8a6a6
   RAMReel: 8372977449403fd60f5bc91a7c3896ced9aa1683
   Segmentio: fd5598b3b13a6aa4e0356c4d12e1ed3e373fde1b
-  StatefulViewController: 58a8134ea4a2f43504a9671700385f699450d018
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
   TCTitleLoading: ecc8810b6e3609fcab4068d0844622a1189e6bca
   TLTagsControl: 34ab7d25f282aa2b8b42e73cc71b96ffe9fa7a15
   UIScrollView-InfiniteScroll: 14e204c50ca4040467e1cbfa141dad7a18919b56
-  UITableViewCell-Badge: db55cad2d53d43dd3e66e656b1f6612cb1d7138d
-  XHAmazingLoading: 86da1c59191326ea63e6df7ba3886f3e6ddef032
 
-PODFILE CHECKSUM: 39026cf9d76cb522bdbb11f3cae9889cca6852cd
+PODFILE CHECKSUM: ad7ff405fbbd3d4a47a3116cbf24c326ed356bc2
 
 COCOAPODS: 1.1.0.rc.1
