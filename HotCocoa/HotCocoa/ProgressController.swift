@@ -18,4 +18,8 @@ class ProgressController {
     func dismiss(){
         SVProgressHUD.dismiss()
     }
+
+    func showProgress(status: String, progress: Float){
+        SVProgressHUD.showProgress(progress, status: status)
+    }
 }

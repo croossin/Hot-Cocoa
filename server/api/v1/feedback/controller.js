@@ -17,6 +17,7 @@ exports.postFeedback = function(req, res){
 	var email = req.body.email;
 	var topic = req.body.topic;
 	var content = req.body.content;
+	var image = req.body.imageUrl;
 
 	newFeedback.email = email;
 	newFeedback.topic = removeColon(topic);
@@ -29,7 +30,8 @@ exports.postFeedback = function(req, res){
 	newFeedback.iOS = removeColon(tempArray[4]);
 	newFeedback.version = removeColon(tempArray[6]);
 	newFeedback.build = removeColon(tempArray[7]);
-
+	newFeedback.image = image;
+	
 	newFeedback.save()
 	.then(function(resp){
 		res.send(resp);

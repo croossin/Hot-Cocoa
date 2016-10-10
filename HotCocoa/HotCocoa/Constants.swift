@@ -48,3 +48,7 @@ struct Credit{
         (title: "Menu", author: "Milky - Digital Innovation", website: "Noun Project", url: "https://thenounproject.com/search/?q=menu&creator=246241&i=105216")
     ]
 }
+
+struct Credentials {
+    static let CloudinaryUrl = "cloudinary://638749293868572:Udn9I2nizX5TJR61hBE3c6gt3AY@dhlu6rpmd"
+}

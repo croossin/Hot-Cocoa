@@ -20,5 +20,6 @@ pod 'FCAlertView'
 pod 'CTFeedback'
 pod 'Bohr'
 pod 'ISMessages'
+pod 'Cloudinary'
 
 end

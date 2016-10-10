@@ -9,6 +9,7 @@ var feedbackSchema = new Schema({
   iOS: String,
   version: String,
   build: String,
+  image: String,
   date: {
     type: Date,
     default: new Date()

@@ -3,6 +3,7 @@ PODS:
   - AlamofireImage (2.5.0):
     - Alamofire (~> 3.5)
   - Bohr (3.0.0)
+  - Cloudinary (1.0.15)
   - CTFeedback (1.1.1)
   - FCAlertView (1.0.9)
   - FoldingCell (1.0.0)
@@ -22,6 +23,7 @@ DEPENDENCIES:
   - Alamofire (~> 3.4)
   - AlamofireImage (~> 2.0)
   - Bohr
+  - Cloudinary
   - CTFeedback
   - FCAlertView
   - FoldingCell
@@ -55,6 +57,7 @@ SPEC CHECKSUMS:
   Alamofire: b70a7352335f8ea5babd0a923eb7e8eacc67b877
   AlamofireImage: 2d34936e5201270bb17a316a786e90e83b4a249d
   Bohr: 17b150766e54e1fb8ff417d85b830c7caafa8b4a
+  Cloudinary: f80af4565ec08c521d5e58cb56d9fbe1e4595e40
   CTFeedback: 6f128606e0d26d46075c3fa9fc33884372df8675
   FCAlertView: 9a39300baaf29de8b343dec7f05c9978cd5b9f51
   FoldingCell: ca0b0f73a853143bf7d968c04a6604d25fbf1af7
@@ -70,6 +73,6 @@ SPEC CHECKSUMS:
   UITableViewCell-Badge: db55cad2d53d43dd3e66e656b1f6612cb1d7138d
   XHAmazingLoading: 86da1c59191326ea63e6df7ba3886f3e6ddef032
 
-PODFILE CHECKSUM: 8e96725a5819b4878c24d42909b8c5d51afd2a11
+PODFILE CHECKSUM: 39026cf9d76cb522bdbb11f3cae9889cca6852cd
 
 COCOAPODS: 1.1.0.rc.1

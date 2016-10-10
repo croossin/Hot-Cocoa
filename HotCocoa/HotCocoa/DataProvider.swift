@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import AlamofireImage
 import SwiftyJSON
+import Cloudinary
 
 class DataProvider {
     static let sharedInstance = DataProvider()
@@ -23,9 +24,29 @@ class DataProvider {
                  }
     }
 
-    class func sendFeedback(topic: String, content: String, email: String, successCallback: (()->()), errorCallback: (()->())){
+    static func uploadImage(image: UIImage, onCompletion: ((status: Bool, url: String?) -> Void)) {
+        let clouder = CLCloudinary(url: Credentials.CloudinaryUrl)
+        let imageToUpload = UIImagePNGRepresentation(image)
+        let uploader : CLUploader = CLUploader(clouder, delegate: nil)
+        uploader.upload(imageToUpload, options: nil, withCompletion: { (dataDictionary, errorResult, code, context) in
 
-        let parameters = ["topic": topic, "content": content, "email": email]
+            code < 400 ? onCompletion(status: true, url: dataDictionary["url"] as? String ?? "") : onCompletion(status: false, url:"")
+
+        }) { (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite, context) in
+            ProgressController.sharedInstance.showProgress("Uploading Image", progress: Float(totalBytesWritten * 100/totalBytesExpectedToWrite)/100)
+        }
+    }
+
+    class func sendFeedback(topic: String, content: String, email: String, imageUrl: String?, successCallback: (()->()), errorCallback: (()->())){
+
+        var parameters: [String: AnyObject] = [:]
+
+        if let imageUrl = imageUrl {
+            parameters = ["topic": topic, "content": content, "email": email, "imageUrl": imageUrl]
+        }else{
+            parameters = ["topic": topic, "content": content, "email": email]
+        }
+
 
         Alamofire.request(.POST, Network.MAIN_URL + "/feedback", parameters: parameters, encoding: .JSON, headers: nil).validate().responseJSON { response in
             switch response.result {
