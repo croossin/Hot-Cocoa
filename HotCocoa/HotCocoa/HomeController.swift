@@ -61,13 +61,15 @@ class HomeController: UIViewController {
         let rightBarButton = UIBarButtonItem(customView: searchButton)
         self.navigationItem.rightBarButtonItem = rightBarButton
 
-        let menuButton = UIButton()
-        menuButton.setImage(UIImage(named: "menu"), forState: .Normal)
-        menuButton.frame = CGRectMake(0, 0, 20, 20)
-        menuButton.addTarget(self, action: #selector(HomeController.presentSettingsVC), forControlEvents: .TouchUpInside)
+        if self.navigationController?.viewControllers.count == 1 {
+            let menuButton = UIButton()
+            menuButton.setImage(UIImage(named: "menu"), forState: .Normal)
+            menuButton.frame = CGRectMake(0, 0, 20, 20)
+            menuButton.addTarget(self, action: #selector(HomeController.presentSettingsVC), forControlEvents: .TouchUpInside)
 
-        let leftBarButton = UIBarButtonItem(customView: menuButton)
-        self.navigationItem.leftBarButtonItem = leftBarButton
+            let leftBarButton = UIBarButtonItem(customView: menuButton)
+            self.navigationItem.leftBarButtonItem = leftBarButton
+        }
 
         //Segmentio
         guard let sv = HCSegmentio(isSearching: isSearching).segView else { return }
