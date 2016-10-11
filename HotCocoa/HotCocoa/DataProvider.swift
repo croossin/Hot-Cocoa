@@ -48,7 +48,7 @@ class DataProvider {
         }
 
 
-        Alamofire.request(.POST, Network.MAIN_URL + "/feedback", parameters: parameters, encoding: .JSON, headers: nil).validate().responseJSON { response in
+        Alamofire.request(.POST, Network.MAIN_URL + Network.Routes.Feedback, parameters: parameters, encoding: .JSON, headers: nil).validate().responseJSON { response in
             switch response.result {
             case .Success:
                 successCallback()
@@ -59,7 +59,7 @@ class DataProvider {
     }
 
     class func getAllTags(callback:([String])->()){
-        Alamofire.request(.GET, Network.MAIN_URL + "/fetch/tags").validate().responseJSON { response in
+        Alamofire.request(.GET, Network.MAIN_URL + Network.Routes.Fetch_Tags).validate().responseJSON { response in
             switch response.result {
             case .Success:
                 if let value = response.result.value {
@@ -82,19 +82,19 @@ class DataProvider {
         switch _podSorting {
         case .Recent:
             print("Making call for RECENT")
-            sharedInstance.makeRequestToServerForHomePage(.POST, endpoint: "/fetch", currentNumberRetrieved: currentNumberRetrieved, callback: callback, errorCallback: errorCallback)
+            sharedInstance.makeRequestToServerForHomePage(.POST, endpoint: Network.Routes.Fetch, currentNumberRetrieved: currentNumberRetrieved, callback: callback, errorCallback: errorCallback)
         case .Rating:
             print("Making call for RATING")
-            sharedInstance.makeRequestToServerForHomePage(.POST, endpoint: "/fetch/rating", currentNumberRetrieved: currentNumberRetrieved, callback: callback, errorCallback: errorCallback)
+            sharedInstance.makeRequestToServerForHomePage(.POST, endpoint: Network.Routes.Fetch_Rating, currentNumberRetrieved: currentNumberRetrieved, callback: callback, errorCallback: errorCallback)
         case .Swift:
             print("Making call for SWIFT")
-            sharedInstance.makeRequestToServerForHomePage(.POST, endpoint: "/fetch/language/swift", currentNumberRetrieved: currentNumberRetrieved, callback: callback, errorCallback: errorCallback)
+            sharedInstance.makeRequestToServerForHomePage(.POST, endpoint: Network.Routes.Fetch_Swift, currentNumberRetrieved: currentNumberRetrieved, callback: callback, errorCallback: errorCallback)
         case .ObjC:
             print("Making call for OBJECTIVE")
-            sharedInstance.makeRequestToServerForHomePage(.POST, endpoint: "/fetch/language/objc", currentNumberRetrieved: currentNumberRetrieved, callback: callback, errorCallback: errorCallback)
+            sharedInstance.makeRequestToServerForHomePage(.POST, endpoint: Network.Routes.Fetch_ObjC, currentNumberRetrieved: currentNumberRetrieved, callback: callback, errorCallback: errorCallback)
         case .Simulator:
             print("Making call for SIMULATOR")
-            sharedInstance.makeRequestToServerForHomePage(.POST, endpoint: "/fetch/simulator", currentNumberRetrieved: currentNumberRetrieved, callback: callback, errorCallback: errorCallback)
+            sharedInstance.makeRequestToServerForHomePage(.POST, endpoint: Network.Routes.Fetch_Simulator, currentNumberRetrieved: currentNumberRetrieved, callback: callback, errorCallback: errorCallback)
         }
     }
 
@@ -118,7 +118,7 @@ class DataProvider {
 
     class func getPodsBasedOnSearchTag(platform: Platform, searchTerm: String, currentNumberRetrieved: Int, callback: ([CocoaPod])->(), errorCallback: (()->())){
 
-        sharedInstance.makeRequestToServerForSearchTagPage(.POST, endpoint: "/search/tags/", platform: platform, searchTerm: searchTerm, currentNumberRetrieved: currentNumberRetrieved, callback: callback, errorCallback: errorCallback)
+        sharedInstance.makeRequestToServerForSearchTagPage(.POST, endpoint: Network.Routes.Search_Tags, platform: platform, searchTerm: searchTerm, currentNumberRetrieved: currentNumberRetrieved, callback: callback, errorCallback: errorCallback)
     }
 
     internal func makeRequestToServerForSearchTagPage(requestType: Alamofire.Method, endpoint: String, platform: Platform, searchTerm: String, currentNumberRetrieved: Int, callback: ([CocoaPod])->(), errorCallback: (()->())){

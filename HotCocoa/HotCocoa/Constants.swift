@@ -15,6 +15,19 @@ struct Dimensions{
 struct Network{
 //    static let MAIN_URL: String = "https://shielded-plateau-69173.herokuapp.com/api/v1"
     static let MAIN_URL: String = "http://localhost:8081/api/v1"
+
+    struct Routes {
+        static let Feedback: String = "/feedback"
+
+        static let Fetch: String = "/fetch"
+        static let Fetch_Tags: String = "/fetch/tags"
+        static let Fetch_Rating: String = "/fetch/rating"
+        static let Fetch_Swift: String = "/fetch/language/swift"
+        static let Fetch_ObjC: String = "/fetch/language/objc"
+        static let Fetch_Simulator: String = "/fetch/simulator"
+
+        static let Search_Tags: String = "/search/tags/"
+    }
 }
 
 struct GitHubLinks{
@@ -52,7 +65,7 @@ struct Credit{
         (title: "CTFeedback", author: "rizumita", url: "https://github.com/rizumita/CTFeedback"),
         (title: "Bohr", author: "DavdRoman", url: "https://github.com/DavdRoman/Bohr"),
         (title: "ISMessages", author: "ilyainyushin", url: "https://github.com/ilyainyushin/ISMessages"),
-        (title: "Cloudinary", author: "cloudinary", url: "https://github.com/cloudinary/cloudinary_ios"),
+        (title: "Cloudinary", author: "cloudinary", url: "https://github.com/cloudinary/cloudinary_ios")
     ]
 
     static let Icons = [
