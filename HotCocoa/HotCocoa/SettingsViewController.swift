@@ -52,7 +52,7 @@ class SettingsViewController: BOTableViewController {
         //Pods
         self.addSection(BOTableViewSection(headerTitle: "CocoaPods", handler: { (section) in
 
-            let sortedPods = Credit.CocoaPods.sort { $0.title < $1.title }
+            let sortedPods = Credit.CocoaPods.sort { $0.title.lowercaseString < $1.title.lowercaseString }
 
             for pod in sortedPods {
 
@@ -72,7 +72,7 @@ class SettingsViewController: BOTableViewController {
         //Icons
         self.addSection(BOTableViewSection(headerTitle: "Icons", handler: { (section) in
 
-            let sortedIcons = Credit.Icons.sort { $0.title < $1.title }
+            let sortedIcons = Credit.Icons.sort { $0.title.lowercaseString < $1.title.lowercaseString }
 
             for credit in sortedIcons {
 
