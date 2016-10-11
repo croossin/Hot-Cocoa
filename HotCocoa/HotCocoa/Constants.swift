@@ -76,7 +76,8 @@ struct Credit{
         (title: "Smart Watch", author: "M", website: "Noun Project", url: "https://thenounproject.com/search/?q=apple+watch&i=76125"),
         (title: "Command", author: "Johan Cato", website: "Noun Project", url: "https://thenounproject.com/term/command/432301"),
         (title: "iPhone", author: "Edward Boatman", website: "Noun Project", url: "https://thenounproject.com/term/iphone/414"),
-        (title: "Menu", author: "Milky - Digital Innovation", website: "Noun Project", url: "https://thenounproject.com/search/?q=menu&creator=246241&i=105216")
+        (title: "Menu", author: "Milky - Digital Innovation", website: "Noun Project", url: "https://thenounproject.com/search/?q=menu&creator=246241&i=105216"),
+        (title: "Mug", author: "Fuat şanlı", website: "Noun Project", url: "https://thenounproject.com/search/?q=hot%20cocoa&i=657447")
     ]
 }
 
