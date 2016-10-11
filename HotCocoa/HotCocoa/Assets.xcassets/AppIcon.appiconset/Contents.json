@@ -1,56 +1,63 @@
 {
   "images" : [
     {
-      "idiom" : "iphone",
       "size" : "29x29",
+      "idiom" : "iphone",
+      "filename" : "Icon-60@2x-3.png",
       "scale" : "2x"
     },
     {
-      "idiom" : "iphone",
       "size" : "29x29",
+      "idiom" : "iphone",
+      "filename" : "Icon-60@3x-2.png",
       "scale" : "3x"
     },
     {
-      "idiom" : "iphone",
       "size" : "40x40",
+      "idiom" : "iphone",
+      "filename" : "Icon-60@2x-2.png",
       "scale" : "2x"
     },
     {
-      "idiom" : "iphone",
       "size" : "40x40",
+      "idiom" : "iphone",
+      "filename" : "Icon-60@3x-3.png",
       "scale" : "3x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "Icon-Small-60@2x.png",
+      "filename" : "Icon-60@2x-4.png",
       "scale" : "2x"
     },
     {
-      "idiom" : "iphone",
       "size" : "60x60",
+      "idiom" : "iphone",
+      "filename" : "Icon-60.png",
       "scale" : "3x"
     },
     {
       "size" : "29x29",
       "idiom" : "ipad",
-      "filename" : "Icon-Small.png",
+      "filename" : "Icon-60@2x-6.png",
       "scale" : "1x"
     },
     {
-      "idiom" : "ipad",
       "size" : "29x29",
+      "idiom" : "ipad",
+      "filename" : "Icon-60@3x-4.png",
       "scale" : "2x"
     },
     {
-      "idiom" : "ipad",
       "size" : "40x40",
+      "idiom" : "ipad",
+      "filename" : "Icon-60@2x-5.png",
       "scale" : "1x"
     },
     {
       "size" : "40x40",
       "idiom" : "ipad",
-      "filename" : "38mm Home Screen.png",
+      "filename" : "Icon-60@3x-5.png",
       "scale" : "2x"
     },
     {
@@ -59,15 +66,13 @@
       "scale" : "2x"
     },
     {
-      "size" : "60x60",
       "idiom" : "car",
-      "filename" : "Icon-Small-60@3x.png",
+      "size" : "60x60",
       "scale" : "3x"
     },
     {
       "size" : "24x24",
       "idiom" : "watch",
-      "filename" : "38mm Notification.png",
       "scale" : "2x",
       "role" : "notificationCenter",
       "subtype" : "38mm"
@@ -75,7 +80,6 @@
     {
       "size" : "27.5x27.5",
       "idiom" : "watch",
-      "filename" : "42mm Notification.png",
       "scale" : "2x",
       "role" : "notificationCenter",
       "subtype" : "42mm"
@@ -83,14 +87,12 @@
     {
       "size" : "29x29",
       "idiom" : "watch",
-      "filename" : "Icon-Small@2x.png",
       "role" : "companionSettings",
       "scale" : "2x"
     },
     {
       "size" : "29x29",
       "idiom" : "watch",
-      "filename" : "Icon-Small@3x.png",
       "role" : "companionSettings",
       "scale" : "3x"
     },
@@ -104,7 +106,6 @@
     {
       "size" : "44x44",
       "idiom" : "watch",
-      "filename" : "42mm Long Look.png",
       "scale" : "2x",
       "role" : "longLook",
       "subtype" : "42mm"
@@ -112,7 +113,6 @@
     {
       "size" : "86x86",
       "idiom" : "watch",
-      "filename" : "38mm Short Look.png",
       "scale" : "2x",
       "role" : "quickLook",
       "subtype" : "38mm"
@@ -120,7 +120,6 @@
     {
       "size" : "98x98",
       "idiom" : "watch",
-      "filename" : "42mm Short Look.png",
       "scale" : "2x",
       "role" : "quickLook",
       "subtype" : "42mm"
@@ -131,35 +130,29 @@
       "scale" : "1x"
     },
     {
-      "size" : "256x256",
       "idiom" : "mac",
-      "filename" : "App Store Copy.png",
+      "size" : "256x256",
       "scale" : "2x"
     },
     {
-      "idiom" : "mac",
       "size" : "512x512",
+      "idiom" : "mac",
+      "filename" : "iTunesArtwork.png",
       "scale" : "1x"
     },
     {
       "size" : "512x512",
       "idiom" : "mac",
-      "filename" : "App Store Copy@2x.png",
+      "filename" : "iTunesArtwork@2x.png",
       "scale" : "2x"
     },
     {
-      "size" : "40x40",
-      "idiom" : "ipad",
-      "filename" : "38mm Long Look.png",
-      "unassigned" : true,
-      "scale" : "2x"
+      "filename" : "Icon-60@3x-1.png",
+      "unassigned" : true
     },
     {
-      "size" : "40x40",
-      "idiom" : "ipad",
-      "filename" : "42mm Home Screen.png",
-      "unassigned" : true,
-      "scale" : "2x"
+      "filename" : "Icon-60@3x.png",
+      "unassigned" : true
     }
   ],
   "info" : {
