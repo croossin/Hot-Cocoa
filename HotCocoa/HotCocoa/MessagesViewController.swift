@@ -8,6 +8,7 @@
 
 import UIKit
 import JSQMessagesViewController
+import SwiftRandom
 
 class MessagesViewController: JSQMessagesViewController {
     var messages = [JSQMessage]()
@@ -20,6 +21,16 @@ class MessagesViewController: JSQMessagesViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        joinRoom()
+    }
+
+    override func viewWillDisappear(animated: Bool) {
+
+        //Back button pressed - leave room
+        if self.navigationController?.viewControllers.indexOf(self) == nil {
+            SocketManager.sharedInstance.disconnectFromRoom(self.senderId, nickname: UserService.sharedInstance.getUserID())
+        }
+        super.viewWillDisappear(animated)
     }
 
     private func setup() {
@@ -27,7 +38,7 @@ class MessagesViewController: JSQMessagesViewController {
         self.title = "\(self.senderId)'s Chat"
 
         //For Chat UI
-        self.senderDisplayName = "Sender"
+        self.senderDisplayName = UserService.sharedInstance.getUserID()
 
         let bubbleImageFactory = JSQMessagesBubbleImageFactory()
 
@@ -36,6 +47,24 @@ class MessagesViewController: JSQMessagesViewController {
 
         outgoingAvatar = JSQMessagesAvatarImageFactory.avatarImageWithImage(UIImage(named: "user") ?? UIImage(), diameter: UInt(collectionView.collectionViewLayout.incomingAvatarViewSize.width))
         incomingAvatar = JSQMessagesAvatarImageFactory.avatarImageWithImage(UIImage(named: "exis-logo")  ?? UIImage(), diameter: UInt(collectionView.collectionViewLayout.incomingAvatarViewSize.width))
+    }
+
+    private func joinRoom(){
+        //Connect to Room and get all messages
+        SocketManager.sharedInstance.connectToRoomWithNickname(self.senderId, nickname: UserService.sharedInstance.getUserID()) {[weak self] (messages) in
+            self?.messages = messages
+            self?.finishReceivingMessage()
+        }
+
+        //Add yourself as a listener for new messages
+        SocketManager.sharedInstance.becomeListenerForRoom(self.senderId) {[weak self] (message) in
+
+            if let message = message { self?.displayMsg(message) }
+        }
+    }
+
+    func displayMsg(message: JSQMessage){
+        messages.append(message)
     }
 
     func displayMsg(id: String, displayName: String, text: String) {
@@ -73,13 +102,14 @@ class MessagesViewController: JSQMessagesViewController {
     }
 
     override func didPressSendButton(button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: NSDate!) {
-//        app.publish("chat", text) //User sent - publish to Exis
-        displayMsg(senderId, displayName: "Me", text: text)
+
+        SocketManager.sharedInstance.sendMessageToRoom(self.senderId, message: text, nickname: senderDisplayName)
+
+        displayMsg(self.senderId, displayName: senderDisplayName, text: text)
         finishSendingMessage()
     }
 
     override func didPressAccessoryButton(sender: UIButton!) {
         print("Camera pressed!")
     }
-
 }

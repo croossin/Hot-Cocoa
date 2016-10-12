@@ -54,7 +54,17 @@ struct MessageTitles{
 }
 
 struct Socket {
-    static let ConnectUser = "connectUser"
+    static let ConnectUserToRoom = "connectUserToRoom"
+    static let DisconnectFromRoom = "disconnectUserFromRoom"
+
+    struct Endpoints{
+        static let MainMessage = "messages/"
+        static let ChatMessage = "chatMessage"
+    }
+}
+
+struct UserDefaults {
+    static let UserKey = "kUserKey"
 }
 
 struct Credit{

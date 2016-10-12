@@ -51,4 +51,12 @@ class Pod {
     func githubUsername() -> String?{
         return self.githubLink.sliceFrom(".com/", to: "/")
     }
+
+    func getGitHubProjectName() -> String?{
+        if let projectName = self.githubLink.componentsSeparatedByString("/").last {
+            return projectName
+        }
+
+        return nil
+    }
 }

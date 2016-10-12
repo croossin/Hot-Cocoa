@@ -15,6 +15,7 @@ PODS:
   - Segmentio (1.0)
   - Socket.IO-Client-Swift (7.0.3)
   - SVProgressHUD (2.0.3)
+  - SwiftRandom (0.1.7)
   - SwiftyJSON (2.3.2)
   - TCTitleLoading (0.0.4)
   - TLTagsControl (1.0.0)
@@ -34,6 +35,7 @@ DEPENDENCIES:
   - Segmentio (~> 1.0)
   - Socket.IO-Client-Swift (~> 7.0.0)
   - SVProgressHUD (from `https://github.com/SVProgressHUD/SVProgressHUD.git`)
+  - SwiftRandom
   - SwiftyJSON
   - TCTitleLoading
   - TLTagsControl (from `https://github.com/mohlman3/TLTagsControl.git`)
@@ -68,11 +70,12 @@ SPEC CHECKSUMS:
   Segmentio: fd5598b3b13a6aa4e0356c4d12e1ed3e373fde1b
   Socket.IO-Client-Swift: cca640f81f8856278c8bcd56ea42d1d070a011b6
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
+  SwiftRandom: a03b68cbcda1b03d0fef5a1b87296f9500b6eac3
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
   TCTitleLoading: ecc8810b6e3609fcab4068d0844622a1189e6bca
   TLTagsControl: 34ab7d25f282aa2b8b42e73cc71b96ffe9fa7a15
   UIScrollView-InfiniteScroll: 14e204c50ca4040467e1cbfa141dad7a18919b56
 
-PODFILE CHECKSUM: f2512aa13762d4d46d239035d80f40de9473c3c0
+PODFILE CHECKSUM: 4e14054fe224907d318cc4a9d453769d264b8456
 
 COCOAPODS: 1.1.0.rc.1

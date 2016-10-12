@@ -60,10 +60,11 @@ class PodCell: FoldingCell {
 
     @IBAction func openChat(sender: AnyObject) {
 
-        guard let pod = internalpod else { return }
+        guard let pod = internalpod, podName = pod.getGitHubProjectName() else { return }
 
         let messageVC = MessagesViewController()
-        messageVC.senderId = pod.name
+
+        messageVC.senderId = podName
 
         WindowHelper.pushOnToRootViewController(messageVC)
     }

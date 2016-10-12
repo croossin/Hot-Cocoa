@@ -8,6 +8,7 @@
 
 import UIKit
 import SocketIO
+import JSQMessagesViewController
 
 class SocketManager: NSObject {
 
@@ -23,16 +24,37 @@ class SocketManager: NSObject {
         socket.connect()
     }
 
-
     func closeConnection() {
         socket.disconnect()
     }
 
-    func connectToRoomWithNickname(room: String, nickname: String, completionHandler: (messages: [Message]) -> Void){
-        socket.emit("connectUser", room, nickname)
-        completionHandler(messages: [])
+    func connectToRoomWithNickname(room: String, nickname: String, completionHandler: (messages: [JSQMessage]) -> Void){
+        //Connect us to the room on the server
+        socket.emit(Socket.ConnectUserToRoom, room, nickname)
+
+        //Get existing messages in current room back from server
+        socket.on(Socket.Endpoints.MainMessage + room) { ( data, ack) -> Void in
+            guard let data = data.first as? [[String: AnyObject]] else { return }
+            completionHandler(messages: DataHandler.dataToMessages(data))
+        }
     }
 
+    func disconnectFromRoom(room: String, nickname: String){
+        socket.emit(Socket.DisconnectFromRoom, room, nickname)
+    }
+
+    //Add yourself as a listener for newMessages
+    func becomeListenerForRoom(room: String, completionHandler: (message: JSQMessage?) -> Void){
+
+        socket.on("\(room)/newChatMessage") { (data, socketAck) -> Void in
+            guard let data = data.first as? [String: AnyObject] else { return }
+            completionHandler(message: DataHandler.dataToSingleMessage(data))
+        }
+    }
+
+    func sendMessageToRoom(room: String, message: String, nickname: String){
+        socket.emit(Socket.Endpoints.ChatMessage, room, nickname, message)
+    }
 
     ///////////
 

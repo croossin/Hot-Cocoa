@@ -5,7 +5,7 @@ var mongoose   = require('mongoose');
 var bodyParser = require('body-parser');
 var server = require('http').createServer(app);
 var io = require('socket.io')(server);
-
+var MessageService = require('./helper/MessageService.js');
 /** 
  * =============================================================================
  * Mongo Database
@@ -36,8 +36,29 @@ io.on('connection', function(clientSocket){
 
 	});
 
-  	clientSocket.on('connectUser', function(room, nickname){
-   		console.log(nickname + " is trying to connect to " + room);
+  	clientSocket.on('connectUserToRoom', function(room, nickname){
+   		console.log(nickname + " is trying to connect to: " + room);
+
+   		//Grab messages from DB
+   		MessageService.getMessagesInRoom(room)
+   		.then(function(messages){
+
+   			//Return messages that are in the room
+   			io.emit("messages/" + room, messages);
+   		});
+	});
+
+	clientSocket.on('disconnectUserFromRoom', function(room, nickname){
+   		console.log(nickname + " is disconnecting from: " + room);
+	});
+	
+	//Got message
+	clientSocket.on('chatMessage', function(room, nickname, message){
+		console.log("Got a message from " + nickname + " in room: " + room + "\n" + message);
+
+		var message = MessageService.saveMessage(room, nickname, message);
+
+		io.emit(room + "/newChatMessage", message);
 	});
 });
 /** 

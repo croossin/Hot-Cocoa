@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyJSON
+import JSQMessagesViewController
 
 class DataHandler {
 
@@ -111,5 +112,45 @@ class DataHandler {
         }
 
         return listOfPods
+    }
+
+    class func dataToMessages(data: [[String: AnyObject]]) -> [JSQMessage]{
+        var messages = [JSQMessage]()
+
+        if data.count <= 0 { return [] }
+
+        for i in 0...data.count-1{
+
+            guard let senderID = data[i]["senderID"] as? String,
+                senderDisplayName = data[i]["senderDisplayName"] as? String,
+                stringDate = data[i]["composedDate"] as? String,
+                date = stringDate.toNSDate(),
+                message = data[i]["message"] as? String
+                else { return []}
+
+            messages.append(JSQMessage(senderId: senderID, senderDisplayName: senderDisplayName, date: date, text: message))
+        }
+
+        return messages
+    }
+
+    class func dataToSingleMessage(data: [String: AnyObject]) -> JSQMessage? {
+
+        //New message is ours - dont show
+        if let userID = data["senderID"] where userID as? String == UserService.sharedInstance.getUserID() {
+            return nil
+        } else {
+            //it isnt return it
+
+            guard let senderID = data["senderID"] as? String,
+                      senderDisplayName = data["senderDisplayName"] as? String,
+                      stringDate = data["composedDate"] as? String,
+                      date = stringDate.toNSDate(),
+                      message = data["message"] as? String
+                      else { return nil}
+
+
+            return JSQMessage(senderId: senderID, senderDisplayName: senderDisplayName, date: date, text: message)
+        }
     }
 }

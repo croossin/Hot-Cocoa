@@ -10,8 +10,8 @@
 		0D4EEC6FF31F9CB5F16F2A1D /* Pods_HotCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCB442D7D84B77C65218B01D /* Pods_HotCocoa.framework */; };
 		8C49FD7B1D85DCC3003A37A9 /* WindowHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C49FD7A1D85DCC3003A37A9 /* WindowHelper.swift */; };
 		8C52940F1DADBB71007321E5 /* SocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C52940E1DADBB71007321E5 /* SocketManager.swift */; };
-		8C5294111DADC4AE007321E5 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5294101DADC4AE007321E5 /* Message.swift */; };
 		8C5294131DADD5C8007321E5 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5294121DADD5C8007321E5 /* MessagesViewController.swift */; };
+		8C61AA451DAE8AB3007D0992 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C61AA441DAE8AB3007D0992 /* UserService.swift */; };
 		8C7FF88E1DAAA2A800E41B2E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7FF88D1DAAA2A800E41B2E /* SettingsViewController.swift */; };
 		8C7FF8901DAAAAD000E41B2E /* ProgressController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7FF88F1DAAAAD000E41B2E /* ProgressController.swift */; };
 		8CB20C551D85C22A00BA2004 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB20C541D85C22A00BA2004 /* StringExtension.swift */; };
@@ -61,8 +61,8 @@
 		801FD5F7E556F2347EA8F8FF /* Pods-HotCocoa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotCocoa.release.xcconfig"; path = "Pods/Target Support Files/Pods-HotCocoa/Pods-HotCocoa.release.xcconfig"; sourceTree = "<group>"; };
 		8C49FD7A1D85DCC3003A37A9 /* WindowHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowHelper.swift; sourceTree = "<group>"; };
 		8C52940E1DADBB71007321E5 /* SocketManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketManager.swift; sourceTree = "<group>"; };
-		8C5294101DADC4AE007321E5 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		8C5294121DADD5C8007321E5 /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		8C61AA441DAE8AB3007D0992 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		8C7FF88D1DAAA2A800E41B2E /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8C7FF88F1DAAAAD000E41B2E /* ProgressController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressController.swift; sourceTree = "<group>"; };
 		8CB20C541D85C22A00BA2004 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
@@ -206,7 +206,6 @@
 				8CE37F0D1D79422100EB23C9 /* Pod.swift */,
 				8CBF95A41D8068F60079782F /* CocoaPod.swift */,
 				8CBF95AC1D8470000079782F /* Tuples.swift */,
-				8C5294101DADC4AE007321E5 /* Message.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -294,6 +293,7 @@
 				8C49FD7A1D85DCC3003A37A9 /* WindowHelper.swift */,
 				8CBA9AB11D96E230006A9557 /* AlertController.swift */,
 				8C7FF88F1DAAAAD000E41B2E /* ProgressController.swift */,
+				8C61AA441DAE8AB3007D0992 /* UserService.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -467,11 +467,11 @@
 				8C5294131DADD5C8007321E5 /* MessagesViewController.swift in Sources */,
 				8CC7F3441D7B37DD0082E36B /* UILabelExtension.swift in Sources */,
 				8C49FD7B1D85DCC3003A37A9 /* WindowHelper.swift in Sources */,
+				8C61AA451DAE8AB3007D0992 /* UserService.swift in Sources */,
 				8CBF95A91D830C0B0079782F /* CocoaSearchTableViewController.swift in Sources */,
 				8CE37F1E1D7A4C9800EB23C9 /* Enums.swift in Sources */,
 				8CE37F201D7A5A2200EB23C9 /* DataHandler.swift in Sources */,
 				8CC7F3481D7B45A50082E36B /* SearchViewController.swift in Sources */,
-				8C5294111DADC4AE007321E5 /* Message.swift in Sources */,
 				8CE37F0E1D79422100EB23C9 /* Pod.swift in Sources */,
 				8CBA9AB21D96E230006A9557 /* AlertController.swift in Sources */,
 				8CE37F081D793E8C00EB23C9 /* CellInterface.swift in Sources */,

@@ -16,4 +16,11 @@ extension String {
             }
         }
     }
+
+    func toNSDate() -> NSDate? {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+
+        return dateFormatter.dateFromString(self)
+    }
 }
