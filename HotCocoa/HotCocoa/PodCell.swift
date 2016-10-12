@@ -64,7 +64,9 @@ class PodCell: FoldingCell {
 
         let messageVC = MessagesViewController()
 
-        messageVC.senderId = podName
+        messageVC.senderId = UserService.sharedInstance.getUserID()
+
+        messageVC.roomname = podName
 
         WindowHelper.pushOnToRootViewController(messageVC)
     }

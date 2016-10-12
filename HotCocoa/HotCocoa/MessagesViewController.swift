@@ -18,6 +18,9 @@ class MessagesViewController: JSQMessagesViewController {
     var incomingBubbleImageView: JSQMessagesBubbleImage!
     var incomingAvatar: JSQMessagesAvatarImage!
 
+    var nickname: String = UserService.sharedInstance.getUserID()
+    var roomname: String?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -28,7 +31,8 @@ class MessagesViewController: JSQMessagesViewController {
 
         //Back button pressed - leave room
         if self.navigationController?.viewControllers.indexOf(self) == nil {
-            SocketManager.sharedInstance.disconnectFromRoom(self.senderId, nickname: UserService.sharedInstance.getUserID())
+            guard let roomname = roomname else { return }
+            SocketManager.sharedInstance.disconnectFromRoom(roomname, nickname: self.nickname)
         }
         super.viewWillDisappear(animated)
     }
@@ -38,7 +42,7 @@ class MessagesViewController: JSQMessagesViewController {
         self.title = "\(self.senderId)'s Chat"
 
         //For Chat UI
-        self.senderDisplayName = UserService.sharedInstance.getUserID()
+        self.senderDisplayName = self.nickname
 
         let bubbleImageFactory = JSQMessagesBubbleImageFactory()
 
@@ -50,14 +54,19 @@ class MessagesViewController: JSQMessagesViewController {
     }
 
     private func joinRoom(){
+
+        guard let roomname = roomname else {
+            return
+        }
+
         //Connect to Room and get all messages
-        SocketManager.sharedInstance.connectToRoomWithNickname(self.senderId, nickname: UserService.sharedInstance.getUserID()) {[weak self] (messages) in
+        SocketManager.sharedInstance.connectToRoomWithNickname(roomname, nickname: self.nickname) {[weak self] (messages) in
             self?.messages = messages
-            self?.finishReceivingMessage()
+            self?.collectionView.reloadData()
         }
 
         //Add yourself as a listener for new messages
-        SocketManager.sharedInstance.becomeListenerForRoom(self.senderId) {[weak self] (message) in
+        SocketManager.sharedInstance.becomeListenerForRoom(roomname) {[weak self] (message) in
 
             if let message = message { self?.displayMsg(message) }
         }
@@ -82,7 +91,7 @@ class MessagesViewController: JSQMessagesViewController {
     override func collectionView(collectionView: JSQMessagesCollectionView!, messageBubbleImageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageBubbleImageDataSource! {
         let message = messages[indexPath.item]
 
-        return message.senderId == self.senderId ? outgoingBubbleImageView : incomingBubbleImageView
+        return message.senderId == self.nickname ? outgoingBubbleImageView : incomingBubbleImageView
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -90,22 +99,23 @@ class MessagesViewController: JSQMessagesViewController {
 
         let message = messages[indexPath.item]
 
-        cell.textView!.textColor = message.senderId == senderId ? UIColor.whiteColor() : UIColor.blackColor()
-
+        cell.textView!.textColor = message.senderId == self.nickname ? UIColor.whiteColor() : UIColor.blackColor()
+        cell.cellTopLabel!.text = message.senderId
+        
         return cell
     }
 
     override func collectionView(collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageAvatarImageDataSource! {
         let message = messages[indexPath.item]
 
-        return message.senderId == self.senderId ? outgoingAvatar : incomingAvatar
+        return message.senderId == self.nickname ? outgoingAvatar : incomingAvatar
     }
 
     override func didPressSendButton(button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: NSDate!) {
 
         SocketManager.sharedInstance.sendMessageToRoom(self.senderId, message: text, nickname: senderDisplayName)
 
-        displayMsg(self.senderId, displayName: senderDisplayName, text: text)
+        displayMsg(self.nickname, displayName: senderDisplayName, text: text)
         finishSendingMessage()
     }
 
