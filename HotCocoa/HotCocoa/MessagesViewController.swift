@@ -16,7 +16,6 @@ class MessagesViewController: JSQMessagesViewController {
     var outgoingBubbleImageView: JSQMessagesBubbleImage!
     var outgoingAvatar: JSQMessagesAvatarImage!
     var incomingBubbleImageView: JSQMessagesBubbleImage!
-    var incomingAvatar: JSQMessagesAvatarImage!
 
     var nickname: String = UserService.sharedInstance.getUserID()
     var roomname: String?
@@ -70,8 +69,13 @@ class MessagesViewController: JSQMessagesViewController {
 
         //Connect to Room and get all messages
         SocketManager.sharedInstance.connectToRoomWithNickname(roomname, nickname: self.nickname) {[weak self] (messages) in
-            self?.messages = messages
-            self?.collectionView.reloadData()
+
+            if messages.count == 0{
+                self?.showNoMessageAnimationText()
+            }else{
+                self?.messages = messages
+                self?.collectionView.reloadData()
+            }
         }
 
         //Add yourself as a listener for new messages
@@ -79,6 +83,24 @@ class MessagesViewController: JSQMessagesViewController {
 
             if let message = message { self?.displayMsg(message) }
         }
+    }
+
+    private func showNoMessageAnimationText(){
+        showTypingIndicator = true
+
+        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC)))
+        dispatch_after(delayTime, dispatch_get_main_queue()) {
+            self.messages.append(JSQMessage(senderId: "Robot", displayName: "Hot Cocoa", text: "Welcome!"))
+            self.finishReceivingMessageAnimated(true)
+            self.showTypingIndicator = true
+
+            dispatch_after(delayTime, dispatch_get_main_queue()) {
+                guard let roomname = self.roomname else { return }
+                self.messages.append(JSQMessage(senderId: "Robot", displayName: "Hot Cocoa", text: "You are the first one here.  Feel free to start a conversation about \(roomname)"))
+                self.finishReceivingMessageAnimated(true)
+            }
+        }
+
     }
 
     func displayMsg(message: JSQMessage){
