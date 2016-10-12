@@ -1,8 +1,10 @@
-var express  = require('express');
-var app      = express();
-var morgan   = require('morgan');
-var mongoose = require('mongoose');
-var bodyParser = require('body-parser')
+var express    = require('express');
+var app        = express();
+var morgan     = require('morgan');
+var mongoose   = require('mongoose');
+var bodyParser = require('body-parser');
+var server = require('http').createServer(app);
+var io = require('socket.io')(server);
 
 /** 
  * =============================================================================
@@ -21,6 +23,19 @@ db.once('open', function() {
     console.log("Connected to DB");
 });
 
+/** 
+ * =============================================================================
+ * Socket Config
+ * =============================================================================
+ */
+io.on('connection', function(clientSocket){
+  console.log('User connected');
+
+  	clientSocket.on('disconnect', function(){
+    	console.log('User disconnected');
+
+	});
+});
 /** 
  * =============================================================================
  * Config
@@ -53,6 +68,6 @@ app.use('/api/v1', require('./api/v1/general'));
  */
 
 // app.listen(process.env.PORT || '8081');
-app.listen('8081');
+server.listen('8081');
 console.log('Magic happens on port ');
 exports = module.exports = app;

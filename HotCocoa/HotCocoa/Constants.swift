@@ -16,6 +16,10 @@ struct Network{
 //    static let MAIN_URL: String = "https://shielded-plateau-69173.herokuapp.com/api/v1"
     static let MAIN_URL: String = "http://localhost:8081/api/v1"
 
+//    static let MAIN_URL_FOR_SOCKETS: String = "https://shielded-plateau-69173.herokuapp.com"
+    static let MAIN_URL_FOR_SOCKETS: String = "http://localhost:8081"
+
+
     struct Routes {
         static let Feedback: String = "/feedback"
 

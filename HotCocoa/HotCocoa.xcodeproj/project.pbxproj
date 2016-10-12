@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0D4EEC6FF31F9CB5F16F2A1D /* Pods_HotCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCB442D7D84B77C65218B01D /* Pods_HotCocoa.framework */; };
 		8C49FD7B1D85DCC3003A37A9 /* WindowHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C49FD7A1D85DCC3003A37A9 /* WindowHelper.swift */; };
+		8C52940F1DADBB71007321E5 /* SocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C52940E1DADBB71007321E5 /* SocketManager.swift */; };
 		8C7FF88E1DAAA2A800E41B2E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7FF88D1DAAA2A800E41B2E /* SettingsViewController.swift */; };
 		8C7FF8901DAAAAD000E41B2E /* ProgressController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7FF88F1DAAAAD000E41B2E /* ProgressController.swift */; };
 		8CB20C551D85C22A00BA2004 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB20C541D85C22A00BA2004 /* StringExtension.swift */; };
@@ -57,6 +58,7 @@
 		259F6E6FD62EB24E0A0576A8 /* Pods-HotCocoa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotCocoa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HotCocoa/Pods-HotCocoa.debug.xcconfig"; sourceTree = "<group>"; };
 		801FD5F7E556F2347EA8F8FF /* Pods-HotCocoa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotCocoa.release.xcconfig"; path = "Pods/Target Support Files/Pods-HotCocoa/Pods-HotCocoa.release.xcconfig"; sourceTree = "<group>"; };
 		8C49FD7A1D85DCC3003A37A9 /* WindowHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowHelper.swift; sourceTree = "<group>"; };
+		8C52940E1DADBB71007321E5 /* SocketManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketManager.swift; sourceTree = "<group>"; };
 		8C7FF88D1DAAA2A800E41B2E /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8C7FF88F1DAAAAD000E41B2E /* ProgressController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressController.swift; sourceTree = "<group>"; };
 		8CB20C541D85C22A00BA2004 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 			children = (
 				8CE37F101D79454A00EB23C9 /* DataProvider.swift */,
 				8CE37F1F1D7A5A2200EB23C9 /* DataHandler.swift */,
+				8C52940E1DADBB71007321E5 /* SocketManager.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -445,6 +448,7 @@
 				8CEEF49E1D84F20A001270DB /* EmailController.swift in Sources */,
 				8CE37EF51D79286700EB23C9 /* HCSegmentio.swift in Sources */,
 				8C7FF8901DAAAAD000E41B2E /* ProgressController.swift in Sources */,
+				8C52940F1DADBB71007321E5 /* SocketManager.swift in Sources */,
 				8CE37EFA1D792A1E00EB23C9 /* UIColorExtension.swift in Sources */,
 				8CF54BC01D7C8AF50025BE5F /* PodCell.swift in Sources */,
 				8CDAE3B81D791EA900C4F220 /* AppDelegate.swift in Sources */,
