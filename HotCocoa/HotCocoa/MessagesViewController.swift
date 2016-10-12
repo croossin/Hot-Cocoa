@@ -20,10 +20,21 @@ class MessagesViewController: JSQMessagesViewController {
     var nickname: String = UserService.sharedInstance.getUserID()
     var roomname: String?
     var isTyping: Bool = false {
+        willSet(newValue){
+            if isTyping != newValue {
+                if let roomname = roomname {
+                    SocketManager.sharedInstance.emitTypingStatus(newValue, room: roomname, nickname: nickname)
+                }
+            }
+        }
+    }
+
+    var othersTyping: Bool = false{
         didSet{
             self.showTypingIndicator = isTyping
         }
     }
+
     var activeUsers: Int = 0
 
     override func viewDidLoad() {
@@ -98,7 +109,8 @@ class MessagesViewController: JSQMessagesViewController {
 
             //Call back was for typing update
             if isTyping {
-                self?.isTyping = array.count > 0
+                guard let _isTyping = self?.isTyping else { return }
+                self?.othersTyping = (array.count > 0) && !(_isTyping)
             }
 
             //Callback was for user update
@@ -196,9 +208,8 @@ class MessagesViewController: JSQMessagesViewController {
 
     //Text input view override
     override func textViewDidChange(textView: UITextView) {
-        if textView.text.characters.count > 0 && !isTyping{
-            //emit typing
-        }
+
+        self.isTyping = textView.text.characters.count > 0
 
         super.textViewDidChange(textView)
     }

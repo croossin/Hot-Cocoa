@@ -36,7 +36,7 @@ io.on('connection', function(clientSocket){
   	clientSocket.on('disconnect', function(){
     	console.log('User disconnected');
 
-	});
+  	});
 
   	clientSocket.on('connectUserToRoom', function(room, nickname){
    		console.log(nickname + " is trying to connect to: " + room);

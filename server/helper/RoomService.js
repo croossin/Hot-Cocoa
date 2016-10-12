@@ -22,7 +22,8 @@ exports.addTypingUserInRoom = function(roomname, nickname){
 		}else{
 			var newRoom = new Room();
 			newRoom.chatRoom = roomname;
-			newRoom.typingList = [nickname];
+			newRoom.typingList = [];
+			newRoom.typingList.push(nickname);
 			newRoom.save();
 			p.resolve(newRoom.typingList);
 		}

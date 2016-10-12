@@ -72,6 +72,11 @@ class SocketManager: NSObject {
         }
     }
 
+    //Send typing status to room
+    func emitTypingStatus(isTyping: Bool, room: String, nickname: String){
+        socket.emit(room  + (isTyping ? Socket.Endpoints.StartTyping : Socket.Endpoints.EndTyping ), room, nickname)
+    }
+
     func sendMessageToRoom(room: String, message: String, nickname: String){
         socket.emit(Socket.Endpoints.ChatMessage, room, nickname, message)
     }

@@ -67,6 +67,8 @@ struct Socket {
         static let NewChatMessage = "/newChatMessage"
         static let Users = "/users"
         static let TypingUpdate = "/typingUpdate"
+        static let StartTyping = "/startType"
+        static let EndTyping = "/endType"
     }
 }
 
