@@ -50,8 +50,7 @@ class MessagesViewController: JSQMessagesViewController {
         outgoingBubbleImageView = bubbleImageFactory.outgoingMessagesBubbleImageWithColor(UIColor.jsq_messageBubbleBlueColor())
         incomingBubbleImageView = bubbleImageFactory.incomingMessagesBubbleImageWithColor(UIColor.jsq_messageBubbleLightGrayColor())
 
-        outgoingAvatar = JSQMessagesAvatarImageFactory.avatarImageWithImage(UIImage(named: "user") ?? UIImage(), diameter: UInt(collectionView.collectionViewLayout.incomingAvatarViewSize.width))
-        incomingAvatar = JSQMessagesAvatarImageFactory.avatarImageWithImage(UIImage(named: "exis-logo")  ?? UIImage(), diameter: UInt(collectionView.collectionViewLayout.incomingAvatarViewSize.width))
+        outgoingAvatar = JSQMessagesAvatarImageFactory.avatarImageWithUserInitials(self.nickname.getInitials(), backgroundColor: UIColor.lightGrayColor(), textColor: UIColor.darkGrayColor(), font: UIFont(name: "Avenir-Book", size: 14), diameter: 34)
     }
 
     private func joinRoom(){
@@ -118,7 +117,7 @@ class MessagesViewController: JSQMessagesViewController {
     override func collectionView(collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageAvatarImageDataSource! {
         let message = messages[indexPath.item]
 
-        return message.senderId == self.nickname ? outgoingAvatar : incomingAvatar
+        return message.senderId == self.nickname ? outgoingAvatar : JSQMessagesAvatarImageFactory.avatarImageWithUserInitials(message.senderDisplayName.getInitials(), backgroundColor: UIColor.lightGrayColor(), textColor: UIColor.darkGrayColor(), font: UIFont(name: "Avenir-Book", size: 14), diameter: 34)
     }
 
     override func didPressSendButton(button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: NSDate!) {

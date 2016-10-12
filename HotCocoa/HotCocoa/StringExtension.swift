@@ -9,6 +9,10 @@
 import Foundation
 
 extension String {
+    public var first: String {
+        return String(self[startIndex])
+    }
+
     func sliceFrom(start: String, to: String) -> String? {
         return (rangeOfString(start)?.endIndex).flatMap { sInd in
             (rangeOfString(to, range: sInd..<endIndex)?.startIndex).map { eInd in
@@ -22,5 +26,9 @@ extension String {
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
 
         return dateFormatter.dateFromString(self)
+    }
+
+    func getInitials() -> String {
+        return self.componentsSeparatedByString(" ").reduce("") { ($0 == "" ? "" : $0.first) + $1.first}
     }
 }
