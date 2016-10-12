@@ -51,8 +51,12 @@ struct DetailedScroll{
 struct MessageTitles{
     static let Error = ["Whoops", "Uh-Oh", "Shoot", "Darn"]
     static let Success = ["Sweet", "Awesome", "Excellent", "You Did It", "Great Job"]
+    static let RandomUsernameTitle = "Random Username Assigned - "
 }
 
+struct MessageBody{
+    static let RandomUsernameBody = "All users are assigned a random name. Your name is: "
+}
 struct Socket {
     static let ConnectUserToRoom = "connectUserToRoom"
     static let DisconnectFromRoom = "disconnectUserFromRoom"
@@ -63,8 +67,15 @@ struct Socket {
     }
 }
 
+struct Errors{
+    struct Messages{
+        static let CantJoinRoom = "We are unable to join this chat room. Try again later."
+    }
+}
+
 struct UserDefaults {
     static let UserKey = "kUserKey"
+    static let RandomUsernameWarningKey = "kRandomUsernameWarningKey"
 }
 
 struct Credit{

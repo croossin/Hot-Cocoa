@@ -35,4 +35,8 @@ class AlertController {
 
         ISMessages.showCardAlertWithTitle(MessageTitles.Error[randomTitleIndex], message: "You must fill out feedback form", iconImage: nil, duration: 3.0, hideOnSwipe: true, hideOnTap: true, alertType: .Info, alertPosition: .Top)
     }
+
+    class func displayBanner(alertType: ISAlertType, title: String, message: String){
+        ISMessages.showCardAlertWithTitle(title, message: message, iconImage: nil, duration: 3.0, hideOnSwipe: true, hideOnTap: true, alertType: alertType, alertPosition: .Top)
+    }
 }

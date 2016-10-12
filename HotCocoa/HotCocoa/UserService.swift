@@ -34,4 +34,12 @@ class UserService {
 
         return ""
     }
+
+    func hasSeenRandomUsernameWarning() -> Bool {
+        return NSUserDefaults.standardUserDefaults().boolForKey(UserDefaults.RandomUsernameWarningKey) ? true : false
+    }
+
+    func setHasSeenRandomUsernameWarning(){
+        NSUserDefaults.standardUserDefaults().setBool(true, forKey: UserDefaults.RandomUsernameWarningKey)
+    }
 }

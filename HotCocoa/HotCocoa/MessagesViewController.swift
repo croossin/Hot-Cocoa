@@ -38,8 +38,9 @@ class MessagesViewController: JSQMessagesViewController {
     }
 
     private func setup() {
-
-        self.title = "\(self.senderId)'s Chat"
+        if let roomname = roomname {
+            self.title = "\(roomname)'s Chat"
+        }
 
         //For Chat UI
         self.senderDisplayName = self.nickname
@@ -56,7 +57,16 @@ class MessagesViewController: JSQMessagesViewController {
     private func joinRoom(){
 
         guard let roomname = roomname else {
+            let randomTitleIndex = Int(arc4random_uniform(UInt32(MessageTitles.Error.count)))
+            AlertController.displayBanner(.Error, title: MessageTitles.Error[randomTitleIndex], message: Errors.Messages.CantJoinRoom)
             return
+        }
+
+        //Warn the users about random username
+        if !UserService.sharedInstance.hasSeenRandomUsernameWarning() {
+            AlertController.displayBanner(.Info, title: MessageTitles.RandomUsernameTitle + self.nickname, message: MessageBody.RandomUsernameBody + self.nickname)
+
+            UserService.sharedInstance.setHasSeenRandomUsernameWarning()
         }
 
         //Connect to Room and get all messages
