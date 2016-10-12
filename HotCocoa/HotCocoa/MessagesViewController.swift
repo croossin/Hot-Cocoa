@@ -81,7 +81,10 @@ class MessagesViewController: JSQMessagesViewController {
         //Add yourself as a listener for new messages
         SocketManager.sharedInstance.becomeListenerForRoom(roomname) {[weak self] (message) in
 
-            if let message = message { self?.displayMsg(message) }
+            if let message = message {
+                self?.displayMsg(message)
+                self?.finishReceivingMessageAnimated(true)
+            }
         }
     }
 
@@ -131,9 +134,19 @@ class MessagesViewController: JSQMessagesViewController {
         let message = messages[indexPath.item]
 
         cell.textView!.textColor = message.senderId == self.nickname ? UIColor.whiteColor() : UIColor.blackColor()
-        cell.cellTopLabel!.text = message.senderId
-        
+
         return cell
+    }
+
+    override func collectionView(collectionView: JSQMessagesCollectionView!, attributedTextForMessageBubbleTopLabelAtIndexPath indexPath: NSIndexPath!) -> NSAttributedString! {
+        let message = messages[indexPath.item]
+
+        let attributes: [String : AnyObject] = [
+            NSForegroundColorAttributeName: UIColor.lightGrayColor(),
+            NSFontAttributeName: UIFont(name: "Avenir-Book", size: 10)!
+        ]
+
+        return NSAttributedString(string: message.senderDisplayName, attributes: attributes)
     }
 
     override func collectionView(collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageAvatarImageDataSource! {
