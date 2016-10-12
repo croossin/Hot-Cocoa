@@ -19,6 +19,12 @@ class MessagesViewController: JSQMessagesViewController {
 
     var nickname: String = UserService.sharedInstance.getUserID()
     var roomname: String?
+    var isTyping: Bool = false {
+        didSet{
+            self.showTypingIndicator = isTyping
+        }
+    }
+    var activeUsers: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,6 +90,20 @@ class MessagesViewController: JSQMessagesViewController {
             if let message = message {
                 self?.displayMsg(message)
                 self?.finishReceivingMessageAnimated(true)
+            }
+        }
+
+        //Add yourself as a listener for active user and typing list changes
+        SocketManager.sharedInstance.getNotifiedForTypingAndUserChanges(roomname) {[weak self] (isTyping, array) in
+
+            //Call back was for typing update
+            if isTyping {
+                self?.isTyping = array.count > 0
+            }
+
+            //Callback was for user update
+            else {
+                self?.activeUsers = array.count
             }
         }
     }
@@ -171,5 +191,15 @@ class MessagesViewController: JSQMessagesViewController {
 
     override func didPressAccessoryButton(sender: UIButton!) {
         print("Camera pressed!")
+    }
+
+
+    //Text input view override
+    override func textViewDidChange(textView: UITextView) {
+        if textView.text.characters.count > 0 && !isTyping{
+            //emit typing
+        }
+
+        super.textViewDidChange(textView)
     }
 }

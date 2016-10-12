@@ -6,13 +6,15 @@ var bodyParser = require('body-parser');
 var server = require('http').createServer(app);
 var io = require('socket.io')(server);
 var MessageService = require('./helper/MessageService.js');
+var RoomService = require('./helper/RoomService.js');
+
 /** 
  * =============================================================================
  * Mongo Database
  * =============================================================================
  */
-mongoose.connect(process.env.MONGODB_URI);
-// mongoose.connect("mongodb://localhost/hotcocoa")
+// mongoose.connect(process.env.MONGODB_URI);
+mongoose.connect("mongodb://localhost/hotcocoa")
 
 mongoose.Promise = global.Promise;
 
@@ -44,12 +46,46 @@ io.on('connection', function(clientSocket){
    		.then(function(messages){
 
    			//Return messages that are in the room
-   			io.emit("messages/" + room, messages);
+   			io.emit(room + "/messages", messages);
    		});
+
+   		//Get list of current active users
+   		RoomService.addSelfAsConnectedUsersInRoom(room, nickname)
+   		.then(function(users){
+
+   			io.emit(room +"/users", users);
+   		});
+
+   		//Typing Status - Start
+   		clientSocket.on(room +'/startType', function(room, nickname){
+
+   			RoomService.addTypingUserInRoom(room, nickname)
+   			.then(function(typingList){
+
+   				io.emit(room + "/typingUpdate", typingList);
+	   		});
+   		});
+
+		//Typing Status - End
+		clientSocket.on(room +'/endType', function(room, nickname){
+
+   			RoomService.removeTypingUserInRoom(room, nickname)
+   			.then(function(typingList){
+
+   				io.emit(room + "/typingUpdate", typingList);
+	   		});
+   		});   		
 	});
 
+  	//Disconnected from room
 	clientSocket.on('disconnectUserFromRoom', function(room, nickname){
    		console.log(nickname + " is disconnecting from: " + room);
+
+   		//Remove from DB
+   		RoomService.removeConnectedUserInRoom(room, nickname)
+   		.then(function(users){
+   			io.emit(room + "/users", users);
+   		});
 	});
 	
 	//Got message
@@ -92,7 +128,7 @@ app.use('/api/v1', require('./api/v1/general'));
  * =============================================================================
  */
 
-server.listen(process.env.PORT || '8081');
-// server.listen('8081');
+// server.listen(process.env.PORT || '8081');
+server.listen('8081');
 console.log('Magic happens on port ');
 exports = module.exports = app;

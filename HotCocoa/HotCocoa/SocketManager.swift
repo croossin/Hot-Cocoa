@@ -20,25 +20,29 @@ class SocketManager: NSObject {
         super.init()
     }
 
+    //Initial connection to server
     func establishConnection() {
         socket.connect()
     }
 
+    //Disconnect from server
     func closeConnection() {
         socket.disconnect()
     }
 
+    //Conect to a room
     func connectToRoomWithNickname(room: String, nickname: String, completionHandler: (messages: [JSQMessage]) -> Void){
         //Connect us to the room on the server
         socket.emit(Socket.ConnectUserToRoom, room, nickname)
 
         //Get existing messages in current room back from server
-        socket.on(Socket.Endpoints.MainMessage + room) { ( data, ack) -> Void in
+        socket.on(room + Socket.Endpoints.MainMessage) { ( data, ack) -> Void in
             guard let data = data.first as? [[String: AnyObject]] else { return }
             completionHandler(messages: DataHandler.dataToMessages(data))
         }
     }
 
+    //Disconnect from room
     func disconnectFromRoom(room: String, nickname: String){
         socket.emit(Socket.DisconnectFromRoom, room, nickname)
     }
@@ -46,9 +50,25 @@ class SocketManager: NSObject {
     //Add yourself as a listener for newMessages
     func becomeListenerForRoom(room: String, completionHandler: (message: JSQMessage?) -> Void){
 
-        socket.on("\(room)/newChatMessage") { (data, socketAck) -> Void in
+        socket.on(room + Socket.Endpoints.NewChatMessage) { (data, socketAck) -> Void in
             guard let data = data.first as? [String: AnyObject] else { return }
             completionHandler(message: DataHandler.dataToSingleMessage(data))
+        }
+    }
+
+    //Add yourself for typing and user changes
+    func getNotifiedForTypingAndUserChanges(room: String, completionHandler: (isTypingUpdate: Bool, array: [String: AnyObject]) -> Void){
+
+        //Get updates on users
+        socket.on(room + Socket.Endpoints.Users) { (data, socketAck) -> Void in
+            guard let data = data.first as? [String: AnyObject] else { return }
+            completionHandler(isTypingUpdate: false, array: data)
+        }
+
+        //Get updates on users whom are typing
+        socket.on(room + Socket.Endpoints.TypingUpdate) { (data, socketAck) -> Void in
+            guard let data = data.first as? [String: AnyObject] else { return }
+            completionHandler(isTypingUpdate: true, array: data)
         }
     }
 
