@@ -58,6 +58,16 @@ class PodCell: FoldingCell {
         WebController.displayURLWithinView(pod.appetize)
     }
 
+    @IBAction func openChat(sender: AnyObject) {
+
+        guard let pod = internalpod else { return }
+
+        let messageVC = MessagesViewController()
+        messageVC.senderId = pod.name
+
+        WindowHelper.pushOnToRootViewController(messageVC)
+    }
+    
     var internalpod: Pod?
 
     override func awakeFromNib() {
@@ -132,7 +142,7 @@ class PodCell: FoldingCell {
             self?.authorAvatar.addGestureRecognizer(tapGesture)
         }
 
-        
+
         //Setup scrolling tags
         tagsView.tags = NSMutableArray(array: pod.tags)
         tagsView.reloadTagSubviews()

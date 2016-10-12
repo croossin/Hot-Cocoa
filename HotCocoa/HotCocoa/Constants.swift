@@ -53,6 +53,10 @@ struct MessageTitles{
     static let Success = ["Sweet", "Awesome", "Excellent", "You Did It", "Great Job"]
 }
 
+struct Socket {
+    static let ConnectUser = "connectUser"
+}
+
 struct Credit{
     static let CocoaPods = [
         (title: "Alamofire", author: "Alamofire", url: "https://github.com/Alamofire/Alamofire"),
@@ -81,7 +85,8 @@ struct Credit{
         (title: "Command", author: "Johan Cato", website: "Noun Project", url: "https://thenounproject.com/term/command/432301"),
         (title: "iPhone", author: "Edward Boatman", website: "Noun Project", url: "https://thenounproject.com/term/iphone/414"),
         (title: "Menu", author: "Milky - Digital Innovation", website: "Noun Project", url: "https://thenounproject.com/search/?q=menu&creator=246241&i=105216"),
-        (title: "Mug", author: "Fuat şanlı", website: "Noun Project", url: "https://thenounproject.com/search/?q=hot%20cocoa&i=657447")
+        (title: "Mug", author: "Fuat şanlı", website: "Noun Project", url: "https://thenounproject.com/search/?q=hot%20cocoa&i=657447"),
+        (title: "Message", author: "Dmitrij", website: "Noun Project", url: "https://thenounproject.com/search/?q=message&i=662995")
     ]
 }
 

@@ -28,6 +28,13 @@ class SocketManager: NSObject {
         socket.disconnect()
     }
 
+    func connectToRoomWithNickname(room: String, nickname: String, completionHandler: (messages: [Message]) -> Void){
+        socket.emit("connectUser", room, nickname)
+        completionHandler(messages: [])
+    }
+
+
+    ///////////
 
     func connectToServerWithNickname(nickname: String, completionHandler: (userList: [[String: AnyObject]]!) -> Void) {
         socket.emit("connectUser", nickname)
@@ -38,7 +45,6 @@ class SocketManager: NSObject {
 
         listenForOtherMessages()
     }
-
 
     func exitChatWithNickname(nickname: String, completionHandler: () -> Void) {
         socket.emit("exitUser", nickname)

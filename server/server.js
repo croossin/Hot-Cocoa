@@ -29,11 +29,15 @@ db.once('open', function() {
  * =============================================================================
  */
 io.on('connection', function(clientSocket){
-  console.log('User connected');
+  	console.log('User connected');
 
   	clientSocket.on('disconnect', function(){
     	console.log('User disconnected');
 
+	});
+
+  	clientSocket.on('connectUser', function(room, nickname){
+   		console.log(nickname + " is trying to connect to " + room);
 	});
 });
 /** 

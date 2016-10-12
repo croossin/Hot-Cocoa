@@ -20,4 +20,10 @@ class WindowHelper{
             mainNavController.childViewControllers.first?.navigationController?.pushViewController(tagVC, animated: true)
         }
     }
+
+    class func pushOnToRootViewController(vc: UIViewController){
+        if let mainNavController = UIApplication.sharedApplication().keyWindow?.rootViewController{
+            mainNavController.childViewControllers.first?.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 }

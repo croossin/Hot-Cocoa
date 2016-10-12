@@ -19,5 +19,6 @@ pod 'Bohr'
 pod 'ISMessages'
 pod 'Cloudinary'
 pod 'Socket.IO-Client-Swift', '~> 7.0.0'
+pod 'JSQMessagesViewController'
 
 end
