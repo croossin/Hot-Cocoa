@@ -19,6 +19,7 @@ class MessagesViewController: JSQMessagesViewController {
 
     var nickname: String = UserService.sharedInstance.getUserID()
     var roomname: String?
+    var hasSeenNotification: Bool = false
     var isTyping: Bool = false {
         willSet(newValue){
             if isTyping != newValue {
@@ -118,10 +119,13 @@ class MessagesViewController: JSQMessagesViewController {
             //Callback was for user update
             else {
                 self?.activeUsers = array.count
-                if array.count == 2 {
+                guard let _hasSeenNotification = self?.hasSeenNotification else { return }
+                if array.count == 2 && !_hasSeenNotification{
                     AlertController.displayBanner(.Success, title: MessageTitles.Connected, message: MessageBody.ConnectedToChatOneOther)
-                }else if array.count > 2{
+                    self?.hasSeenNotification = true
+                }else if array.count > 2 && !_hasSeenNotification{
                     AlertController.displayBanner(.Success, title: MessageTitles.Connected, message: MessageBody.ConnectedToMulptiple(array.count))
+                    self?.hasSeenNotification = true
                 }
             }
         }
