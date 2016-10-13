@@ -52,10 +52,13 @@ struct MessageTitles{
     static let Error = ["Whoops", "Uh-Oh", "Shoot", "Darn"]
     static let Success = ["Sweet", "Awesome", "Excellent", "You Did It", "Great Job"]
     static let RandomUsernameTitle = "Random Username Assigned - "
+    static let Connected = "Connected"
 }
 
 struct MessageBody{
     static let RandomUsernameBody = "All users are assigned a random name. Your name is: "
+    static let ConnectedToChatOneOther = "There is one other person connected to this chat right now! Say hello!"
+    static func ConnectedToMulptiple(count: Int) -> String{return "There are \(count) currently connect to this chat!" }
 }
 struct Socket {
     static let ConnectUserToRoom = "connectUserToRoom"

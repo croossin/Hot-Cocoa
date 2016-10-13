@@ -118,6 +118,11 @@ class MessagesViewController: JSQMessagesViewController {
             //Callback was for user update
             else {
                 self?.activeUsers = array.count
+                if array.count == 2 {
+                    AlertController.displayBanner(.Success, title: MessageTitles.Connected, message: MessageBody.ConnectedToChatOneOther)
+                }else if array.count > 2{
+                    AlertController.displayBanner(.Success, title: MessageTitles.Connected, message: MessageBody.ConnectedToMulptiple(array.count))
+                }
             }
         }
     }
