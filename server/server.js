@@ -13,8 +13,8 @@ var RoomService = require('./helper/RoomService.js');
  * Mongo Database
  * =============================================================================
  */
-// mongoose.connect(process.env.MONGODB_URI);
-mongoose.connect("mongodb://localhost/hotcocoa")
+mongoose.connect(process.env.MONGODB_URI);
+// mongoose.connect("mongodb://localhost/hotcocoa")
 
 mongoose.Promise = global.Promise;
 
@@ -74,7 +74,16 @@ io.on('connection', function(clientSocket){
    				console.log(typingList);
    				io.emit(room + "/typingUpdate", typingList);
 	   		});
-   		});   		
+   		});
+
+	   	//Got message
+		clientSocket.on(room + '/chatMessage', function(room, nickname, message){
+			console.log("Got a message from " + nickname + " in room: " + room + "\n" + message);
+
+			var message = MessageService.saveMessage(room, nickname, message);
+
+			io.emit(room + "/newChatMessage", message);
+		});   		
 	});
 
   	//Disconnected from room
@@ -86,15 +95,6 @@ io.on('connection', function(clientSocket){
    		.then(function(users){
    			io.emit(room + "/users", users);
    		});
-	});
-	
-	//Got message
-	clientSocket.on('chatMessage', function(room, nickname, message){
-		console.log("Got a message from " + nickname + " in room: " + room + "\n" + message);
-
-		var message = MessageService.saveMessage(room, nickname, message);
-
-		io.emit(room + "/newChatMessage", message);
 	});
 });
 /** 
@@ -128,7 +128,7 @@ app.use('/api/v1', require('./api/v1/general'));
  * =============================================================================
  */
 
-// server.listen(process.env.PORT || '8081');
-server.listen('8081');
+server.listen(process.env.PORT || '8081');
+// server.listen('8081');
 console.log('Magic happens on port ');
 exports = module.exports = app;

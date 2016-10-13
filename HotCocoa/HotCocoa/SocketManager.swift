@@ -78,7 +78,7 @@ class SocketManager: NSObject {
     }
 
     func sendMessageToRoom(room: String, message: String, nickname: String){
-        socket.emit(Socket.Endpoints.ChatMessage, room, nickname, message)
+        socket.emit(room + Socket.Endpoints.ChatMessage, room, nickname, message)
     }
 
     ///////////

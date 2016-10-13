@@ -13,11 +13,11 @@ struct Dimensions{
 }
 
 struct Network{
-    static let MAIN_URL: String = "https://shielded-plateau-69173.herokuapp.com/api/v1"
-//    static let MAIN_URL: String = "http://localhost:8081/api/v1"
+//    static let MAIN_URL: String = "https://shielded-plateau-69173.herokuapp.com/api/v1"
+    static let MAIN_URL: String = "http://localhost:8081/api/v1"
 
-    static let MAIN_URL_FOR_SOCKETS: String = "https://shielded-plateau-69173.herokuapp.com"
-//    static let MAIN_URL_FOR_SOCKETS: String = "http://localhost:8081"
+//    static let MAIN_URL_FOR_SOCKETS: String = "https://shielded-plateau-69173.herokuapp.com"
+    static let MAIN_URL_FOR_SOCKETS: String = "http://localhost:8081"
 
 
     struct Routes {
@@ -63,7 +63,7 @@ struct Socket {
 
     struct Endpoints{
         static let MainMessage = "/messages"
-        static let ChatMessage = "chatMessage"
+        static let ChatMessage = "/chatMessage"
         static let NewChatMessage = "/newChatMessage"
         static let Users = "/users"
         static let TypingUpdate = "/typingUpdate"
