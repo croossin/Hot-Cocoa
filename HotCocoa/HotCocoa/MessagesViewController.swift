@@ -191,6 +191,8 @@ class MessagesViewController: JSQMessagesViewController {
 
     override func didPressSendButton(button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: NSDate!) {
 
+        self.isTyping = false
+
         guard let roomname = roomname else {
             let randomTitleIndex = Int(arc4random_uniform(UInt32(MessageTitles.Error.count)))
             AlertController.displayBanner(.Error, title: MessageTitles.Error[randomTitleIndex], message: Errors.Messages.CantSendMessage)
@@ -200,6 +202,7 @@ class MessagesViewController: JSQMessagesViewController {
         SocketManager.sharedInstance.sendMessageToRoom(roomname, message: text, nickname: senderDisplayName)
 
         displayMsg(self.nickname, displayName: senderDisplayName, text: text)
+
         finishSendingMessage()
     }
 
