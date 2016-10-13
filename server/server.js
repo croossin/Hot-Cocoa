@@ -13,8 +13,8 @@ var RoomService = require('./helper/RoomService.js');
  * Mongo Database
  * =============================================================================
  */
-mongoose.connect(process.env.MONGODB_URI);
-// mongoose.connect("mongodb://localhost/hotcocoa")
+// mongoose.connect(process.env.MONGODB_URI);
+mongoose.connect("mongodb://localhost/hotcocoa")
 
 mongoose.Promise = global.Promise;
 
@@ -71,7 +71,7 @@ io.on('connection', function(clientSocket){
 
    			RoomService.removeTypingUserInRoom(room, nickname)
    			.then(function(typingList){
-
+   				console.log(typingList);
    				io.emit(room + "/typingUpdate", typingList);
 	   		});
    		});   		
@@ -128,7 +128,7 @@ app.use('/api/v1', require('./api/v1/general'));
  * =============================================================================
  */
 
-server.listen(process.env.PORT || '8081');
-// server.listen('8081');
+// server.listen(process.env.PORT || '8081');
+server.listen('8081');
 console.log('Magic happens on port ');
 exports = module.exports = app;

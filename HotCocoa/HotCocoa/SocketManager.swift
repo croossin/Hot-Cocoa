@@ -57,17 +57,17 @@ class SocketManager: NSObject {
     }
 
     //Add yourself for typing and user changes
-    func getNotifiedForTypingAndUserChanges(room: String, completionHandler: (isTypingUpdate: Bool, array: [String: AnyObject]) -> Void){
+    func getNotifiedForTypingAndUserChanges(room: String, completionHandler: (isTypingUpdate: Bool, array: [AnyObject]) -> Void){
 
         //Get updates on users
         socket.on(room + Socket.Endpoints.Users) { (data, socketAck) -> Void in
-            guard let data = data.first as? [String: AnyObject] else { return }
+            guard let data = data.first as? [AnyObject] else { return }
             completionHandler(isTypingUpdate: false, array: data)
         }
 
         //Get updates on users whom are typing
         socket.on(room + Socket.Endpoints.TypingUpdate) { (data, socketAck) -> Void in
-            guard let data = data.first as? [String: AnyObject] else { return }
+            guard let data = data.first as? [AnyObject] else { return }
             completionHandler(isTypingUpdate: true, array: data)
         }
     }

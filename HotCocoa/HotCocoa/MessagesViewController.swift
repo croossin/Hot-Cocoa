@@ -31,7 +31,8 @@ class MessagesViewController: JSQMessagesViewController {
 
     var othersTyping: Bool = false{
         didSet{
-            self.showTypingIndicator = isTyping
+            self.showTypingIndicator = othersTyping
+            self.scrollToBottomAnimated(true)
         }
     }
 
@@ -92,6 +93,7 @@ class MessagesViewController: JSQMessagesViewController {
             }else{
                 self?.messages = messages
                 self?.collectionView.reloadData()
+                self?.scrollToBottomAnimated(false)
             }
         }
 
@@ -110,7 +112,7 @@ class MessagesViewController: JSQMessagesViewController {
             //Call back was for typing update
             if isTyping {
                 guard let _isTyping = self?.isTyping else { return }
-                self?.othersTyping = (array.count > 0) && !(_isTyping)
+                self?.othersTyping = array.count == 0 ? false : ((array.count == 1) && !(_isTyping)) || array.count > 1
             }
 
             //Callback was for user update
