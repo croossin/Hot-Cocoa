@@ -46,7 +46,20 @@ class SettingsViewController: BOTableViewController {
                 cell.destinationViewController = vc
             }))
 
-            section.footerTitle = "All feedback is greatly appreciated"
+            section.footerTitle = Settings.Footers.Feedback
+        }))
+
+        //Profile
+        self.addSection(BOTableViewSection(headerTitle: "Profile", handler: { (section) in
+
+            section.addCell(BOButtonTableViewCell(title: Settings.ProfileName(UserService.sharedInstance.getUserID()), key: "", handler: { (cell) in
+
+                guard let cell = cell as? BOButtonTableViewCell else { return }
+
+                cell.actionBlock = {
+                    AlertController.displayInfoAlert(Settings.ProfileNameTitle, subtitle: Settings.ProfileNameSubtitle)
+                }
+            }))
         }))
 
         //Pods
@@ -66,7 +79,7 @@ class SettingsViewController: BOTableViewController {
                 }))
             }
 
-            section.footerTitle = "The CocoaPods used in this project"
+            section.footerTitle = Settings.Footers.CocoaPods
         }))
 
         //Icons
@@ -86,7 +99,7 @@ class SettingsViewController: BOTableViewController {
                 }))
             }
 
-            section.footerTitle = "App made possible by these great designers!"
+            section.footerTitle = Settings.Footers.Icons
         }))
     }
 }

@@ -17,6 +17,12 @@ class AlertController {
         alert.showAlertWithTitle(title, withSubtitle: subtitle, withCustomImage: nil, withDoneButtonTitle: "Got It", andButtons: nil)
     }
 
+    class func displayInfoAlert(title: String, subtitle: String){
+        let alert = FCAlertView()
+        alert.makeAlertTypeCaution()
+        alert.showAlertWithTitle(title, withSubtitle: subtitle, withCustomImage: nil, withDoneButtonTitle: "Got It", andButtons: nil)
+    }
+
     class func displayCompleteFeedbackRequest(){
         let randomTitleIndex = Int(arc4random_uniform(UInt32(MessageTitles.Success.count)))
 

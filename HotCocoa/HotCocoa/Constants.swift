@@ -88,6 +88,18 @@ struct UserDefaults {
     static let RandomUsernameWarningKey = "kRandomUsernameWarningKey"
 }
 
+struct Settings {
+    static func ProfileName(nickname: String) -> String { return "Your app-wide nickname is: \(nickname)"}
+    static let ProfileNameTitle = "Randomly Assigned Nicknames"
+    static let ProfileNameSubtitle = "We randomly assign all users nicknames in order to keep chat conversation annonymous"
+    
+    struct Footers {
+        static let Feedback = "All feedback is greatly appreciated"
+        static let CocoaPods = "The CocoaPods used in this project"
+        static let Icons = "App made possible by these great designers!"
+    }
+}
+
 struct Credit{
     static let CocoaPods = [
         (title: "Alamofire", author: "Alamofire", url: "https://github.com/Alamofire/Alamofire"),
