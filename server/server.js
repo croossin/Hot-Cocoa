@@ -31,11 +31,22 @@ db.once('open', function() {
  * =============================================================================
  */
 io.on('connection', function(clientSocket){
-  	console.log('User connected');
-
+  	console.log('====== User connected =====');
+  	
   	clientSocket.on('disconnect', function(){
-    	console.log('User disconnected');
+    	console.log('===== User disconnected =====');
+  	});
 
+  	clientSocket.on('removeFromEntireDB', function(nickname){
+    	console.log('===== Removing ' + nickname + " from entire DB =====");
+    	RoomService.removeFromEntireDB(nickname)
+    	.then(function(){
+    		console.log('===== [SUCCESS] Removed ' + nickname + " from entire DB =====");
+
+    		clientSocket.destroy();
+    		//Figure out a way to have every room that we deleted from update their typing/active status
+    		
+    	});
   	});
 
   	clientSocket.on('connectUserToRoom', function(room, nickname){
@@ -53,7 +64,7 @@ io.on('connection', function(clientSocket){
    		RoomService.addSelfAsConnectedUsersInRoom(room, nickname)
    		.then(function(users){
 
-   			io.emit(room +"/users", users);
+   			io.emit(room + "/users", users);
    		});
 
    		//Typing Status - Start
@@ -71,7 +82,7 @@ io.on('connection', function(clientSocket){
 
    			RoomService.removeTypingUserInRoom(room, nickname)
    			.then(function(typingList){
-   				console.log(typingList);
+   				
    				io.emit(room + "/typingUpdate", typingList);
 	   		});
    		});

@@ -110,3 +110,16 @@ exports.removeConnectedUserInRoom = function(roomname, nickname){
 
 	return p.promise;
 }
+
+exports.removeFromEntireDB = function(nickname){
+	var p = Q.defer();
+
+	Room.update({}, {$pull: {"connectedUserList": nickname, 'typingList': nickname}}, {multi: true})
+	.then(function(room){
+		p.resolve();
+	}, function(err){
+		p.reject();
+	})
+
+	return p.promise;
+}
