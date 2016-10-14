@@ -20,6 +20,7 @@ class MessagesViewController: JSQMessagesViewController {
     var nickname: String = UserService.sharedInstance.getUserID()
     var roomname: String?
     var hasSeenNotification: Bool = false
+
     var isTyping: Bool = false {
         willSet(newValue){
             if isTyping != newValue {
@@ -69,6 +70,15 @@ class MessagesViewController: JSQMessagesViewController {
         incomingBubbleImageView = bubbleImageFactory.incomingMessagesBubbleImageWithColor(UIColor.jsq_messageBubbleLightGrayColor())
 
         outgoingAvatar = JSQMessagesAvatarImageFactory.avatarImageWithUserInitials(self.nickname.getInitials(), backgroundColor: UIColor.lightGrayColor(), textColor: UIColor.darkGrayColor(), font: UIFont(name: "Avenir-Book", size: 14), diameter: 34)
+
+        //Navigationbar
+        let userButton = UIButton()
+        userButton.setImage(UIImage(named: "search"), forState: .Normal)
+        userButton.frame = CGRectMake(0, 0, 30, 30)
+        userButton.addTarget(self, action: #selector(MessagesViewController.displayUsers), forControlEvents: .TouchUpInside)
+
+        let rightBarButton = UIBarButtonItem(customView: userButton)
+        self.navigationItem.rightBarButtonItem = rightBarButton
     }
 
     private func joinRoom(){
@@ -129,6 +139,10 @@ class MessagesViewController: JSQMessagesViewController {
                 }
             }
         }
+    }
+
+    func displayUsers(){
+        
     }
 
     private func showNoMessageAnimationText(){

@@ -13,7 +13,7 @@ var RoomService = require('./helper/RoomService.js');
  * Mongo Database
  * =============================================================================
  */
-mongoose.connect(process.env.MONGODB_URI);
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/hotcocoa");
 // mongoose.connect("mongodb://localhost/hotcocoa")
 
 mongoose.Promise = global.Promise;
