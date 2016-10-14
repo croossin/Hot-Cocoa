@@ -98,9 +98,15 @@ exports.removeConnectedUserInRoom = function(roomname, nickname){
 
 	Room.findOne({'chatRoom': roomname})
 	.then(function(room){
-		var index = room.connectedUserList.indexOf(nickname);
-		if (index !== -1) {
-		    room.connectedUserList.splice(index, 1);
+		var indexOfConnected = room.connectedUserList.indexOf(nickname);
+		var indexOfTyping = room.typingList.indexOf(nickname);
+		if (indexOfConnected !== -1) {
+		    room.connectedUserList.splice(indexOfConnected, 1);
+			
+			if (indexOfTyping !== -1){
+				room.typingList.splice(indexOfTyping, 1);
+			}
+		    
 		    room.save();
 		    p.resolve(room.connectedUserList);
 		}
