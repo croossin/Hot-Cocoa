@@ -521,7 +521,7 @@
                                                                 <constraint firstAttribute="height" constant="1" id="saD-Vk-IZt"/>
                                                             </constraints>
                                                         </view>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Jf-yn-thM" userLabel="descriptionView">
+                                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Jf-yn-thM" userLabel="descriptionView">
                                                             <rect key="frame" x="22" y="92" width="516" height="73"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="DESCRIPTION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0X-W1-cfm">
@@ -530,11 +530,10 @@
                                                                     <color key="textColor" red="0.13725490200000001" green="0.13725490200000001" blue="0.13725490200000001" alpha="0.49546030410000003" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Project Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HEw-Iw-u93">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Project Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HEw-Iw-u93">
                                                                     <rect key="frame" x="0.0" y="26" width="508" height="39"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="39" id="DGX-22-4of"/>
-                                                                        <constraint firstAttribute="width" constant="508" id="M0D-9V-IhZ"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="15"/>
                                                                     <color key="textColor" red="0.20392156859999999" green="0.23921568630000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -576,6 +575,7 @@
                                                         <constraint firstItem="RlG-FH-gnA" firstAttribute="top" secondItem="AyB-Cj-Z8D" secondAttribute="top" constant="12" id="fOr-gH-dET"/>
                                                         <constraint firstItem="8Jf-yn-thM" firstAttribute="top" secondItem="3sA-Kh-qYQ" secondAttribute="bottom" constant="-1" id="fSu-6X-JDy"/>
                                                         <constraint firstItem="RlG-FH-gnA" firstAttribute="leading" secondItem="AyB-Cj-Z8D" secondAttribute="trailing" constant="8" id="fwL-cy-Spn"/>
+                                                        <constraint firstItem="HEw-Iw-u93" firstAttribute="width" secondItem="3sA-Kh-qYQ" secondAttribute="width" id="mEq-aY-zoX"/>
                                                         <constraint firstItem="AyB-Cj-Z8D" firstAttribute="top" secondItem="jDS-v9-JzZ" secondAttribute="bottom" constant="5" id="pMB-cF-jNZ"/>
                                                         <constraint firstItem="3sA-Kh-qYQ" firstAttribute="leading" secondItem="dXs-Z1-g5L" secondAttribute="leading" constant="22" id="sF8-EA-hb2"/>
                                                         <constraint firstAttribute="bottom" secondItem="GXS-y4-HIG" secondAttribute="bottom" id="yNS-nB-Anz"/>
