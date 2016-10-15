@@ -16,7 +16,25 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="tUI-AY-UrZ">
+                                <rect key="frame" x="-200" y="-950" width="1000" height="2500"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Hot-Cocoa-Logo" translatesAutoresizingMaskIntoConstraints="NO" id="qgr-Ge-SVr">
+                                <rect key="frame" x="217" y="206" width="167" height="188"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="188" id="bHY-ZT-L2F"/>
+                                    <constraint firstAttribute="width" constant="167" id="igt-yD-zeS"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tUI-AY-UrZ" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="11j-l6-Aei"/>
+                            <constraint firstItem="qgr-Ge-SVr" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="2QK-YK-AMC"/>
+                            <constraint firstItem="qgr-Ge-SVr" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="WqS-Zj-6Gw"/>
+                            <constraint firstItem="tUI-AY-UrZ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="YeF-8u-aNc"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -24,4 +42,8 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Hot-Cocoa-Logo" width="410" height="475"/>
+        <image name="background" width="1000" height="2499"/>
+    </resources>
 </document>
