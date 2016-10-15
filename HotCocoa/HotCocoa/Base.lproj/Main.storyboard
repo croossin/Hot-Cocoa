@@ -151,14 +151,14 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bAC-dF-8ST" userLabel="LeftView">
                                                     <rect key="frame" x="0.0" y="0.0" width="88" height="165"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="DATE ADDED" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b0S-sS-PGq">
-                                                            <rect key="frame" x="18" y="101" width="61" height="14"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="DATE ADDED" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b0S-sS-PGq">
+                                                            <rect key="frame" x="0.0" y="101" width="88" height="14"/>
                                                             <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="10"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="06:30 PM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aZ4-Eo-sDt">
-                                                            <rect key="frame" x="18" y="120" width="57" height="18"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="06:30 PM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aZ4-Eo-sDt">
+                                                            <rect key="frame" x="0.0" y="120" width="88" height="18"/>
                                                             <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="13"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="0.80434438340000003" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -174,12 +174,13 @@
                                                     <color key="backgroundColor" red="0.36470588240000001" green="0.2901960784" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="88" id="0Bl-bb-wGU"/>
+                                                        <constraint firstItem="b0S-sS-PGq" firstAttribute="centerX" secondItem="bAC-dF-8ST" secondAttribute="centerX" id="5zU-TI-Niv"/>
                                                         <constraint firstAttribute="trailing" secondItem="n7k-8f-5qW" secondAttribute="trailing" constant="19" id="6eR-NS-Pkm"/>
-                                                        <constraint firstItem="b0S-sS-PGq" firstAttribute="leading" secondItem="bAC-dF-8ST" secondAttribute="leading" constant="13" id="Ba8-AR-vwq"/>
                                                         <constraint firstAttribute="bottom" secondItem="b0S-sS-PGq" secondAttribute="bottom" constant="50" id="O3s-sw-joU"/>
                                                         <constraint firstItem="b0S-sS-PGq" firstAttribute="top" secondItem="n7k-8f-5qW" secondAttribute="bottom" constant="24" id="RRw-Sh-ugY"/>
                                                         <constraint firstItem="n7k-8f-5qW" firstAttribute="top" secondItem="bAC-dF-8ST" secondAttribute="top" constant="28" id="Re3-PL-5gJ"/>
-                                                        <constraint firstItem="aZ4-Eo-sDt" firstAttribute="leading" secondItem="bAC-dF-8ST" secondAttribute="leading" constant="15" id="SLH-9w-F5k"/>
+                                                        <constraint firstItem="aZ4-Eo-sDt" firstAttribute="leading" secondItem="bAC-dF-8ST" secondAttribute="leading" id="SLH-9w-F5k"/>
+                                                        <constraint firstItem="aZ4-Eo-sDt" firstAttribute="centerX" secondItem="bAC-dF-8ST" secondAttribute="centerX" id="TjN-h0-yeg"/>
                                                         <constraint firstAttribute="bottom" secondItem="aZ4-Eo-sDt" secondAttribute="bottom" constant="27" id="igQ-r4-6kd"/>
                                                         <constraint firstItem="n7k-8f-5qW" firstAttribute="leading" secondItem="bAC-dF-8ST" secondAttribute="leading" constant="20" id="kbZ-n1-cID"/>
                                                     </constraints>
