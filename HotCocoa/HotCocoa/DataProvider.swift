@@ -15,10 +15,21 @@ import Cloudinary
 class DataProvider {
     static let sharedInstance = DataProvider()
 
+    let imageCache = AutoPurgingImageCache()
+
     class func getImageFromUrl(url: String, callback: ((UIImage)->())){
+
+        if let cachedImage = sharedInstance.imageCache.imageWithIdentifier(url){
+            callback(cachedImage)
+            return
+        }
+
         Alamofire.request(.GET, url)
                  .responseImage { response in
                     if let image = response.result.value {
+
+                        sharedInstance.imageCache.addImage(image, withIdentifier: url)
+
                         callback(image)
                     }
                  }
