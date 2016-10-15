@@ -63,24 +63,24 @@ class SettingsViewController: BOTableViewController {
         }))
 
         //Pods
-        self.addSection(BOTableViewSection(headerTitle: "CocoaPods", handler: { (section) in
-
-            let sortedPods = Credit.CocoaPods.sort { $0.title.lowercaseString < $1.title.lowercaseString }
-
-            for pod in sortedPods {
-
-                section.addCell(BOButtonTableViewCell(title: pod.title, key: "", handler: { (cell) in
-
-                    guard let cell = cell as? BOButtonTableViewCell else { return }
-
-                    cell.actionBlock = {
-                        WebController.displayURLOnGivenView(self, url: pod.url)
-                    }
-                }))
-            }
-
-            section.footerTitle = Settings.Footers.CocoaPods
-        }))
+//        self.addSection(BOTableViewSection(headerTitle: "CocoaPods", handler: { (section) in
+//
+//            let sortedPods = Credit.CocoaPods.sort { $0.title.lowercaseString < $1.title.lowercaseString }
+//
+//            for pod in sortedPods {
+//
+//                section.addCell(BOButtonTableViewCell(title: pod.title, key: "", handler: { (cell) in
+//
+//                    guard let cell = cell as? BOButtonTableViewCell else { return }
+//
+//                    cell.actionBlock = {
+//                        WebController.displayURLOnGivenView(self, url: pod.url)
+//                    }
+//                }))
+//            }
+//
+//            section.footerTitle = Settings.Footers.CocoaPods
+//        }))
 
         //Icons
         self.addSection(BOTableViewSection(headerTitle: "Icons", handler: { (section) in
