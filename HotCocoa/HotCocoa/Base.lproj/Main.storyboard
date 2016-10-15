@@ -339,7 +339,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qWH-t4-5wa">
-                                                                    <rect key="frame" x="332" y="12" width="25" height="25"/>
+                                                                    <rect key="frame" x="527" y="12" width="25" height="25"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="25" id="D16-Ko-Jma"/>
                                                                     </constraints>
@@ -351,7 +351,7 @@
                                                             </subviews>
                                                             <color key="backgroundColor" red="0.36470588240000001" green="0.29411764709999999" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="trailing" secondItem="qWH-t4-5wa" secondAttribute="trailing" constant="203" id="1xl-9r-Afw"/>
+                                                                <constraint firstAttribute="trailing" secondItem="qWH-t4-5wa" secondAttribute="trailing" constant="8" id="1xl-9r-Afw"/>
                                                                 <constraint firstItem="YPm-az-u9E" firstAttribute="top" secondItem="nGW-d8-ZhF" secondAttribute="top" id="3Z4-dw-6Se"/>
                                                                 <constraint firstItem="qWH-t4-5wa" firstAttribute="top" secondItem="nGW-d8-ZhF" secondAttribute="top" constant="12" id="CFo-jq-5Hl"/>
                                                                 <constraint firstAttribute="trailing" secondItem="YPm-az-u9E" secondAttribute="trailing" id="FMx-lF-Yef"/>
@@ -359,7 +359,6 @@
                                                                 <constraint firstItem="YPm-az-u9E" firstAttribute="leading" secondItem="nGW-d8-ZhF" secondAttribute="leading" id="mZ2-OC-yB9"/>
                                                                 <constraint firstAttribute="bottom" secondItem="YPm-az-u9E" secondAttribute="bottom" id="p6d-T6-cDd"/>
                                                                 <constraint firstAttribute="height" constant="49" id="qK6-jn-dZr"/>
-                                                                <constraint firstItem="qWH-t4-5wa" firstAttribute="leading" secondItem="nGW-d8-ZhF" secondAttribute="leading" constant="332" id="t8g-KT-QUV"/>
                                                             </constraints>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -395,7 +394,7 @@
                                                                 <constraint firstAttribute="bottom" secondItem="ASz-UL-llL" secondAttribute="bottom" id="zXF-cY-PBu"/>
                                                             </constraints>
                                                         </view>
-                                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aoc-2V-3hn" userLabel="CenterView">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aoc-2V-3hn" userLabel="CenterView">
                                                             <rect key="frame" x="190" y="117" width="180" height="40"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="LICENSE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i0l-zS-T6v">
@@ -694,6 +693,11 @@
                                                 <constraint firstItem="HEw-Iw-u93" firstAttribute="width" secondItem="1co-g6-K4f" secondAttribute="width" id="sws-4h-e8t"/>
                                                 <constraint firstAttribute="trailing" secondItem="dXs-Z1-g5L" secondAttribute="trailing" id="xbS-Cr-71F"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="sws-4h-e8t"/>
+                                                </mask>
+                                            </variation>
                                         </view>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1003,7 +1007,7 @@
                                                                 <constraint firstItem="CTo-sa-RqN" firstAttribute="top" secondItem="M1B-p6-jIc" secondAttribute="top" id="RHW-RA-aOv"/>
                                                             </constraints>
                                                         </view>
-                                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TKU-vf-79y" userLabel="CenterView">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TKU-vf-79y" userLabel="CenterView">
                                                             <rect key="frame" x="190" y="117" width="180" height="40"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="LICENSE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8NQ-fv-LDX">
