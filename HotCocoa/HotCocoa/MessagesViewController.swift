@@ -159,7 +159,7 @@ class MessagesViewController: JSQMessagesViewController {
 
             dispatch_after(delayTime, dispatch_get_main_queue()) {
                 guard let roomname = self.roomname else { return }
-                self.messages.append(JSQMessage(senderId: "Robot", displayName: "Hot Cocoa", text: "You are the first one here.  Feel free to start a conversation about \(roomname)"))
+                self.messages.append(JSQMessage(senderId: "Robot", displayName: "Hot Cocoa", text: "You are the first one here.  Feel free to start a conversation about \(roomname)."))
                 self.finishReceivingMessageAnimated(true)
             }
         }
@@ -171,7 +171,7 @@ class MessagesViewController: JSQMessagesViewController {
     }
 
     func displayMsg(id: String, displayName: String, text: String) {
-        messages.append(JSQMessage(senderId: id, displayName: displayName, text: text))
+        messages.append(JSQMessage(senderId: id, senderDisplayName: displayName, date: NSDate(), text: text))
     }
 
     override func collectionView(collectionView: JSQMessagesCollectionView!, messageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageData! {
