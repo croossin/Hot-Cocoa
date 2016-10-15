@@ -8,7 +8,7 @@
 
 import UIKit
 import JSQMessagesViewController
-import SwiftRandom
+import BBBadgeBarButtonItem
 
 class MessagesViewController: JSQMessagesViewController {
     var messages = [JSQMessage]()
@@ -20,6 +20,8 @@ class MessagesViewController: JSQMessagesViewController {
     var nickname: String = UserService.sharedInstance.getUserID()
     var roomname: String?
     var hasSeenNotification: Bool = false
+
+    var userBadgeButton: BBBadgeBarButtonItem?
 
     var isTyping: Bool = false {
         willSet(newValue){
@@ -38,7 +40,7 @@ class MessagesViewController: JSQMessagesViewController {
         }
     }
 
-    var activeUsers: Int = 0
+    var activeUsers = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,12 +75,12 @@ class MessagesViewController: JSQMessagesViewController {
 
         //Navigationbar
         let userButton = UIButton()
-        userButton.setImage(UIImage(named: "search"), forState: .Normal)
-        userButton.frame = CGRectMake(0, 0, 30, 30)
+        userButton.setImage(UIImage(named: "user"), forState: .Normal)
+        userButton.frame = CGRectMake(0, 0, 25, 25)
         userButton.addTarget(self, action: #selector(MessagesViewController.displayUsers), forControlEvents: .TouchUpInside)
 
-        let rightBarButton = UIBarButtonItem(customView: userButton)
-        self.navigationItem.rightBarButtonItem = rightBarButton
+        userBadgeButton = BBBadgeBarButtonItem(customUIButton: userButton)
+        navigationItem.rightBarButtonItem = userBadgeButton
     }
 
     private func joinRoom(){
@@ -128,7 +130,8 @@ class MessagesViewController: JSQMessagesViewController {
 
             //Callback was for user update
             else {
-                self?.activeUsers = array.count
+                self?.activeUsers = array
+                self?.userBadgeButton?.badgeValue = "\(array.count - 1)"
                 guard let _hasSeenNotification = self?.hasSeenNotification else { return }
                 if array.count == 2 && !_hasSeenNotification{
                     AlertController.displayBanner(.Success, title: MessageTitles.Connected, message: MessageBody.ConnectedToChatOneOther)

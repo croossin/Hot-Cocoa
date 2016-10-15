@@ -2,6 +2,7 @@ PODS:
   - Alamofire (3.5.0)
   - AlamofireImage (2.5.0):
     - Alamofire (~> 3.5)
+  - BBBadgeBarButtonItem (1.2)
   - Bohr (3.0.0)
   - Cloudinary (1.0.15)
   - CTFeedback (1.1.1)
@@ -24,6 +25,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 3.4)
   - AlamofireImage (~> 2.0)
+  - BBBadgeBarButtonItem
   - Bohr
   - Cloudinary
   - CTFeedback
@@ -58,6 +60,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: b70a7352335f8ea5babd0a923eb7e8eacc67b877
   AlamofireImage: 2d34936e5201270bb17a316a786e90e83b4a249d
+  BBBadgeBarButtonItem: c2fbca0bff18e21b70defc9438a8a5048008e7ca
   Bohr: 17b150766e54e1fb8ff417d85b830c7caafa8b4a
   Cloudinary: f80af4565ec08c521d5e58cb56d9fbe1e4595e40
   CTFeedback: 6f128606e0d26d46075c3fa9fc33884372df8675
@@ -76,6 +79,6 @@ SPEC CHECKSUMS:
   TLTagsControl: 34ab7d25f282aa2b8b42e73cc71b96ffe9fa7a15
   UIScrollView-InfiniteScroll: 14e204c50ca4040467e1cbfa141dad7a18919b56
 
-PODFILE CHECKSUM: 4e14054fe224907d318cc4a9d453769d264b8456
+PODFILE CHECKSUM: d30ec65d626c39de8c446961cf040f578848386f
 
 COCOAPODS: 1.1.0.rc.1
