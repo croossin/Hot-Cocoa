@@ -16,6 +16,8 @@ class SocketManager: NSObject {
 
     var socket: SocketIOClient = SocketIOClient(socketURL: NSURL(string: Network.MAIN_URL_FOR_SOCKETS)!)
 
+    var reconnected: Bool = false
+
     override init() {
         super.init()
     }
@@ -28,6 +30,11 @@ class SocketManager: NSObject {
     //Disconnect from server
     func closeConnection() {
         socket.disconnect()
+    }
+
+    func reconnect(){
+        socket.reconnect()
+        reconnected = true
     }
 
     //Remove yourself from entire DB
