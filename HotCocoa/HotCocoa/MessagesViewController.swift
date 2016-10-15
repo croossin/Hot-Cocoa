@@ -93,7 +93,7 @@ class MessagesViewController: JSQMessagesViewController {
 
         //Warn the users about random username
         if !UserService.sharedInstance.hasSeenRandomUsernameWarning() {
-            AlertController.displayBanner(.Info, title: MessageTitles.RandomUsernameTitle + self.nickname, message: MessageBody.RandomUsernameBody + self.nickname)
+            AlertController.displayBanner(.Info, title: MessageTitles.RandomUsernameTitle(self.nickname), message: MessageBody.RandomUsernameBody + self.nickname)
 
             UserService.sharedInstance.setHasSeenRandomUsernameWarning()
         }
@@ -145,7 +145,11 @@ class MessagesViewController: JSQMessagesViewController {
     }
 
     func displayUsers(){
-        
+        if activeUsers.count > 1 {
+            AlertController.displayBanner(.Success, title: MessageTitles.UsersConnectedPopUp, message: MessageBody.ConnectedUsersMessage(activeUsers.count-1))
+        }else{
+            AlertController.displayBanner(.Warning, title: MessageTitles.UsersConnectedAlone, message: MessageBody.ConnectUserAloneMessage)
+        }
     }
 
     private func showNoMessageAnimationText(){

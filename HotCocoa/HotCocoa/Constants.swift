@@ -51,14 +51,18 @@ struct DetailedScroll{
 struct MessageTitles{
     static let Error = ["Whoops", "Uh-Oh", "Shoot", "Darn"]
     static let Success = ["Sweet", "Awesome", "Excellent", "You Did It", "Great Job"]
-    static let RandomUsernameTitle = "Random Username Assigned - "
+    static func RandomUsernameTitle(nickname: String) -> String {return "Random Username Assigned - \(nickname)"}
     static let Connected = "Connected"
+    static let UsersConnectedPopUp = "You're Not Alone"
+    static let UsersConnectedAlone = "Well..."
 }
 
 struct MessageBody{
     static let RandomUsernameBody = "All users are assigned a random name. Your name is: "
     static let ConnectedToChatOneOther = "There is one other person connected to this chat right now! Say hello!"
-    static func ConnectedToMulptiple(count: Int) -> String{return "There are \(count) currently connect to this chat!" }
+    static func ConnectedToMulptiple(count: Int) -> String {return "There are \(count) currently connect to this chat!" }
+    static func ConnectedUsersMessage(count: Int) -> String {return "You are currently in the chat with \(count) other active user!"}
+    static let ConnectUserAloneMessage = "It seems that no one else is in here with you"
 }
 struct Socket {
     static let ConnectUserToRoom = "connectUserToRoom"
