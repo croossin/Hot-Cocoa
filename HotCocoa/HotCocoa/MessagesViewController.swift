@@ -209,6 +209,24 @@ class MessagesViewController: JSQMessagesViewController {
         return NSAttributedString(string: message.senderDisplayName, attributes: attributes)
     }
 
+    override func collectionView(collectionView: JSQMessagesCollectionView!, layout collectionViewLayout: JSQMessagesCollectionViewFlowLayout!, heightForMessageBubbleTopLabelAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
+        let message = messages[indexPath.item]
+
+        //Don't display header if it is your message
+        if message.senderId == self.nickname { return 0 }
+
+        if indexPath.item - 1 >= 0 {
+            let previousMessage = messages[indexPath.item - 1]
+
+            //If the same user send multiple messages in a row
+            if message.senderId == previousMessage.senderId {
+                return 0
+            }
+        }
+
+        return 15
+    }
+
     override func collectionView(collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageAvatarImageDataSource! {
         let message = messages[indexPath.item]
 
