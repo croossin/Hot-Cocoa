@@ -970,6 +970,9 @@
                                                                         <constraint firstAttribute="width" constant="25" id="Cet-ei-JBd"/>
                                                                     </constraints>
                                                                     <state key="normal" image="message"/>
+                                                                    <connections>
+                                                                        <action selector="openMessages:" destination="eEk-9d-qfZ" eventType="touchUpInside" id="vUJ-qQ-yIl"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                             <color key="backgroundColor" red="0.36470588240000001" green="0.29411764709999999" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>

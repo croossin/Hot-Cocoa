@@ -53,6 +53,18 @@ class CocoaPodCell: FoldingCell {
         }
     }
 
+    @IBAction func openMessages(sender: AnyObject) {
+        guard let pod = pod, podName = pod.getGitHubProjectName() else { return }
+
+        let messageVC = MessagesViewController()
+
+        messageVC.senderId = UserService.sharedInstance.getUserID()
+
+        messageVC.roomname = podName
+
+        WindowHelper.pushOnToRootViewController(messageVC)
+    }
+
     var pod: CocoaPod?
     var ghUsername: String?
 

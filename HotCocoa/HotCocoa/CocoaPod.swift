@@ -53,6 +53,14 @@ class CocoaPod {
         return emailTest.evaluateWithObject(self.author.email)
     }
 
+    func getGitHubProjectName() -> String?{
+        if let projectName = self.url.componentsSeparatedByString("/").last {
+            return projectName
+        }
+
+        return nil
+    }
+
     func githubUsername() -> String?{
         return self.url.sliceFrom(".com/", to: "/")
     }
