@@ -358,6 +358,7 @@
 				TargetAttributes = {
 					8CDAE3B31D791EA800C4F220 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = P857ZRS6WM;
 					};
 					8CDAE3C71D791EA900C4F220 = {
 						CreatedOnToolsVersion = 7.3;
@@ -633,10 +634,13 @@
 			baseConfigurationReference = 259F6E6FD62EB24E0A0576A8 /* Pods-HotCocoa.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = HotCocoa/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.crmobiledev.HotCocoa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -645,10 +649,13 @@
 			baseConfigurationReference = 801FD5F7E556F2347EA8F8FF /* Pods-HotCocoa.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = HotCocoa/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.crmobiledev.HotCocoa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

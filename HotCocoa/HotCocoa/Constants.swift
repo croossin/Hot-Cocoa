@@ -13,11 +13,11 @@ struct Dimensions{
 }
 
 struct Network{
-//    static let MAIN_URL: String = "https://shielded-plateau-69173.herokuapp.com/api/v1"
-    static let MAIN_URL: String = "http://localhost:8081/api/v1"
+    static let MAIN_URL: String = "https://shielded-plateau-69173.herokuapp.com/api/v1"
+//    static let MAIN_URL: String = "http://localhost:8081/api/v1"
 
-//    static let MAIN_URL_FOR_SOCKETS: String = "https://shielded-plateau-69173.herokuapp.com"
-    static let MAIN_URL_FOR_SOCKETS: String = "http://localhost:8081"
+    static let MAIN_URL_FOR_SOCKETS: String = "https://shielded-plateau-69173.herokuapp.com"
+//    static let MAIN_URL_FOR_SOCKETS: String = "http://localhost:8081"
 
 
     struct Routes {
@@ -60,7 +60,7 @@ struct MessageTitles{
 struct MessageBody{
     static let RandomUsernameBody = "All users are assigned a random name. Your name is: "
     static let ConnectedToChatOneOther = "There is one other person connected to this chat right now! Say hello!"
-    static func ConnectedToMulptiple(count: Int) -> String {return "There are \(count) currently connect to this chat!" }
+    static func ConnectedToMulptiple(count: Int) -> String {return "There are currently \(count) others connected to this chat!" }
     static func ConnectedUsersMessage(count: Int) -> String {return "You are currently in the chat with \(count) other active user!"}
     static let ConnectUserAloneMessage = "It seems that no one else is in here with you"
 }

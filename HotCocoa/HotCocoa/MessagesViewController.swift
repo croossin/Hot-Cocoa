@@ -21,6 +21,7 @@ class MessagesViewController: JSQMessagesViewController {
     var nickname: String = UserService.sharedInstance.getUserID()
     var roomname: String?
     var hasSeenNotification: Bool = false
+    var hasShownWelcomeMessage: Bool = false
 
     var userBadgeButton: BBBadgeBarButtonItem?
 
@@ -138,7 +139,7 @@ class MessagesViewController: JSQMessagesViewController {
                     AlertController.displayBanner(.Success, title: MessageTitles.Connected, message: MessageBody.ConnectedToChatOneOther)
                     self?.hasSeenNotification = true
                 }else if array.count > 2 && !_hasSeenNotification{
-                    AlertController.displayBanner(.Success, title: MessageTitles.Connected, message: MessageBody.ConnectedToMulptiple(array.count))
+                    AlertController.displayBanner(.Success, title: MessageTitles.Connected, message: MessageBody.ConnectedToMulptiple(array.count - 1))
                     self?.hasSeenNotification = true
                 }
             }
@@ -154,6 +155,7 @@ class MessagesViewController: JSQMessagesViewController {
     }
 
     private func showNoMessageAnimationText(){
+        if self.hasShownWelcomeMessage { return }
         showTypingIndicator = true
 
         let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC)))
@@ -166,6 +168,7 @@ class MessagesViewController: JSQMessagesViewController {
                 guard let roomname = self.roomname else { return }
                 self.messages.append(JSQMessage(senderId: "Robot", displayName: "Hot Cocoa", text: "You are the first one here.  Feel free to start a conversation about \(roomname)."))
                 self.finishReceivingMessageAnimated(true)
+                self.hasShownWelcomeMessage = true
             }
         }
 
