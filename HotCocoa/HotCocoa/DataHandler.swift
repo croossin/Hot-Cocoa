@@ -128,7 +128,13 @@ class DataHandler {
                 message = data[i]["message"] as? String
                 else { return []}
 
-            messages.append(JSQMessage(senderId: senderID, senderDisplayName: senderDisplayName, date: date, text: message))
+            //It was an image message
+            if let imageUrl = data[i]["imageUrl"] as? String{
+                let mediaItem = AsyncPhotoMediaItem(withURL: imageUrl, imageSize: CGSizeMake(200, 200), isOperator: senderID == UserService.sharedInstance.getUserID())
+                messages.append(JSQMessage(senderId: imageUrl, senderDisplayName: senderDisplayName, date: date, media: mediaItem))
+            }else{
+                messages.append(JSQMessage(senderId: senderID, senderDisplayName: senderDisplayName, date: date, text: message))
+            }
         }
 
         return messages

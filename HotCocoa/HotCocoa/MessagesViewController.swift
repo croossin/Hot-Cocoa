@@ -9,6 +9,7 @@
 import UIKit
 import JSQMessagesViewController
 import BBBadgeBarButtonItem
+import Fusuma
 
 class MessagesViewController: JSQMessagesViewController {
     var messages = [JSQMessage]()
@@ -172,10 +173,16 @@ class MessagesViewController: JSQMessagesViewController {
 
     func displayMsg(message: JSQMessage){
         messages.append(message)
+        self.finishReceivingMessage()
     }
 
-    func displayMsg(id: String, displayName: String, text: String) {
-        messages.append(JSQMessage(senderId: id, senderDisplayName: displayName, date: NSDate(), text: text))
+    func displayMsg(id: String, displayName: String, text: String, image: UIImage? = nil) {
+        if let mediaImage = image {
+            messages.append(JSQMessage(senderId: id, senderDisplayName: displayName, date: NSDate(), media: JSQPhotoMediaItem(image: mediaImage)))
+        }else{
+            messages.append(JSQMessage(senderId: id, senderDisplayName: displayName, date: NSDate(), text: text))
+        }
+        self.finishSendingMessage()
     }
 
     override func collectionView(collectionView: JSQMessagesCollectionView!, messageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageData! {
@@ -196,7 +203,7 @@ class MessagesViewController: JSQMessagesViewController {
         let cell = super.collectionView(collectionView, cellForItemAtIndexPath: indexPath) as! JSQMessagesCollectionViewCell
 
         let message = messages[indexPath.item]
-
+        
         cell.textView!.textColor = message.senderId == self.nickname ? UIColor.whiteColor() : UIColor.blackColor()
 
         return cell
@@ -255,7 +262,10 @@ class MessagesViewController: JSQMessagesViewController {
     }
 
     override func didPressAccessoryButton(sender: UIButton!) {
-        print("Camera pressed!")
+        let fusuma = FusumaViewController()
+        fusuma.delegate = self
+        fusuma.hasVideo = false
+        self.presentViewController(fusuma, animated: true, completion: nil)
     }
 
 
@@ -265,5 +275,33 @@ class MessagesViewController: JSQMessagesViewController {
         self.isTyping = textView.text.characters.count > 0
 
         super.textViewDidChange(textView)
+    }
+}
+
+extension MessagesViewController : FusumaDelegate {
+
+    func fusumaImageSelected(image: UIImage) {
+
+        self.view.userInteractionEnabled = false
+
+        DataProvider.uploadImage(image) {[weak self] (success, url) in
+
+            self?.view.userInteractionEnabled = true
+
+            if success {
+                guard let nickname = self?.nickname, roomname = self?.roomname else { return }
+                
+                SocketManager.sharedInstance.sendMessageToRoom(roomname, message: "", nickname: nickname, imageUrl: url)
+                self?.displayMsg(nickname, displayName: nickname, text: "", image: image)
+            }
+        }
+    }
+
+    func fusumaCameraRollUnauthorized() {
+        
+    }
+
+    func fusumaVideoCompleted(withFileURL fileURL: NSURL) {
+
     }
 }

@@ -31,3 +31,17 @@ exports.saveMessage = function(room, nickname, message){
 
 	return newMessage; 
 }
+
+exports.saveImageMessage = function(room, nickname, imageUrl){
+	var newMessage = new Message();
+	
+	newMessage.chatRoom = room;
+	newMessage.senderID = nickname;
+	newMessage.senderDisplayName = nickname
+	newMessage.message = "";
+	newMessage.imageUrl = imageUrl;
+
+	newMessage.save();
+
+	return newMessage; 
+}

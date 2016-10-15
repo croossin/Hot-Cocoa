@@ -10,7 +10,7 @@ var messageSchema = new Schema({
     default: new Date()
   },
   message: String,
-  isMedia: Boolean
+  imageUrl: String
 });
 
 module.exports = mongoose.model('Message', messageSchema);

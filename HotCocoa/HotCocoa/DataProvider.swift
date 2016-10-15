@@ -30,8 +30,12 @@ class DataProvider {
         let uploader : CLUploader = CLUploader(clouder, delegate: nil)
         uploader.upload(imageToUpload, options: nil, withCompletion: { (dataDictionary, errorResult, code, context) in
 
-            code < 400 ? onCompletion(status: true, url: dataDictionary["url"] as? String ?? "") : onCompletion(status: false, url:"")
-
+            if code < 400 {
+                ProgressController.sharedInstance.dismiss()
+                onCompletion(status: true, url: dataDictionary["url"] as? String ?? "")
+            } else {
+                onCompletion(status: false, url:"")
+            }
         }) { (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite, context) in
             ProgressController.sharedInstance.showProgress("Uploading Image", progress: Float(totalBytesWritten * 100/totalBytesExpectedToWrite)/100)
         }

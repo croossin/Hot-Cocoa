@@ -82,7 +82,12 @@ class SocketManager: NSObject {
         socket.emit(room  + (isTyping ? Socket.Endpoints.StartTyping : Socket.Endpoints.EndTyping ), room, nickname)
     }
 
-    func sendMessageToRoom(room: String, message: String, nickname: String){
-        socket.emit(room + Socket.Endpoints.ChatMessage, room, nickname, message)
+    //Send single message to room
+    func sendMessageToRoom(room: String, message: String, nickname: String, imageUrl: String? = nil){
+        if let imageUrl = imageUrl {
+            socket.emit(room + Socket.Endpoints.ImageMessage, room, nickname, imageUrl)
+        }else{
+            socket.emit(room + Socket.Endpoints.ChatMessage, room, nickname, message)
+        }
     }
 }

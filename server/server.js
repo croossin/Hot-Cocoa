@@ -94,6 +94,15 @@ io.on('connection', function(clientSocket){
 			var message = MessageService.saveMessage(room, nickname, message);
 
 			io.emit(room + "/newChatMessage", message);
+		});
+
+		//Got Image Message
+		clientSocket.on(room + '/imageMessage', function(room, nickname, imageUrl){
+			console.log("Got a image from " + nickname);
+
+			var message = MessageService.saveImageMessage(room, nickname, imageUrl);
+
+			io.emit(room + "/newChatMessage", message);
 		});   		
 	});
 

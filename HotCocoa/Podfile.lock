@@ -11,6 +11,7 @@ PODS:
   - Fabric (1.6.8)
   - FCAlertView (1.0.9)
   - FoldingCell (1.0.0)
+  - Fusuma (0.5.3)
   - ISMessages (1.0.3)
   - JSQMessagesViewController (7.3.4):
     - JSQSystemSoundPlayer (~> 2.0.1)
@@ -36,6 +37,7 @@ DEPENDENCIES:
   - Fabric
   - FCAlertView
   - FoldingCell
+  - Fusuma
   - ISMessages
   - JSQMessagesViewController
   - RAMReel
@@ -73,6 +75,7 @@ SPEC CHECKSUMS:
   Fabric: 5755268d0171435ab167e3d0878a28a777deaf10
   FCAlertView: 9a39300baaf29de8b343dec7f05c9978cd5b9f51
   FoldingCell: ca0b0f73a853143bf7d968c04a6604d25fbf1af7
+  Fusuma: 02ffb3a9943792519f2c0972263b750acb550a49
   ISMessages: 8c9c900f750cc763774e6e581c8cbd6f35c8a6a6
   JSQMessagesViewController: 39fed975e3c9f8eba7292071e29eeb541d105e66
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
@@ -86,6 +89,6 @@ SPEC CHECKSUMS:
   TLTagsControl: 34ab7d25f282aa2b8b42e73cc71b96ffe9fa7a15
   UIScrollView-InfiniteScroll: 14e204c50ca4040467e1cbfa141dad7a18919b56
 
-PODFILE CHECKSUM: 035dd79ad7f0186ef4a992963ac01495573aaee7
+PODFILE CHECKSUM: a72aa9a8b943408a66c0d3201ed9ea5d6038c040
 
 COCOAPODS: 1.1.0.rc.1
