@@ -8,6 +8,8 @@
 
 import UIKit
 import TCTitleLoading
+import Fabric
+import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +21,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
 //        UILabel.appearance().defaultFont = UIFont(name: "Avenir-Book", size: 14)
         TCTitleLoadingManager.setDotColor(UIColor.CoralColor)
+
+        //Crashlytics
+        Fabric.with([Crashlytics.self])
+
         return true
     }
 

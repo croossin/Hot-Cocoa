@@ -311,6 +311,7 @@
 				8CDAE3B21D791EA800C4F220 /* Resources */,
 				30683AE2D91751D0A1107AB4 /* [CP] Embed Pods Frameworks */,
 				772F1B074C554006C0A6350C /* [CP] Copy Pods Resources */,
+				8CA3C8B01DB1BFC200395530 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -427,6 +428,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HotCocoa/Pods-HotCocoa-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		8CA3C8B01DB1BFC200395530 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" a268f5bdb176805a37b04724fbd1b638a34638a1 54697b922ea04cb262da9af1d3cea5d024fce888e6d990edeadbec7be445657e";
 		};
 		F54931096910462E9CCFF49C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

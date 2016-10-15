@@ -5,7 +5,10 @@ PODS:
   - BBBadgeBarButtonItem (1.2)
   - Bohr (3.0.0)
   - Cloudinary (1.0.15)
+  - Crashlytics (3.8.2):
+    - Fabric (~> 1.6.3)
   - CTFeedback (1.1.1)
+  - Fabric (1.6.8)
   - FCAlertView (1.0.9)
   - FoldingCell (1.0.0)
   - ISMessages (1.0.3)
@@ -28,7 +31,9 @@ DEPENDENCIES:
   - BBBadgeBarButtonItem
   - Bohr
   - Cloudinary
+  - Crashlytics
   - CTFeedback
+  - Fabric
   - FCAlertView
   - FoldingCell
   - ISMessages
@@ -63,7 +68,9 @@ SPEC CHECKSUMS:
   BBBadgeBarButtonItem: c2fbca0bff18e21b70defc9438a8a5048008e7ca
   Bohr: 17b150766e54e1fb8ff417d85b830c7caafa8b4a
   Cloudinary: f80af4565ec08c521d5e58cb56d9fbe1e4595e40
+  Crashlytics: 27acca95a01b042a8294291dd6dff27f8f6af6d7
   CTFeedback: 6f128606e0d26d46075c3fa9fc33884372df8675
+  Fabric: 5755268d0171435ab167e3d0878a28a777deaf10
   FCAlertView: 9a39300baaf29de8b343dec7f05c9978cd5b9f51
   FoldingCell: ca0b0f73a853143bf7d968c04a6604d25fbf1af7
   ISMessages: 8c9c900f750cc763774e6e581c8cbd6f35c8a6a6
@@ -79,6 +86,6 @@ SPEC CHECKSUMS:
   TLTagsControl: 34ab7d25f282aa2b8b42e73cc71b96ffe9fa7a15
   UIScrollView-InfiniteScroll: 14e204c50ca4040467e1cbfa141dad7a18919b56
 
-PODFILE CHECKSUM: d30ec65d626c39de8c446961cf040f578848386f
+PODFILE CHECKSUM: 035dd79ad7f0186ef4a992963ac01495573aaee7
 
 COCOAPODS: 1.1.0.rc.1
