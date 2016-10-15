@@ -10,7 +10,11 @@ var messageSchema = new Schema({
     default: new Date()
   },
   message: String,
-  imageUrl: String
+  image: {
+    url: String,
+    width: Number,
+    height: Number
+  }
 });
 
 module.exports = mongoose.model('Message', messageSchema);

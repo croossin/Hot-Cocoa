@@ -97,10 +97,10 @@ io.on('connection', function(clientSocket){
 		});
 
 		//Got Image Message
-		clientSocket.on(room + '/imageMessage', function(room, nickname, imageUrl){
+		clientSocket.on(room + '/imageMessage', function(room, nickname, imageUrl, width, height){
 			console.log("Got a image from " + nickname);
 
-			var message = MessageService.saveImageMessage(room, nickname, imageUrl);
+			var message = MessageService.saveImageMessage(room, nickname, imageUrl, width, height);
 
 			io.emit(room + "/newChatMessage", message);
 		});   		

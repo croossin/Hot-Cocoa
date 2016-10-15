@@ -32,14 +32,14 @@ exports.saveMessage = function(room, nickname, message){
 	return newMessage; 
 }
 
-exports.saveImageMessage = function(room, nickname, imageUrl){
+exports.saveImageMessage = function(room, nickname, imageUrl, width, height){
 	var newMessage = new Message();
 	
 	newMessage.chatRoom = room;
 	newMessage.senderID = nickname;
 	newMessage.senderDisplayName = nickname
 	newMessage.message = "";
-	newMessage.imageUrl = imageUrl;
+	newMessage.image = {url: imageUrl, width: width, height: height};
 
 	newMessage.save();
 

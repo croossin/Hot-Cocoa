@@ -25,9 +25,9 @@ class AsyncPhotoMediaItem : JSQPhotoMediaItem {
 //        size.height = min(size.height, resizedImageSize.height)
 
         let size = super.mediaViewDisplaySize()
-
+ 
         asyncImageView = UIImageView()
-        asyncImageView.frame = CGRectMake(0, 0, size.width, size.height)
+        asyncImageView.frame = CGRectMake(0, 0, imageSize.width, imageSize.height)
         asyncImageView.contentMode = .ScaleAspectFit
         asyncImageView.clipsToBounds = true
         asyncImageView.layer.cornerRadius = 20

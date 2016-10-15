@@ -290,8 +290,9 @@ extension MessagesViewController : FusumaDelegate {
 
             if success {
                 guard let nickname = self?.nickname, roomname = self?.roomname else { return }
-                
-                SocketManager.sharedInstance.sendMessageToRoom(roomname, message: "", nickname: nickname, imageUrl: url)
+                print(image.size.width)
+                print(image.size.height)
+                SocketManager.sharedInstance.sendMessageToRoom(roomname, message: "", nickname: nickname, imageUrl: url, width: image.size.width, height: image.size.height)
                 self?.displayMsg(nickname, displayName: nickname, text: "", image: image)
             }
         }

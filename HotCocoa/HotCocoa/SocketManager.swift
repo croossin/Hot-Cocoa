@@ -83,9 +83,9 @@ class SocketManager: NSObject {
     }
 
     //Send single message to room
-    func sendMessageToRoom(room: String, message: String, nickname: String, imageUrl: String? = nil){
-        if let imageUrl = imageUrl {
-            socket.emit(room + Socket.Endpoints.ImageMessage, room, nickname, imageUrl)
+    func sendMessageToRoom(room: String, message: String, nickname: String, imageUrl: String? = nil, width: CGFloat? = nil, height: CGFloat? = nil){
+        if let imageUrl = imageUrl, width = width, height = height {
+            socket.emit(room + Socket.Endpoints.ImageMessage, room, nickname, imageUrl, width, height)
         }else{
             socket.emit(room + Socket.Endpoints.ChatMessage, room, nickname, message)
         }
