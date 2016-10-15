@@ -964,12 +964,22 @@
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9iN-qk-igi">
+                                                                    <rect key="frame" x="527" y="12" width="25" height="25"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="25" id="Cet-ei-JBd"/>
+                                                                    </constraints>
+                                                                    <state key="normal" image="message"/>
+                                                                </button>
                                                             </subviews>
                                                             <color key="backgroundColor" red="0.36470588240000001" green="0.29411764709999999" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstItem="CWf-tH-63p" firstAttribute="leading" secondItem="Eha-uj-VUk" secondAttribute="leading" id="40Z-mg-TfY"/>
+                                                                <constraint firstItem="9iN-qk-igi" firstAttribute="trailing" secondItem="Eha-uj-VUk" secondAttribute="trailingMargin" id="T8n-oc-fRi"/>
+                                                                <constraint firstItem="9iN-qk-igi" firstAttribute="top" secondItem="Eha-uj-VUk" secondAttribute="top" constant="12" id="Y8z-PM-ls4"/>
                                                                 <constraint firstAttribute="bottom" secondItem="CWf-tH-63p" secondAttribute="bottom" id="hDQ-WP-OtC"/>
                                                                 <constraint firstAttribute="trailing" secondItem="CWf-tH-63p" secondAttribute="trailing" id="iCb-CQ-Zg8"/>
+                                                                <constraint firstItem="9iN-qk-igi" firstAttribute="centerY" secondItem="CWf-tH-63p" secondAttribute="centerY" id="kbt-L2-fW9"/>
                                                                 <constraint firstItem="CWf-tH-63p" firstAttribute="top" secondItem="Eha-uj-VUk" secondAttribute="top" id="uLl-ui-37h"/>
                                                                 <constraint firstAttribute="height" constant="49" id="vTB-th-m01"/>
                                                             </constraints>
