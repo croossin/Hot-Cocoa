@@ -116,7 +116,13 @@ struct Credit{
         (title: "CTFeedback", author: "rizumita", url: "https://github.com/rizumita/CTFeedback"),
         (title: "Bohr", author: "DavdRoman", url: "https://github.com/DavdRoman/Bohr"),
         (title: "ISMessages", author: "ilyainyushin", url: "https://github.com/ilyainyushin/ISMessages"),
-        (title: "Cloudinary", author: "cloudinary", url: "https://github.com/cloudinary/cloudinary_ios")
+        (title: "Cloudinary", author: "cloudinary", url: "https://github.com/cloudinary/cloudinary_ios"),
+        (title: "Socket.IO-Client-Swift", author: "SocketIO", url: "https://github.com/socketio/socket.io-client-swift"),
+        (title: "JSQMessagesViewController", author: "jessesquires", url: "https://github.com/jessesquires/JSQMessagesViewController"),
+        (title: "SwiftRandom", author: "thellimist", url: "https://github.com/thellimist/SwiftRandom"),
+        (title: "BBBadgeBarButtonItem", author: "TanguyAladenise", url: "https://github.com/TanguyAladenise/BBBadgeBarButtonItem"),
+        (title: "Fabric", author: "Twitter", url: "https://get.fabric.io/"),
+        (title: "Crashlytics", author: "Twitter", url: "https://get.fabric.io/")
     ]
 
     static let Icons = [
