@@ -45,6 +45,7 @@ class DataProvider {
                 ProgressController.sharedInstance.dismiss()
                 onCompletion(status: true, url: dataDictionary["url"] as? String ?? "")
             } else {
+                ProgressController.sharedInstance.showError(Errors.Messages.CantUploadImage)
                 onCompletion(status: false, url:"")
             }
         }) { (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite, context) in

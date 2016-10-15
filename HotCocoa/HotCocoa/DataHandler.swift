@@ -129,7 +129,9 @@ class DataHandler {
                 else { return []}
 
             //It was an image message
-            if let imageUrl = data[i]["imageUrl"] as? String, width = data[i]["width"] as? CGFloat, height = data[i]["height"] as? CGFloat{
+            if let image = data[i]["image"]{
+
+                guard let imageUrl = image["url"] as? String, width = image["width"] as? CGFloat, height = image["height"] as? CGFloat else { continue }
                 let mediaItem = AsyncPhotoMediaItem(withURL: imageUrl, imageSize: CGSizeMake(width, height), isOperator: senderID == UserService.sharedInstance.getUserID())
                 messages.append(JSQMessage(senderId: imageUrl, senderDisplayName: senderDisplayName, date: date, media: mediaItem))
             }else{
@@ -155,8 +157,16 @@ class DataHandler {
                       message = data["message"] as? String
                       else { return nil}
 
+            if let image = data["image"]{
 
-            return JSQMessage(senderId: senderID, senderDisplayName: senderDisplayName, date: date, text: message)
+                guard let imageUrl = image["url"] as? String, width = image["width"] as? CGFloat, height = image["height"] as? CGFloat else { return nil }
+
+                let mediaItem = AsyncPhotoMediaItem(withURL: imageUrl, imageSize: CGSizeMake(width, height), isOperator: senderID == UserService.sharedInstance.getUserID())
+                return JSQMessage(senderId: imageUrl, senderDisplayName: senderDisplayName, date: date, media: mediaItem)
+
+            }else{
+                return JSQMessage(senderId: senderID, senderDisplayName: senderDisplayName, date: date, text: message)
+            }
         }
     }
 }

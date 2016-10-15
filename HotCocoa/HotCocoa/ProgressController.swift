@@ -15,6 +15,10 @@ class ProgressController {
         SVProgressHUD.showWithStatus(status)
     }
 
+    func showError(status: String){
+        SVProgressHUD.showErrorWithStatus(status)
+    }
+
     func dismiss(){
         SVProgressHUD.dismiss()
     }

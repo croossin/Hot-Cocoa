@@ -203,8 +203,10 @@ class MessagesViewController: JSQMessagesViewController {
         let cell = super.collectionView(collectionView, cellForItemAtIndexPath: indexPath) as! JSQMessagesCollectionViewCell
 
         let message = messages[indexPath.item]
-        
-        cell.textView!.textColor = message.senderId == self.nickname ? UIColor.whiteColor() : UIColor.blackColor()
+
+        if !message.isMediaMessage {
+            cell.textView!.textColor = message.senderId == self.nickname ? UIColor.whiteColor() : UIColor.blackColor()
+        }
 
         return cell
     }
@@ -282,9 +284,15 @@ extension MessagesViewController : FusumaDelegate {
 
     func fusumaImageSelected(image: UIImage) {
 
+    }
+
+    func fusumaDismissedWithImage(image: UIImage) {
+        
         self.view.userInteractionEnabled = false
 
-        DataProvider.uploadImage(image) {[weak self] (success, url) in
+        guard let scaledImage = image.resizeWithWidth(200.0) else { return }
+
+        DataProvider.uploadImage(scaledImage) {[weak self] (success, url) in
 
             self?.view.userInteractionEnabled = true
 
@@ -292,7 +300,7 @@ extension MessagesViewController : FusumaDelegate {
                 guard let nickname = self?.nickname, roomname = self?.roomname else { return }
                 print(image.size.width)
                 print(image.size.height)
-                SocketManager.sharedInstance.sendMessageToRoom(roomname, message: "", nickname: nickname, imageUrl: url, width: image.size.width, height: image.size.height)
+                SocketManager.sharedInstance.sendMessageToRoom(roomname, message: "", nickname: nickname, imageUrl: url, width: scaledImage.size.width, height: scaledImage.size.height)
                 self?.displayMsg(nickname, displayName: nickname, text: "", image: image)
             }
         }

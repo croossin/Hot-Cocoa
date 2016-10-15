@@ -13,11 +13,11 @@ struct Dimensions{
 }
 
 struct Network{
-//    static let MAIN_URL: String = "https://shielded-plateau-69173.herokuapp.com/api/v1"
-    static let MAIN_URL: String = "http://localhost:8081/api/v1"
+    static let MAIN_URL: String = "https://shielded-plateau-69173.herokuapp.com/api/v1"
+//    static let MAIN_URL: String = "http://localhost:8081/api/v1"
 
-//    static let MAIN_URL_FOR_SOCKETS: String = "https://shielded-plateau-69173.herokuapp.com"
-    static let MAIN_URL_FOR_SOCKETS: String = "http://localhost:8081"
+    static let MAIN_URL_FOR_SOCKETS: String = "https://shielded-plateau-69173.herokuapp.com"
+//    static let MAIN_URL_FOR_SOCKETS: String = "http://localhost:8081"
 
 
     struct Routes {
@@ -85,6 +85,7 @@ struct Errors{
     struct Messages{
         static let CantJoinRoom = "We are unable to join this chat room. Try again later."
         static let CantSendMessage = "We can't send your message right now. Try again later."
+        static let CantUploadImage = "Unable to Upload Image"
     }
 }
 

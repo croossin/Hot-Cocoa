@@ -18,13 +18,7 @@ class AsyncPhotoMediaItem : JSQPhotoMediaItem {
 
     init(withURL url: String, imageSize: CGSize, isOperator: Bool) {
         super.init()
-        appliesMediaViewMaskAsOutgoing = (isOperator == false)
-//        var size = (imageSize == CGSizeZero) ? super.mediaViewDisplaySize() : ImageType(withSize: imageSize).frameSize()
-//        let resizedImageSize = UbikHelper.resizeFrameWithSize(imageSize, targetSize: size)
-//        size.width = min(size.width, resizedImageSize.width)
-//        size.height = min(size.height, resizedImageSize.height)
-
-        let size = super.mediaViewDisplaySize()
+        appliesMediaViewMaskAsOutgoing = isOperator
  
         asyncImageView = UIImageView()
         asyncImageView.frame = CGRectMake(0, 0, imageSize.width, imageSize.height)
