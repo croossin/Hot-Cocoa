@@ -10,6 +10,7 @@ import UIKit
 import UIScrollView_InfiniteScroll
 import SVProgressHUD
 import FoldingCell
+import DZNEmptyDataSet
 
 class CocoaSearchTableViewController: UITableViewController {
 
@@ -22,6 +23,8 @@ class CocoaSearchTableViewController: UITableViewController {
 
     private var pods = [CocoaPod]()
 
+    private var isCurrentlyLoading = true
+
     var platform: Platform = .IOS
     var searchTerm: String = ""
 
@@ -31,6 +34,9 @@ class CocoaSearchTableViewController: UITableViewController {
         super.viewDidLoad()
 
         self.tableView.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
+
+        self.tableView.emptyDataSetSource = self
+        self.tableView.emptyDataSetDelegate = self
 
         _loadPods()
 
@@ -47,11 +53,15 @@ class CocoaSearchTableViewController: UITableViewController {
     private func _loadPods(){
         print("Were loading search for \(platform)")
         delegate?.loadingStarted()
+
+        self.isCurrentlyLoading = true
         
         DataProvider.getPodsBasedOnSearchTag(platform, searchTerm: searchTerm, currentNumberRetrieved: pods.count, callback: { (listOfPods) in
                 self.pods = listOfPods
 
                 self.createCellHeightsArray()
+
+                self.isCurrentlyLoading = false
 
                 self.tableView.reloadData()
 
@@ -155,5 +165,38 @@ class CocoaSearchTableViewController: UITableViewController {
             tableView.beginUpdates()
             tableView.endUpdates()
             }, completion: nil)   
+    }
+}
+
+extension CocoaSearchTableViewController : DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+    func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
+        return UIImage(named: "rating")
+    }
+
+    func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+
+        let attributes: [String : AnyObject] = [
+            NSForegroundColorAttributeName: UIColor.blackColor(),
+            NSFontAttributeName: UIFont(name: "Avenir-Book", size: 20)!
+        ]
+
+        if self.isCurrentlyLoading {
+            guard let loadingTitle = MessageTitles.SearchingForData.chooseRandom() else { return NSAttributedString() }
+            return NSAttributedString(string: loadingTitle, attributes: attributes)
+        }else{
+            guard let title = MessageTitles.NoDataFound.chooseRandom() else { return NSAttributedString() }
+            return NSAttributedString(string: title, attributes: attributes)
+        }
+
+    }
+
+    func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+
+        let attributes: [String : AnyObject] = [
+            NSForegroundColorAttributeName: UIColor.blackColor(),
+            NSFontAttributeName: UIFont(name: "Avenir-Book", size: 15)!
+        ]
+
+        return NSAttributedString(string: self.isCurrentlyLoading ? MessageBody.SearchingForData : MessageBody.NoDataFound, attributes: attributes)
     }
 }

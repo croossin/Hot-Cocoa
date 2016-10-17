@@ -10,6 +10,7 @@
 		0D4EEC6FF31F9CB5F16F2A1D /* Pods_HotCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCB442D7D84B77C65218B01D /* Pods_HotCocoa.framework */; };
 		8C37928D1DB277C700F007FF /* AsyncPhotoMediaItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C37928C1DB277C700F007FF /* AsyncPhotoMediaItem.swift */; };
 		8C3792911DB283AC00F007FF /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3792901DB283AC00F007FF /* UIImageExtension.swift */; };
+		8C3792931DB4569000F007FF /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3792921DB4569000F007FF /* ArrayExtension.swift */; };
 		8C49FD7B1D85DCC3003A37A9 /* WindowHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C49FD7A1D85DCC3003A37A9 /* WindowHelper.swift */; };
 		8C52940F1DADBB71007321E5 /* SocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C52940E1DADBB71007321E5 /* SocketManager.swift */; };
 		8C5294131DADD5C8007321E5 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5294121DADD5C8007321E5 /* MessagesViewController.swift */; };
@@ -63,6 +64,7 @@
 		801FD5F7E556F2347EA8F8FF /* Pods-HotCocoa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotCocoa.release.xcconfig"; path = "Pods/Target Support Files/Pods-HotCocoa/Pods-HotCocoa.release.xcconfig"; sourceTree = "<group>"; };
 		8C37928C1DB277C700F007FF /* AsyncPhotoMediaItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncPhotoMediaItem.swift; sourceTree = "<group>"; };
 		8C3792901DB283AC00F007FF /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		8C3792921DB4569000F007FF /* ArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		8C49FD7A1D85DCC3003A37A9 /* WindowHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowHelper.swift; sourceTree = "<group>"; };
 		8C52940E1DADBB71007321E5 /* SocketManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketManager.swift; sourceTree = "<group>"; };
 		8C5294121DADD5C8007321E5 /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 				8CEEF49F1D85B0CB001270DB /* UIApplicationExtension.swift */,
 				8CB20C541D85C22A00BA2004 /* StringExtension.swift */,
 				8C3792901DB283AC00F007FF /* UIImageExtension.swift */,
+				8C3792921DB4569000F007FF /* ArrayExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 				8CE37F201D7A5A2200EB23C9 /* DataHandler.swift in Sources */,
 				8CC7F3481D7B45A50082E36B /* SearchViewController.swift in Sources */,
 				8CE37F0E1D79422100EB23C9 /* Pod.swift in Sources */,
+				8C3792931DB4569000F007FF /* ArrayExtension.swift in Sources */,
 				8CBA9AB21D96E230006A9557 /* AlertController.swift in Sources */,
 				8CE37F081D793E8C00EB23C9 /* CellInterface.swift in Sources */,
 				8CE37F001D793B8800EB23C9 /* CocoaTableViewController.swift in Sources */,

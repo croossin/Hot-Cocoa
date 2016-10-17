@@ -8,6 +8,7 @@ PODS:
   - Crashlytics (3.8.2):
     - Fabric (~> 1.6.3)
   - CTFeedback (1.1.1)
+  - DZNEmptyDataSet (1.8.1)
   - Fabric (1.6.8)
   - FCAlertView (1.0.9)
   - FoldingCell (1.0.0)
@@ -34,6 +35,7 @@ DEPENDENCIES:
   - Cloudinary
   - Crashlytics
   - CTFeedback
+  - DZNEmptyDataSet
   - Fabric
   - FCAlertView
   - FoldingCell
@@ -72,6 +74,7 @@ SPEC CHECKSUMS:
   Cloudinary: f80af4565ec08c521d5e58cb56d9fbe1e4595e40
   Crashlytics: 27acca95a01b042a8294291dd6dff27f8f6af6d7
   CTFeedback: 6f128606e0d26d46075c3fa9fc33884372df8675
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   Fabric: 5755268d0171435ab167e3d0878a28a777deaf10
   FCAlertView: 9a39300baaf29de8b343dec7f05c9978cd5b9f51
   FoldingCell: ca0b0f73a853143bf7d968c04a6604d25fbf1af7
@@ -89,6 +92,6 @@ SPEC CHECKSUMS:
   TLTagsControl: 34ab7d25f282aa2b8b42e73cc71b96ffe9fa7a15
   UIScrollView-InfiniteScroll: 14e204c50ca4040467e1cbfa141dad7a18919b56
 
-PODFILE CHECKSUM: a72aa9a8b943408a66c0d3201ed9ea5d6038c040
+PODFILE CHECKSUM: 8540c7457c22dfe94403646459402ad0360a292b
 
 COCOAPODS: 1.1.0.rc.1

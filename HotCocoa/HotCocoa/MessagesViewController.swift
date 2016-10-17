@@ -88,8 +88,10 @@ class MessagesViewController: JSQMessagesViewController {
     private func joinRoom(){
 
         guard let roomname = roomname else {
-            let randomTitleIndex = Int(arc4random_uniform(UInt32(MessageTitles.Error.count)))
-            AlertController.displayBanner(.Error, title: MessageTitles.Error[randomTitleIndex], message: Errors.Messages.CantJoinRoom)
+            
+            guard let randomTitle = MessageTitles.Error.chooseRandom() else { return }
+
+            AlertController.displayBanner(.Error, title: randomTitle, message: Errors.Messages.CantJoinRoom)
             return
         }
 
@@ -254,8 +256,8 @@ class MessagesViewController: JSQMessagesViewController {
         self.isTyping = false
 
         guard let roomname = roomname else {
-            let randomTitleIndex = Int(arc4random_uniform(UInt32(MessageTitles.Error.count)))
-            AlertController.displayBanner(.Error, title: MessageTitles.Error[randomTitleIndex], message: Errors.Messages.CantSendMessage)
+            guard let randomTitle = MessageTitles.Error.chooseRandom() else { return }
+            AlertController.displayBanner(.Error, title: randomTitle, message: Errors.Messages.CantSendMessage)
             return
         }
 

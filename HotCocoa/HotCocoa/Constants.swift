@@ -51,10 +51,12 @@ struct DetailedScroll{
 struct MessageTitles{
     static let Error = ["Whoops", "Uh-Oh", "Shoot", "Darn"]
     static let Success = ["Sweet", "Awesome", "Excellent", "You Did It", "Great Job"]
-    static func RandomUsernameTitle(nickname: String) -> String {return "Random Username Assigned - \(nickname)"}
+    static func RandomUsernameTitle(nickname: String) -> String {return "Random Username - \(nickname)"}
     static let Connected = "Connected"
     static let UsersConnectedPopUp = "You're Not Alone"
     static let UsersConnectedAlone = "Well..."
+    static let NoDataFound = ["It's Dark in Here...", "Where is everyone?", "I'm lost"]
+    static let SearchingForData = ["Searching", "Squint a little harder", "We're looking for you"]
 }
 
 struct MessageBody{
@@ -63,6 +65,8 @@ struct MessageBody{
     static func ConnectedToMulptiple(count: Int) -> String {return "There are currently \(count) others connected to this chat!" }
     static func ConnectedUsersMessage(count: Int) -> String {return "You are currently in the chat with \(count) other active user!"}
     static let ConnectUserAloneMessage = "It seems that no one else is in here with you"
+    static let NoDataFound = "We were unable to find any Cocoa Pods for your given search."
+    static let SearchingForData = "We are currently gathering Cocoa Pods from the deep interwebs. Please be patient."
 }
 struct Socket {
     static let ConnectUserToRoom = "connectUserToRoom"
@@ -129,7 +133,8 @@ struct Credit{
         (title: "BBBadgeBarButtonItem", author: "TanguyAladenise", url: "https://github.com/TanguyAladenise/BBBadgeBarButtonItem"),
         (title: "Fabric", author: "Twitter", url: "https://get.fabric.io/"),
         (title: "Crashlytics", author: "Twitter", url: "https://get.fabric.io/"),
-        (title: "Fusuma", author: "ytakzk", url: "https://github.com/ytakzk/Fusuma")
+        (title: "Fusuma", author: "ytakzk", url: "https://github.com/ytakzk/Fusuma"),
+        (title: "DZNEmptyDataSet", author: "dzenbot", url: "https://github.com/dzenbot/DZNEmptyDataSet")
     ]
 
     static let Icons = [

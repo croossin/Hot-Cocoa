@@ -24,22 +24,23 @@ class AlertController {
     }
 
     class func displayCompleteFeedbackRequest(){
-        let randomTitleIndex = Int(arc4random_uniform(UInt32(MessageTitles.Success.count)))
+        guard let randomTitle = MessageTitles.Success.chooseRandom() else { return }
 
-        ISMessages.showCardAlertWithTitle(MessageTitles.Success[randomTitleIndex], message: "We really appreciate your feedback!", iconImage: nil, duration: 3.0, hideOnSwipe: true, hideOnTap: true, alertType: .Success, alertPosition: .Top)
+        ISMessages.showCardAlertWithTitle(randomTitle, message: "We really appreciate your feedback!", iconImage: nil, duration: 3.0, hideOnSwipe: true, hideOnTap: true, alertType: .Success, alertPosition: .Top)
     }
 
     class func displayErrorFeedbackRequest(){
-        let randomTitleIndex = Int(arc4random_uniform(UInt32(MessageTitles.Error.count)))
 
-       ISMessages.showCardAlertWithTitle(MessageTitles.Error[randomTitleIndex], message: "We had an issue on our side. Please try again later.", iconImage: nil, duration: 3.0, hideOnSwipe: true, hideOnTap: true, alertType: .Error, alertPosition: .Top)
+        guard let randomTitle = MessageTitles.Error.chooseRandom() else { return }
+
+       ISMessages.showCardAlertWithTitle(randomTitle, message: "We had an issue on our side. Please try again later.", iconImage: nil, duration: 3.0, hideOnSwipe: true, hideOnTap: true, alertType: .Error, alertPosition: .Top)
     }
 
     class func displayNotCompleteFormBanner(){
 
-        let randomTitleIndex = Int(arc4random_uniform(UInt32(MessageTitles.Error.count)))
+        guard let randomTitle = MessageTitles.Error.chooseRandom() else { return }
 
-        ISMessages.showCardAlertWithTitle(MessageTitles.Error[randomTitleIndex], message: "You must fill out feedback form", iconImage: nil, duration: 3.0, hideOnSwipe: true, hideOnTap: true, alertType: .Info, alertPosition: .Top)
+        ISMessages.showCardAlertWithTitle(randomTitle, message: "You must fill out feedback form", iconImage: nil, duration: 3.0, hideOnSwipe: true, hideOnTap: true, alertType: .Info, alertPosition: .Top)
     }
 
     class func displayBanner(alertType: ISAlertType, title: String, message: String){
