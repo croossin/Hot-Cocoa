@@ -94,6 +94,9 @@ function getPageData(page){
               }
             );
           }
+
+          console.log("Updated DB complete : " + Date());
+          process.exit()
         });
       }
     }) 
