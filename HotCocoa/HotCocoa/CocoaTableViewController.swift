@@ -41,7 +41,7 @@ class CocoaTableViewController: UITableViewController {
 
         self.tableView.emptyDataSetSource = self
         self.tableView.emptyDataSetDelegate = self
-        
+
         _loadPods()
 
         _setupInfiniteScroll()
