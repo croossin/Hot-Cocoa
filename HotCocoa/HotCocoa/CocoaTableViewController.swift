@@ -173,7 +173,7 @@ class CocoaTableViewController: UITableViewController {
 
 extension CocoaTableViewController : DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
-        return UIImage(named: "rating")
+        return UIImage(named: "hotcocoa-logo")
     }
 
     func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
