@@ -167,7 +167,11 @@ class CocoaTableViewController: UITableViewController {
         UIView.animateWithDuration(duration, delay: 0, options: .CurveEaseOut, animations: { () -> Void in
             tableView.beginUpdates()
             tableView.endUpdates()
-            }, completion: nil)   
+            }) {[weak self] (complete) in
+                if complete {
+                    self?.tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Top, animated: true)
+                }
+        }
     }
 }
 
