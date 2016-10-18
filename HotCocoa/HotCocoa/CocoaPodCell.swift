@@ -106,6 +106,8 @@ class CocoaPodCell: FoldingCell {
 
         authorName.text = pod.author.name
 
+        self.authorGHAvatarImage.image =  UIImage(named: "user_placeholder")
+
         //See if we can get gh username from gh link
         if let _ghUsername = pod.githubUsername(){
 
@@ -118,6 +120,7 @@ class CocoaPodCell: FoldingCell {
                 let tapGesture = UITapGestureRecognizer(target: self, action: Selector("profileImageTapped:"))
                 self?.authorGHAvatarImage.userInteractionEnabled = true
                 self?.authorGHAvatarImage.addGestureRecognizer(tapGesture)
+                self?.authorName.addGestureRecognizer(tapGesture)
             })
         }
 

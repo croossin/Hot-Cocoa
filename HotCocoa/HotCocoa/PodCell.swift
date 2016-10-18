@@ -133,6 +133,8 @@ class PodCell: FoldingCell {
 
         authorName.text = pod.author.name
 
+        authorAvatar.image = UIImage(named: "user_placeholder")
+        closeAvatar.image = UIImage(named: "user_placeholder")
 
         //Get author profile image
         DataProvider.getImageFromUrl(pod.author.avatar){[weak self] image in

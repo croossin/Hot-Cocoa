@@ -13,11 +13,11 @@ struct Dimensions{
 }
 
 struct Network{
-    static let MAIN_URL: String = "https://shielded-plateau-69173.herokuapp.com/api/v1"
-//    static let MAIN_URL: String = "http://localhost:8081/api/v1"
+//    static let MAIN_URL: String = "https://shielded-plateau-69173.herokuapp.com/api/v1"
+    static let MAIN_URL: String = "http://localhost:8081/api/v1"
 
-    static let MAIN_URL_FOR_SOCKETS: String = "https://shielded-plateau-69173.herokuapp.com"
-//    static let MAIN_URL_FOR_SOCKETS: String = "http://localhost:8081"
+//    static let MAIN_URL_FOR_SOCKETS: String = "https://shielded-plateau-69173.herokuapp.com"
+    static let MAIN_URL_FOR_SOCKETS: String = "http://localhost:8081"
 
 
     struct Routes {
@@ -148,7 +148,8 @@ struct Credit{
         (title: "Menu", author: "Milky - Digital Innovation", website: "Noun Project", url: "https://thenounproject.com/search/?q=menu&creator=246241&i=105216"),
         (title: "Mug", author: "Fuat şanlı", website: "Noun Project", url: "https://thenounproject.com/search/?q=hot%20cocoa&i=657447"),
         (title: "Message", author: "Dmitrij", website: "Noun Project", url: "https://thenounproject.com/search/?q=message&i=662995"),
-        (title: "User", author: "Bryn Taylor", website: "Noun Project", url: "https://thenounproject.com/search/?q=user&i=101409")
+        (title: "User", author: "Bryn Taylor", website: "Noun Project", url: "https://thenounproject.com/search/?q=user&i=101409"),
+        (title: "User Placeholder", author: "Kevin White", website: "Noun Project", url: "https://thenounproject.com/search/?q=user+placeholder&i=538846")
     ]
 }
 
