@@ -80,23 +80,24 @@ function getPageData(page){
         })
 
         Q.all(promises).then(function(results){
+          var updatePromises = [];
+
           for(i = 0; i < results.length; i++){
             controls[i].details = results[i];
 
             var control = new CocoaPod(controls[i]);
 
-            CocoaPod.update(
+            updatePromises.push(CocoaPod.update(
               {name: control.name},
               {$setOnInsert: control},
-              {upsert: true},
-              function(err, numAffected){
-                console.log(numAffected);
-              }
-            );
+              {upsert: true}
+            ));
           }
 
-          console.log("Updated DB complete : " + Date());
-          process.exit()
+          Q.allSettled(updatePromises).then(function(results){
+            console.log("Finished cron job at: " + Date());
+            process.exit();
+          }); 
         });
       }
     }) 
