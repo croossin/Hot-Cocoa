@@ -135,7 +135,9 @@ class MessagesViewController: JSQMessagesViewController {
             //Callback was for user update
             else {
                 self?.activeUsers = array
-                self?.userBadgeButton?.badgeValue = "\(array.count - 1)"
+                if array.count > 0 {
+                    self?.userBadgeButton?.badgeValue = "\(array.count - 1)"
+                }
                 guard let _hasSeenNotification = self?.hasSeenNotification else { return }
                 if array.count == 2 && !_hasSeenNotification{
                     AlertController.displayBanner(.Success, title: MessageTitles.Connected, message: MessageBody.ConnectedToChatOneOther)
