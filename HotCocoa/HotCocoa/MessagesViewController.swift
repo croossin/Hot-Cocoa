@@ -274,6 +274,7 @@ class MessagesViewController: JSQMessagesViewController {
         let fusuma = FusumaViewController()
         fusuma.delegate = self
         fusuma.hasVideo = false
+        fusumaTintColor = UIColor.CoralColor
         self.presentViewController(fusuma, animated: true, completion: nil)
     }
 
@@ -314,7 +315,8 @@ extension MessagesViewController : FusumaDelegate {
     }
 
     func fusumaCameraRollUnauthorized() {
-        
+        guard let errorTitle = MessageTitles.Error.chooseRandom() else { return }
+        AlertController.displayBanner(.Error, title: errorTitle, message: MessageBody.NoCameraAccess)
     }
 
     func fusumaVideoCompleted(withFileURL fileURL: NSURL) {

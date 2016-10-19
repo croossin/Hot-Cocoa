@@ -67,6 +67,7 @@ struct MessageBody{
     static let ConnectUserAloneMessage = "It seems that no one else is in here with you"
     static let NoDataFound = "We were unable to find any Cocoa Pods for your given search."
     static let SearchingForData = "We are currently gathering Cocoa Pods from the deep interwebs. Please be patient."
+    static let NoCameraAccess = "We need access to your camera to upload images!"
 }
 struct Socket {
     static let ConnectUserToRoom = "connectUserToRoom"
