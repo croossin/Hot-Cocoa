@@ -101,6 +101,7 @@ struct UserDefaults {
 
 struct Settings {
     static func ProfileName(nickname: String) -> String { return "Your app-wide nickname is: \(nickname)"}
+    static let ProfileSubtitle = "This is your randomly assigned nickname"
     static let ProfileNameTitle = "Randomly Assigned Nicknames"
     static let ProfileNameSubtitle = "We randomly assign all users nicknames in order to keep chat conversation annonymous"
     

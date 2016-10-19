@@ -52,7 +52,7 @@ class SettingsViewController: BOTableViewController {
         //Profile
         self.addSection(BOTableViewSection(headerTitle: "Profile", handler: { (section) in
 
-            section.addCell(BOButtonTableViewCell(title: Settings.ProfileName(UserService.sharedInstance.getUserID()), key: "", handler: { (cell) in
+            section.addCell(BOButtonTableViewCell(title: UserService.sharedInstance.getUserID(), key: "", handler: { (cell) in
 
                 guard let cell = cell as? BOButtonTableViewCell else { return }
 
@@ -60,6 +60,8 @@ class SettingsViewController: BOTableViewController {
                     AlertController.displayInfoAlert(Settings.ProfileNameTitle, subtitle: Settings.ProfileNameSubtitle)
                 }
             }))
+
+            section.footerTitle = Settings.ProfileNameSubtitle
         }))
 
         //Pods
