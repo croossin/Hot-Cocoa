@@ -20,6 +20,10 @@ class SearchViewController: UIViewController, UICollectionViewDelegate {
         super.viewDidLoad()
     }
 
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
 
@@ -45,9 +49,8 @@ class SearchViewController: UIViewController, UICollectionViewDelegate {
     }
 
     func _setupDismissButton(){
-        let dismissButton = UIButton(frame: CGRect(x: 5, y: 10, width: 20, height: 20))
-        dismissButton.backgroundColor = UIColor.BlackColor
-        dismissButton.setTitle("X", forState: .Normal)
+        let dismissButton = UIButton(frame: CGRect(x: 15, y: 15, width: 30, height: 30))
+        dismissButton.setBackgroundImage(UIImage(named: "cancel"), forState: .Normal)
         dismissButton.addTarget(self, action: #selector(SearchViewController.dismiss(_:)), forControlEvents: .TouchUpInside)
         self.view.addSubview(dismissButton)
     }

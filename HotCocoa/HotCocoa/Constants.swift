@@ -151,7 +151,8 @@ struct Credit{
         (title: "Mug", author: "Fuat şanlı", website: "Noun Project", url: "https://thenounproject.com/search/?q=hot%20cocoa&i=657447"),
         (title: "Message", author: "Dmitrij", website: "Noun Project", url: "https://thenounproject.com/search/?q=message&i=662995"),
         (title: "User", author: "Bryn Taylor", website: "Noun Project", url: "https://thenounproject.com/search/?q=user&i=101409"),
-        (title: "User Placeholder", author: "Kevin White", website: "Noun Project", url: "https://thenounproject.com/search/?q=user+placeholder&i=538846")
+        (title: "User Placeholder", author: "Kevin White", website: "Noun Project", url: "https://thenounproject.com/search/?q=user+placeholder&i=538846"),
+        (title: "Cancel", author: "Hector", website: "Noun Project", url: "https://thenounproject.com/search/?q=cnacel&i=657311")
     ]
 }
 
